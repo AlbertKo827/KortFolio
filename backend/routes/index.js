@@ -1,13 +1,12 @@
-const express = require('express')
+const express = require('express');
+const passport = require('passport');
 
-const isLogin = ((req, res, next)=>{
-    if(!req.isAuthenticated()){
-        return next();
-    }
-    else{
-        res.redirect('/');
-    }
-})
+const kakaoStrategy = require('passport-kakao').Strategy;
+const naverStrategy = require('passport-naver').Strategy;
+const facebookStrategy = require('passport-facebook').Strategy;
+
+const login = require('./login.js');
+const restAPI = require('./RESTfulAPI');
 
 exports.login = (app => {
     var routeLogin = express.router()

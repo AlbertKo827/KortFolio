@@ -21,11 +21,13 @@
   },
   "homepage": "https://github.com/ArnoldKo/KortFolio#readme",
   "dependencies": {
+    "assert": "^1.4.1",
     "body-parser": "^1.17.2",
     "connect-mongo": "^1.3.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.4",
     "express-session": "^1.15.5",
+    "helmet": "^3.8.1",
     "mongoose": "^4.11.10",
     "passport": "^0.4.0",
     "passport-facebook": "^2.1.1",
