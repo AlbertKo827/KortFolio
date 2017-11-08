@@ -10,10 +10,25 @@ const restAPI = require('./RESTfulAPI');
 const config = require('../module/configuration.js');
 
 module.exports = (app=>{//Test
-    app.get('/',(req, res)=>{
+app.use(passport.initialize());
+
+    app.get('/', (req, res)=>{
+        res.render('index');
+    })
+
+    app.get('/home',(req, res)=>{
         res.send(`<h1>Fuck it...</h1>`);
     })
 
+    app.post('/fail',(req, res)=>{
+        res.send('ok');
+    } )
+
+    app.post('/home',(req, res)=>{
+        res.send('ok');
+    } )
+
+/*
     app.post('/',(req, res)=>{
         res.redirect('/home');
     })
@@ -21,7 +36,7 @@ module.exports = (app=>{//Test
     app.get('/home',(req, res)=>{
         res.send(`<h1>here is home</h1>`);
     })
-
+*/
     app.use('/login', login);
 ///////////////////////////////////////////
     app.use(passport.initialize());
@@ -32,7 +47,7 @@ module.exports = (app=>{//Test
     });
 
     passport.deserializeUser((id ,done)=>{
-        User.findOne({_id:id}, (err, user)=>{
+        User.findById(id, (err, user)=>{
             done(err, user);
         })
     });
@@ -40,7 +55,7 @@ module.exports = (app=>{//Test
     passport.use('naver', new naverStrategy(config.naverValue, 
         (accessToken, refreshToken, profile, done)=>
         {
-        
+            done(null, profile);
         }
     ));
 
@@ -54,7 +69,7 @@ module.exports = (app=>{//Test
     passport.use('kakao', new kakaoStrategy(config.kakaoValue, 
         (accessToken, refreshToken, profile, done)=>
         {
-            
+            console.log(profile);
         }
     ));
 })
