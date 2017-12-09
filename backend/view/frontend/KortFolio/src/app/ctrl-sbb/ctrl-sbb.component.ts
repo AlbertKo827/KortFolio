@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-titlebar',
-  templateUrl: './titlebar.component.html',
+  selector: 'app-ctrl-sbb',
+  templateUrl: './ctrl-sbb.component.html',
   styleUrls: ['../app.component.css']
 })
-export class TitlebarComponent implements OnInit {
+export class CtrlSBBComponent implements OnInit {
 
   constructor() { }
 

@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { TitlebarComponent } from './titlebar/titlebar.component';
+import { CtrlSBBComponent } from './ctrl-sbb/ctrl-sbb.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    TitlebarComponent
+    TitlebarComponent,
+    CtrlSBBComponent
   ],
   imports: [
     BrowserModule
