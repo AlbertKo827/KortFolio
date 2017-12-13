@@ -6,8 +6,8 @@ import { LoginComponent } from './login/login.component';
 import { TitlebarComponent } from './titlebar/titlebar.component';
 import { CtrlSBBComponent } from './ctrl-sbb/ctrl-sbb.component';
 
-import { BsDropdownModule as DropDown} from 'ngx-bootstrap';
-
+import { BsDropdownModule as DropDown } from 'ngx-bootstrap';
+import { ModalModule as Modal } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -19,6 +19,7 @@ import { BsDropdownModule as DropDown} from 'ngx-bootstrap';
   imports: [
     BrowserModule,
     DropDown.forRoot(),
+    Modal.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

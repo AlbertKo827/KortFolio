@@ -25,14 +25,12 @@ nav.navbar-kortfolio a{
 }
 
 .dropdown .btn.btn-default{
-    background-image: -webkit-linear-gradient(top, #fff 0%, #000000 100%);
-    background-image:      -o-linear-gradient(top, #fff 0%, #000000 100%);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#000));
-    background-image:         linear-gradient(to bottom, #fff 0%, #000 100%);
-    margin-left: 10px;
+    margin-left: 10px; 
     width: -webkit-calc(100% - 20px);
 }
-
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus,
 .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
 .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
 .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
@@ -43,4 +41,9 @@ nav.navbar-kortfolio a{
 .btn-default:focus {
   background-color: #000000;
   background-position: 0 -15px;
+}
+
+.dropdown-toggle:active, .open .dropdown-toggle {
+    background:#FFF !important; 
+    color:#000 !important;
 }
