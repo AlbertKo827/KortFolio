@@ -1,24 +1,25 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
-import { AppComponent } from '../app.component'
-
-import { BsModalService } from 'ngx-bootstrap/modal';
-import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
-
+import { Component, ViewChild } from '@angular/core';
+import { ModalDirective } from 'ngx-bootstrap/modal';
+ 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['../app.component.css']
 })
-export class LoginComponent implements OnInit {
-  modalRef: BsModalRef;
-  constructor(private modalService: BsModalService) {}
+
+export class LoginComponent {
+  @ViewChild('autoShownModal') autoShownModal: ModalDirective;
+  isModalShown: boolean = false;
  
-  openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
+  showModal(): void {
+    this.isModalShown = true;
   }
-
-  ngOnInit() {
-    
+ 
+  hideModal(): void {
+    this.autoShownModal.hide();
   }
-
+ 
+  onHidden(): void {
+    this.isModalShown = false;
+  }
 }
