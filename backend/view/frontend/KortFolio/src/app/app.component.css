@@ -52,11 +52,18 @@ nav.navbar-kortfolio a{
     width:100%; 
     padding-left:0; 
     padding-right:0;
+    color: white;
 }
 
 .kortfolio-intro-header img.header-img{
     
     animation: header-hovor-img 1s ease-out 200ms 1 normal forwards;
+}
+
+#header-name{
+    font-size:2rem;
+    font-weight:bold; 
+    margin-top:1.5%;
 }
 
 .center-cropped {
@@ -89,3 +96,45 @@ nav.navbar-kortfolio a{
     font-weight: bold;
 }
 
+.kortfolio-contant > *{
+    font-size:1.2rem;
+    line-height: 2.5rem;
+}
+
+.kortfolio-contant span:first-child{
+    margin-right:0.5rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    line-height: 2.8rem;
+    float: left;
+    font-size: 2.9rem;
+    color: #000;
+}
+
+.kortfolio-contant p > span:first-child{
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    background-color: #000;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    text-align: center;
+    color: rgb(99, 99, 99);
+}
+
+.kortfolio-contant p{
+    margin-top:0.8rem;
+    margin-bottom:0.8rem;
+}
+
+.kortfolio-boutme{
+    
+}
+
+a:link { color: white; text-decoration: none;}
+a:visited { color: white; text-decoration: none;}
+a:hover { color: rgb(236, 226, 164); text-decoration: none;}
+
+.col-md-6{
+    border-right: solid black;
+}
