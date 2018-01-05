@@ -3,11 +3,6 @@
 @import url("../../node_modules/bootstrap-social/bootstrap-social.css");
 @import url("../../node_modules/bootstrap-social/assets/css/font-awesome.css");
 
-.button-center{
-    float: none;
-    margin : 0 auto;
-}
-
 nav.navbar-kortfolio{
     background-color: rgb(237, 234, 215);
     color:rgb(99, 99, 99);
@@ -46,6 +41,30 @@ nav.navbar-kortfolio a{
 .dropdown-toggle:active, .open .dropdown-toggle {
     background:#FFF !important; 
     color:#000 !important;
+}
+
+#kortfolio-menu{
+    display: none;
+}
+
+.kortfolio-profile-img{
+    bottom:5rem; 
+    position:relative;
+}
+
+.kortfolio-profile-img > div{
+    overflow:hidden; 
+    position:relative; 
+    width:10rem; 
+    height:10rem;  
+    border:10px solid rgb(236, 226, 164); 
+    border-radius:50%; 
+    margin:auto;
+    padding-bottom: -10%;
+}
+
+.kortfolio-profile-img > div > img{
+    width: 100%;
 }
 
 .kortfolio-intro-header{
@@ -99,12 +118,13 @@ nav.navbar-kortfolio a{
 .kortfolio-contant > *{
     font-size:1.2rem;
     line-height: 2.5rem;
+    z-index:1;
+    margin:1rem 0;
+    padding:1rem 0;
 }
 
 .kortfolio-contant span:first-child{
     margin-right:0.5rem;
-    width: 2.8rem;
-    height: 2.8rem;
     line-height: 2.8rem;
     float: left;
     font-size: 2.9rem;
@@ -128,13 +148,93 @@ nav.navbar-kortfolio a{
 }
 
 .kortfolio-boutme{
-    
+    font-size:0.9rem;
+    padding-bottom: 1rem;
+    margin-bottom:1rem;
+}
+
+.kortfolio-intro-body{
+    background-color:white; 
+    color:rgb(99, 99, 99);
+    padding: 1rem 0;
+}
+
+.kortfolio-intro-body h2,
+.kortfolio-intro-body h1{
+    font-weight: bold;
 }
 
 a:link { color: white; text-decoration: none;}
 a:visited { color: white; text-decoration: none;}
 a:hover { color: rgb(236, 226, 164); text-decoration: none;}
 
-.col-md-6{
-    border-right: solid black;
+.kortfolio-class{
+    margin:1rem 0;
+}
+
+.kortfolio-class::before{
+    margin-bottom: 10px;
+    float: left;
+    width: 4rem;
+}
+
+.kortfolio-skill p{
+    float:left; 
+    margin: 0 4.5rem 0 1rem;
+    width:3.5rem;
+    font-weight: bold;
+    
+}
+
+.kortfolio-skill > div{
+    margin:1.5rem 0;
+}
+
+.kortfolio-skill .progress-bar{
+    background-image:none;
+    color: rgb(99, 99, 99);
+}
+
+/* 매우 작은 기기들 (모바일폰, 768px 보다 작은) */
+/* 부트스트랩에서 이것은 기본이므로 미디어쿼리가 없습니다. */
+
+/* 작은 기기들 (태블릿, 768px 이상) */
+@media (max-width: 992px) {  
+    .navbar-header{
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .nav.navbar-nav{
+        display:none;
+    }
+
+    .kortfolio-boutme{
+        border-bottom:dashed 1px rgb(236, 226, 164);
+    }
+
+    #kortfolio-menu{
+        display: block;
+        float: left;
+        margin: 0;
+    }
+
+    #kortfolio-menu:hovor,
+    #kortfolio-menu:focus{
+        
+    }
+}
+
+/* 중간 기기들 (데스크탑, 992px 이상) */
+@media (min-width: 992px) {  
+    .kortfolio-boutme{
+        border-right:dashed 1px rgb(236, 226, 164);
+    }
+}
+
+/* 큰 기기들 (큰 데스크탑, 1200px 이상) */
+@media (min-width: 1200px)  {  
+    .kortfolio-boutme{
+        border-right:dashed 1px rgb(236, 226, 164);
+    }
 }

@@ -10,6 +10,7 @@ import { IntroduceComponent } from './introduce/introduce.component';
 import { AlertModule } from 'ngx-bootstrap';
 import { BsDropdownModule as DropDown } from 'ngx-bootstrap/dropdown';
 import { ModalModule as Modal } from 'ngx-bootstrap/modal';
+import { ProgressbarModule as ProgressBar } from 'ngx-bootstrap/progressbar';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ModalModule as Modal } from 'ngx-bootstrap/modal';
     AlertModule.forRoot(),
     DropDown.forRoot(),
     Modal.forRoot(),
+    ProgressBar.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
