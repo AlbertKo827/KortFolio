@@ -22,5 +22,6 @@ Config.KFInitialize(app, Mongoose, session, MongoStore);
 
 
 route(app);
+// require('./routes/login.js').loginRoute(app);
 
 Config.serverOn(app);

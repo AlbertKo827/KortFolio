@@ -39,7 +39,7 @@ app.use(passport.initialize());
 */
     app.use('/login', login);
 ///////////////////////////////////////////
-    app.use(passport.initialize());
+    // app.use(passport.initialize());
     app.use(passport.session());
 
     passport.serializeUser((user, done)=>{

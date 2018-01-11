@@ -6,6 +6,7 @@
 nav.navbar-kortfolio{
     background-color: rgb(237, 234, 215);
     color:rgb(99, 99, 99);
+    font-size: 0.8rem;
 }
 .nav > li > a:hover,
 .nav > li > a:focus, 
@@ -23,25 +24,21 @@ nav.navbar-kortfolio a{
     margin-left: 10px; 
     width: -webkit-calc(100% - 20px);
 }
+
 .nav .open > a,
 .nav .open > a:hover,
 .nav .open > a:focus,
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+.navbar-kortfolio .navbar-nav .open .dropdown-menu > a,
+.navbar-kortfolio .navbar-nav .open .dropdown-menu > a:hover,
+.navbar-kortfolio .navbar-nav .open .dropdown-menu > a:focus {
   background-color: rgb(236, 226, 164);
 }
 
-.btn-default:hover,
-.btn-default:focus {
-  background-color: #000000;
-  background-position: 0 -15px;
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    background-color: rgb(236, 226, 164);
 }
 
-.dropdown-toggle:active, .open .dropdown-toggle {
-    background:#FFF !important; 
-    color:#000 !important;
-}
 
 #kortfolio-menu{
     display: none;
@@ -223,6 +220,7 @@ a:hover { color: rgb(236, 226, 164); text-decoration: none;}
     #kortfolio-menu:focus{
         
     }
+
 }
 
 /* 중간 기기들 (데스크탑, 992px 이상) */
