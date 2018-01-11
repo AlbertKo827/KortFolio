@@ -8,6 +8,7 @@ const isLogin = ((req, res, next)=>{
 })
 
 exports.loginRoute = ((router, passport) => {
+
     var login = router;
 
     login.get('/auth/kakao', isLogin, passport.authenticate('kakao', {

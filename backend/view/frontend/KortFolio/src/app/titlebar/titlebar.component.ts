@@ -1,4 +1,5 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { ModalDirective } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-titlebar',
@@ -27,4 +28,18 @@ export class TitlebarComponent implements OnInit {
       element.setAttribute("style","display:none;");
   }
 
+  @ViewChild('autoShownModal') autoShownModal: ModalDirective;
+  isModalShown: boolean = false;
+ 
+  showModal(): void {
+    this.isModalShown = true;
+  }
+ 
+  hideModal(): void {
+    this.autoShownModal.hide();
+  }
+ 
+  onHidden(): void {
+    this.isModalShown = false;
+  }
 }
