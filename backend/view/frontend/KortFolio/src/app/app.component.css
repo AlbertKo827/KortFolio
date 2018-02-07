@@ -45,15 +45,15 @@ nav.navbar-kortfolio a{
 }
 
 .kortfolio-profile-img{
-    bottom:5rem; 
+    bottom:6.5rem; 
     position:relative;
 }
 
 .kortfolio-profile-img > div{
     overflow:hidden; 
     position:relative; 
-    width:10rem; 
-    height:10rem;  
+    width:13rem; 
+    height:13rem;  
     border:10px solid rgb(236, 226, 164); 
     border-radius:50%; 
     margin:auto;
