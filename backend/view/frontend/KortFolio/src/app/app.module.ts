@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {RouterModule} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -22,6 +23,16 @@ import { ProgressbarModule as ProgressBar } from 'ngx-bootstrap/progressbar';
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot([
+      {
+        path:'',
+        component:IntroduceComponent
+      },
+      {
+        path:'login',
+        component:LoginComponent
+      }
+    ]),
     AlertModule.forRoot(),
     DropDown.forRoot(),
     Modal.forRoot(),
