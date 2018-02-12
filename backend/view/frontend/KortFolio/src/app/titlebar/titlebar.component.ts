@@ -17,6 +17,7 @@ export class TitlebarComponent implements OnInit {
   ngOnInit() {
   }
 
+  
   openMenu(){
     this.menuStatus = !this.menuStatus;
 
@@ -27,6 +28,8 @@ export class TitlebarComponent implements OnInit {
     else
       element.setAttribute("style","display:none;");
   }
+/*
+  Modal
 
   @ViewChild('autoShownModal') autoShownModal: ModalDirective;
   isModalShown: boolean = false;
@@ -41,5 +44,5 @@ export class TitlebarComponent implements OnInit {
  
   onHidden(): void {
     this.isModalShown = false;
-  }
+  }*/
 }

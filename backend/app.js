@@ -9,6 +9,8 @@ const Config = require('./module/configuration.js');//Configration Data e.g>host
 
 const route = require('./routes')//RESTful API
 
+const User = require('./module/users.js').User(Mongoose);
+
 //PassPort
 const passport = require('passport');
 
@@ -45,7 +47,25 @@ passport.deserializeUser((id ,done)=>{
 passport.use('naver', new naverStrategy(Config.naverValue, 
     (accessToken, refreshToken, profile, done)=>
     {
-        done(null, profile);
+        User.findOne({
+            'naver.id': profile.id
+        }, function(err, user) {
+            if (!user) {
+                user = new User({
+                    name: profile.displayName,
+                    email: profile.emails[0].value,
+                    username: profile.displayName,
+                    provider: 'naver',
+                    naver: profile._json
+                });
+                user.save(function(err) {
+                    if (err) console.log(err);
+                    return done(err, user);
+                });
+            } else {
+                return done(err, user);
+            }
+        });
     }
 ));
 
