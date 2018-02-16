@@ -17,8 +17,7 @@ const facebookStrategy = require('passport-facebook').Strategy;
 /////////////////////////////////////
 
 const route = require('./routes')//RESTful API
-const login = require('./routes/login.js')(express.Router(), passport);
-const register = require('./routes/register.js')(express.Router());
+const index = require('./routes/index.js');
 const User = require('./module/users.js').User(Mongoose);
 
 
@@ -34,22 +33,21 @@ Config.KFInitialize(app, Mongoose, session, MongoStore);
 
 app.get('*', (req, res, next)=>{
     res.sendFile(path.join(__dirname, 'view/index.html'), (err) =>{
-        console.log(err);
+        if(err){
+            res.send(`<h1>불러오는데 실패했습니다.</h1>`);
+            console.log(err);
+        }
+        else{
+            next();
+        }
     });
-    console.log('every!');
-
-    next();
 });
 
+app.use('/', index);
+
 //app.use('/login', login);
-app.get('/login', (req, res)=>{
-    //res.sendFile(path.join(__dirname, 'view/index.html'));
-    console.log('can i success???!!');
 
-    
-})
-
-app.use('/register', register);
+//app.use('/register', register);
 
 
 //#region PassPort
@@ -105,10 +103,5 @@ passport.use('kakao', new kakaoStrategy(Config.kakaoValue,
     }
 ));
 //#endregion
-//////////////////////////////////////////////
-
-
-//route(express, passport);
-// require('./routes/login.js').loginRoute(app);
 
 Config.serverOn(app);

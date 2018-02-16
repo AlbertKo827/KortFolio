@@ -1,9 +1,14 @@
+const express = require('express');
+const passport = require('passport');
 const restAPI = require('./RESTfulAPI');
 
-module.exports = ((express, passport)=>{//Test
-    const app = express();
 
-    const login = require('./login.js').loginRoute(express.Router(), passport);
+const route = express.Router();
 
-    app.use('/login', login);
-})
+const login = require('./login.js')(route, passport);
+const register = require('./register.js')(route);
+
+route.use('/login', login);
+route.use('/register', register);
+
+module.exports = route;
