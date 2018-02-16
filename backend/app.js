@@ -1,15 +1,12 @@
 const express = require('express');
 const session = require('express-session');
+const path = require('path');
 const app = express();
 const bodyparser = require('body-parser');
 const cookieparser = require('cookie-parser');
 const Mongoose = require('mongoose');
 const MongoStore = require('connect-mongo')(session);
 const Config = require('./module/configuration.js');//Configration Data e.g>host url, key value...
-
-const route = require('./routes')//RESTful API
-
-const User = require('./module/users.js').User(Mongoose);
 
 //PassPort
 const passport = require('passport');
@@ -19,16 +16,41 @@ const naverStrategy = require('passport-naver').Strategy;
 const facebookStrategy = require('passport-facebook').Strategy;
 /////////////////////////////////////
 
+const route = require('./routes')//RESTful API
+const login = require('./routes/login.js')(express.Router(), passport);
+const register = require('./routes/register.js')(express.Router());
+const User = require('./module/users.js').User(Mongoose);
+
+
+
 app.locals.pretty = true;
 
-app.use(express.static('./view/frontend/KortFolio/dist'));
+app.use(express.static(path.join(__dirname, 'view')));
+app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:false}));
 app.use(cookieparser(Config.secretCookie));
 
-app.set('view engine', 'ejs');
-app.set('views', './view/frontend/KortFolio/dist');
-app.engine('html', require('ejs').renderFile);
 Config.KFInitialize(app, Mongoose, session, MongoStore);
+
+app.get('*', (req, res, next)=>{
+    res.sendFile(path.join(__dirname, 'view/index.html'), (err) =>{
+        console.log(err);
+    });
+    console.log('every!');
+
+    next();
+});
+
+//app.use('/login', login);
+app.get('/login', (req, res)=>{
+    //res.sendFile(path.join(__dirname, 'view/index.html'));
+    console.log('can i success???!!');
+
+    
+})
+
+app.use('/register', register);
+
 
 //#region PassPort
 app.use(passport.initialize());
@@ -86,7 +108,7 @@ passport.use('kakao', new kakaoStrategy(Config.kakaoValue,
 //////////////////////////////////////////////
 
 
-route(express, passport);
+//route(express, passport);
 // require('./routes/login.js').loginRoute(app);
 
 Config.serverOn(app);

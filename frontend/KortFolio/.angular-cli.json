@@ -6,7 +6,7 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "dist",
+      "outDir": "/Users/albertko/Desktop/Project/Project/KortFolio/backend/view",
       "assets": [
         "assets",
         "favicon.ico"

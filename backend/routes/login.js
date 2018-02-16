@@ -7,9 +7,13 @@ const isLogin = ((req, res, next)=>{
     }
 })
 
-exports.loginRoute = ((router, passport) => {
+module.exports = ((router, passport) => {
 
     var login = router;
+
+    login.get('/', (req, res)=>{
+        console.log('login');
+    });
 
     login.get('/auth/kakao', isLogin, passport.authenticate('kakao', {
         successRedirect : '/',

@@ -5,9 +5,5 @@ module.exports = ((express, passport)=>{//Test
 
     const login = require('./login.js').loginRoute(express.Router(), passport);
 
-app.get('/',(req, res)=>{
-    res.render('index');
-})
-
     app.use('/login', login);
 })
