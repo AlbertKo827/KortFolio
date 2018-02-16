@@ -71,13 +71,13 @@ passport.use('naver', new naverStrategy(Config.naverValue,
             'naver.id': profile.id
         }, function(err, user) {
             if (!user) {
-                user = new User({
+                user = {
                     name: profile.displayName,
                     email: profile.emails[0].value,
                     username: profile.displayName,
                     provider: 'naver',
                     naver: profile._json
-                });
+                };
                 user.save(function(err) {
                     if (err) console.log(err);
                     return done(err, user);
