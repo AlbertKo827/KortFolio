@@ -1,9 +1,9 @@
 module.exports.User = (mongoose) => {
     const UserInfoSchema = new mongoose.Schema({
-        id : String,
-        password : String,
-        name : String,
-        job : String
+        _id : String,
+        _password : String,
+        _email : String,
+        _name : String
     });
 
     UserInfoSchema.methods.comparePassword = (inputPW, cb) => {

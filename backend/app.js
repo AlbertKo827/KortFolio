@@ -24,7 +24,7 @@ const User = require('./module/users.js').User(Mongoose);
 
 app.locals.pretty = true;
 
-app.use(express.static(path.join(__dirname, 'view')));
+app.use('/', express.static(path.join(__dirname, 'view')));
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:false}));
 app.use(cookieparser(Config.secretCookie));
@@ -37,18 +37,13 @@ app.get('*', (req, res, next)=>{
             res.send(`<h1>불러오는데 실패했습니다.</h1>`);
             console.log(err);
         }
-        else{
-            next();
-        }
+       else{
+           next();
+       }
     });
 });
 
 app.use('/', index);
-
-//app.use('/login', login);
-
-//app.use('/register', register);
-
 
 //#region PassPort
 app.use(passport.initialize());
@@ -67,19 +62,34 @@ passport.deserializeUser((id ,done)=>{
 passport.use('naver', new naverStrategy(Config.naverValue, 
     (accessToken, refreshToken, profile, done)=>
     {
-        User.findOne({
-            'naver.id': profile.id
-        }, function(err, user) {
-            if (!user) {
-                user = {
+        console.log(profile);
+
+        var _profile = profile._json;
+
+        User.findOne({//DB에서 회원 정보를 찾는다.
+            '_id': profile.id
+        }, (err, user)=>{
+
+            if(err){//DB Error!
+                console.log(err);
+
+                return done(err);
+            }
+
+            if (!user) {//회원이 아니라면
+                user = {//신규 유저 정보를 JSON으로
                     name: profile.displayName,
-                    email: profile.emails[0].value,
-                    username: profile.displayName,
-                    provider: 'naver',
-                    naver: profile._json
+                    email: _profile.email,
+                    username: profile.displayName
                 };
-                user.save(function(err) {
-                    if (err) console.log(err);
+
+                user.save((err)=>{
+                    if (err){ 
+                        console.log(err);
+
+                        return done(err);
+                    }
+
                     return done(err, user);
                 });
             } else {
@@ -99,7 +109,7 @@ passport.use('facebook', new facebookStrategy(Config.facebookValue,
 passport.use('kakao', new kakaoStrategy(Config.kakaoValue, 
     (accessToken, refreshToken, profile, done)=>
     {
-        console.log(profile);
+        
     }
 ));
 //#endregion

@@ -12,7 +12,7 @@ module.exports = ((router, passport) => {
     var login = router;
 
     login.get('/', (req, res)=>{
-        console.log('login');
+        
     });
 
     login.get('/auth/kakao', isLogin, passport.authenticate('kakao', {
@@ -47,14 +47,14 @@ module.exports = ((router, passport) => {
         successRedirect : '/',
         failureRedirect : '/fail'
     }), (req, res)=>{
-        console.log(req.protocol + '://' + req.get('host') + req.originalUrl);
+        
     })
 
     login.get('/naver_oauth', passport.authenticate('naver', {
         successRedirect : '/',
         failureRedirect : '/fail'
     }), (req, res)=>{
-        console.log(req.protocol + '://' + req.get('host') + req.originalUrl);
+        
     })
 
     return login;
