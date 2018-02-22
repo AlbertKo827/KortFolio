@@ -16,34 +16,50 @@ const naverStrategy = require('passport-naver').Strategy;
 const facebookStrategy = require('passport-facebook').Strategy;
 /////////////////////////////////////
 
-const route = require('./routes')//RESTful API
-const index = require('./routes/index.js');
+//const route = require('./routes')//RESTful API
+//const index = require('./routes/index.js');
+
+const route = express.Router();
+
+const login = require('./routes/login.js')(route, passport);
+const register = require('./routes/register.js')(route);
+
 const User = require('./module/users.js').User(Mongoose);
-
-
 
 app.locals.pretty = true;
 
-app.use('/', express.static(path.join(__dirname, 'view')));
+app.use(express.static(path.join(__dirname, 'view')));
+
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:false}));
 app.use(cookieparser(Config.secretCookie));
 
 Config.KFInitialize(app, Mongoose, session, MongoStore);
 
-app.get('*', (req, res, next)=>{
+
+
+app.get('/*', (req, res, next)=>{
+    res.sendFile(path.join(__dirname, 'view/index.html'));
+    next();
+})
+
+/*
+app.get(['/', '/login', '/register'], (req, res, next)=>{
     res.sendFile(path.join(__dirname, 'view/index.html'), (err) =>{
         if(err){
             res.send(`<h1>불러오는데 실패했습니다.</h1>`);
             console.log(err);
         }
        else{
+           console.log('yes');
            next();
        }
     });
-});
+});*/
 
-app.use('/', index);
+//app.use('/', index);
+app.use('/login', login);
+app.use('/register', register);
 
 //#region PassPort
 app.use(passport.initialize());
@@ -77,20 +93,21 @@ passport.use('naver', new naverStrategy(Config.naverValue,
             }
 
             if (!user) {//회원이 아니라면
-                user = {//신규 유저 정보를 JSON으로
-                    name: profile.displayName,
-                    email: _profile.email,
-                    username: profile.displayName
-                };
+                const _user = new User({//신규 유저 정보를 JSON으로
+                    _id : _profile.id,
+                    _name: profile.displayName,
+                    _email: _profile.email
+                });
 
-                user.save((err)=>{
+                _user.save((err)=>{
                     if (err){ 
                         console.log(err);
 
                         return done(err);
                     }
-
-                    return done(err, user);
+                    else{
+                        return done(err, user);
+                    }
                 });
             } else {
                 return done(err, user);

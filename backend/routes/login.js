@@ -1,3 +1,5 @@
+const path = require('path');
+
 const isLogin = ((req, res, next)=>{
     if(!req.isAuthenticated()){
         return next();
@@ -10,9 +12,8 @@ const isLogin = ((req, res, next)=>{
 module.exports = ((router, passport) => {
 
     var login = router;
-
     login.get('/', (req, res)=>{
-        
+        console.log('hello');
     });
 
     login.get('/auth/kakao', isLogin, passport.authenticate('kakao', {
