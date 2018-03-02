@@ -5,6 +5,7 @@ const isLogin = ((req, res, next)=>{
         return next();
     }
     else{
+        //console.log('logining');
         res.redirect('/');
     }
 })
@@ -19,43 +20,35 @@ module.exports = ((router, passport) => {
     login.get('/auth/kakao', isLogin, passport.authenticate('kakao', {
         successRedirect : '/',
         failureRedirect : '/fail'
-    }), (req, res)=>{
-        console.log(req.protocol + '://' + req.get('host') + req.originalUrl);
-    })
+    }))
 
     login.get('/kakao_oauth', passport.authenticate('kakao', {
         successRedirect : '/',
         failureRedirect : '/fail'
-    }), (req, res)=>{
-        console.log(req.protocol + '://' + req.get('host') + req.originalUrl);
-    })
+    }))
 
     login.get('/auth/facebook', isLogin, passport.authenticate('facebook', {
         successRedirect : '/',
         failureRedirect : '/fail'
-    }), (req, res)=>{
-        console.log(req.protocol + '://' + req.get('host') + req.originalUrl);
-    })
+    }))
 
     login.get('/facebook_oauth', passport.authenticate('facebook', {
         successRedirect : '/',
         failureRedirect : '/fail'
-    }), (req, res)=>{
-        console.log(req.protocol + '://' + req.get('host') + req.originalUrl);
-    })
+    }))
 
-    login.get('/auth/naver', isLogin, passport.authenticate('naver', {
-        successRedirect : '/',
-        failureRedirect : '/fail'
-    }), (req, res)=>{
-        
-    })
+    login.get('/auth/naver', passport.authenticate('naver', null),
+        (req, res)=>{
+            console.log('connect naver');
+        })
 
     login.get('/naver_oauth', passport.authenticate('naver', {
-        successRedirect : '/',
-        failureRedirect : '/fail'
-    }), (req, res)=>{
-        
+        failureRedirect : '/login'
+    }), (req, res, next)=>{
+        console.log('logining');
+        //res.end();
+        res.redirect('/');
+        next();
     })
 
     return login;

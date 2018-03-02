@@ -38,35 +38,14 @@ Config.KFInitialize(app, Mongoose, session, MongoStore);
 
 
 
-app.get('/*', (req, res, next)=>{
-    res.sendFile(path.join(__dirname, 'view/index.html'));
-    next();
-})
-
-/*
-app.get(['/', '/login', '/register'], (req, res, next)=>{
-    res.sendFile(path.join(__dirname, 'view/index.html'), (err) =>{
-        if(err){
-            res.send(`<h1>불러오는데 실패했습니다.</h1>`);
-            console.log(err);
-        }
-       else{
-           console.log('yes');
-           next();
-       }
-    });
-});*/
-
-//app.use('/', index);
-app.use('/login', login);
-app.use('/register', register);
 
 //#region PassPort
 app.use(passport.initialize());
 app.use(passport.session());
 
 passport.serializeUser((user, done)=>{
-    done(null, user.id);
+    console.log(user);
+    done(null, user._id);
 });
 
 passport.deserializeUser((id ,done)=>{
@@ -78,8 +57,8 @@ passport.deserializeUser((id ,done)=>{
 passport.use('naver', new naverStrategy(Config.naverValue, 
     (accessToken, refreshToken, profile, done)=>
     {
-        console.log(profile);
-
+        //console.log(profile);
+        
         var _profile = profile._json;
 
         User.findOne({//DB에서 회원 정보를 찾는다.
@@ -87,12 +66,11 @@ passport.use('naver', new naverStrategy(Config.naverValue,
         }, (err, user)=>{
 
             if(err){//DB Error!
-                console.log(err);
+                console.log("에러! : " + err);
 
                 return done(err);
             }
-
-            if (!user) {//회원이 아니라면
+            else if (!user) {//회원이 아니라면
                 const _user = new User({//신규 유저 정보를 JSON으로
                     _id : _profile.id,
                     _name: profile.displayName,
@@ -100,17 +78,20 @@ passport.use('naver', new naverStrategy(Config.naverValue,
                 });
 
                 _user.save((err)=>{
+
                     if (err){ 
                         console.log(err);
-
+                        console.log('done 1');
                         return done(err);
                     }
                     else{
-                        return done(err, user);
+                        console.log('done 2');
+                        return done(null, user);
                     }
                 });
             } else {
-                return done(err, user);
+                console.log('로그인');
+                return done(null, user);
             }
         });
     }
@@ -130,5 +111,41 @@ passport.use('kakao', new kakaoStrategy(Config.kakaoValue,
     }
 ));
 //#endregion
+
+
+
+app.get('/login/auth/naver', passport.authenticate('naver', null),
+        (req, res)=>{
+            console.log('connect naver');
+        })
+
+app.get('/login/naver_oauth', passport.authenticate('naver', {
+    failureRedirect : '/login'
+}), (req, res, next)=>{
+    console.log('logining');
+    //res.end();
+    res.redirect('/');
+    //next();
+})
+
+app.get('/*', (req, res, next)=>{
+    res.sendFile(path.join(__dirname, 'view/index.html'));
+    console.log('sned!!');
+    next();
+})
+
+app.get('/login', (req, res, next)=>{
+    console.log('hello');
+});
+
+//app.use('/login', login);
+app.use('/register', register);
+
+app.get('/test', (req, res)=>{
+    console.log(req.user);
+    //res.send(req.user._name);
+})
+
+
 
 Config.serverOn(app);
