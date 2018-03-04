@@ -7,6 +7,9 @@ body{
     background-color:rgb(99, 99, 99);
 }
 
+input, select, textarea {
+    -webkit-user-select: auto;
+}
 
 *{
     user-select: none;

@@ -13,6 +13,7 @@ import { AlertModule } from 'ngx-bootstrap';
 import { BsDropdownModule as DropDown } from 'ngx-bootstrap/dropdown';
 import { ModalModule as Modal } from 'ngx-bootstrap/modal';
 import { ProgressbarModule as ProgressBar } from 'ngx-bootstrap/progressbar';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ProgressbarModule as ProgressBar } from 'ngx-bootstrap/progressbar';
     CtrlSBBComponent,
     IntroduceComponent,
     RegisterComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +40,10 @@ import { ProgressbarModule as ProgressBar } from 'ngx-bootstrap/progressbar';
       {
         path:'register',
         component:RegisterComponent
+      },
+      {
+        path:'contact',
+        component:ContactComponent
       }
     ]),
     AlertModule.forRoot(),
