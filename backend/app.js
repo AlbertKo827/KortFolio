@@ -8,6 +8,8 @@ const Mongoose = require('mongoose');
 const MongoStore = require('connect-mongo')(session);
 const Config = require('./module/configuration.js');//Configration Data e.g>host url, key value...
 
+const Mail = require('./module/mailsend.js');
+
 //PassPort
 const passport = require('passport');
 
@@ -226,6 +228,11 @@ app.get('/login/facebook_oauth', passport.authenticate('facebook', {
     //res.end();
     res.redirect('/');
     //next();
+})
+
+app.get('/mailtest', (req, res)=>{
+    Mail.send();
+    res.end();
 })
 
 app.get('/*', (req, res, next)=>{
