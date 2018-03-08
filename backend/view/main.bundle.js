@@ -24,7 +24,7 @@ exports.i(__webpack_require__("../../../../css-loader/index.js?{\"sourceMap\":fa
 exports.i(__webpack_require__("../../../../css-loader/index.js?{\"sourceMap\":false,\"importLoaders\":1}!../../../../postcss-loader/index.js?{\"ident\":\"postcss\"}!../../../../bootstrap-social/assets/css/font-awesome.css"), "");
 
 // module
-exports.push([module.i, "nav.navbar-kortfolio{\n    background-color: rgb(237, 234, 215);\n    color:rgb(99, 99, 99);\n    font-size: 0.8rem;\n}\n.nav > li > a:hover,\n.nav > li > a:focus, \n.navbar-default .navbar-nav > .open > a,\n.navbar-default .navbar-nav > .active > a {\n    text-decoration: none;\n    background-color: rgb(236, 226, 164);\n}\n\nnav.navbar-kortfolio a{\n    color: rgb(99, 99, 99);\n}\n\n.dropdown .btn.btn-default{\n    margin-left: 10px; \n    width: -webkit-calc(100% - 20px);\n}\n\n.nav .open > a,\n.nav .open > a:hover,\n.nav .open > a:focus,\n.navbar-kortfolio .navbar-nav .open .dropdown-menu > a,\n.navbar-kortfolio .navbar-nav .open .dropdown-menu > a:hover,\n.navbar-kortfolio .navbar-nav .open .dropdown-menu > a:focus {\n  background-color: rgb(236, 226, 164);\n}\n\n.dropdown-menu > li > a:hover,\n.dropdown-menu > li > a:focus {\n    background-color: rgb(236, 226, 164);\n}\n\n\n#kortfolio-menu{\n    display: none;\n}\n\n.kortfolio-profile-img{\n    bottom:7.5rem; \n    position:relative;\n}\n\n.kortfolio-profile-img > div{\n    overflow:hidden; \n    position:relative; \n    width:15rem; \n    height:15rem;  \n    border:10px solid rgb(236, 226, 164); \n    border-radius:50%; \n    margin:auto;\n    padding-bottom: -10%;\n}\n\n.kortfolio-profile-img > div > img{\n    width: 100%;\n}\n\n.kortfolio-intro-header{\n    width:100%; \n    padding-left:0; \n    padding-right:0;\n    color: white;\n}\n\n.kortfolio-intro-header img.header-img{\n    \n    -webkit-animation: header-hovor-img 1s ease-out 200ms 1 normal forwards;\n    \n            animation: header-hovor-img 1s ease-out 200ms 1 normal forwards;\n}\n\n#header-name{\n    font-size:2rem;\n    font-weight:bold; \n    margin-top:1.5%;\n}\n\n.center-cropped {\n    width: 100px;\n    height: 100px;\n    background-position: center center;\n    background-repeat: no-repeat;\n  }\n\n.modal{\n    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\n}\n\n.svg-color g{\n    fill: rgb(237, 234, 215);\n}\n\n@-webkit-keyframes header-hovor-img{\n    to{\n        /*filter: brightness(1.1) contrast(2.4) grayscale(1) hue-rotate(0deg) invert(0.32) saturate(0);*/\n        opacity: 0.3;\n    }\n}\n\n@keyframes header-hovor-img{\n    to{\n        /*filter: brightness(1.1) contrast(2.4) grayscale(1) hue-rotate(0deg) invert(0.32) saturate(0);*/\n        opacity: 0.3;\n    }\n}\n\n.kortfolio-font > *{\n    color:rgb(236, 226, 164);\n}\n\n.kortfolio-font h1{\n    font-weight: bold;\n}\n\n.kortfolio-contant > *{\n    font-size:1.2rem;\n    line-height: 2.5rem;\n    z-index:1;\n    margin:1rem 0;\n    padding:1rem 0;\n}\n\n.kortfolio-contant span:first-child{\n    margin-right:0.5rem;\n    line-height: 2.8rem;\n    float: left;\n    font-size: 2.9rem;\n    color: #000;\n}\n\n.kortfolio-contant p > span:first-child{\n    width: 2.5rem;\n    height: 2.5rem;\n    line-height: 2.5rem;\n    background-color: #000;\n    border-radius: 50%;\n    font-size: 1.5rem;\n    text-align: center;\n    color: rgb(99, 99, 99);\n}\n\n.kortfolio-contant p{\n    margin-top:0.8rem;\n    margin-bottom:0.8rem;\n}\n\n.kortfolio-boutme{\n    font-size:0.9rem;\n    padding-bottom: 1rem;\n    margin-bottom:1rem;\n}\n\n.kortfolio-intro-body{\n    background-color:white; \n    color:rgb(99, 99, 99);\n    padding: 1rem 0;\n}\n\n.kortfolio-intro-body h2,\n.kortfolio-intro-body h1{\n    font-weight: bold;\n}\n\na:link { color: white; text-decoration: none;}\na:visited { color: white; text-decoration: none;}\na:hover { color: rgb(236, 226, 164); text-decoration: none;}\n\n.kortfolio-class{\n    margin:1rem 0;\n}\n\n.kortfolio-class::before{\n    margin-bottom: 10px;\n    float: left;\n    width: 4rem;\n}\n\n.kortfolio-skill p{\n    float:left; \n    margin: 0 4.5rem 0 1rem;\n    width:3.5rem;\n    font-weight: bold;\n    \n}\n\n.kortfolio-skill > div{\n    margin:1.5rem 0;\n}\n\n.kortfolio-skill .progress-bar{\n    background-image:none;\n    color: rgb(99, 99, 99);\n}\n\n/* 매우 작은 기기들 (모바일폰, 768px 보다 작은) */\n/* 부트스트랩에서 이것은 기본이므로 미디어쿼리가 없습니다. */\n\n/* 작은 기기들 (태블릿, 768px 이상) */\n@media (max-width: 992px) {  \n    .navbar-header{\n        text-align: center;\n        margin: 0 auto;\n    }\n\n    .nav.navbar-nav{\n        display:none;\n    }\n\n    .kortfolio-boutme{\n        border-bottom:dashed 1px rgb(236, 226, 164);\n    }\n\n    #kortfolio-menu{\n        display: block;\n        float: left;\n        margin: 0;\n    }\n\n    #kortfolio-menu:hovor,\n    #kortfolio-menu:focus{\n        \n    }\n\n}\n\n/* 중간 기기들 (데스크탑, 992px 이상) */\n@media (min-width: 992px) {  \n    .kortfolio-boutme{\n        border-right:dashed 1px rgb(236, 226, 164);\n    }\n}\n\n/* 큰 기기들 (큰 데스크탑, 1200px 이상) */\n@media (min-width: 1200px)  {  \n    .kortfolio-boutme{\n        border-right:dashed 1px rgb(236, 226, 164);\n    }\n}", ""]);
+exports.push([module.i, "nav.navbar-kortfolio{\n    background-color: rgb(237, 234, 215);\n    color:rgb(99, 99, 99);\n    font-size: 1.2rem;\n}\n.nav > li > a:hover,\n.nav > li > a:focus, \n.navbar-default .navbar-nav > .open > a,\n.navbar-default .navbar-nav > .active > a {\n    text-decoration: none;\n    background-color: rgb(236, 226, 164);\n}\n\nnav.navbar-kortfolio a{\n    color: rgb(99, 99, 99);\n}\n\n.dropdown .btn.btn-default{\n    margin-left: 10px; \n    width: -webkit-calc(100% - 20px);\n}\n\n.nav .open > a,\n.nav .open > a:hover,\n.nav .open > a:focus,\n.navbar-kortfolio .navbar-nav .open .dropdown-menu > a,\n.navbar-kortfolio .navbar-nav .open .dropdown-menu > a:hover,\n.navbar-kortfolio .navbar-nav .open .dropdown-menu > a:focus {\n  background-color: rgb(236, 226, 164);\n}\n\n.dropdown-menu > li > a:hover,\n.dropdown-menu > li > a:focus {\n    background-color: rgb(236, 226, 164);\n}\n\n\n#kortfolio-menu{\n    display: none;\n}\n\n.kortfolio-profile-img{\n    bottom:7.5rem; \n    position:relative;\n}\n\n.kortfolio-profile-img > div{\n    overflow:hidden; \n    position:relative; \n    width:15rem; \n    height:15rem;  \n    border:10px solid rgb(236, 226, 164); \n    border-radius:50%; \n    margin:auto;\n    padding-bottom: -10%;\n}\n\n.kortfolio-profile-img > div > img{\n    width: 100%;\n}\n\n.kortfolio-intro-header{\n    width:100%; \n    padding-left:0; \n    padding-right:0;\n    color: white;\n}\n\n.kortfolio-intro-header img.header-img{\n    \n    -webkit-animation: header-hovor-img 1s ease-out 200ms 1 normal forwards;\n    \n            animation: header-hovor-img 1s ease-out 200ms 1 normal forwards;\n}\n\n#header-name{\n    font-size:2rem;\n    font-weight:bold; \n    margin-top:1.5%;\n}\n\n.center-cropped {\n    width: 100px;\n    height: 100px;\n    background-position: center center;\n    background-repeat: no-repeat;\n  }\n\n.modal{\n    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\n}\n\n.svg-color g{\n    fill: rgb(237, 234, 215);\n}\n\n@-webkit-keyframes header-hovor-img{\n    to{\n        /*filter: brightness(1.1) contrast(2.4) grayscale(1) hue-rotate(0deg) invert(0.32) saturate(0);*/\n        opacity: 0.3;\n    }\n}\n\n@keyframes header-hovor-img{\n    to{\n        /*filter: brightness(1.1) contrast(2.4) grayscale(1) hue-rotate(0deg) invert(0.32) saturate(0);*/\n        opacity: 0.3;\n    }\n}\n\n.kortfolio-font > *{\n    color:rgb(236, 226, 164);\n}\n\n.kortfolio-font h1{\n    font-weight: bold;\n}\n\n.kortfolio-contant > *{\n    font-size:1.2rem;\n    line-height: 2.5rem;\n    z-index:1;\n    margin:1rem 0;\n    padding:1rem 0;\n}\n\n.kortfolio-contant span:first-child{\n    margin-right:0.5rem;\n    line-height: 2.8rem;\n    float: left;\n    font-size: 2.9rem;\n    color: #000;\n}\n\n.kortfolio-contant p > span:first-child{\n    width: 2.5rem;\n    height: 2.5rem;\n    line-height: 2.5rem;\n    background-color: #000;\n    border-radius: 50%;\n    font-size: 1.5rem;\n    text-align: center;\n    color: rgb(99, 99, 99);\n}\n\n.kortfolio-contant p{\n    margin-top:0.8rem;\n    margin-bottom:0.8rem;\n}\n\n.kortfolio-boutme{\n    font-size:0.9rem;\n    padding-bottom: 1rem;\n    margin-bottom:1rem;\n}\n\n.kortfolio-intro-body{\n    background-color:white; \n    color:rgb(99, 99, 99);\n    padding: 1rem 0;\n}\n\n.kortfolio-intro-body h2,\n.kortfolio-intro-body h1{\n    font-weight: bold;\n}\n\na:link { color: white; text-decoration: none;}\na:visited { color: white; text-decoration: none;}\na:hover { color: rgb(236, 226, 164); text-decoration: none;}\n\n.kortfolio-class{\n    margin:1rem 0;\n}\n\n.kortfolio-class::before{\n    margin-bottom: 10px;\n    float: left;\n    width: 4rem;\n}\n\n.kortfolio-skill p{\n    float:left; \n    margin: 0 4.5rem 0 1rem;\n    width:3.5rem;\n    font-weight: bold;\n    \n}\n\n.kortfolio-skill > div{\n    margin:1.5rem 0;\n}\n\n.kortfolio-skill .progress-bar{\n    background-image:none;\n    color: rgb(99, 99, 99);\n}\n\n/* 매우 작은 기기들 (모바일폰, 768px 보다 작은) */\n/* 부트스트랩에서 이것은 기본이므로 미디어쿼리가 없습니다. */\n\n/* 작은 기기들 (태블릿, 768px 이상) */\n@media (max-width: 992px) {  \n    .navbar-header{\n        text-align: center;\n        margin: 0 auto;\n    }\n\n    .nav.navbar-nav{\n        display:none;\n    }\n\n    .kortfolio-boutme{\n        border-bottom:dashed 1px rgb(236, 226, 164);\n    }\n\n    #kortfolio-menu{\n        display: block;\n        float: left;\n        margin: 0;\n    }\n\n    #kortfolio-menu:hovor,\n    #kortfolio-menu:focus{\n        \n    }\n\n}\n\n/* 중간 기기들 (데스크탑, 992px 이상) */\n@media (min-width: 992px) {  \n    .kortfolio-boutme{\n        border-right:dashed 1px rgb(236, 226, 164);\n    }\n}\n\n/* 큰 기기들 (큰 데스크탑, 1200px 이상) */\n@media (min-width: 1200px)  {  \n    .kortfolio-boutme{\n        border-right:dashed 1px rgb(236, 226, 164);\n    }\n}", ""]);
 
 // exports
 
@@ -90,12 +90,14 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_ngx_bootstrap_dropdown__ = __webpack_require__("../../../../ngx-bootstrap/dropdown/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ngx_bootstrap_modal__ = __webpack_require__("../../../../ngx-bootstrap/modal/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_ngx_bootstrap_progressbar__ = __webpack_require__("../../../../ngx-bootstrap/progressbar/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__contact_contact_component__ = __webpack_require__("../../../../../src/app/contact/contact.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -123,6 +125,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_6__ctrl_sbb_ctrl_sbb_component__["a" /* CtrlSBBComponent */],
             __WEBPACK_IMPORTED_MODULE_7__introduce_introduce_component__["a" /* IntroduceComponent */],
             __WEBPACK_IMPORTED_MODULE_8__register_register_component__["a" /* RegisterComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__contact_contact_component__["a" /* ContactComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -138,6 +141,10 @@ AppModule = __decorate([
                 {
                     path: 'register',
                     component: __WEBPACK_IMPORTED_MODULE_8__register_register_component__["a" /* RegisterComponent */]
+                },
+                {
+                    path: 'contact',
+                    component: __WEBPACK_IMPORTED_MODULE_13__contact_contact_component__["a" /* ContactComponent */]
                 }
             ]),
             __WEBPACK_IMPORTED_MODULE_9_ngx_bootstrap__["a" /* AlertModule */].forRoot(),
@@ -151,6 +158,49 @@ AppModule = __decorate([
 ], AppModule);
 
 //# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/contact/contact.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid\">\n  <form action=\"../app.js\" accept-charset=\"utf-8\" style=\"margin : 10rem auto; width : 25rem; padding : 0;\">\n    <label>이름<input type=\"text\"/></label>\n    <label>연락처<input type=\"text\"/></label>\n    <label>메세지<textarea name=\"Message\" rows=\"8\" cols=\"20\" style=\"resize:none;\"></textarea></label>\n    <input type=\"submit\" value=\"보내기\"/>\n  </form>\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/contact/contact.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ContactComponent = (function () {
+    function ContactComponent() {
+    }
+    ContactComponent.prototype.ngOnInit = function () {
+    };
+    return ContactComponent;
+}());
+ContactComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-contact',
+        template: __webpack_require__("../../../../../src/app/contact/contact.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/app.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], ContactComponent);
+
+//# sourceMappingURL=contact.component.js.map
 
 /***/ }),
 
@@ -379,7 +429,7 @@ RegisterComponent = __decorate([
 /***/ "../../../../../src/app/titlebar/titlebar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-kortfolio navbar-fixed-top\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n            <!--<a class=\"navbar-brand\">\n              <img src=\"assets/img/ngx-bootstrap.svg\" class=\"logo\">\n            </a>-->\n            <span class=\"navbar-brand glyphicon glyphicon-align-justify\" id=\"kortfolio-menu\" (click)=\"openMenu()\"></span>\n            <a href=\"\" style=\"margin:auto 0;\"><span class=\"navbar-brand\">KortFolio</span></a>\n        </div>\n\n        <ul class=\"nav navbar-nav\" id=\"menu\">\n            <li>\n                <a href=\"a\">공사중</a>\n            </li>\n            <li><a href=\"b\">공사중</a></li>\n            <li class=\"dropdown\" dropdown> <!-- {1} -->\n                <a dropdownToggle role=\"button\"> <!-- {2} -->\n                  <span class=\"glyphicon glyphicon-cog\"></span>\n                  <span class=\"caret\"></span></a>\n                <ul *dropdownMenu class=\"dropdown-menu\"> <!-- {3} -->\n                    <!--<li><a href=\"#\">공사중이라고욧!!</a></li>\n                    <li role=\"separator\" class=\"divider\"></li>-->\n                    <li>\n                        <a href=\"login\">\n                            <span class=\"glyphicon glyphicon-user\" style=\"margin-right:1rem;\"></span>\n                            Login\n                        </a>\n                    </li>\n                </ul>\n            </li>\n        </ul>\n    </div>\n</nav>"
+module.exports = "<nav class=\"navbar navbar-kortfolio navbar-fixed-top\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n            <!--<a class=\"navbar-brand\">\n              <img src=\"assets/img/ngx-bootstrap.svg\" class=\"logo\">\n            </a>-->\n            <span class=\"navbar-brand glyphicon glyphicon-align-justify\" id=\"kortfolio-menu\" (click)=\"openMenu()\"></span>\n            <a href=\"\" style=\"margin:auto 0;\"><span class=\"navbar-brand\">KortFolio</span></a>\n        </div>\n\n        <ul class=\"nav navbar-nav\" id=\"menu\">\n            <li>\n                <a href=\"contact\">Contact</a>\n            </li>\n            <li><a href=\"b\">MyStudy</a></li>\n            <li class=\"dropdown\" dropdown> <!-- {1} -->\n                <a dropdownToggle role=\"button\"> <!-- {2} -->\n                  <span class=\"glyphicon glyphicon-cog\"></span>\n                  <span class=\"caret\"></span></a>\n                <ul *dropdownMenu class=\"dropdown-menu\"> <!-- {3} -->\n                    <!--<li><a href=\"#\">공사중이라고욧!!</a></li>\n                    <li role=\"separator\" class=\"divider\"></li>-->\n                    <li>\n                        <a href=\"login\">\n                            <span class=\"glyphicon glyphicon-user\" style=\"margin-right:1rem;\"></span>\n                            Login\n                        </a>\n                    </li>\n                </ul>\n            </li>\n        </ul>\n    </div>\n</nav>"
 
 /***/ }),
 
