@@ -237,7 +237,8 @@ app.get('/mailtest', (req, res)=>{
 
 app.get('/*', (req, res, next)=>{
     res.sendFile(path.join(__dirname, 'view/index.html'));
-    console.log('sned!!');
+    res.json(req.user._id);
+    console.log(req.user._id);
     next();
 })
 
