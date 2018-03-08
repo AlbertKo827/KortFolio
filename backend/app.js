@@ -238,7 +238,7 @@ app.get('/mailtest', (req, res)=>{
 app.get('/*', (req, res, next)=>{
     res.sendFile(path.join(__dirname, 'view/index.html'));
     res.json(req.user._id);
-    if(req.user)
+    if(req.user != null)
         console.log(req.user._id);
     else
         console.log("can't find")
