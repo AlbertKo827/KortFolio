@@ -239,7 +239,6 @@ app.get('/*', (req, res, next)=>{
     res.sendFile(path.join(__dirname, 'view/index.html'));
     //res.json(req.user._id);
 
-    console.log(req.user);
     if(req.user != undefined){
         User.findById(req.user._id, (err, user)=>{
             if(!err)
