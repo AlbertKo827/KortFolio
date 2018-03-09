@@ -240,13 +240,14 @@ app.get('/*', (req, res, next)=>{
     //res.json(req.user._id);
 
     console.log(req.user);
-
-    // User.findById(req.user._id, (err, user)=>{
-    //     if(!err)
-    //         console.log(req.user._id);
-    //     else
-    //         console.log("can't find")
-    // })
+    if(req.user != undefined){
+        User.findById(req.user._id, (err, user)=>{
+            if(!err)
+                console.log(req.user._id);
+            else
+                console.log("can't find")
+        })
+    }
     
     next();
 })
