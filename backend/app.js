@@ -239,12 +239,14 @@ app.get('/*', (req, res, next)=>{
     res.sendFile(path.join(__dirname, 'view/index.html'));
     res.json(req.user._id);
 
-    User.findById(req.user._id, (err, user)=>{
-        if(!err)
-            console.log(req.user._id);
-        else
-            console.log("can't find")
-    })
+    console.log(req.user);
+
+    // User.findById(req.user._id, (err, user)=>{
+    //     if(!err)
+    //         console.log(req.user._id);
+    //     else
+    //         console.log("can't find")
+    // })
     
     next();
 })
