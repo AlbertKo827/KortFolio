@@ -239,14 +239,7 @@ app.get('/*', (req, res, next)=>{
     res.sendFile(path.join(__dirname, 'view/index.html'));
     //res.json(req.user._id);
 
-    if(req.user != undefined){
-        User.findById(req.user._id, (err, user)=>{
-            if(!err)
-                console.log(req.user._id);
-            else
-                console.log("can't find")
-        })
-    }
+    
     
     next();
 })
@@ -264,6 +257,15 @@ app.use('/register', register);
 
 app.get('/test', (req, res)=>{
     console.log(req.user);
+
+    if(req.user != undefined){
+        User.findById(req.user._id, (err, user)=>{
+            if(!err)
+                console.log(`<h1>${req.user._id}</h1>`);
+            else
+                console.log("can't find")
+        })
+    }
     //res.send(req.user._name);
 })
 
