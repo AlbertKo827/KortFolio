@@ -261,7 +261,7 @@ app.get('/test', (req, res)=>{
     if(req.user != undefined){
         User.findById(req.user._id, (err, user)=>{
             if(!err)
-                res.send(`<h1>${req.user._id}</h1>`);
+                res.json(req.user);
             else
                 console.log("can't find")
         })

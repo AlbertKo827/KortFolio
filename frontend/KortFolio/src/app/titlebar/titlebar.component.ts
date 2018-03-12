@@ -1,6 +1,7 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { ModalDirective } from 'ngx-bootstrap/modal';
-import { Http } from '@angular/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { Observable, Subject } from 'rxjs/Rx'
 
 @Component({
   selector: 'app-titlebar',
@@ -11,6 +12,10 @@ import { Http } from '@angular/http'
 export class TitlebarComponent implements OnInit {
 
   menuStatus : boolean = false;
+
+ userSession = sessionStorage.getItem('user');
+  aaa = {a : 'a'};
+  tests = this.userSession ? this.userSession : 'login';
 
   constructor() {
   }

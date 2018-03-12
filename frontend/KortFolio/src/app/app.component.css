@@ -216,11 +216,9 @@ a:hover { color: rgb(236, 226, 164); text-decoration: none;}
         margin: 0;
     }
 
-    #kortfolio-menu:hovor,
-    #kortfolio-menu:focus{
-        
+    .nav.navbar-nav.navbar-right{
+        display: block;
     }
-
 }
 
 /* 중간 기기들 (데스크탑, 992px 이상) */
