@@ -14,6 +14,6 @@ export class UserinfoService {
   constructor(private http : Http) { }
 
   get() : void {
-    this.http
+    //this.http
   }
 }

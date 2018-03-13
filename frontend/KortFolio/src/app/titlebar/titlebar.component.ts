@@ -15,13 +15,13 @@ export class TitlebarComponent implements OnInit {
   menuStatus : boolean = false;
 
   tests : any;
-
-  constructor(private _http : HttpClient) {
+  http : HttpClient;
+  constructor( ) {
     
   }
 
   ngOnInit() {
-    this._http.get('/').subscribe(data => {
+    this.http.get('/').subscribe(data => {
       this.tests = data;
     })
   }
