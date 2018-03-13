@@ -21,7 +21,7 @@ export class TitlebarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get('/').subscribe(data => {
+    this.http.get('/').subscribe(data =>{
       this.tests = data;
     })
   }
