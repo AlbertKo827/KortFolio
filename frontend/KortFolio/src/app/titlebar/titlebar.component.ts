@@ -26,7 +26,7 @@ export class TitlebarComponent implements OnInit {
     })
   }
 
-  
+  ///test
   openMenu(){
     this.menuStatus = !this.menuStatus;
 
