@@ -80,23 +80,27 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__titlebar_titlebar_component__ = __webpack_require__("../../../../../src/app/titlebar/titlebar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ctrl_sbb_ctrl_sbb_component__ = __webpack_require__("../../../../../src/app/ctrl-sbb/ctrl-sbb.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__introduce_introduce_component__ = __webpack_require__("../../../../../src/app/introduce/introduce.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__register_register_component__ = __webpack_require__("../../../../../src/app/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ngx_bootstrap__ = __webpack_require__("../../../../ngx-bootstrap/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_ngx_bootstrap_dropdown__ = __webpack_require__("../../../../ngx-bootstrap/dropdown/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ngx_bootstrap_modal__ = __webpack_require__("../../../../ngx-bootstrap/modal/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_ngx_bootstrap_progressbar__ = __webpack_require__("../../../../ngx-bootstrap/progressbar/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__contact_contact_component__ = __webpack_require__("../../../../../src/app/contact/contact.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__titlebar_titlebar_component__ = __webpack_require__("../../../../../src/app/titlebar/titlebar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ctrl_sbb_ctrl_sbb_component__ = __webpack_require__("../../../../../src/app/ctrl-sbb/ctrl-sbb.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__introduce_introduce_component__ = __webpack_require__("../../../../../src/app/introduce/introduce.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__register_register_component__ = __webpack_require__("../../../../../src/app/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_ngx_bootstrap__ = __webpack_require__("../../../../ngx-bootstrap/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ngx_bootstrap_dropdown__ = __webpack_require__("../../../../ngx-bootstrap/dropdown/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_ngx_bootstrap_modal__ = __webpack_require__("../../../../ngx-bootstrap/modal/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ngx_bootstrap_progressbar__ = __webpack_require__("../../../../ngx-bootstrap/progressbar/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__contact_contact_component__ = __webpack_require__("../../../../../src/app/contact/contact.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__service_userinfo_service__ = __webpack_require__("../../../../../src/app/service/userinfo.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -119,41 +123,42 @@ var AppModule = (function () {
 AppModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["M" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_4__login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_5__titlebar_titlebar_component__["a" /* TitlebarComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__ctrl_sbb_ctrl_sbb_component__["a" /* CtrlSBBComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__introduce_introduce_component__["a" /* IntroduceComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__register_register_component__["a" /* RegisterComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__contact_contact_component__["a" /* ContactComponent */],
+            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__titlebar_titlebar_component__["a" /* TitlebarComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__ctrl_sbb_ctrl_sbb_component__["a" /* CtrlSBBComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__introduce_introduce_component__["a" /* IntroduceComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__register_register_component__["a" /* RegisterComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__contact_contact_component__["a" /* ContactComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* RouterModule */].forRoot([
                 {
                     path: '',
-                    component: __WEBPACK_IMPORTED_MODULE_7__introduce_introduce_component__["a" /* IntroduceComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_8__introduce_introduce_component__["a" /* IntroduceComponent */]
                 },
                 {
                     path: 'login',
-                    component: __WEBPACK_IMPORTED_MODULE_4__login_login_component__["a" /* LoginComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_5__login_login_component__["a" /* LoginComponent */]
                 },
                 {
                     path: 'register',
-                    component: __WEBPACK_IMPORTED_MODULE_8__register_register_component__["a" /* RegisterComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_9__register_register_component__["a" /* RegisterComponent */]
                 },
                 {
                     path: 'contact',
-                    component: __WEBPACK_IMPORTED_MODULE_13__contact_contact_component__["a" /* ContactComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_14__contact_contact_component__["a" /* ContactComponent */]
                 }
             ]),
-            __WEBPACK_IMPORTED_MODULE_9_ngx_bootstrap__["a" /* AlertModule */].forRoot(),
-            __WEBPACK_IMPORTED_MODULE_10_ngx_bootstrap_dropdown__["a" /* BsDropdownModule */].forRoot(),
-            __WEBPACK_IMPORTED_MODULE_11_ngx_bootstrap_modal__["b" /* ModalModule */].forRoot(),
-            __WEBPACK_IMPORTED_MODULE_12_ngx_bootstrap_progressbar__["a" /* ProgressbarModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_10_ngx_bootstrap__["a" /* AlertModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_11_ngx_bootstrap_dropdown__["a" /* BsDropdownModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_12_ngx_bootstrap_modal__["b" /* ModalModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_13_ngx_bootstrap_progressbar__["a" /* ProgressbarModule */].forRoot(),
         ],
-        providers: [],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_15__service_userinfo_service__["a" /* UserinfoService */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -426,6 +431,51 @@ RegisterComponent = __decorate([
 
 /***/ }),
 
+/***/ "../../../../../src/app/service/userinfo.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserinfoService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__("../../../../rxjs/add/operator/catch.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+// Import RxJs required methods
+
+
+var UserinfoService = (function () {
+    function UserinfoService(http) {
+        this.http = http;
+    }
+    UserinfoService.prototype.getUserName = function () {
+        return this.http.get('./')
+            .map(function (res) { return res.json(); });
+    };
+    return UserinfoService;
+}());
+UserinfoService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object])
+], UserinfoService);
+
+var _a;
+//# sourceMappingURL=userinfo.service.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/titlebar/titlebar.component.html":
 /***/ (function(module, exports) {
 
@@ -439,6 +489,11 @@ module.exports = "<nav class=\"navbar navbar-kortfolio navbar-fixed-top\">\n    
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TitlebarComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__ = __webpack_require__("../../../../rxjs/add/operator/catch.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__service_userinfo_service__ = __webpack_require__("../../../../../src/app/service/userinfo.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -449,15 +504,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
 var TitlebarComponent = (function () {
-    function TitlebarComponent() {
+    function TitlebarComponent(UserService) {
+        this.UserService = UserService;
         this.menuStatus = false;
     }
-    TitlebarComponent.prototype.ngOnInit = function () {
+    TitlebarComponent.prototype.getUserName = function () {
         var _this = this;
-        this.http.get('/').subscribe(function (data) {
+        this.UserService.getUserName().subscribe(function (data) {
             _this.tests = data;
         });
+    };
+    TitlebarComponent.prototype.ngOnInit = function () {
+        this.getUserName();
     };
     ///test
     TitlebarComponent.prototype.openMenu = function () {
@@ -476,9 +538,10 @@ TitlebarComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/titlebar/titlebar.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__service_userinfo_service__["a" /* UserinfoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__service_userinfo_service__["a" /* UserinfoService */]) === "function" && _a || Object])
 ], TitlebarComponent);
 
+var _a;
 //# sourceMappingURL=titlebar.component.js.map
 
 /***/ }),
