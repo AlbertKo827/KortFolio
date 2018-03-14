@@ -16,7 +16,7 @@ export class UserinfoService {
   constructor(private http : Http) { }
 
   getUserName() : void {
-    this.http.get('./')
+    this.http.get('./test')
              .map((res) => res.json())
              .subscribe(data => {
                console.log(data);
