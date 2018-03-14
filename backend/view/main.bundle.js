@@ -520,6 +520,7 @@ var TitlebarComponent = (function () {
     };
     TitlebarComponent.prototype.ngOnInit = function () {
         this.getUserName();
+        console.log('testing now!');
     };
     ///test
     TitlebarComponent.prototype.openMenu = function () {
