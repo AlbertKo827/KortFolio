@@ -461,8 +461,18 @@ var UserinfoService = (function () {
         this.http = http;
     }
     UserinfoService.prototype.getUserName = function () {
-        return this.http.get('./')
-            .map(function (res) { return res.json(); });
+        var _this = this;
+        this.http.get('./')
+            .map(function (res) { return res.json(); })
+            .subscribe(function (data) {
+            console.log(data);
+            _this.result = data;
+        }, function (err) {
+            console.log(err);
+            return undefined;
+        }, function () {
+            console.log(_this.result);
+        });
     };
     return UserinfoService;
 }());
@@ -513,10 +523,7 @@ var TitlebarComponent = (function () {
         this.menuStatus = false;
     }
     TitlebarComponent.prototype.getUserName = function () {
-        var _this = this;
-        this.UserService.getUserName().subscribe(function (data) {
-            _this.tests = data;
-        });
+        this.UserService.getUserName();
     };
     TitlebarComponent.prototype.ngOnInit = function () {
         this.getUserName();

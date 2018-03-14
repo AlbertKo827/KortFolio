@@ -10,10 +10,23 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class UserinfoService {
 
+
+  result : any;
+
   constructor(private http : Http) { }
 
-  getUserName() : Observable<any> {
-    return this.http.get('./')
-                    .map((res : any) => res.json());
+  getUserName() : void {
+    this.http.get('./')
+             .map((res) => res.json())
+             .subscribe(data => {
+               console.log(data);
+               this.result = data;
+             }, err =>{
+               console.log(err);
+               return undefined;
+             },
+            ()=>{
+              console.log(this.result);
+            });
   }
 }
