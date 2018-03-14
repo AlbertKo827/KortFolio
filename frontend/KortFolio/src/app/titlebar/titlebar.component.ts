@@ -1,8 +1,13 @@
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild, Input } from '@angular/core';
 import { ModalDirective } from 'ngx-bootstrap/modal';
-import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { Observable, Subject } from 'rxjs/Rx'
-import { Http } from '@angular/http';
+
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
+
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+
+import { UserinfoService } from '../service/userinfo.service'
 
 @Component({
   selector: 'app-titlebar',
@@ -15,15 +20,20 @@ export class TitlebarComponent implements OnInit {
   menuStatus : boolean = false;
 
   tests : any;
-  http : HttpClient;
-  constructor( ) {
+
+  constructor(private UserService : UserinfoService ) {
+
+  }
+
+  getUserName() : void {
+    this.UserService.getUserName().subscribe( data => {
+      this.tests = data;
+    })
     
   }
 
   ngOnInit() {
-    this.http.get('/').subscribe(data =>{
-      this.tests = data;
-    })
+    this.getUserName();
   }
 
   ///test

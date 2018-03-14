@@ -6,14 +6,14 @@ import {Observable} from 'rxjs/Rx';
 // Import RxJs required methods
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import { promise } from 'protractor';
 
 @Injectable()
 export class UserinfoService {
 
   constructor(private http : Http) { }
 
-  get() : void {
-    //this.http
+  getUserName() : Observable<any> {
+    return this.http.get('./')
+                    .map((res : any) => res.json());
   }
 }

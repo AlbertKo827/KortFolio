@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule} from '@angular/router';
-
+import { HttpModule, Http } from '@angular/http'
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { TitlebarComponent } from './titlebar/titlebar.component';
@@ -15,6 +15,7 @@ import { ModalModule as Modal } from 'ngx-bootstrap/modal';
 import { ProgressbarModule as ProgressBar } from 'ngx-bootstrap/progressbar';
 import { ContactComponent } from './contact/contact.component';
 
+import { UserinfoService } from './service/userinfo.service'
 
 @NgModule({
   declarations: [
@@ -46,12 +47,13 @@ import { ContactComponent } from './contact/contact.component';
         component:ContactComponent
       }
     ]),
+    HttpModule,
     AlertModule.forRoot(),
     DropDown.forRoot(),
     Modal.forRoot(),
     ProgressBar.forRoot(),
   ],
-  providers: [],
+  providers: [ UserinfoService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
