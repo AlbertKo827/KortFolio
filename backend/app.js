@@ -256,16 +256,16 @@ app.use('/register', register);
 app.get('/test', (req, res)=>{
     //console.log(req.user);
 
-    if(req.user != undefined){
-        User.findById(req.user._id, (err, user)=>{
-            var user = req.user;
-            if(!err)
-                //res.json(user);
-                console.log('okokok');
-            else
-                console.log("can't find")
-        })
-    }
+    // if(req.user != undefined){
+    //     User.findById(req.user._id, (err, user)=>{
+    //         var user = req.user;
+    //         if(!err)
+    //             //res.json(user);
+    //             console.log('okokok');
+    //         else
+    //             console.log("can't find")
+    //     })
+    // }
     //res.send(req.user._name);
 })
 
