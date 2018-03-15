@@ -258,8 +258,9 @@ app.get('/test', (req, res)=>{
 
     if(req.user != undefined){
         User.findById(req.user._id, (err, user)=>{
+            var user = req.user;
             if(!err)
-                res.json(req.user);
+                res.json(user);
             else
                 console.log("can't find")
         })

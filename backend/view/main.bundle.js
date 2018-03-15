@@ -462,7 +462,7 @@ var UserinfoService = (function () {
     }
     UserinfoService.prototype.getUserName = function () {
         var _this = this;
-        this.http.get('./')
+        this.http.get('./user')
             .map(function (res) { return res.json(); })
             .subscribe(function (data) {
             console.log(data);
