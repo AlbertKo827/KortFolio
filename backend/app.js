@@ -254,7 +254,7 @@ app.get('/logout', (req, res)=>{
 app.use('/register', register);
 
 app.get('/test', (req, res)=>{
-    console.log(req.user);
+    //console.log(req.user);
 
     if(req.user != undefined){
         User.findById(req.user._id, (err, user)=>{
