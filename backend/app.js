@@ -260,7 +260,8 @@ app.get('/test', (req, res)=>{
         User.findById(req.user._id, (err, user)=>{
             var user = req.user;
             if(!err)
-                res.json(user);
+                //res.json(user);
+                console.log('okokok');
             else
                 console.log("can't find")
         })
