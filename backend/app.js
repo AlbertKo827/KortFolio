@@ -255,7 +255,7 @@ app.get('/logout', (req, res)=>{
 app.use('/register', register);
 
 app.get('/test', (req, res)=>{
-    res.json({message : "success", username : "re"});
+    res.json({message : "success", username : "retgrtgrtgrtgrtgrtgbbbbb"});
 
 
     // console.log(req.user);
