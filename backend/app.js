@@ -254,7 +254,7 @@ app.get('/logout', (req, res)=>{
 //app.use('/login', login);
 app.use('/register', register);
 
-app.post('/test', (req, res)=>{
+app.get('/test', (req, res)=>{
     res.json({message : "success", username : "req.uhb"});
 
 
