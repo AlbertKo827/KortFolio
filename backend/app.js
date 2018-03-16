@@ -198,6 +198,7 @@ app.get('/login/naver_oauth', passport.authenticate('naver', {
 }), (req, res, next)=>{
     console.log('logining');
     //res.end();
+    //res.json({message : "success", username : req.user._name});
     res.redirect('/');
     //next();
 })
@@ -253,21 +254,24 @@ app.get('/logout', (req, res)=>{
 //app.use('/login', login);
 app.use('/register', register);
 
-// app.get('/test', (req, res)=>{
-//     console.log(req.user);
+app.get('/test', (req, res)=>{
+    res.json({message : "success"});
 
-//     // if(req.user != undefined){
-//     //     User.findById(req.user._id, (err, user)=>{
-//     //         var user = req.user;
-//     //         if(!err)
-//                 // res.json(user);
-//     //             console.log('okokok');
-//     //         else
-//     //             console.log("can't find")
-//     //     })
-//     // }
-//     // res.send(req.user._name);
-// })
+
+    // console.log(req.user);
+
+    // // if(req.user != undefined){
+    // //     User.findById(req.user._id, (err, user)=>{
+    // //         var user = req.user;
+    // //         if(!err)
+    //             // res.json(user);
+    // //             console.log('okokok');
+    // //         else
+    // //             console.log("can't find")
+    // //     })
+    // // }
+    // // res.send(req.user._name);
+})
 
 
 
