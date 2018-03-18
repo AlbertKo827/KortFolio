@@ -23,7 +23,8 @@ export class UserinfoService {
                this.result = data;
              }, err =>{
                console.log('err : ' + err);
-               return 'undefined';
+               if(err)
+                return 'undefined';
              },
             ()=>{
               console.log(this.result);

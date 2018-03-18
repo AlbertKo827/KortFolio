@@ -245,9 +245,9 @@ app.get('/*', (req, res, next)=>{
     next();
 })
 
-app.get('/test', (req, res)=>{
+app.get('/test', (req, res, next)=>{
     res.json({message : "success", username : "retgrtgrtgrtgrtgrtgbbbbb"});
-    
+    next();
 
     // console.log(req.user);
 
