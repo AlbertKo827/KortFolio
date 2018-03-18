@@ -7,12 +7,12 @@ import { UserinfoService } from '../service/userinfo.service';
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit {
-  test : any = "undifined";
+  test : any = {};
 
   constructor(private userinfo : UserinfoService) { }
 
   ngOnInit() {
-    this.test = this.userinfo.getUserName();
+    this.test.message = this.userinfo.getUserName();
   }
 
 }

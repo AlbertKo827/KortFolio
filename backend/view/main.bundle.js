@@ -476,7 +476,7 @@ var UserinfoService = (function () {
             _this.result = data;
         }, function (err) {
             console.log('err : ' + err);
-            return undefined;
+            return 'undefined';
         }, function () {
             console.log(_this.result);
             return _this.result;
@@ -515,7 +515,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/test/test.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  Hello! : {{test?.message}}\n</p>\n"
+module.exports = "<p>\n  Hello! : {{test.message}}\n</p>\n"
 
 /***/ }),
 
@@ -540,10 +540,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var TestComponent = (function () {
     function TestComponent(userinfo) {
         this.userinfo = userinfo;
-        this.test = "undifined";
+        this.test = {};
     }
     TestComponent.prototype.ngOnInit = function () {
-        this.test = this.userinfo.getUserName();
+        this.test.message = this.userinfo.getUserName();
     };
     return TestComponent;
 }());

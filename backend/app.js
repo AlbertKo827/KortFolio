@@ -237,7 +237,6 @@ app.get('/mailtest', (req, res)=>{
 })
 
 app.get('/test', (req, res)=>{
-    res.send(`<h1>hello</h1>`);
     res.json({message : "success", username : "retgrtgrtgrtgrtgrtgbbbbb"});
     
 
