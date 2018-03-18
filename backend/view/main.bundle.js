@@ -93,12 +93,14 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ngx_bootstrap_progressbar__ = __webpack_require__("../../../../ngx-bootstrap/progressbar/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__contact_contact_component__ = __webpack_require__("../../../../../src/app/contact/contact.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__service_userinfo_service__ = __webpack_require__("../../../../../src/app/service/userinfo.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__test_test_component__ = __webpack_require__("../../../../../src/app/test/test.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -130,6 +132,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_8__introduce_introduce_component__["a" /* IntroduceComponent */],
             __WEBPACK_IMPORTED_MODULE_9__register_register_component__["a" /* RegisterComponent */],
             __WEBPACK_IMPORTED_MODULE_14__contact_contact_component__["a" /* ContactComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__test_test_component__["a" /* TestComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -149,6 +152,10 @@ AppModule = __decorate([
                 {
                     path: 'contact',
                     component: __WEBPACK_IMPORTED_MODULE_14__contact_contact_component__["a" /* ContactComponent */]
+                },
+                {
+                    path: 'test',
+                    component: __WEBPACK_IMPORTED_MODULE_16__test_test_component__["a" /* TestComponent */]
                 }
             ]),
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* HttpModule */],
@@ -273,7 +280,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/introduce/introduce.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid kortfolio-intro-header\">\n  <img class=\"header-img\" src=\"../../assets/images/header-bg.jpg\" style=\"width:100%; height: auto;\"/>\n  \n  <div class=\"container-fluid text-center\" style=\"margin-bottom:1rem; background-color:rgb(99, 99, 99);\">\n    \n    <div class=\"container kortfolio-profile-img\">\n      <div>\n          <img src=\"../../assets/images/myeongseok.jpg\"/>\n      </div>\n      <p id=\"header-name\">고명석</p>\n    </div>\n\n    <div class=\"container-fluid\">\n      <div class=\"container col-sm-12 col-md-6 text-left kortfolio-boutme\"\n      style=\"position:relative;\">\n        <p>\n          &nbsp;프로그래머 고명석입니다.<br><br>\n          &nbsp;저는 고등학교 3학년 하반기부터 1년 4개월간 회사를 재직하며 C#을 이용하여 WPF개발을 해왔습니다.<br><br>\n          &nbsp;하지만, 국방의 의무를 지켜야할 나이가 왔고, 프로그래머로서 다양한 역량을 키우고 싶다는 욕심에 재직 중이던 회사를 나와서 해보고 싶었던 다양한 부분을 공부하며 산업기능요원을 준비하고 있습니다.<br><br>\n          &nbsp;'KortFolio'란, 제 이름에 성인 'Ko'외 'PortFolio'를 합친 것으로 'MEAN'을 이용하여 제작되었고 보고 계시는 웹페이지이며, 저의 도전을 위한 첫걸음이자 포부이고, 남들과 다름을 추구하는 저의 이력서이며, 제가 새로운 것을 배울때마다 다이나믹한 변화를 보일 공간입니다.<br><br>\n          &nbsp;저는 현재 무엇이든 포지셔닝이 가능합니다. 왜냐하면 젊은 개발자들 중에서도 젊은 것을 자부하기 때문에 접근하고 익히는 것에 자신이 있기 때문입니다. 그간 많은 사람들이 사용한 Windows에 Application 개발을 해보았고, 코딩에 접근하는 방법을 배웠습니다. 그래서 저는 Backend, Frontend, App(ios, Android) 등 조금더 다양하게 접근하며 다음에 포커싱할 부분을 정하고 있습니다. 부족한 실력이지만 저를 표현하자면, Low Lisk High Retern이 맞는 사람이라고 표현하고 싶습니다.<br>\n        </p>\n      </div>\n      \n      <div class=\"container col-sm-12 col-md-6 text-right kortfolio-contant\"\n      style=\"position:relative; vertical-align:middle;\">\n        <div style=\"float:right; top:50%; position:relative;\">\n          <p><a href=\"https://github.com/AlbertKo827\"><span class=\"fa fa-github fa-2x\" aria-hidden=\"true\"></span>github.com/AlbertKo827</a></p>\n          <p><span class=\"glyphicon glyphicon-envelope\" aria-hidden=\"true\"></span>myeongsku@gmail.com</p>\n          <p><span class=\"glyphicon glyphicon-phone\" aria-hidden=\"true\"></span>+82) 10-4814-6109</p>\n          <p><span class=\"glyphicon glyphicon-home\" aria-hidden=\"true\"></span>인천 서구<span style=\"font-size:0.5em; opacity:0.8;\"> (재직 결과에 따라 이사 예정)</span></p>\n        </div>  \n      </div>\n    </div>\n  </div>\n  \n  <div class=\"container-fluid kortfolio-intro-body\">\n    <div class=\"container-fluid col-sm-12 col-md-6\" style=\"\">\n      <div class=\"container-fluid\">\n        <h1 class=\"fa fa-graduation-cap fa-2x kortfolio-class\">Education</h1>\n        <ul>\n          <li>\n            <h2>1998.08 - 2013.01</h2>\n            <p>\n              태어나서 중학교 3학년 까지 대한민국의 기본 교육을 받음\n            </p>\n          </li>\n          <li>\n            <h2>2014.3 - 2018.1</h2>\n            <p>\n              '인천 전자 마이스터고'입학 후 프로그래밍에 기초와 전자 회로 응용법을 배움<br><br>\n              &lt;&nbsp; SoftWare &nbsp;&gt;<br>\n              &emsp;- C<br>\n              &emsp;- Verilog<br><br>\n              &lt;&nbsp; HardWare &nbsp;&gt;<br>\n              &emsp;- Raspberry Pi<br>\n              &emsp;- ATMega128<br>\n            </p>\n          </li>\n          <li>\n            <h2>2017.12.13</h2>\n            <p>\n              Swift Korea Meetup 2회 참여<br><br>\n            </p>\n          </li>\n          <li>\n              <h2>2018.01.06 ~</h2>\n              <p>\n                Goggle Developer Group Incheon 모.각.개 프로그램 참여중<br><br>\n              </p>\n            </li>\n        </ul>\n      </div>\n\n      <div class=\"container-fluid\">\n        <h1 class=\"fa fa-suitcase fa-2x kortfolio-class\">Experience</h1>\n        <ul>\n          <li>\n            <h2>2016.08 - 2017.12</h2>\n            <p>\n              C# 개발 경력 1년 4개월 (회사 : T.Friends)<br><br>\n              &lt;&nbsp; Project &nbsp;&gt;<br>\n              &emsp;- WPF로 레이저 헤드 프로그램 개발 참여<br>&emsp;&nbsp;(Motor & CDS Cam Control)<br>\n              &emsp;- WPF & OpenCV와 LineScanCamera를 이용한 AOI장비 개발 참여<br>\n              &emsp;- Xamarin으로 레이저 헤드 프로그램 UI/UX개발<br>\n            </p>\n          </li>\n        </ul>\n      </div>\n    </div>\n\n    <div class=\"container-fluid col-sm-12 col-md-6\" style=\"\">\n\n      <div class=\"container-fluid\">\n        <h1 class=\"fa fa-language fa-2x kortfolio-class\">Language</h1>\n        <ul>\n            <li>\n              <h2>English</h2>\n              <p>\n                  &nbsp;- 구글에 모르는거 검색 후 StackOverFlow에서 답 찾기 가능<br>\n                  &nbsp;- Document 단어 뒤져가며 해석 가능<br>\n                  &nbsp;- 영화를 보면서 '어, 저 단어 아는데'라고 말하기 가능<br>\n                  &nbsp;- 부모님 앞에서 영어 잘하는 척 가능<br>\n                  &nbsp;- 평상시에 th발음<br>\n              </p>\n            </li>\n            <li>\n              <h2>Korean</h2>\n              <p>\n                  &nbsp;- 기분 좋은 아침 인사 가능<br>\n                  &nbsp;- 회식 자리에서 건배사 가능<br>\n              </p>\n            </li>\n          </ul>\n      </div>\n\n      <div class=\"container-fluid kortfolio-skill\">\n        <h1 class=\"fa fa-cubes fa-2x kortfolio-class\">Skill</h1>\n        <div>\n          <p>C#</p>\n          <div class=\"progress\">\n              <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 80%; background-color:red;\">\n                80%\n              </div>\n            </div>\n        </div>\n        <div>\n          <p>Angular2/5</p>\n          <div class=\"progress\">\n              <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 70%; background-color:orange;\">\n                70%\n              </div>\n            </div>\n        </div>\n        <div>\n          <p>NodeJS</p>\n          <div class=\"progress\">\n              <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 60%; background-color:yellow;\">\n                60%\n              </div>\n            </div>\n        </div>\n        <div>\n          <p>Swift</p>\n          <div class=\"progress\">\n              <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 30%; background-color:chartreuse;\">\n                30%\n              </div>\n            </div>\n        </div>\n        <div>\n          <p>Kotlin</p>\n          <div class=\"progress\">\n              <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 30%; background-color:aqua;\">\n                30%\n              </div>\n            </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"container-fluid kortfolio-intro-header\">\n  <img class=\"header-img\" src=\"../../assets/images/header-bg.jpg\" style=\"width:100%; height: auto;\"/>\n  \n  <div class=\"container-fluid text-center\" style=\"margin-bottom:1rem; background-color:rgb(99, 99, 99);\">\n    \n    <div class=\"container kortfolio-profile-img\">\n      <div>\n          <img src=\"../../assets/images/myeongseok.jpg\"/>\n      </div>\n      <p id=\"header-name\">고명석</p>\n    </div>\n\n    <div class=\"container-fluid\">\n      <div class=\"container col-sm-12 col-md-6 text-left kortfolio-boutme\"\n      style=\"position:relative;\">\n        <p>\n          &nbsp;프로그래머 고명석입니다.<br><br>\n          &nbsp;저는 고등학교 3학년 하반기부터 1년 4개월간 회사를 재직하며 C#을 이용하여 WPF개발을 해왔습니다.<br><br>\n          &nbsp;하지만, 국방의 의무를 지켜야할 나이가 왔고, 프로그래머로서 다양한 역량을 키우고 싶다는 욕심에 재직 중이던 회사를 나와서 해보고 싶었던 다양한 부분을 공부하며 산업기능요원을 준비하고 있습니다.<br><br>\n          &nbsp;'KortFolio'란, 제 이름에 성인 'Ko'외 'PortFolio'를 합친 것으로 'MEAN'을 이용하여 제작되었고 보고 계시는 웹페이지이며, 저의 도전을 위한 첫걸음이자 포부이고, 남들과 다름을 추구하는 저의 이력서이며, 제가 새로운 것을 배울때마다 다이나믹한 변화를 보일 공간입니다.<br><br>\n          &nbsp;저는 현재 무엇이든 포지셔닝이 가능합니다. 왜냐하면 젊은 개발자들 중에서도 젊은 것을 자부하기 때문에 접근하고 익히는 것에 자신이 있기 때문입니다. 그간 많은 사람들이 사용한 Windows에 Application 개발을 해보았고, 코딩에 접근하는 방법을 배웠습니다. 그래서 저는 Backend, Frontend, App(ios, Android) 등 조금더 다양하게 접근하며 다음에 포커싱할 부분을 정하고 있습니다. 부족한 실력이지만 저를 표현하자면, Low Lisk High Retern이 맞는 사람이라고 표현하고 싶습니다.<br>\n        </p>\n      </div>\n      \n      <div class=\"container col-sm-12 col-md-6 text-right kortfolio-contant\"\n      style=\"position:relative; vertical-align:middle;\">\n        <div style=\"float:right; top:50%; position:relative;\">\n          <p><a href=\"https://github.com/AlbertKo827\"><span class=\"fa fa-github fa-2x\" aria-hidden=\"true\"></span>github.com/AlbertKo827</a></p>\n          <p><span class=\"glyphicon glyphicon-envelope\" aria-hidden=\"true\"></span>myeongsku@gmail.com</p>\n          <p><span class=\"glyphicon glyphicon-phone\" aria-hidden=\"true\"></span>+82) 10-4814-6109</p>\n          <p><span class=\"glyphicon glyphicon-home\" aria-hidden=\"true\"></span>인천 남구<span style=\"font-size:0.5em; opacity:0.8;\"> (상황에 따라 이사)</span></p>\n        </div>  \n      </div>\n    </div>\n  </div>\n  \n  <div class=\"container-fluid kortfolio-intro-body\">\n    <div class=\"container-fluid col-sm-12 col-md-6\" style=\"\">\n      <div class=\"container-fluid\">\n        <h1 class=\"fa fa-graduation-cap fa-2x kortfolio-class\">Education</h1>\n        <ul>\n          <li>\n            <h2>1998.08 - 2013.01</h2>\n            <p>\n              태어나서 중학교 3학년 까지 대한민국의 기본 교육을 받음\n            </p>\n          </li>\n          <li>\n            <h2>2014.3 - 2018.1</h2>\n            <p>\n              '인천 전자 마이스터고'입학 후 프로그래밍에 기초와 전자 회로 응용법을 배움<br><br>\n              &lt;&nbsp; SoftWare &nbsp;&gt;<br>\n              &emsp;- C<br>\n              &emsp;- Verilog<br><br>\n              &lt;&nbsp; HardWare &nbsp;&gt;<br>\n              &emsp;- Raspberry Pi<br>\n              &emsp;- ATMega128<br>\n            </p>\n          </li>\n          <li>\n            <h2>2017.12.13</h2>\n            <p>\n              Swift Korea Meetup 2회 참여<br><br>\n            </p>\n          </li>\n          <li>\n              <h2>2018.01.06 ~</h2>\n              <p>\n                Goggle Developer Group Incheon 모.각.개 프로그램 참여중<br><br>\n              </p>\n            </li>\n        </ul>\n      </div>\n\n      <div class=\"container-fluid\">\n        <h1 class=\"fa fa-suitcase fa-2x kortfolio-class\">Experience</h1>\n        <ul>\n          <li>\n            <h2>2016.08 - 2017.12</h2>\n            <p>\n              C# 개발 경력 1년 4개월 (회사 : T.Friends)<br><br>\n              &lt;&nbsp; Project &nbsp;&gt;<br>\n              &emsp;- WPF로 레이저 헤드 프로그램 개발 참여<br>&emsp;&nbsp;(Motor & CDS Cam Control)<br>\n              &emsp;- WPF & OpenCV와 LineScanCamera를 이용한 AOI장비 개발 참여<br>\n              &emsp;- Xamarin으로 레이저 헤드 프로그램 UI/UX개발<br>\n            </p>\n          </li>\n        </ul>\n      </div>\n    </div>\n\n    <div class=\"container-fluid col-sm-12 col-md-6\" style=\"\">\n\n      <div class=\"container-fluid\">\n        <h1 class=\"fa fa-language fa-2x kortfolio-class\">Language</h1>\n        <ul>\n            <li>\n              <h2>English</h2>\n              <p>\n                  &nbsp;- 구글에 모르는거 검색 후 StackOverFlow에서 답 찾기 가능<br>\n                  &nbsp;- Document 단어 뒤져가며 해석 가능<br>\n                  &nbsp;- 영화를 보면서 '어, 저 단어 아는데'라고 말하기 가능<br>\n                  &nbsp;- 부모님 앞에서 영어 잘하는 척 가능<br>\n                  &nbsp;- 평상시에 th발음<br>\n              </p>\n            </li>\n            <li>\n              <h2>Korean</h2>\n              <p>\n                  &nbsp;- 기분 좋은 아침 인사 가능<br>\n                  &nbsp;- 회식 자리에서 건배사 가능<br>\n              </p>\n            </li>\n          </ul>\n      </div>\n\n      <div class=\"container-fluid kortfolio-skill\">\n        <h1 class=\"fa fa-cubes fa-2x kortfolio-class\">Skill</h1>\n        <div>\n          <p>C#</p>\n          <div class=\"progress\">\n              <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 80%; background-color:red;\">\n                80%\n              </div>\n            </div>\n        </div>\n        <div>\n          <p>Angular2/5</p>\n          <div class=\"progress\">\n              <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 70%; background-color:orange;\">\n                70%\n              </div>\n            </div>\n        </div>\n        <div>\n          <p>NodeJS</p>\n          <div class=\"progress\">\n              <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 60%; background-color:yellow;\">\n                60%\n              </div>\n            </div>\n        </div>\n        <div>\n          <p>Swift</p>\n          <div class=\"progress\">\n              <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 30%; background-color:chartreuse;\">\n                30%\n              </div>\n            </div>\n        </div>\n        <div>\n          <p>Kotlin</p>\n          <div class=\"progress\">\n              <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 30%; background-color:aqua;\">\n                30%\n              </div>\n            </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -465,13 +472,14 @@ var UserinfoService = (function () {
         this.http.get('/test')
             .map(function (res) { return res.json(); })
             .subscribe(function (data) {
-            console.log(data);
+            console.log('data : ' + data);
             _this.result = data;
         }, function (err) {
-            console.log(err);
+            console.log('err : ' + err);
             return undefined;
         }, function () {
             console.log(_this.result);
+            return _this.result;
         });
     };
     return UserinfoService;
@@ -483,6 +491,73 @@ UserinfoService = __decorate([
 
 var _a;
 //# sourceMappingURL=userinfo.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/test/test.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/test/test.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  Hello! : {{test}}\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/test/test.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TestComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__ = __webpack_require__("../../../../../src/app/service/userinfo.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var TestComponent = (function () {
+    function TestComponent(userinfo) {
+        this.userinfo = userinfo;
+        this.test = "undifined";
+    }
+    TestComponent.prototype.ngOnInit = function () {
+        this.test = this.userinfo.getUserName();
+    };
+    return TestComponent;
+}());
+TestComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-test',
+        template: __webpack_require__("../../../../../src/app/test/test.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/test/test.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__["a" /* UserinfoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__["a" /* UserinfoService */]) === "function" && _a || Object])
+], TestComponent);
+
+var _a;
+//# sourceMappingURL=test.component.js.map
 
 /***/ }),
 

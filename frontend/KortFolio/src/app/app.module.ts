@@ -15,7 +15,8 @@ import { ModalModule as Modal } from 'ngx-bootstrap/modal';
 import { ProgressbarModule as ProgressBar } from 'ngx-bootstrap/progressbar';
 import { ContactComponent } from './contact/contact.component';
 
-import { UserinfoService } from './service/userinfo.service'
+import { UserinfoService } from './service/userinfo.service';
+import { TestComponent } from './test/test.component'
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { UserinfoService } from './service/userinfo.service'
     IntroduceComponent,
     RegisterComponent,
     ContactComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +47,10 @@ import { UserinfoService } from './service/userinfo.service'
       {
         path:'contact',
         component:ContactComponent
+      },
+      {
+        path:'test',
+        component:TestComponent
       }
     ]),
     HttpModule,
