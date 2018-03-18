@@ -13,6 +13,7 @@ export class TestComponent implements OnInit {
 
   ngOnInit() {
     this.test.message = this.userinfo.getUserName();
+    console.log("test : " + this.test);
   }
 
 }
