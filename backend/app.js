@@ -256,7 +256,7 @@ app.use('/register', register);
 
 app.get('/test', (req, res)=>{
     res.json({message : "success", username : "retgrtgrtgrtgrtgrtgbbbbb"});
-
+    res.send(`<h1>hello</h1>`);
 
     // console.log(req.user);
 
