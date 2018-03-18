@@ -241,13 +241,13 @@ app.get('/mailtest', (req, res)=>{
 app.get('/*', (req, res, next)=>{
     res.sendFile(path.join(__dirname, 'view/index.html'));
     // res.json(req.user._id);
-    
+    //console.log()
     next();
 })
 
 app.get('/test', (req, res, next)=>{
     res.json({message : "success", username : "retgrtgrtgrtgrtgrtgbbbbb"});
-    next();
+    
 
     // console.log(req.user);
 
