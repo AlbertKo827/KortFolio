@@ -236,6 +236,15 @@ app.get('/mailtest', (req, res)=>{
     res.end();
 })
 
+
+
+app.get('/*', (req, res, next)=>{
+    res.sendFile(path.join(__dirname, 'view/index.html'));
+    // res.json(req.user._id);
+    
+    next();
+})
+
 app.get('/test', (req, res)=>{
     res.json({message : "success", username : "retgrtgrtgrtgrtgrtgbbbbb"});
     
@@ -253,13 +262,6 @@ app.get('/test', (req, res)=>{
     // //     })
     // // }
     // // res.send(req.user._name);
-})
-
-app.get('/*', (req, res, next)=>{
-    res.sendFile(path.join(__dirname, 'view/index.html'));
-    // res.json(req.user._id);
-    
-    next();
 })
 
 app.get('/login', (req, res, next)=>{
