@@ -36,6 +36,10 @@ export class TitlebarComponent implements OnInit {
     this.UserService.getUserName().subscribe( data => {
       this.tests = data;
       console.log("data : " + this.tests);
+    },err => {
+      console.log(err);
+    },()=>{
+      console.log(this.tests);
     });
     console.log('testing now!');
     console.log(this.tests);

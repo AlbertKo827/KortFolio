@@ -627,6 +627,10 @@ var TitlebarComponent = (function () {
         this.UserService.getUserName().subscribe(function (data) {
             _this.tests = data;
             console.log("data : " + _this.tests);
+        }, function (err) {
+            console.log(err);
+        }, function () {
+            console.log(_this.tests);
         });
         console.log('testing now!');
         console.log(this.tests);
