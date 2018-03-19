@@ -545,6 +545,7 @@ var TestComponent = (function () {
     }
     TestComponent.prototype.ngOnInit = function () {
         this.test.message = this.userinfo.getUserName();
+        console.log("test : " + this.test);
     };
     return TestComponent;
 }());
