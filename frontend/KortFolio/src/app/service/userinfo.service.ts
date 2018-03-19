@@ -15,8 +15,11 @@ export class UserinfoService {
 
   constructor(private http : Http) { }
 
-  getUserName() : any {
-     this.http.get('/test');
+  getUserName() {
+     return this.http.get('/test');
+
+
+
             //  .map((res) => res.json())
             //  .subscribe(data => {
             //    console.log('data : ' + data.String);
@@ -32,6 +35,11 @@ export class UserinfoService {
             // console.log('result : ' + this.result);
             // return this.result;
   }
+
+  private handleErrorObservable (error: Response | any) {
+    console.error(error.message || error);
+    return Observable.throw(error.message || error);
+}
 }
 
 class UserModel{

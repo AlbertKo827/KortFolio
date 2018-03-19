@@ -25,7 +25,7 @@ export class TitlebarComponent implements OnInit {
 
   }
 
-  getUserName() : any {
+  getUserName() : void {
     this.UserService.getUserName().subscribe(data => {
       this.tests = data;
     });
