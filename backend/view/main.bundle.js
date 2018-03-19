@@ -623,7 +623,11 @@ var TitlebarComponent = (function () {
     //                                 });
     // }
     TitlebarComponent.prototype.ngOnInit = function () {
-        this.tests = this.UserService.getUserName();
+        var _this = this;
+        this.UserService.getUserName().subscribe(function (data) {
+            _this.tests = data;
+            console.log("data : " + _this.tests);
+        });
         console.log('testing now!');
         console.log(this.tests);
     };

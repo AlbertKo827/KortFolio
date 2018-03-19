@@ -33,7 +33,10 @@ export class TitlebarComponent implements OnInit {
   // }
 
   ngOnInit() {
-    this.tests = this.UserService.getUserName();
+    this.UserService.getUserName().subscribe( data => {
+      this.tests = data;
+      console.log("data : " + this.tests);
+    });
     console.log('testing now!');
     console.log(this.tests);
   }
