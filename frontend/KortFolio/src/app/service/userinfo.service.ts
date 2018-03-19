@@ -16,7 +16,10 @@ export class UserinfoService {
   constructor(private http : Http) { }
 
   getUserName() {
-     return this.http.get('/test');
+     return this.http.get('/test').map(
+      res => {
+        res.json();
+    });
 
 
 

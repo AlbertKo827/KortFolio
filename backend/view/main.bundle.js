@@ -471,7 +471,9 @@ var UserinfoService = (function () {
         this.http = http;
     }
     UserinfoService.prototype.getUserName = function () {
-        return this.http.get('/test');
+        return this.http.get('/test').map(function (res) {
+            res.json();
+        });
         //  .map((res) => res.json())
         //  .subscribe(data => {
         //    console.log('data : ' + data.String);
@@ -614,18 +616,14 @@ var TitlebarComponent = (function () {
         this.UserService = UserService;
         this.menuStatus = false;
     }
-    TitlebarComponent.prototype.getUserName = function () {
-        var _this = this;
-        this.UserService.getUserName().map(function (res) {
-            res.json();
-        })
-            .subscribe(function (data) {
-            _this.tests = data;
-            console.log(_this.tests);
-        });
-    };
+    // getUserName() : void {
+    //   this.UserService.getUserName().subscribe(data => {
+    //                                   this.tests = data;
+    //                                   console.log(this.tests);
+    //                                 });
+    // }
     TitlebarComponent.prototype.ngOnInit = function () {
-        this.getUserName();
+        this.tests = this.UserService.getUserName();
         console.log('testing now!');
         console.log(this.tests);
     };
