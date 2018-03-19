@@ -32,6 +32,7 @@ export class TitlebarComponent implements OnInit {
                                   })
                                   .subscribe(data => {
                                     this.tests = data;
+                                    console.log(this.tests);
                                   });
   }
 

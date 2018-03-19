@@ -621,6 +621,7 @@ var TitlebarComponent = (function () {
         })
             .subscribe(function (data) {
             _this.tests = data;
+            console.log(_this.tests);
         });
     };
     TitlebarComponent.prototype.ngOnInit = function () {
