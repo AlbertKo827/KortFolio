@@ -16,20 +16,25 @@ export class UserinfoService {
   constructor(private http : Http) { }
 
   getUserName() : any {
-    this.http.get('/test')
+     this.http.get('/test')
              .map((res) => res.json())
              .subscribe(data => {
                console.log('data : ' + data);
                this.result = data;
              }, err =>{
                console.log('err : ' + err);
-               if(err)
-                return 'undefined';
              },
             ()=>{
               console.log(this.result);
-              return this.result;
             });
-            
+      
+            return this.result;
   }
+}
+
+class UserModel{
+  constructor(
+    public name : String,
+    public id : String
+  ){};
 }

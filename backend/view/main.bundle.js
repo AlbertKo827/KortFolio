@@ -476,12 +476,10 @@ var UserinfoService = (function () {
             _this.result = data;
         }, function (err) {
             console.log('err : ' + err);
-            if (err)
-                return 'undefined';
         }, function () {
             console.log(_this.result);
-            return _this.result;
         });
+        return this.result;
     };
     return UserinfoService;
 }());
@@ -490,6 +488,14 @@ UserinfoService = __decorate([
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object])
 ], UserinfoService);
 
+var UserModel = (function () {
+    function UserModel(name, id) {
+        this.name = name;
+        this.id = id;
+    }
+    ;
+    return UserModel;
+}());
 var _a;
 //# sourceMappingURL=userinfo.service.js.map
 
@@ -600,7 +606,7 @@ var TitlebarComponent = (function () {
         this.menuStatus = false;
     }
     TitlebarComponent.prototype.getUserName = function () {
-        this.UserService.getUserName();
+        return this.UserService.getUserName();
     };
     TitlebarComponent.prototype.ngOnInit = function () {
         this.tests = this.getUserName();
