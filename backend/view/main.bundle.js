@@ -478,6 +478,7 @@ var UserinfoService = (function () {
             console.log('err : ' + err);
         }, function () {
             console.log(_this.result);
+            return _this.result;
         });
         console.log('result : ' + this.result);
         return this.result;

@@ -26,6 +26,7 @@ export class UserinfoService {
              },
             ()=>{
               console.log(this.result);
+              return this.result;
             });
             
             console.log('result : ' + this.result);
