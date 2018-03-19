@@ -468,20 +468,20 @@ var UserinfoService = (function () {
         this.http = http;
     }
     UserinfoService.prototype.getUserName = function () {
-        var _this = this;
-        this.http.get('/test')
-            .map(function (res) { return res.json(); })
-            .subscribe(function (data) {
-            console.log('data : ' + data.String);
-            _this.result = data;
-        }, function (err) {
-            console.log('err : ' + err);
-        }, function () {
-            console.log(_this.result);
-            return _this.result;
-        });
-        console.log('result : ' + this.result);
-        return this.result;
+        this.http.get('/test');
+        //  .map((res) => res.json())
+        //  .subscribe(data => {
+        //    console.log('data : ' + data.String);
+        //    this.result = data;
+        //  }, err =>{
+        //    console.log('err : ' + err);
+        //  },
+        // ()=>{
+        //   console.log(this.result);
+        //   return this.result;
+        // });
+        // console.log('result : ' + this.result);
+        // return this.result;
     };
     return UserinfoService;
 }());
@@ -608,10 +608,13 @@ var TitlebarComponent = (function () {
         this.menuStatus = false;
     }
     TitlebarComponent.prototype.getUserName = function () {
-        return this.UserService.getUserName();
+        var _this = this;
+        this.UserService.getUserName().subscribe(function (data) {
+            _this.tests = data;
+        });
     };
     TitlebarComponent.prototype.ngOnInit = function () {
-        this.tests = this.getUserName();
+        this.getUserName();
         console.log('testing now!');
         console.log(this.tests);
     };

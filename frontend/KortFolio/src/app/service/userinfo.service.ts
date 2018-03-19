@@ -16,21 +16,21 @@ export class UserinfoService {
   constructor(private http : Http) { }
 
   getUserName() : any {
-     this.http.get('/test')
-             .map((res) => res.json())
-             .subscribe(data => {
-               console.log('data : ' + data.String);
-               this.result = data;
-             }, err =>{
-               console.log('err : ' + err);
-             },
-            ()=>{
-              console.log(this.result);
-              return this.result;
-            });
+     this.http.get('/test');
+            //  .map((res) => res.json())
+            //  .subscribe(data => {
+            //    console.log('data : ' + data.String);
+            //    this.result = data;
+            //  }, err =>{
+            //    console.log('err : ' + err);
+            //  },
+            // ()=>{
+            //   console.log(this.result);
+            //   return this.result;
+            // });
             
-            console.log('result : ' + this.result);
-            return this.result;
+            // console.log('result : ' + this.result);
+            // return this.result;
   }
 }
 
