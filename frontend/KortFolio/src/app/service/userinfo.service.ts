@@ -19,7 +19,7 @@ export class UserinfoService {
      this.http.get('/test')
              .map((res) => res.json())
              .subscribe(data => {
-               console.log('data : ' + data);
+               console.log('data : ' + data.String());
                this.result = data;
              }, err =>{
                console.log('err : ' + err);
@@ -27,7 +27,8 @@ export class UserinfoService {
             ()=>{
               console.log(this.result);
             });
-      
+            
+            console.log('result : ' + this.result);
             return this.result;
   }
 }

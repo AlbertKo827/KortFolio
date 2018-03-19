@@ -472,13 +472,14 @@ var UserinfoService = (function () {
         this.http.get('/test')
             .map(function (res) { return res.json(); })
             .subscribe(function (data) {
-            console.log('data : ' + data);
+            console.log('data : ' + data.String());
             _this.result = data;
         }, function (err) {
             console.log('err : ' + err);
         }, function () {
             console.log(_this.result);
         });
+        console.log('result : ' + this.result);
         return this.result;
     };
     return UserinfoService;
