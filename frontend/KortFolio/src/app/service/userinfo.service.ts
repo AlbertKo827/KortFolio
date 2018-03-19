@@ -28,8 +28,8 @@ export class UserinfoService {
              },
             ()=>{
               console.log(this.result);
-              
+              return this.result;
             });
-            return this.result;
+            
   }
 }
