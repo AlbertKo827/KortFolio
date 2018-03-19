@@ -472,7 +472,7 @@ var UserinfoService = (function () {
         this.http.get('/test')
             .map(function (res) { return res.json(); })
             .subscribe(function (data) {
-            console.log('data : ' + data.String());
+            console.log('data : ' + data.String);
             _this.result = data;
         }, function (err) {
             console.log('err : ' + err);

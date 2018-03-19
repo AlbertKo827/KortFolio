@@ -19,7 +19,7 @@ export class UserinfoService {
      this.http.get('/test')
              .map((res) => res.json())
              .subscribe(data => {
-               console.log('data : ' + data.String());
+               console.log('data : ' + data.String);
                this.result = data;
              }, err =>{
                console.log('err : ' + err);
