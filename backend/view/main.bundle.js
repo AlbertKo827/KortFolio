@@ -616,7 +616,10 @@ var TitlebarComponent = (function () {
     }
     TitlebarComponent.prototype.getUserName = function () {
         var _this = this;
-        this.UserService.getUserName().subscribe(function (data) {
+        this.UserService.getUserName().map(function (res) {
+            res.json();
+        })
+            .subscribe(function (data) {
             _this.tests = data;
         });
     };
