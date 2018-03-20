@@ -19,6 +19,7 @@ export class UserinfoService {
   getUserName() {
      return this.http.get('/test').map(
       res => {
+        console.log("Response" + res);
         return res.json();
     });
 
