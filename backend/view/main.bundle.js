@@ -446,6 +446,7 @@ RegisterComponent = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserinfoService; });
+/* unused harmony export UserModel */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__("../../../common/@angular/common/http.es5.js");
@@ -510,15 +511,19 @@ UserinfoService = __decorate([
 ], UserinfoService);
 
 var UserModel = (function () {
-    function UserModel(_id, _password, _email, _name) {
-        this._id = _id;
-        this._password = _password;
-        this._email = _email;
-        this._name = _name;
+    function UserModel(
+        // public _id : String,
+        // public _password : String,
+        // public  _email : String,
+        // public  _name : String
+        message, usernaem) {
+        this.message = message;
+        this.usernaem = usernaem;
     }
     ;
     return UserModel;
 }());
+
 var _a, _b;
 //# sourceMappingURL=userinfo.service.js.map
 
@@ -640,7 +645,7 @@ var TitlebarComponent = (function () {
         this.UserService.getUserName().subscribe(function (data) {
             _this.tests = data;
             console.log("data!! : " + data);
-            console.log("tests!! : " + _this.tests);
+            console.log("tests!! : " + _this.tests.message);
         }, function (err) { return alert(err); }, function () { return console.log('success'); });
         // //HttpClient
         // this.UserService.getUserNameC().subscribe( data => {
@@ -675,16 +680,6 @@ TitlebarComponent = __decorate([
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__service_userinfo_service__["a" /* UserinfoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__service_userinfo_service__["a" /* UserinfoService */]) === "function" && _a || Object])
 ], TitlebarComponent);
 
-var UserModel = (function () {
-    function UserModel(_id, _password, _email, _name) {
-        this._id = _id;
-        this._password = _password;
-        this._email = _email;
-        this._name = _name;
-    }
-    ;
-    return UserModel;
-}());
 var _a;
 //# sourceMappingURL=titlebar.component.js.map
 

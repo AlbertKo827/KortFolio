@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import { UserinfoService } from '../service/userinfo.service'
+import { UserinfoService, UserModel } from '../service/userinfo.service'
 
 @Component({
   selector: 'app-titlebar',
@@ -19,7 +19,7 @@ export class TitlebarComponent implements OnInit {
 
   menuStatus : boolean = false;
 
-  public tests : any;
+  public tests : UserModel;
   public test1 : object;
 
   constructor(private UserService : UserinfoService ) {
@@ -39,7 +39,7 @@ export class TitlebarComponent implements OnInit {
       data => {
         this.tests = data;
         console.log("data!! : " + data);
-        console.log("tests!! : " + this.tests);
+        console.log("tests!! : " + this.tests.message);
       },
       err => alert(err),
       () => console.log('success')
@@ -88,13 +88,4 @@ export class TitlebarComponent implements OnInit {
   onHidden(): void {
     this.isModalShown = false;
   }*/
-}
-
-class UserModel{
-  constructor(
-    public _id : String,
-    public _password : String,
-    public  _email : String,
-    public  _name : String
-  ){};
 }
