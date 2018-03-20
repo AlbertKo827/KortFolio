@@ -20,6 +20,7 @@ export class TitlebarComponent implements OnInit {
   menuStatus : boolean = false;
 
   public tests : any;
+  public test1 : any
 
   constructor(private UserService : UserinfoService ) {
 
@@ -33,14 +34,22 @@ export class TitlebarComponent implements OnInit {
   // }
 
   ngOnInit() {
+    //Http
     this.UserService.getUserName().subscribe( data => {
       this.tests = data;
-      console.log("data : " + this.tests);
+      console.log("HttpData : " + this.tests);
     },err => {
       console.log(err);
     },()=>{
       console.log(this.tests);
     });
+
+    //HttpClient
+    this.UserService.getUserNameC().subscribe( data => {
+      this.test1 = data;
+      console.log("HttpClientData : " + this.test1)
+    });
+
     console.log('testing now!');
     console.log(this.tests);
   }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Request, Headers, RequestOptions } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 import {Observable} from 'rxjs/Rx';
 
@@ -13,13 +14,15 @@ export class UserinfoService {
 
   result : any;
 
-  constructor(private http : Http) { }
+  constructor(private http : Http, private httpC : HttpClient) { }
 
   getUserName() {
      return this.http.get('/test').map(
       res => {
         res.json();
     });
+
+  
 
 
 
@@ -39,6 +42,10 @@ export class UserinfoService {
             // return this.result;
   }
 
+  getUserNameC() {
+    return this.httpC.get<UserModel>('/test');
+  }
+
   private handleErrorObservable (error: Response | any) {
     console.error(error.message || error);
     return Observable.throw(error.message || error);
@@ -47,7 +54,9 @@ export class UserinfoService {
 
 class UserModel{
   constructor(
-    public name : String,
-    public id : String
+    public _id : String,
+    public _password : String,
+    public  _email : String,
+    public  _name : String
   ){};
 }

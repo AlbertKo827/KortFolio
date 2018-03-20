@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule} from '@angular/router';
 import { HttpModule, Http } from '@angular/http'
+import { HttpClient } from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { TitlebarComponent } from './titlebar/titlebar.component';
@@ -54,6 +55,7 @@ import { TestComponent } from './test/test.component'
       }
     ]),
     HttpModule,
+    HttpClient,
     AlertModule.forRoot(),
     DropDown.forRoot(),
     Modal.forRoot(),
