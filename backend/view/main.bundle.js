@@ -478,7 +478,7 @@ var UserinfoService = (function () {
     }
     UserinfoService.prototype.getUserName = function () {
         return this.http.get('/test').map(function (res) {
-            res.json();
+            return res.json();
         });
         //  .map((res) => res.json())
         //  .subscribe(data => {
