@@ -655,7 +655,7 @@ var TitlebarComponent = (function () {
         });
         console.log('testing now!');
         console.log(this.tests);
-        console.log(this.test1);
+        console.log(this.test1.toString());
     };
     ///test
     TitlebarComponent.prototype.openMenu = function () {

@@ -56,7 +56,7 @@ export class TitlebarComponent implements OnInit {
 
     console.log('testing now!');
     console.log(this.tests);
-    console.log(this.test1 as String);
+    console.log((this.test1 as String).toString());
   }
 
   ///test
