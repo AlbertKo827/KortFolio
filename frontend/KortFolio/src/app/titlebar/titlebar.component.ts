@@ -20,7 +20,7 @@ export class TitlebarComponent implements OnInit {
   menuStatus : boolean = false;
 
   public tests : any;
-  public test1 : any
+  public test1 : object;
 
   constructor(private UserService : UserinfoService ) {
 
