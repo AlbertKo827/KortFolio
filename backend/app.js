@@ -255,7 +255,7 @@ app.get('/test', (req, res, next)=>{
         User.findById(req.user._id, (err, user)=>{
             var user = req.user;
             if(!err){
-                res.json(user);
+                res.json(JSON.stringify(user));
                 console.log('okokok');
             }
             else

@@ -14,7 +14,7 @@ export class UserinfoService {
 
   result : any;
 
-  constructor(private http : Http, private httpC : HttpClient) { }
+  constructor(private http : Http) { }
 
   getUserName() : Observable<UserModel>{
      return this.http.get('/test').map(
@@ -41,10 +41,6 @@ export class UserinfoService {
             
             // console.log('result : ' + this.result);
             // return this.result;
-  }
-
-  getUserNameC() {
-    return this.httpC.get<UserModel>('/test');
   }
 
   private handleErrorObservable (error: Response | any) {

@@ -161,7 +161,7 @@ AppModule = __decorate([
                 }
             ]),
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["b" /* HttpClientModule */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClientModule */],
             __WEBPACK_IMPORTED_MODULE_11_ngx_bootstrap__["a" /* AlertModule */].forRoot(),
             __WEBPACK_IMPORTED_MODULE_12_ngx_bootstrap_dropdown__["a" /* BsDropdownModule */].forRoot(),
             __WEBPACK_IMPORTED_MODULE_13_ngx_bootstrap_modal__["b" /* ModalModule */].forRoot(),
@@ -449,13 +449,12 @@ RegisterComponent = __decorate([
 /* unused harmony export UserModel */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__("../../../common/@angular/common/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__("../../../../rxjs/Rx.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch__ = __webpack_require__("../../../../rxjs/add/operator/catch.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__("../../../../rxjs/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__("../../../../rxjs/add/operator/catch.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -468,14 +467,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 // Import RxJs required methods
 
 
 var UserinfoService = (function () {
-    function UserinfoService(http, httpC) {
+    function UserinfoService(http) {
         this.http = http;
-        this.httpC = httpC;
     }
     UserinfoService.prototype.getUserName = function () {
         return this.http.get('/test').map(function (res) {
@@ -496,18 +493,15 @@ var UserinfoService = (function () {
         // console.log('result : ' + this.result);
         // return this.result;
     };
-    UserinfoService.prototype.getUserNameC = function () {
-        return this.httpC.get('/test');
-    };
     UserinfoService.prototype.handleErrorObservable = function (error) {
         console.error(error.message || error);
-        return __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__["Observable"].throw(error.message || error);
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__["Observable"].throw(error.message || error);
     };
     return UserinfoService;
 }());
 UserinfoService = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object])
 ], UserinfoService);
 
 var UserModel = (function () {
@@ -524,7 +518,7 @@ var UserModel = (function () {
     return UserModel;
 }());
 
-var _a, _b;
+var _a;
 //# sourceMappingURL=userinfo.service.js.map
 
 /***/ }),
@@ -575,11 +569,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var TestComponent = (function () {
     function TestComponent(userinfo) {
         this.userinfo = userinfo;
-        this.test = {};
     }
     TestComponent.prototype.ngOnInit = function () {
-        this.test.message = this.userinfo.getUserName();
-        console.log("test : " + this.test);
+        var _this = this;
+        this.userinfo.getUserName().subscribe(function (data) { return _this.test; }, function (err) { return alert(err); }, function () { return console.log("success"); });
+        console.log("test : " + this.test._name);
     };
     return TestComponent;
 }());
@@ -633,12 +627,6 @@ var TitlebarComponent = (function () {
         this.UserService = UserService;
         this.menuStatus = false;
     }
-    // getUserName() : void {
-    //   this.UserService.getUserName().subscribe(data => {
-    //                                   this.tests = data;
-    //                                   console.log(this.tests);
-    //                                 });
-    // }
     TitlebarComponent.prototype.ngOnInit = function () {
         var _this = this;
         //Http
@@ -647,18 +635,8 @@ var TitlebarComponent = (function () {
             console.log("data!! : " + data);
             console.log("tests!! : " + _this.tests._name);
         }, function (err) { return alert(err); }, function () { return console.log('success'); });
-        // //HttpClient
-        // this.UserService.getUserNameC().subscribe( data => {
-        //   this.test1 = data;
-        //   console.log("HttpClientData : " + this.test1);
-        // }, err => {
-        //   console.log(err);
-        // },()=>{
-        //   console.log("HttpClientDataResult : " + this.test1);
-        // });
         console.log('testing now!');
         console.log(this.tests);
-        console.log(this.test1);
     };
     ///test
     TitlebarComponent.prototype.openMenu = function () {

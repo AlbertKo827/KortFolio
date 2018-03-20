@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserinfoService } from '../service/userinfo.service';
+import { UserinfoService, UserModel } from '../service/userinfo.service';
 
 @Component({
   selector: 'app-test',
@@ -7,13 +7,18 @@ import { UserinfoService } from '../service/userinfo.service';
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit {
-  test : any = {};
+  test : UserModel;
 
   constructor(private userinfo : UserinfoService) { }
 
   ngOnInit() {
-    this.test.message = this.userinfo.getUserName();
-    console.log("test : " + this.test);
+    this.userinfo.getUserName().subscribe(
+      data => this.test,
+      err => alert(err),
+      () => console.log("success")
+    );
+    
+    console.log("test : " + this.test._name);
   }
 
 }
