@@ -638,24 +638,20 @@ var TitlebarComponent = (function () {
         //Http
         this.UserService.getUserName().subscribe(function (data) {
             _this.tests = data;
-            console.log("HttpData : " + _this.tests);
-        }, function (err) {
-            console.log(err);
-        }, function () {
-            console.log(_this.tests);
-        });
-        //HttpClient
-        this.UserService.getUserNameC().subscribe(function (data) {
-            _this.test1 = data;
-            console.log("HttpClientData : " + _this.test1);
-        }, function (err) {
-            console.log(err);
-        }, function () {
-            console.log("HttpClientDataResult : " + _this.test1);
-        });
+            console.log("tests!! : " + _this.tests);
+        }, function (err) { return alert(err); }, function () { return console.log('success'); });
+        // //HttpClient
+        // this.UserService.getUserNameC().subscribe( data => {
+        //   this.test1 = data;
+        //   console.log("HttpClientData : " + this.test1);
+        // }, err => {
+        //   console.log(err);
+        // },()=>{
+        //   console.log("HttpClientDataResult : " + this.test1);
+        // });
         console.log('testing now!');
         console.log(this.tests);
-        console.log(this.test1.toString());
+        console.log(this.test1);
     };
     ///test
     TitlebarComponent.prototype.openMenu = function () {
@@ -677,6 +673,16 @@ TitlebarComponent = __decorate([
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__service_userinfo_service__["a" /* UserinfoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__service_userinfo_service__["a" /* UserinfoService */]) === "function" && _a || Object])
 ], TitlebarComponent);
 
+var UserModel = (function () {
+    function UserModel(_id, _password, _email, _name) {
+        this._id = _id;
+        this._password = _password;
+        this._email = _email;
+        this._name = _name;
+    }
+    ;
+    return UserModel;
+}());
 var _a;
 //# sourceMappingURL=titlebar.component.js.map
 

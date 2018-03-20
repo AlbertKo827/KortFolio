@@ -35,28 +35,28 @@ export class TitlebarComponent implements OnInit {
 
   ngOnInit() {
     //Http
-    this.UserService.getUserName().subscribe( data => {
-      this.tests = data;
-      console.log("HttpData : " + this.tests);
-    },err => {
-      console.log(err);
-    },()=>{
-      console.log(this.tests);
-    });
+    this.UserService.getUserName().subscribe( 
+      data => {
+        this.tests = data;
+        console.log("tests!! : " + this.tests);
+      },
+      err => alert(err),
+      () => console.log('success')
+    );
 
-    //HttpClient
-    this.UserService.getUserNameC().subscribe( data => {
-      this.test1 = data;
-      console.log("HttpClientData : " + this.test1);
-    }, err => {
-      console.log(err);
-    },()=>{
-      console.log("HttpClientDataResult : " + this.test1);
-    });
+    // //HttpClient
+    // this.UserService.getUserNameC().subscribe( data => {
+    //   this.test1 = data;
+    //   console.log("HttpClientData : " + this.test1);
+    // }, err => {
+    //   console.log(err);
+    // },()=>{
+    //   console.log("HttpClientDataResult : " + this.test1);
+    // });
 
     console.log('testing now!');
     console.log(this.tests);
-    console.log((this.test1 as String).toString());
+    console.log(this.test1);
   }
 
   ///test
@@ -87,4 +87,13 @@ export class TitlebarComponent implements OnInit {
   onHidden(): void {
     this.isModalShown = false;
   }*/
+}
+
+class UserModel{
+  constructor(
+    public _id : String,
+    public _password : String,
+    public  _email : String,
+    public  _name : String
+  ){};
 }
