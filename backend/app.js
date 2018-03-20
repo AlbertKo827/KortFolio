@@ -262,6 +262,9 @@ app.get('/test', (req, res, next)=>{
                 console.log("can't find")
         })
     }
+    else{
+        res.json({_name : "Login"});
+    }
 })
 
 app.get('/login', (req, res, next)=>{

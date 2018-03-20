@@ -544,7 +544,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/test/test.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  Hello! : {{test.message}}\n</p>\n"
+module.exports = "<p>\n  Hello! : {{test?._name}}\n</p>\n"
 
 /***/ }),
 
