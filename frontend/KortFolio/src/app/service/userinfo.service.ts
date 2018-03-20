@@ -16,7 +16,7 @@ export class UserinfoService {
 
   constructor(private http : Http, private httpC : HttpClient) { }
 
-  getUserName() {
+  getUserName() : Observable<UserModel>{
      return this.http.get('/test').map(
       res => {
         console.log("Response" + res);
