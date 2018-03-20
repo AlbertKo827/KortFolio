@@ -632,9 +632,14 @@ var TitlebarComponent = (function () {
         //Http
         this.UserService.getUserName().subscribe(function (data) {
             _this.tests = data;
-            console.log("data!! : " + data);
-            console.log("tests!! : " + _this.tests._name);
-        }, function (err) { return alert(err); }, function () { return console.log('success'); });
+            if (_this.tests === undefined) {
+                console.log('undefined!!!!');
+            }
+            else {
+                console.log("data!! : " + data);
+                console.log("tests!! : " + _this.tests._name);
+            }
+        }, function (err) { return console.log(err); }, function () { return console.log('success'); });
         console.log('testing now!');
         console.log(this.tests);
     };
