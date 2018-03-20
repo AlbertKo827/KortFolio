@@ -246,22 +246,22 @@ app.get('/*', (req, res, next)=>{
 })
 
 app.get('/test', (req, res, next)=>{
-    res.json({message : "success", username : "retgrtgrtgrtgrtgrtgbbbbb"});
+    //res.json({message : "success", username : "retgrtgrtgrtgrtgrtgbbbbb"});
     
 
-    // console.log(req.user);
+    console.log(req.user);
 
-    // // if(req.user != undefined){
-    // //     User.findById(req.user._id, (err, user)=>{
-    // //         var user = req.user;
-    // //         if(!err)
-    //             // res.json(user);
-    // //             console.log('okokok');
-    // //         else
-    // //             console.log("can't find")
-    // //     })
-    // // }
-    // // res.send(req.user._name);
+    if(req.user != undefined){
+        User.findById(req.user._id, (err, user)=>{
+            var user = req.user;
+            if(!err){
+                res.json(user);
+                console.log('okokok');
+            }
+            else
+                console.log("can't find")
+        })
+    }
 })
 
 app.get('/login', (req, res, next)=>{

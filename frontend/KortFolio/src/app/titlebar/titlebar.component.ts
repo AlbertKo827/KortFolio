@@ -39,7 +39,7 @@ export class TitlebarComponent implements OnInit {
       data => {
         this.tests = data;
         console.log("data!! : " + data);
-        console.log("tests!! : " + this.tests.message);
+        console.log("tests!! : " + this.tests._name);
       },
       err => alert(err),
       () => console.log('success')

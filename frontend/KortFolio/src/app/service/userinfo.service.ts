@@ -55,11 +55,11 @@ export class UserinfoService {
 
 export class UserModel{
   constructor(
-    // public _id : String,
-    // public _password : String,
-    // public  _email : String,
-    // public  _name : String
-    public message : String,
-    public usernaem : String
+    public _id : String,
+    public _password : String,
+    public  _email : String,
+    public  _name : String
+    // public message : String,
+    // public usernaem : String
   ){};
 }

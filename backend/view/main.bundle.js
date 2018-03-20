@@ -511,14 +511,14 @@ UserinfoService = __decorate([
 ], UserinfoService);
 
 var UserModel = (function () {
-    function UserModel(
-        // public _id : String,
-        // public _password : String,
-        // public  _email : String,
-        // public  _name : String
-        message, usernaem) {
-        this.message = message;
-        this.usernaem = usernaem;
+    function UserModel(_id, _password, _email, _name
+        // public message : String,
+        // public usernaem : String
+    ) {
+        this._id = _id;
+        this._password = _password;
+        this._email = _email;
+        this._name = _name;
     }
     ;
     return UserModel;
@@ -645,7 +645,7 @@ var TitlebarComponent = (function () {
         this.UserService.getUserName().subscribe(function (data) {
             _this.tests = data;
             console.log("data!! : " + data);
-            console.log("tests!! : " + _this.tests.message);
+            console.log("tests!! : " + _this.tests._name);
         }, function (err) { return alert(err); }, function () { return console.log('success'); });
         // //HttpClient
         // this.UserService.getUserNameC().subscribe( data => {
