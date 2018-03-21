@@ -76,7 +76,8 @@ passport.use('naver', new naverStrategy(Config.naverValue,
                 const _user = new User({//신규 유저 정보를 JSON으로
                     _id : _profile.id,
                     _name: profile.displayName,
-                    _email: _profile.email
+                    _email: _profile.email,
+                    _password : '1111'
                 });
 
                 _user.save((err)=>{
@@ -119,7 +120,8 @@ passport.use('facebook', new facebookStrategy(Config.facebookValue,
                 const _user = new User({//신규 유저 정보를 JSON으로
                     _id : _profile.id,
                     _name: profile.displayName,
-                    _email: _profile.email
+                    _email: _profile.email,
+                    _password : '1111'
                 });
 
                 _user.save((err)=>{
