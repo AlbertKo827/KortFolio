@@ -21,7 +21,10 @@ export class UserinfoService {
       res => {
         console.log("Response" + res);
         return res.json();
-    });
+    })
+                                 .catch(
+      this.handleErrorObservable
+    );
 
   
 

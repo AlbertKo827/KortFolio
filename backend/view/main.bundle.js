@@ -478,7 +478,8 @@ var UserinfoService = (function () {
         return this.http.get('/test').map(function (res) {
             console.log("Response" + res);
             return res.json();
-        });
+        })
+            .catch(this.handleErrorObservable);
         //  .map((res) => res.json())
         //  .subscribe(data => {
         //    console.log('data : ' + data.String);
