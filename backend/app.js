@@ -238,8 +238,8 @@ app.get('/mailtest', (req, res)=>{
 })
 
 app.get('/test', (req, res, next)=>{
-    //res.json({message : "success", username : "retgrtgrtgrtgrtgrtgbbbbb"});
-    res.json(req.user);
+    res.json({message : "success", username : "retgrtgrtgrtgrtgrtgbbbbb"});
+    //res.json(req.user);
     console.log(req.user);
     // console.log(req.user);
 
