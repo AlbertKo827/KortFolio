@@ -238,26 +238,21 @@ app.get('/mailtest', (req, res)=>{
 })
 
 app.get('/test', (req, res, next)=>{
-    res.json({message : "success", username : "retgrtgrtgrtgrtgrtgbbbbb"});
-    //res.json(req.user);
-    console.log(req.user);
-    // console.log(req.user);
-
-    // if(req.user != undefined){
-    //     User.findById(req.user._id, (err, user)=>{
-    //         if(!err){
-    //             console.log("UserInfo : " + user._id);
-    //             //res.json(user);
-    //             res.json({_name : "Test", _email : "", _id : "wefwefwefwef", _password : "wefwefwefwef"});
-    //             console.log('okokok');
-    //         }
-    //         else
-    //             console.log("can't find")
-    //     })
-    // }
-    // else{
-    //     res.json({_name : "Login", _email : "", _id : "", _password : ""});
-    // }
+    if(req.user != undefined){
+        User.findById(req.user._id, (err, user)=>{
+            if(!err){
+                console.log("UserInfo : " + user._id);
+                res.json(user);
+                //res.json({_name : "Test", _email : "", _id : "wefwefwefwef", _password : "wefwefwefwef"});
+                console.log('okokok');
+            }
+            else
+                console.log("can't find")
+        })
+    }
+    else{
+        res.json({_name : "Login", _email : "", _id : "", _password : ""});
+    }
 
     next();
 })
