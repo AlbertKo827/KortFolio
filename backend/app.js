@@ -255,7 +255,7 @@ app.get('/test', (req, res, next)=>{
     if(req.user != undefined){
         User.findById(req.user._id, (err, user)=>{
             if(!err){
-                res.json(user);
+                res.json(JSON.parse(user));
                 console.log('okokok');
             }
             else
