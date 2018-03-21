@@ -257,7 +257,7 @@ app.get('/test', (req, res, next)=>{
             if(!err){
                 console.log("UserInfo : " + user._id);
                 //res.json(user);
-                res.json({_name : "Test", _email : "ddfdfdfwefwefwefwefwef", _id : "wefwefwefwef", _password : "wefwefwefwef"});
+                res.json({_name : "Test", _email : "", _id : "wefwefwefwef", _password : "wefwefwefwef"});
                 console.log('okokok');
             }
             else
