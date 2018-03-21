@@ -237,15 +237,6 @@ app.get('/mailtest', (req, res)=>{
     res.end();
 })
 
-
-
-app.get('/*', (req, res, next)=>{
-    res.sendFile(path.join(__dirname, 'view/index.html'));
-    // res.json(req.user._id);
-    //console.log()
-    next();
-})
-
 app.get('/test', (req, res, next)=>{
     //res.json({message : "success", username : "retgrtgrtgrtgrtgrtgbbbbb"});
     res.json(req.user);
@@ -267,7 +258,18 @@ app.get('/test', (req, res, next)=>{
     // else{
     //     res.json({_name : "Login", _email : "", _id : "", _password : ""});
     // }
+
+    next();
 })
+
+app.get('/*', (req, res, next)=>{
+    res.sendFile(path.join(__dirname, 'view/index.html'));
+    // res.json(req.user._id);
+    //console.log()
+    next();
+})
+
+
 
 app.get('/login', (req, res, next)=>{
     console.log('hello');
