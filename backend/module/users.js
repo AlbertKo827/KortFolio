@@ -4,6 +4,8 @@ module.exports.User = (mongoose) => {
         _password : String,
         _email : String,
         _name : String
+    },{
+        versionKey : false
     });
 
     UserInfoSchema.methods.comparePassword = (inputPW, cb) => {
