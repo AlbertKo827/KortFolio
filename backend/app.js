@@ -256,7 +256,8 @@ app.get('/test', (req, res, next)=>{
         User.findById(req.user._id, (err, user)=>{
             if(!err){
                 console.log("UserInfo : " + user._id);
-                res.json(user);
+                //res.json(user);
+                res.json({_name : "Test", _email : "ddfdfdfwefwefwefwefwef", _id : "wefwefwefwef", _password : "wefwefwefwef"});
                 console.log('okokok');
             }
             else
