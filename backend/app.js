@@ -237,7 +237,7 @@ app.get('/mailtest', (req, res)=>{
     res.end();
 })
 
-app.get('/test', (req, res, next)=>{
+app.get('/test', (req, res)=>{
     if(req.user != undefined){
         User.findById(req.user._id, (err, user)=>{
             if(!err){
@@ -253,8 +253,6 @@ app.get('/test', (req, res, next)=>{
     else{
         res.json({_name : "Login", _email : "", _id : "", _password : ""});
     }
-
-    next();
 })
 
 app.get('/*', (req, res, next)=>{
