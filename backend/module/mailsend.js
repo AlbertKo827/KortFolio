@@ -9,14 +9,14 @@ var transporter = nodemailer.createTransport(smtpTransport({
     }
 }));
 
-var mailOptions = {
+var mailOptions = (body) = {
     from: 'myeongsku@gmail.com',
     to: 'myeongsku@naver.com',
     subject: 'test',
-    text: 'test'
+    text: "이름 : " + body.name + "₩n" + "연락처 : " + body.tel + "₩n" + "내용 : " + body.body
 };
 
-module.exports.send = () => transporter.sendMail(mailOptions, (error, info)=>{
+module.exports.send = (option) => transporter.sendMail(mailOptions(option), (error, info)=>{
     if (error){
         console.log(error);
     }

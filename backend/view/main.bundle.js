@@ -179,7 +179,7 @@ AppModule = __decorate([
 /***/ "../../../../../src/app/contact/contact.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n  <form action=\"../app.js\" accept-charset=\"utf-8\" style=\"margin : 10rem auto; width : 25rem; padding : 0;\">\n    <label>이름<input type=\"text\"/></label>\n    <label>연락처<input type=\"text\"/></label>\n    <label>메세지<textarea name=\"Message\" rows=\"8\" cols=\"20\" style=\"resize:none;\"></textarea></label>\n    <input type=\"submit\" value=\"보내기\"/>\n  </form>\n</div>"
+module.exports = "<div class=\"container-fluid\">\n  <form action=\"../app.js\" accept-charset=\"utf-8\" style=\"margin : 10rem auto; width : 25rem; padding : 0;\" method=\"POST\">\n    <label>이름<input type=\"text\" name=\"name\"/></label>\n    <label>연락처<input type=\"text\" name=\"tel\"/></label>\n    <label>메세지<textarea name=\"Message\" rows=\"8\" cols=\"20\" style=\"resize:none;\" name=\"message\"></textarea></label>\n    <input type=\"submit\" value=\"보내기\"/>\n  </form>\n</div>"
 
 /***/ }),
 

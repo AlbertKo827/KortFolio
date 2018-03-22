@@ -234,8 +234,14 @@ app.get('/login/facebook_oauth', passport.authenticate('facebook', {
     //next();
 })
 
-app.get('/mailtest', (req, res)=>{
-    Mail.send();
+app.post('/contact', (req, res)=>{
+    var option = {
+        name : req.body.name,
+        tel : req.body.tel,
+        body : req.body.message
+    }
+
+    Mail.send(option);
     res.end();
 })
 
@@ -264,7 +270,9 @@ app.get('/*', (req, res, next)=>{
     next();
 })
 
-
+app.get('contact', (req, res) => {
+    console.log('contact');
+})
 
 app.get('/login', (req, res, next)=>{
     console.log('hello');
