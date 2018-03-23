@@ -234,17 +234,7 @@ app.get('/login/facebook_oauth', passport.authenticate('facebook', {
     //next();
 })
 
-app.post('/contact', (req, res, next)=>{
-    var option = {
-        name : req.body.name,
-        tel : req.body.tel,
-        body : req.body.message
-    }
 
-    Mail.send(option);
-    //res.end();
-    next();
-})
 
 app.get('/test', (req, res)=>{
     if(req.user != undefined){
@@ -273,6 +263,18 @@ app.get('/*', (req, res, next)=>{
 
 app.get('contact', (req, res) => {
     console.log('contact');
+})
+
+app.post('/contact', (req, res, next)=>{
+    var option = {
+        name : req.body.name,
+        tel : req.body.tel,
+        body : req.body.message
+    }
+
+    Mail.send(option);
+    //res.end();
+    next();
 })
 
 app.get('/login', (req, res, next)=>{
