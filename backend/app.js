@@ -234,7 +234,7 @@ app.get('/login/facebook_oauth', passport.authenticate('facebook', {
     //next();
 })
 
-app.post('/contact', (req, res)=>{
+app.post('/contact', (req, res, next)=>{
     var option = {
         name : req.body.name,
         tel : req.body.tel,
@@ -242,7 +242,8 @@ app.post('/contact', (req, res)=>{
     }
 
     Mail.send(option);
-    res.end();
+    //res.end();
+    next();
 })
 
 app.get('/test', (req, res)=>{
