@@ -261,7 +261,7 @@ app.get('/*', (req, res, next)=>{
     next();
 })
 
-app.get('contact', (req, res) => {
+app.get('/contact', (req, res) => {
     console.log('contact');
 })
 
