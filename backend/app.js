@@ -234,7 +234,18 @@ app.get('/login/facebook_oauth', passport.authenticate('facebook', {
     //next();
 })
 
-
+app.get('/uesrs/:id', (req, res)=>{
+    User.findById(req.query.id, (err, user)=>{
+        if(!err){
+            console.log("UserInfo : " + user._id);
+            res.send(user);
+            //res.json({_name : "Test", _email : "", _id : "wefwefwefwef", _password : "wefwefwefwef"});
+            console.log('okokok');
+        }
+        else
+            console.log("can't find")
+    })
+})
 
 app.get('/test', (req, res)=>{
     if(req.user != undefined){
@@ -284,18 +295,7 @@ app.get('/contact/result', (req, res)=>{
     //     <a href="/">되돌아가기</a>`)
 })
 
-app.get('/uesrs/:id', (req, res)=>{
-    User.findById(req.query.id, (err, user)=>{
-        if(!err){
-            console.log("UserInfo : " + user._id);
-            res.json(user);
-            //res.json({_name : "Test", _email : "", _id : "wefwefwefwef", _password : "wefwefwefwef"});
-            console.log('okokok');
-        }
-        else
-            console.log("can't find")
-    })
-})
+
 
 app.get('/login', (req, res, next)=>{
     console.log('hello');
