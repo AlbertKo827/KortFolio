@@ -234,7 +234,7 @@ app.get('/login/facebook_oauth', passport.authenticate('facebook', {
     //next();
 })
 
-app.get('/uesrs/:id', (req, res)=>{
+app.get('/uesrs/:id', (req, res, next)=>{
     User.findById(req.query.id, (err, user)=>{
         if(!err){
             console.log("UserInfo : " + user._id);
@@ -245,6 +245,8 @@ app.get('/uesrs/:id', (req, res)=>{
         else
             console.log("can't find")
     })
+
+    next();
 })
 
 app.get('/test', (req, res)=>{
