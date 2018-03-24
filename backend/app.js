@@ -274,7 +274,7 @@ app.post('/contact', (req, res, next)=>{
 
     Mail.send(option);
     //res.end();
-    next();
+    //next();
 })
 
 app.get('/login', (req, res, next)=>{
