@@ -254,7 +254,7 @@ app.get('/test', (req, res)=>{
     }
 })
 
-app.get('/*', (req, res, next)=>{
+app.all('/*', (req, res, next)=>{
     res.sendFile(path.join(__dirname, 'view/index.html'));
     // res.json(req.user._id);
     //console.log()
@@ -274,7 +274,7 @@ app.post('/contact', (req, res, next)=>{
 
     Mail.send(option);
     //res.end();
-    //next();
+    next();
 })
 
 app.get('/login', (req, res, next)=>{
