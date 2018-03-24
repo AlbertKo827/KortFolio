@@ -274,7 +274,27 @@ app.post('/contact', (req, res, next)=>{
 
     Mail.send(option);
     //res.end();
-    next();
+    //next();
+    res.redirect('/contact/result');
+})
+
+app.get('/contact/result', (req, res)=>{
+    // res.send(`
+    //     <h1>완료</h1>
+    //     <a href="/">되돌아가기</a>`)
+})
+
+app.get('/uesrs/:id', (req, res)=>{
+    User.findById(req.query.id, (err, user)=>{
+        if(!err){
+            console.log("UserInfo : " + user._id);
+            res.json(user);
+            //res.json({_name : "Test", _email : "", _id : "wefwefwefwef", _password : "wefwefwefwef"});
+            console.log('okokok');
+        }
+        else
+            console.log("can't find")
+    })
 })
 
 app.get('/login', (req, res, next)=>{
