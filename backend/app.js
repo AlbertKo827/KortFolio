@@ -32,6 +32,10 @@ app.locals.pretty = true;
 
 app.use(express.static(path.join(__dirname, 'view')));
 
+app.set('views', path.join(__dirname, 'view'));
+app.set('view engine', 'ejs');
+app.engine('html', require('ejs').renderFile);
+
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:false}));
 app.use(cookieparser(Config.secretCookie));
@@ -272,7 +276,8 @@ app.get('/uesrs/:id', (req, res, next)=>{
 })
 
 app.all('/*', (req, res, next)=>{
-    res.sendFile(path.join(__dirname, 'view/index.html'));
+   // res.sendFile(path.join(__dirname, 'view/index.html'));
+    res.render(path.join(__dirname, 'view/index.html'));
     // res.json(req.user._id);
     //console.log()
     next();
