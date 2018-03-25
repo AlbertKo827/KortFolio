@@ -277,7 +277,7 @@ app.get('/uesrs/:id', (req, res, next)=>{
 
 app.all('/*', (req, res, next)=>{
    // res.sendFile(path.join(__dirname, 'view/index.html'));
-    res.render(path.join(__dirname, 'view/index.html'));
+    res.render(path.join(__dirname, 'view/index.html'),{test : "test"});
     // res.json(req.user._id);
     //console.log()
     next();
