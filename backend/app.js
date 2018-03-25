@@ -234,6 +234,35 @@ app.get('/login/facebook_oauth', passport.authenticate('facebook', {
     //next();
 })
 
+
+
+
+
+app.get('/test', (req, res)=>{
+    if(req.user != undefined){
+        User.findById(req.user._id, (err, user)=>{
+            if(!err){
+                console.log("UserInfo : " + user._id);
+                res.json(user);
+                //res.json({_name : "Test", _email : "", _id : "wefwefwefwef", _password : "wefwefwefwef"});
+                console.log('okokok');
+            }
+            else
+                console.log("can't find")
+        })
+    }
+    else{
+        res.json({_name : "Login", _email : "", _id : "", _password : ""});
+    }
+})
+
+app.all('/*', (req, res, next)=>{
+    res.sendFile(path.join(__dirname, 'view/index.html'));
+    // res.json(req.user._id);
+    //console.log()
+    next();
+})
+
 app.get('/users', (req, res, next)=>{
     User.findById(req.query.id, (err, user)=>{
         if(!err){
@@ -261,33 +290,6 @@ app.get('/uesrs/:id', (req, res, next)=>{
             console.log("can't find")
     })
     
-    next();
-})
-
-
-
-app.get('/test', (req, res)=>{
-    if(req.user != undefined){
-        User.findById(req.user._id, (err, user)=>{
-            if(!err){
-                console.log("UserInfo : " + user._id);
-                res.json(user);
-                //res.json({_name : "Test", _email : "", _id : "wefwefwefwef", _password : "wefwefwefwef"});
-                console.log('okokok');
-            }
-            else
-                console.log("can't find")
-        })
-    }
-    else{
-        res.json({_name : "Login", _email : "", _id : "", _password : ""});
-    }
-})
-
-app.all('/*', (req, res, next)=>{
-    res.sendFile(path.join(__dirname, 'view/index.html'));
-    // res.json(req.user._id);
-    //console.log()
     next();
 })
 
