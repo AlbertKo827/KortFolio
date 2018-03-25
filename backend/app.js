@@ -245,8 +245,6 @@ app.get('/uesrs/:id', (req, res, next)=>{
         else
             console.log("can't find")
     })
-
-    next();
 })
 
 app.get('/test', (req, res)=>{
