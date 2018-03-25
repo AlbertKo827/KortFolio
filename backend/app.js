@@ -247,6 +247,10 @@ app.get('/uesrs/:id', (req, res, next)=>{
     })
 })
 
+app.get('/users', (req, res)=>{
+    
+})
+
 app.get('/test', (req, res)=>{
     if(req.user != undefined){
         User.findById(req.user._id, (err, user)=>{
