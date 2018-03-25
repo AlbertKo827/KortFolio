@@ -256,28 +256,6 @@ app.get('/test', (req, res)=>{
     }
 })
 
-app.all('/*', (req, res, next)=>{
-    res.sendFile(path.join(__dirname, 'view/index.html'));
-    // res.json(req.user._id);
-    //console.log()
-    next();
-})
-
-app.get('/users', (req, res, next)=>{
-    User.findById(req.query.id, (err, user)=>{
-        if(!err){
-            console.log("UserInfo : " + user._id);
-            res.json(user);
-            //res.json({_name : "Test", _email : "", _id : "wefwefwefwef", _password : "wefwefwefwef"});
-            console.log('okokok');
-        }
-        else
-            console.log("can't find")
-    })
-
-    next();
-})
-
 app.get('/uesrs/:id', (req, res, next)=>{
     User.findById(req.params.id, (err, user)=>{
         if(!err){
@@ -292,6 +270,30 @@ app.get('/uesrs/:id', (req, res, next)=>{
     
     next();
 })
+
+app.all('/*', (req, res, next)=>{
+    res.sendFile(path.join(__dirname, 'view/index.html'));
+    // res.json(req.user._id);
+    //console.log()
+    next();
+})
+
+// app.get('/users', (req, res, next)=>{
+//     User.findById(req.query.id, (err, user)=>{
+//         if(!err){
+//             console.log("UserInfo : " + user._id);
+//             res.json(user);
+//             //res.json({_name : "Test", _email : "", _id : "wefwefwefwef", _password : "wefwefwefwef"});
+//             console.log('okokok');
+//         }
+//         else
+//             console.log("can't find")
+//     })
+
+//     next();
+// })
+
+
 
 app.get('/contact', (req, res) => {
     console.log('contact');
