@@ -235,16 +235,16 @@ app.get('/login/facebook_oauth', passport.authenticate('facebook', {
 })
 
 app.get('/users', (req, res, next)=>{
-    // User.findById(req.query.id, (err, user)=>{
-    //     if(!err){
-    //         console.log("UserInfo : " + user._id);
-    //         res.josn(user);
-    //         //res.json({_name : "Test", _email : "", _id : "wefwefwefwef", _password : "wefwefwefwef"});
-    //         console.log('okokok');
-    //     }
-    //     else
-    //         console.log("can't find")
-    // })
+    User.findById(req.query.id, (err, user)=>{
+        if(!err){
+            console.log("UserInfo : " + user._id);
+            res.josn(user);
+            //res.json({_name : "Test", _email : "", _id : "wefwefwefwef", _password : "wefwefwefwef"});
+            console.log('okokok');
+        }
+        else
+            console.log("can't find")
+    })
 
     next();
 })
