@@ -238,7 +238,7 @@ app.get('/uesrs/:id', (req, res, next)=>{
     User.findById(req.query.id, (err, user)=>{
         if(!err){
             console.log("UserInfo : " + user._id);
-            res.send(user);
+            res.josn(user);
             //res.json({_name : "Test", _email : "", _id : "wefwefwefwef", _password : "wefwefwefwef"});
             console.log('okokok');
         }
