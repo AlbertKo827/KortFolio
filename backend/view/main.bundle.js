@@ -521,6 +521,7 @@ RegisterComponent = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserinfoService; });
+/* unused harmony export TestModel */
 /* unused harmony export UserModel */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
@@ -569,6 +570,13 @@ var UserinfoService = (function () {
         // console.log('result : ' + this.result);
         // return this.result;
     };
+    UserinfoService.prototype.getTest = function () {
+        return this.http.get('/*').map(function (res) {
+            console.log("Response" + res);
+            return res.json();
+        })
+            .catch(this.handleErrorObservable);
+    };
     UserinfoService.prototype.handleErrorObservable = function (error) {
         console.error(error.message || error);
         return __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__["Observable"].throw(error.message || error);
@@ -579,6 +587,14 @@ UserinfoService = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object])
 ], UserinfoService);
+
+var TestModel = (function () {
+    function TestModel(test) {
+        this.test = test;
+    }
+    ;
+    return TestModel;
+}());
 
 var UserModel = (function () {
     function UserModel(_id, _password, _email, _name
@@ -716,8 +732,10 @@ var TitlebarComponent = (function () {
                 console.log("tests!! : " + _this.tests._name);
             }
         }, function (err) { return console.log(err); }, function () { return console.log('success'); });
-        console.log('testing now!');
-        console.log(this.tests);
+        this.UserService.getTest().subscribe(function (data) {
+            var a = data;
+            console.log("renderTest : " + a.test);
+        });
     };
     ///test
     TitlebarComponent.prototype.openMenu = function () {

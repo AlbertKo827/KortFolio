@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import { UserinfoService, UserModel } from '../service/userinfo.service'
+import { UserinfoService, UserModel, TestModel } from '../service/userinfo.service'
 
 @Component({
   selector: 'app-titlebar',
@@ -41,9 +41,14 @@ export class TitlebarComponent implements OnInit {
       () => console.log('success')
     );
 
-    console.log('testing now!');
-    console.log(this.tests);
-  }
+
+    this.UserService.getTest().subscribe(
+      data => {
+        var a : TestModel = data;
+        console.log("renderTest : " + a.test);
+      }
+    )
+}
 
   ///test
   openMenu(){

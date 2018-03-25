@@ -46,10 +46,27 @@ export class UserinfoService {
             // return this.result;
   }
 
+
+  getTest() : Observable<TestModel>{
+    return this.http.get('/*').map(
+      res => {
+        console.log("Response" + res);
+        return res.json();
+    })
+                                 .catch(
+      this.handleErrorObservable
+    );
+  }
   private handleErrorObservable (error: Response | any) {
     console.error(error.message || error);
     return Observable.throw(error.message || error);
 }
+}
+
+export class TestModel{
+  constructor(
+    public test : String
+  ){};
 }
 
 export class UserModel{
