@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router'
 import { Http, Response, Request, Headers, RequestOptions } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
 
@@ -14,7 +15,9 @@ export class UserinfoService {
 
   result : any;
 
-  constructor(private http : Http) { }
+
+
+  constructor(private http : Http, private router : Router) { }
 
   getUserName() : Observable<UserModel>{
      return this.http.get('/test').map(
@@ -48,7 +51,9 @@ export class UserinfoService {
 
 
   getTest() : Observable<TestModel>{
-    return this.http.get('/*').map(
+    console.log("current url : " + this.router.url);
+
+    return this.http.get(this.router.url).map(
       res => {
         console.log("Response" + res);
         return res.json();
