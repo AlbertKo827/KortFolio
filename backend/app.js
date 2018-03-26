@@ -61,6 +61,8 @@ app.get('/test', (req, res)=>{
     }
 })
 
+app.get()
+
 // app.get('/users', (req, res, next)=>{
 //     User.findById(req.query.id, (err, user)=>{
 //         if(!err){
