@@ -1,4 +1,4 @@
-const passport = require(passport);
+const passport = require('passport');
 
 const kakaoStrategy = require('passport-kakao').Strategy;
 const naverStrategy = require('passport-naver').Strategy;
