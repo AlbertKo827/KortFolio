@@ -100,8 +100,10 @@ app.get('/login', (req, res, next)=>{
 
 
 
-app.get('/contact', (req, res) => {
+app.get('/contact', (req, res, next) => {
     console.log('contact');
+
+    next();
 })
 
 app.post('/contact', (req, res, next)=>{
