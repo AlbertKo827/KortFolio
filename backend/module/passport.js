@@ -1,3 +1,5 @@
+const Config = require('./configuration');
+
 const passport = require('passport');
 
 const kakaoStrategy = require('passport-kakao').Strategy;
