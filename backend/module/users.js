@@ -1,5 +1,7 @@
-module.exports.User = (mongoose) => {
-    const UserInfoSchema = new mongoose.Schema({
+const Mongoose = require('mongoose');
+
+module.exports.User = () => {
+    const UserInfoSchema = new Mongoose.Schema({
         _id : String,
         _password : String,
         _email : String,
@@ -16,5 +18,5 @@ module.exports.User = (mongoose) => {
         }
     };
 
-    return mongoose.model('users', UserInfoSchema, 'users');
+    return Mongoose.model('users', UserInfoSchema, 'users');
 }
