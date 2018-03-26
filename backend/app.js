@@ -28,7 +28,7 @@ const route = express.Router();
 // const login = require('./routes/login.js')(route, passport);
 const register = require('./routes/register.js')(route);
 
-const User = require('./module/users.js').User();
+const User = require('./module/users.js').User;
 
 app.locals.pretty = true;
 

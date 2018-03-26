@@ -10,7 +10,7 @@ const kakaoStrategy = require('passport-kakao').Strategy;
 const naverStrategy = require('passport-naver').Strategy;
 const facebookStrategy = require('passport-facebook').Strategy;
 
-const User = require('./users.js').User()
+const User = require('./users.js').User;
 
 router.get('/login/auth/naver', passport.authenticate('naver', null),
         (req, res)=>{
