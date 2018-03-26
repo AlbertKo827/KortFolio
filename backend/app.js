@@ -200,50 +200,50 @@ passport.setPassport();
 
 
 
-app.get('/login/auth/naver', passport.authenticate('naver', null),
-        (req, res)=>{
-            console.log('connect naver');
-        })
+// app.get('/login/auth/naver', passport.authenticate('naver', null),
+//         (req, res)=>{
+//             console.log('connect naver');
+//         })
 
-app.get('/login/naver_oauth', passport.authenticate('naver', {
-    failureRedirect : '/login'
-}), (req, res, next)=>{
-    console.log('logining');
-    //res.end();
-    //res.json({message : "success", username : req.user._name});
-    res.redirect('/');
-    //next();
-})
+// app.get('/login/naver_oauth', passport.authenticate('naver', {
+//     failureRedirect : '/login'
+// }), (req, res, next)=>{
+//     console.log('logining');
+//     //res.end();
+//     //res.json({message : "success", username : req.user._name});
+//     res.redirect('/');
+//     //next();
+// })
 
-app.get('/login/auth/kakao', passport.authenticate('kakao', null),
-        (req, res)=>{
-            console.log('connect kakao');
-        })
+// app.get('/login/auth/kakao', passport.authenticate('kakao', null),
+//         (req, res)=>{
+//             console.log('connect kakao');
+//         })
 
-app.get('/login/kakao_oauth', passport.authenticate('kakao', {
-    failureRedirect : '/login'
-}), (req, res, next)=>{
-    console.log('logining');
-    //res.end();
-    res.redirect('/');
-    //next();
-})
+// app.get('/login/kakao_oauth', passport.authenticate('kakao', {
+//     failureRedirect : '/login'
+// }), (req, res, next)=>{
+//     console.log('logining');
+//     //res.end();
+//     res.redirect('/');
+//     //next();
+// })
 
-app.get('/login/auth/facebook', passport.authenticate('facebook', null),
-        (req, res)=>{
-            console.log('connect facebook');
-        })
+// app.get('/login/auth/facebook', passport.authenticate('facebook', null),
+//         (req, res)=>{
+//             console.log('connect facebook');
+//         })
 
-app.get('/login/facebook_oauth', passport.authenticate('facebook', {
-    failureRedirect : '/login'
-}), (req, res, next)=>{
-    console.log('logining');
-    //res.end();
-    res.redirect('/');
-    //next();
-})
+// app.get('/login/facebook_oauth', passport.authenticate('facebook', {
+//     failureRedirect : '/login'
+// }), (req, res, next)=>{
+//     console.log('logining');
+//     //res.end();
+//     res.redirect('/');
+//     //next();
+// })
 
-
+app.use('/', passport.passportRouter);
 
 
 
