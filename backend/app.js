@@ -25,7 +25,7 @@ const facebookStrategy = require('passport-facebook').Strategy;
 
 const route = express.Router();
 
-const login = require('./routes/login.js')(route, passport);
+// const login = require('./routes/login.js')(route, passport);
 const register = require('./routes/register.js')(route);
 
 const User = require('./module/users.js').User(Mongoose);
