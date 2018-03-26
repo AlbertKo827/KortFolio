@@ -272,7 +272,7 @@ app.get('/uesrs/:id', (req, res, next)=>{
             console.log("can't find")
     })
     
-    next();
+    //next();
 })
 
 app.all('/*', (req, res, next)=>{
