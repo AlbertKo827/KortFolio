@@ -47,7 +47,8 @@ app.get('/test', (req, res)=>{
         User.findById(req.user._id, (err, user)=>{
             if(!err){
                 console.log("UserInfo : " + user._id);
-                res.json(user);
+                res.render(path.join(__dirname, 'view/index.html'),user);
+                //res.json(user);
                 //res.json({_name : "Test", _email : "", _id : "wefwefwefwef", _password : "wefwefwefwef"});
                 console.log('okokok');
             }
@@ -59,29 +60,6 @@ app.get('/test', (req, res)=>{
         res.json({_name : "Login", _email : "", _id : "", _password : ""});
     }
 })
-
-app.get('/uesrs/:id', (req, res, next)=>{
-    User.findById(req.params.id, (err, user)=>{
-        if(!err){
-            console.log("UserInfo : " + user._id);
-            res.json(user);
-            //res.json({_name : "Test", _email : "", _id : "wefwefwefwef", _password : "wefwefwefwef"});
-            console.log('okokok');
-        }
-        else
-            console.log("can't find")
-    })
-    
-    //next();
-})
-
-app.get('/login', (req, res, next)=>{
-    console.log('hello');
-
-    next();
-});
-
-
 
 // app.get('/users', (req, res, next)=>{
 //     User.findById(req.query.id, (err, user)=>{
@@ -98,7 +76,20 @@ app.get('/login', (req, res, next)=>{
 //     next();
 // })
 
-
+app.get('/uesrs/:id', (req, res, next)=>{
+    User.findById(req.params.id, (err, user)=>{
+        if(!err){
+            console.log("UserInfo : " + user._id);
+            res.json(user);
+            //res.json({_name : "Test", _email : "", _id : "wefwefwefwef", _password : "wefwefwefwef"});
+            console.log('okokok');
+        }
+        else
+            console.log("can't find")
+    })
+    
+    next();
+})
 
 app.get('/contact', (req, res, next) => {
     console.log('contact');
@@ -125,9 +116,11 @@ app.get('/contact/result', (req, res)=>{
     //     <a href="/">되돌아가기</a>`)
 })
 
+app.get('/login', (req, res, next)=>{
+    console.log('hello');
 
-
-
+    next();
+});
 
 app.get('/logout', (req, res)=>{
     req.logout();
@@ -136,11 +129,9 @@ app.get('/logout', (req, res)=>{
 //app.use('/login', login);
 app.use('/register', register);
 
-
-
 app.get('/*', (req, res, next)=>{
     // res.sendFile(path.join(__dirname, 'view/index.html'));
-     res.render(path.join(__dirname, 'view/index.html'),{test : "test"});
+     res.render(path.join(__dirname, 'view/index.html'));
      // res.json(req.user._id);
      //console.log()
      next();
