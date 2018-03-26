@@ -81,13 +81,7 @@ app.get('/login', (req, res, next)=>{
     next();
 });
 
-app.all('/*', (req, res, next)=>{
-   // res.sendFile(path.join(__dirname, 'view/index.html'));
-    res.render(path.join(__dirname, 'view/index.html'),{test : "test"});
-    // res.json(req.user._id);
-    //console.log()
-    next();
-})
+
 
 // app.get('/users', (req, res, next)=>{
 //     User.findById(req.query.id, (err, user)=>{
@@ -142,6 +136,12 @@ app.use('/register', register);
 
 
 
-
+app.get('/*', (req, res, next)=>{
+    // res.sendFile(path.join(__dirname, 'view/index.html'));
+     res.render(path.join(__dirname, 'view/index.html'),{test : "test"});
+     // res.json(req.user._id);
+     //console.log()
+     next();
+ })
 
 Config.serverOn(app);
