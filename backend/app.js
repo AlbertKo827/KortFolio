@@ -42,7 +42,7 @@ passport.setPassport();
 ///////////route
 app.use('/', passport.passportRouter);
 
-app.get('/test', (req, res)=>{
+app.get('/test', (req, res, next)=>{
     if(req.user != undefined){
         User.findById(req.user._id, (err, user)=>{
             if(!err){
@@ -59,10 +59,12 @@ app.get('/test', (req, res)=>{
     else{
         res.json({_name : "Login", _email : "", _id : "", _password : ""});
     }
+
+    next();
 })
 
 app.get('/user/info', (req, res, next)=>{
-    
+
 })
 
 // app.get('/users', (req, res, next)=>{
