@@ -44,13 +44,13 @@ app.use('/', passport.passportRouter);
 
 app.get('/test', (req, res, next)=>{
     res.setHeader("Content-Type", "application/json");
-    
+
     if(req.user != undefined){
         User.findById(req.user._id, (err, user)=>{
             if(!err){
                 console.log("UserInfo : " + user._id);
-                res.render(path.join(__dirname, 'view/index.html'), user);
-                //res.json(user);
+                //res.render(path.join(__dirname, 'view/index.html'), user);
+                res.json(user);
                 //res.json({_name : "Test", _email : "", _id : "wefwefwefwef", _password : "wefwefwefwef"});
                 console.log('okokok');
             }
