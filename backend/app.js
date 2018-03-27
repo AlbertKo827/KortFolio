@@ -49,8 +49,8 @@ app.get('/test', (req, res, next)=>{
         User.findById(req.user._id, (err, user)=>{
             if(!err){
                 console.log("UserInfo : " + user._id);
-                //res.render(path.join(__dirname, 'view/index.html'), user);
-                res.json(user);
+                res.render(path.join(__dirname, 'view/index.html'), {test : "test"});
+                //res.json(user);
                 //res.json({_name : "Test", _email : "", _id : "wefwefwefwef", _password : "wefwefwefwef"});
                 console.log('okokok');
             }
@@ -137,12 +137,11 @@ app.get('/logout', (req, res)=>{
 //app.use('/login', login);
 app.use('/register', register);
 
-app.get('/*', (req, res, next)=>{
+app.get('/*', (req, res)=>{
      res.sendFile(path.join(__dirname, 'view/index.html'));
      //res.render(path.join(__dirname, 'view/index.html'));
      // res.json(req.user._id);
      //console.log()
-     next();
  })
 
 Config.serverOn(app);
