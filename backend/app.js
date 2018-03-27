@@ -43,6 +43,8 @@ passport.setPassport();
 app.use('/', passport.passportRouter);
 
 app.get('/test', (req, res, next)=>{
+    res.setHeader("Content-Type", "application/json");
+    
     if(req.user != undefined){
         User.findById(req.user._id, (err, user)=>{
             if(!err){
