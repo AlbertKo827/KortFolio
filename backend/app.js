@@ -59,7 +59,7 @@ app.get('/test', (req, res, next)=>{
         })
     }
     else{
-        res.json({_name : "Login", _email : "", _id : "", _password : ""});
+        res.json({_name : "Login", _email : "", _id : "", _password : ""}).setHeader("Content-Type", "application/json");
     }
 
     next();
