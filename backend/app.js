@@ -136,8 +136,8 @@ app.get('/logout', (req, res)=>{
 app.use('/register', register);
 
 app.get('/*', (req, res, next)=>{
-    // res.sendFile(path.join(__dirname, 'view/index.html'));
-     res.render(path.join(__dirname, 'view/index.html'));
+     res.sendFile(path.join(__dirname, 'view/index.html'));
+     //res.render(path.join(__dirname, 'view/index.html'));
      // res.json(req.user._id);
      //console.log()
      next();
