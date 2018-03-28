@@ -554,24 +554,11 @@ var UserinfoService = (function () {
         this.router = router;
     }
     UserinfoService.prototype.getUserName = function () {
-        return this.http.get('/test').map(function (res) {
+        return this.http.get('/api/user').map(function (res) {
             console.log("Response" + res);
             return res.json();
         })
             .catch(this.handleErrorObservable);
-        //  .map((res) => res.json())
-        //  .subscribe(data => {
-        //    console.log('data : ' + data.String);
-        //    this.result = data;
-        //  }, err =>{
-        //    console.log('err : ' + err);
-        //  },
-        // ()=>{
-        //   console.log(this.result);
-        //   return this.result;
-        // });
-        // console.log('result : ' + this.result);
-        // return this.result;
     };
     UserinfoService.prototype.getTest = function () {
         console.log("current url : " + this.router.url);
@@ -740,6 +727,10 @@ var TitlebarComponent = (function () {
             var a = data;
             console.log("renderTest : " + a.test);
         });
+        if (sessionStorage.getItem("user")) {
+            // Restore the contents of the text field
+            console.log(sessionStorage.getItem("user"));
+        }
     };
     ///test
     TitlebarComponent.prototype.openMenu = function () {

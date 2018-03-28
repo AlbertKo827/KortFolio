@@ -20,7 +20,7 @@ export class UserinfoService {
   constructor(private http : Http, private router : Router) { }
 
   getUserName() : Observable<UserModel>{
-     return this.http.get('/test').map(
+     return this.http.get('/api/user').map(
       res => {
         console.log("Response" + res);
         return res.json();
@@ -28,27 +28,7 @@ export class UserinfoService {
                                  .catch(
       this.handleErrorObservable
     );
-
-  
-
-
-
-            //  .map((res) => res.json())
-            //  .subscribe(data => {
-            //    console.log('data : ' + data.String);
-            //    this.result = data;
-            //  }, err =>{
-            //    console.log('err : ' + err);
-            //  },
-            // ()=>{
-            //   console.log(this.result);
-            //   return this.result;
-            // });
-            
-            // console.log('result : ' + this.result);
-            // return this.result;
   }
-
 
   getTest() : Observable<TestModel>{
     console.log("current url : " + this.router.url);

@@ -42,9 +42,7 @@ passport.setPassport();
 ///////////route
 app.use('/', passport.passportRouter);
 
-app.get('/test', (req, res, next)=>{
-    res.setHeader("Content-Type", "application/json");
-
+app.get('/api/user/:id', (req, res)=>{
     if(req.user != undefined){
         User.findById(req.user._id, (err, user)=>{
             if(!err){
@@ -59,44 +57,27 @@ app.get('/test', (req, res, next)=>{
         })
     }
     else{
-        res.json({_name : "Login", _email : "", _id : "", _password : ""}).setHeader("Content-Type", "application/json");
+        res.json({_name : "Login", _email : "", _id : "", _password : ""});
     }
-
-    next();
 })
 
-app.get('/user/info', (req, res, next)=>{
-
-})
-
-// app.get('/users', (req, res, next)=>{
-//     User.findById(req.query.id, (err, user)=>{
-//         if(!err){
-//             console.log("UserInfo : " + user._id);
-//             res.json(user);
-//             //res.json({_name : "Test", _email : "", _id : "wefwefwefwef", _password : "wefwefwefwef"});
-//             console.log('okokok');
-//         }
-//         else
-//             console.log("can't find")
-//     })
-
-//     next();
-// })
-
-app.get('/uesrs/:id', (req, res, next)=>{
-    User.findById(req.params.id, (err, user)=>{
-        if(!err){
-            console.log("UserInfo : " + user._id);
-            res.json(user);
-            //res.json({_name : "Test", _email : "", _id : "wefwefwefwef", _password : "wefwefwefwef"});
-            console.log('okokok');
-        }
-        else
-            console.log("can't find")
-    })
-    
-    next();
+app.get('/api/user', (req, res, next)=>{
+    if(req.user != undefined){
+        User.findById(req.user._id, (err, user)=>{
+            if(!err){
+                console.log("UserInfo : " + user._id);
+                res.render(path.join(__dirname, 'view/index.html'), {test : "test"});
+                //res.json(user);
+                //res.json({_name : "Test", _email : "", _id : "wefwefwefwef", _password : "wefwefwefwef"});
+                console.log('okokok');
+            }
+            else
+                console.log("can't find")
+        })
+    }
+    else{
+        res.json({_name : "Login", _email : "", _id : "", _password : ""});
+    }
 })
 
 app.get('/contact', (req, res, next) => {
@@ -118,10 +99,11 @@ app.post('/contact', (req, res, next)=>{
     res.redirect('/contact/result');
 })
 
-app.get('/contact/result', (req, res)=>{
+app.get('/contact/result', (req, res, next)=>{
     // res.send(`
     //     <h1>완료</h1>
     //     <a href="/">되돌아가기</a>`)
+    next();
 })
 
 app.get('/login', (req, res, next)=>{

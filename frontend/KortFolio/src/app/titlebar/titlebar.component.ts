@@ -48,6 +48,11 @@ export class TitlebarComponent implements OnInit {
         console.log("renderTest : " + a.test);
       }
     )
+
+    if (sessionStorage.getItem("user")) {
+      // Restore the contents of the text field
+      console.log(sessionStorage.getItem("user"));
+    }
 }
 
   ///test

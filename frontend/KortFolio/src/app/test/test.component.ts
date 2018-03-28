@@ -17,7 +17,7 @@ export class TestComponent implements OnInit {
       err => alert(err),
       () => console.log("success")
     );
-    
+
     console.log("test : " + this.test._name);
   }
 
