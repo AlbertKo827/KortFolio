@@ -20,7 +20,7 @@ export class UserinfoService {
   constructor(private http : Http, private router : Router) { }
 
   getUserName() : Observable<UserModel>{
-     return this.http.get('/api/user').map(
+     return this.http.get('api/user').map(
       res => {
         console.log("Response" + res);
         return res.json();

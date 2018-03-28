@@ -554,7 +554,7 @@ var UserinfoService = (function () {
         this.router = router;
     }
     UserinfoService.prototype.getUserName = function () {
-        return this.http.get('/api/user').map(function (res) {
+        return this.http.get('api/user').map(function (res) {
             console.log("Response" + res);
             return res.json();
         })
