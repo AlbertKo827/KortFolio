@@ -19,7 +19,7 @@ export class TitlebarComponent implements OnInit {
 
   menuStatus : boolean = false;
 
-  public tests : UserModel;
+  public userdata : UserModel;
 
   constructor(private UserService : UserinfoService ) {
 
@@ -29,12 +29,12 @@ export class TitlebarComponent implements OnInit {
     //Http
     this.UserService.getUserSelf().subscribe( 
       data => {
-        this.tests = data;
-        if(this.tests === undefined){
+        this.userdata = data;
+        if(this.userdata === undefined){
           console.log('undefined!!!!');
         } else{
           console.log("data!! : " + data);
-          console.log("tests!! : " + this.tests.user_json._name);
+          console.log("tests!! : " + this.userdata.user_json._name);
         }
       },
       err => console.log(err),

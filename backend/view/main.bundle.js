@@ -671,7 +671,7 @@ var _a;
 /***/ "../../../../../src/app/titlebar/titlebar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-kortfolio navbar-fixed-top\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n            <!--<a class=\"navbar-brand\">\n              <img src=\"assets/img/ngx-bootstrap.svg\" class=\"logo\">\n            </a>-->\n            <span class=\"navbar-brand glyphicon glyphicon-align-justify\" id=\"kortfolio-menu\" (click)=\"openMenu()\"></span>\n            <a href=\"\" style=\"margin:auto 0;\"><span class=\"navbar-brand\">KortFolio</span></a>\n        </div>\n\n        <ul class=\"nav navbar-nav navbar-left\" id=\"menu\">\n            <li>\n                <a href=\"contact\">Contact</a>\n            </li>\n            <li><a href=\"http://ifyoudontknow-youcandothis.tistory.com\">MyBlog</a></li>\n            <li class=\"dropdown\" dropdown> <!-- {1} -->\n                <a dropdownToggle role=\"button\"> <!-- {2} -->\n                  <span class=\"glyphicon glyphicon-cog\"></span>\n                  <span class=\"caret\"></span></a>\n                <ul *dropdownMenu class=\"dropdown-menu\"> <!-- {3} -->\n                    <!--<li><a href=\"#\">공사중이라고욧!!</a></li>\n                    <li role=\"separator\" class=\"divider\"></li>-->\n                    <li>\n                        <a href=\"login\">\n                            <span class=\"glyphicon glyphicon-user\" style=\"margin-right:1rem;\"></span>\n                            Login\n                        </a>\n                    </li>\n                </ul>\n            </li>\n        </ul>\n\n        <ul class=\"nav navbar-nav navbar-right\">\n            <li style=\"float : right;\"><a href=\"users?id={{tests?._id}}\">{{tests?._name}}</a></li>\n        </ul>\n\n    </div>\n</nav>"
+module.exports = "<nav class=\"navbar navbar-kortfolio navbar-fixed-top\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n            <!--<a class=\"navbar-brand\">\n              <img src=\"assets/img/ngx-bootstrap.svg\" class=\"logo\">\n            </a>-->\n            <span class=\"navbar-brand glyphicon glyphicon-align-justify\" id=\"kortfolio-menu\" (click)=\"openMenu()\"></span>\n            <a href=\"\" style=\"margin:auto 0;\"><span class=\"navbar-brand\">KortFolio</span></a>\n        </div>\n\n        <ul class=\"nav navbar-nav navbar-left\" id=\"menu\">\n            <li>\n                <a href=\"contact\">Contact</a>\n            </li>\n            <li><a href=\"http://ifyoudontknow-youcandothis.tistory.com\">MyBlog</a></li>\n            <li class=\"dropdown\" dropdown> <!-- {1} -->\n                <a dropdownToggle role=\"button\"> <!-- {2} -->\n                  <span class=\"glyphicon glyphicon-cog\"></span>\n                  <span class=\"caret\"></span></a>\n                <ul *dropdownMenu class=\"dropdown-menu\"> <!-- {3} -->\n                    <!--<li><a href=\"#\">공사중이라고욧!!</a></li>\n                    <li role=\"separator\" class=\"divider\"></li>-->\n                    <li>\n                        <a href=\"login\">\n                            <span class=\"glyphicon glyphicon-user\" style=\"margin-right:1rem;\"></span>\n                            Login\n                        </a>\n                    </li>\n                </ul>\n            </li>\n        </ul>\n\n        <ul class=\"nav navbar-nav navbar-right\">\n            <li style=\"float : right;\"><a href=\"users?id={{userdata?.user_json._index}}\">{{tests?.user_json._name}}</a></li>\n        </ul>\n\n    </div>\n</nav>"
 
 /***/ }),
 
@@ -708,13 +708,13 @@ var TitlebarComponent = (function () {
         var _this = this;
         //Http
         this.UserService.getUserSelf().subscribe(function (data) {
-            _this.tests = data;
-            if (_this.tests === undefined) {
+            _this.userdata = data;
+            if (_this.userdata === undefined) {
                 console.log('undefined!!!!');
             }
             else {
                 console.log("data!! : " + data);
-                console.log("tests!! : " + _this.tests.user_json._name);
+                console.log("tests!! : " + _this.userdata.user_json._name);
             }
         }, function (err) { return console.log(err); }, function () { return console.log('success'); });
     };
