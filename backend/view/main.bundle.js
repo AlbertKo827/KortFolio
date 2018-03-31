@@ -144,7 +144,7 @@ AppModule = __decorate([
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* RouterModule */].forRoot([
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* RouterModule */].forRoot([
                 {
                     path: '',
                     component: __WEBPACK_IMPORTED_MODULE_9__introduce_introduce_component__["a" /* IntroduceComponent */]
@@ -553,16 +553,16 @@ var UserinfoService = (function () {
         this.http = http;
         this.router = router;
     }
-    UserinfoService.prototype.getUserName = function () {
-        return this.http.get('api/user').map(function (res) {
+    UserinfoService.prototype.getUser = function (id) {
+        return this.http.get('api/user/' + id).map(function (res) {
             console.log("Response" + res);
             return res.json();
         })
             .catch(this.handleErrorObservable);
     };
-    UserinfoService.prototype.getTest = function () {
+    UserinfoService.prototype.getUserSelf = function () {
         console.log("current url : " + this.router.url);
-        return this.http.get(this.router.url).map(function (res) {
+        return this.http.get('api/user').map(function (res) {
             console.log("Response" + res);
             return res.json();
         })
@@ -576,7 +576,7 @@ var UserinfoService = (function () {
 }());
 UserinfoService = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], UserinfoService);
 
 var TestModel = (function () {
@@ -588,14 +588,10 @@ var TestModel = (function () {
 }());
 
 var UserModel = (function () {
-    function UserModel(_id, _password, _email, _name
-        // public message : String,
-        // public usernaem : String
-    ) {
-        this._id = _id;
-        this._password = _password;
-        this._email = _email;
-        this._name = _name;
+    function UserModel(login_status, status, user_json) {
+        this.login_status = login_status;
+        this.status = status;
+        this.user_json = user_json;
     }
     ;
     return UserModel;
@@ -654,9 +650,7 @@ var TestComponent = (function () {
         this.userinfo = userinfo;
     }
     TestComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.userinfo.getUserName().subscribe(function (data) { return _this.test; }, function (err) { return alert(err); }, function () { return console.log("success"); });
-        console.log("test : " + this.test._name);
+        console.log("test : " + this.test.user_json._name);
     };
     return TestComponent;
 }());
@@ -677,7 +671,7 @@ var _a;
 /***/ "../../../../../src/app/titlebar/titlebar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-kortfolio navbar-fixed-top\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n            <!--<a class=\"navbar-brand\">\n              <img src=\"assets/img/ngx-bootstrap.svg\" class=\"logo\">\n            </a>-->\n            <span class=\"navbar-brand glyphicon glyphicon-align-justify\" id=\"kortfolio-menu\" (click)=\"openMenu()\"></span>\n            <a href=\"\" style=\"margin:auto 0;\"><span class=\"navbar-brand\">KortFolio</span></a>\n        </div>\n\n        <ul class=\"nav navbar-nav navbar-left\" id=\"menu\">\n            <li>\n                <a href=\"contact\">Contact</a>\n            </li>\n            <li><a href=\"study\">MyStudy</a></li>\n            <li class=\"dropdown\" dropdown> <!-- {1} -->\n                <a dropdownToggle role=\"button\"> <!-- {2} -->\n                  <span class=\"glyphicon glyphicon-cog\"></span>\n                  <span class=\"caret\"></span></a>\n                <ul *dropdownMenu class=\"dropdown-menu\"> <!-- {3} -->\n                    <!--<li><a href=\"#\">공사중이라고욧!!</a></li>\n                    <li role=\"separator\" class=\"divider\"></li>-->\n                    <li>\n                        <a href=\"login\">\n                            <span class=\"glyphicon glyphicon-user\" style=\"margin-right:1rem;\"></span>\n                            Login\n                        </a>\n                    </li>\n                </ul>\n            </li>\n        </ul>\n\n        <ul class=\"nav navbar-nav navbar-right\">\n            <li style=\"float : right;\"><a href=\"users?id={{tests?._id}}\">{{tests?._name}}</a></li>\n        </ul>\n\n    </div>\n</nav>"
+module.exports = "<nav class=\"navbar navbar-kortfolio navbar-fixed-top\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n            <!--<a class=\"navbar-brand\">\n              <img src=\"assets/img/ngx-bootstrap.svg\" class=\"logo\">\n            </a>-->\n            <span class=\"navbar-brand glyphicon glyphicon-align-justify\" id=\"kortfolio-menu\" (click)=\"openMenu()\"></span>\n            <a href=\"\" style=\"margin:auto 0;\"><span class=\"navbar-brand\">KortFolio</span></a>\n        </div>\n\n        <ul class=\"nav navbar-nav navbar-left\" id=\"menu\">\n            <li>\n                <a href=\"contact\">Contact</a>\n            </li>\n            <li><a href=\"http://ifyoudontknow-youcandothis.tistory.com\">MyBlog</a></li>\n            <li class=\"dropdown\" dropdown> <!-- {1} -->\n                <a dropdownToggle role=\"button\"> <!-- {2} -->\n                  <span class=\"glyphicon glyphicon-cog\"></span>\n                  <span class=\"caret\"></span></a>\n                <ul *dropdownMenu class=\"dropdown-menu\"> <!-- {3} -->\n                    <!--<li><a href=\"#\">공사중이라고욧!!</a></li>\n                    <li role=\"separator\" class=\"divider\"></li>-->\n                    <li>\n                        <a href=\"login\">\n                            <span class=\"glyphicon glyphicon-user\" style=\"margin-right:1rem;\"></span>\n                            Login\n                        </a>\n                    </li>\n                </ul>\n            </li>\n        </ul>\n\n        <ul class=\"nav navbar-nav navbar-right\">\n            <li style=\"float : right;\"><a href=\"users?id={{tests?._id}}\">{{tests?._name}}</a></li>\n        </ul>\n\n    </div>\n</nav>"
 
 /***/ }),
 
@@ -713,24 +707,16 @@ var TitlebarComponent = (function () {
     TitlebarComponent.prototype.ngOnInit = function () {
         var _this = this;
         //Http
-        this.UserService.getUserName().subscribe(function (data) {
+        this.UserService.getUserSelf().subscribe(function (data) {
             _this.tests = data;
             if (_this.tests === undefined) {
                 console.log('undefined!!!!');
             }
             else {
                 console.log("data!! : " + data);
-                console.log("tests!! : " + _this.tests._name);
+                console.log("tests!! : " + _this.tests.user_json._name);
             }
         }, function (err) { return console.log(err); }, function () { return console.log('success'); });
-        this.UserService.getTest().subscribe(function (data) {
-            var a = data;
-            console.log("renderTest : " + a.test);
-        });
-        if (sessionStorage.getItem("user")) {
-            // Restore the contents of the text field
-            console.log(sessionStorage.getItem("user"));
-        }
     };
     ///test
     TitlebarComponent.prototype.openMenu = function () {
@@ -778,7 +764,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/userinfo/userinfo.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  userinfo works!\n</p>\n"
+module.exports = "{{userdata}}\n"
 
 /***/ }),
 
@@ -788,6 +774,8 @@ module.exports = "<p>\n  userinfo works!\n</p>\n"
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserinfoComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__ = __webpack_require__("../../../../../src/app/service/userinfo.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -798,10 +786,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var UserinfoComponent = (function () {
-    function UserinfoComponent() {
+    function UserinfoComponent(userinfo, activatedRoute) {
+        this.userinfo = userinfo;
+        this.activatedRoute = activatedRoute;
     }
     UserinfoComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.activatedRoute.params.subscribe(function (params) {
+            _this.userId = params['id'];
+            console.log(_this.userId);
+        });
+        this.userinfo.getUser(this.userId).subscribe(function (data) { return _this.userdata; }, function (err) { return alert(err); }, function () { return console.log("success"); });
     };
     return UserinfoComponent;
 }());
@@ -811,9 +809,10 @@ UserinfoComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/userinfo/userinfo.component.html"),
         styles: [__webpack_require__("../../../../../src/app/userinfo/userinfo.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__["a" /* UserinfoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__["a" /* UserinfoService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object])
 ], UserinfoComponent);
 
+var _a, _b;
 //# sourceMappingURL=userinfo.component.js.map
 
 /***/ }),

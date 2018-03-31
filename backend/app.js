@@ -42,37 +42,89 @@ passport.setPassport();
 ///////////route
 app.use('/', passport.passportRouter);
 
-app.get('/api/user/:id', (req, res)=>{
-    if(req.user != undefined){
-        User.findById(req.user._id, (err, user)=>{
-            if(!err){
-                console.log("UserInfo : " + user._id);
-                res.render(path.join(__dirname, 'view/index.html'), {test : "test"});
-                //res.json(user);
-                //res.json({_name : "Test", _email : "", _id : "wefwefwefwef", _password : "wefwefwefwef"});
-                console.log('okokok');
+app.get('/api/user/:id', (req, res)=>{//id 값의 유저 정보를 가져온다
+    User.findById(req.param.id, (err, user)=>{//id 값의 유저 정보를 찾는다
+        if(!err){//정상 동작
+            if((req.user != undefined) && (req.user._index == req.param.id)){//클라이언트가 로그인 상태 이며 현재 user와 동일할 때
+                res.json({
+                    login_status : true,
+                    status : "",
+                    user_json : user
+                })
             }
-            else
-                console.log("can't find")
-        })
-    }
-    else{
-        res.json({_name : "Login", _email : "", _id : "", _password : ""});
-    }
+            else{//로그 아웃 상태 일 때
+                res.json({
+                    login_status : false,
+                    status : "",
+                    user_json : user
+                })
+            }
+        }
+        else{//찾기 에러가 발생했을 때
+            res.json({
+                login_status : false,
+                status : "err",
+                user_json : {
+                    _name : "",
+                    _email : "",
+                    _pw : "",
+                    _index : ""
+                }
+            })
+        }
+    })
+
+
+
+
+    // if(req.user != undefined){//로그인 됬을 때
+    //     User.findById(req.user._id, (err, user)=>{
+    //         if(!err){
+    //             console.log("UserInfo : " + user._id);
+    //             res.render(path.join(__dirname, 'view/index.html'), {test : "test"});
+    //             //res.json(user);
+    //             //res.json({_name : "Test", _email : "", _id : "wefwefwefwef", _password : "wefwefwefwef"});
+    //             console.log('okokok');
+    //         }
+    //         else
+    //             console.log("can't find")
+    //     })
+    // }
+    // else{//로그아웃 상태 일때
+    //     res.json({_name : "Login", _email : "", _id : "", _password : ""});
+    // }
 })
 
 app.get('/api/user', (req, res, next)=>{
     if(req.user != undefined){
-        User.findById(req.user._id, (err, user)=>{
+        User.findById(req.user._index, (err, user)=>{
             if(!err){
-                res.json(user);
+                res.json({
+                    login_status : true,
+                    status : "",
+                    user_json : user
+                })
             }
-            else
-                console.log("can't find")
+            else{
+                res.json({
+                    login_status : false,
+                    status : "err",
+                    user_json : user
+                })
+            }
         })
     }
     else{
-        res.json({_name : "Login", _email : "", _id : "", _password : ""});
+        res.json({
+            login_status : false,
+            status : "",
+            user_json : {
+                _name : "Login",
+                _email : "",
+                _pw : "",
+                _index : ""
+            }
+        })
     }
 })
 

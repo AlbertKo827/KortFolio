@@ -19,8 +19,8 @@ export class UserinfoService {
 
   constructor(private http : Http, private router : Router) { }
 
-  getUserName() : Observable<UserModel>{
-     return this.http.get('api/user').map(
+  getUser(id : String) : Observable<UserModel>{
+     return this.http.get('api/user/' + id).map(
       res => {
         console.log("Response" + res);
         return res.json();
@@ -30,10 +30,10 @@ export class UserinfoService {
     );
   }
 
-  getTest() : Observable<TestModel>{
+  getUserSelf() : Observable<UserModel>{
     console.log("current url : " + this.router.url);
 
-    return this.http.get(this.router.url).map(
+    return this.http.get('api/user').map(
       res => {
         console.log("Response" + res);
         return res.json();
@@ -42,10 +42,11 @@ export class UserinfoService {
       this.handleErrorObservable
     );
   }
+
   private handleErrorObservable (error: Response | any) {
     console.error(error.message || error);
     return Observable.throw(error.message || error);
-}
+  }
 }
 
 export class TestModel{
@@ -56,11 +57,13 @@ export class TestModel{
 
 export class UserModel{
   constructor(
-    public _id : String,
-    public _password : String,
-    public  _email : String,
-    public  _name : String
-    // public message : String,
-    // public usernaem : String
+    public login_status : Boolean,
+    public status : String,
+    public user_json : {
+        _name : String,
+        _email : String,
+        _pw : String,
+        _index : Number
+    }
   ){};
 }

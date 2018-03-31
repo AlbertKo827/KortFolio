@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserinfoService, UserModel } from '../service/userinfo.service';
+import { Params } from '@angular/router'
 
 @Component({
   selector: 'app-test',
@@ -12,13 +13,8 @@ export class TestComponent implements OnInit {
   constructor(private userinfo : UserinfoService) { }
 
   ngOnInit() {
-    this.userinfo.getUserName().subscribe(
-      data => this.test,
-      err => alert(err),
-      () => console.log("success")
-    );
 
-    console.log("test : " + this.test._name);
+    console.log("test : " + this.test.user_json._name);
   }
 
 }

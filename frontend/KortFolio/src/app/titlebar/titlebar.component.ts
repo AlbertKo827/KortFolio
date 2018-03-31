@@ -27,32 +27,19 @@ export class TitlebarComponent implements OnInit {
 
   ngOnInit() {
     //Http
-    this.UserService.getUserName().subscribe( 
+    this.UserService.getUserSelf().subscribe( 
       data => {
         this.tests = data;
         if(this.tests === undefined){
           console.log('undefined!!!!');
         } else{
           console.log("data!! : " + data);
-          console.log("tests!! : " + this.tests._name);
+          console.log("tests!! : " + this.tests.user_json._name);
         }
       },
       err => console.log(err),
       () => console.log('success')
     );
-
-
-    this.UserService.getTest().subscribe(
-      data => {
-        var a : TestModel = data;
-        console.log("renderTest : " + a.test);
-      }
-    )
-
-    if (sessionStorage.getItem("user")) {
-      // Restore the contents of the text field
-      console.log(sessionStorage.getItem("user"));
-    }
 }
 
   ///test
