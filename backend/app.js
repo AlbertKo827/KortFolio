@@ -97,6 +97,8 @@ app.get('/api/user/:id', (req, res)=>{//id 값의 유저 정보를 가져온다
 })
 
 app.get('/api/user', (req, res, next)=>{
+console.log("api user : " + req.user);
+
     if(req.user != undefined){
         User.findById(req.user._index, (err, user)=>{
             console.log("user!!!! : " + user);
