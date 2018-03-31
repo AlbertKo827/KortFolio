@@ -77,7 +77,7 @@ module.exports.setPassport = () => {
             var _profile = profile._json;
 
             User.findOne({//DB에서 회원 정보를 찾는다.
-                '_id': profile.id
+                '_index': profile.id
             }, (err, user)=>{
 
                 if(err){//DB Error!
@@ -121,7 +121,7 @@ module.exports.setPassport = () => {
             console.log(profile);
 
             User.findOne({//DB에서 회원 정보를 찾는다.
-                '_id': profile.id
+                '_index': profile.id
             }, (err, user)=>{
 
                 if(err){//DB Error!
@@ -165,7 +165,7 @@ module.exports.setPassport = () => {
             console.log(profile);
 
             User.findOne({//DB에서 회원 정보를 찾는다.
-                '_id': profile.id
+                '_index': profile.id
             }, (err, user)=>{
 
                 if(err){//DB Error!
