@@ -46,7 +46,7 @@ app.get('/api/user/:id', (req, res)=>{//id 값의 유저 정보를 가져온다
     User.findOne({'_index' : req.param.id}, (err, user)=>{//id 값의 유저 정보를 찾는다
         
         if(!err){//정상 동작
-            
+
             delete user._id;
             console.log("user!!!! : " + user);
 
@@ -115,6 +115,12 @@ console.log("api user : " + req.user);
             }
         })
     }
+})
+
+app.get('/user/:id', (req, res, next)=>{
+    console.log('user');
+
+    next();
 })
 
 app.get('/contact', (req, res, next) => {

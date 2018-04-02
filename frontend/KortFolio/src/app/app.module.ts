@@ -58,7 +58,7 @@ import { ContactResultComponent } from './contact-result/contact-result.componen
         component:ContactResultComponent
       },
       {
-        path:'users/:id',
+        path:'user/:id',
         component:UserinfoComponent
       },
       {
