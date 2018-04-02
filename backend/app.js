@@ -43,6 +43,7 @@ passport.setPassport();
 app.use('/', passport.passportRouter);
 
 app.get('/api/user/:id', (req, res)=>{//id 값의 유저 정보를 가져온다
+    console.log("api user : " + req.user);
     console.log("param : " + req.query.id);
 
     User.findOne({'_index' : req.query.id}, (err, user)=>{//id 값의 유저 정보를 찾는다
