@@ -43,7 +43,7 @@ passport.setPassport();
 app.use('/', passport.passportRouter);
 
 app.get('/api/user/:id', (req, res)=>{//id 값의 유저 정보를 가져온다
-    User.findById(req.param.id, (err, user)=>{//id 값의 유저 정보를 찾는다
+    User.findOne({'_index' : req.param.id}, (err, user)=>{//id 값의 유저 정보를 찾는다
         if(!err){//정상 동작
             if((req.user != undefined) && (req.user._index == req.param.id)){//클라이언트가 로그인 상태 이며 현재 user와 동일할 때
                 res.json({
@@ -99,7 +99,7 @@ app.get('/api/user', (req, res, next)=>{
 console.log("api user : " + req.user);
 
     if(req.user != undefined){
-        User.findById(req.user._index, (err, user)=>{
+        User.findOne({'_index' : req.user._index}, (err, user)=>{
             console.log("user!!!! : " + user);
             if(!err){
                 res.json({
