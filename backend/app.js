@@ -49,14 +49,14 @@ app.get('/api/user/:id', (req, res)=>{//id 값의 유저 정보를 가져온다
                 res.json({
                     login_status : true,
                     status : "",
-                    user_json : user
+                    user_json : delete user._id
                 })
             }
             else{//로그 아웃 상태 일 때
                 res.json({
                     login_status : false,
                     status : "",
-                    user_json : user
+                    user_json : delete user._id
                 })
             }
         }
@@ -105,14 +105,14 @@ console.log("api user : " + req.user);
                 res.json({
                     login_status : true,
                     status : "",
-                    user_json : user
+                    user_json : delete user._id
                 })
             }
             else{
                 res.json({
                     login_status : false,
                     status : "err",
-                    user_json : user
+                    user_json : delete user._id
                 })
             }
         })

@@ -6,8 +6,7 @@ const UserInfoSchema = new Mongoose.Schema({
     _pw : String,
     _index : Number
 },{
-    versionKey : false,
-    _id : false
+    versionKey : false
 });
 
 const UserModel = Mongoose.model('users', UserInfoSchema, 'users');

@@ -68,7 +68,7 @@ module.exports.setPassport = () => {
             done(err, user);
         })
     });
-
+    
     passport.use('naver', new naverStrategy(Config.naverValue, 
         (accessToken, refreshToken, profile, done)=>
         {
