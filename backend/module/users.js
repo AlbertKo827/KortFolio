@@ -4,10 +4,10 @@ const UserInfoSchema = new Mongoose.Schema({
     _name : String,
     _email : String,
     _pw : String,
-    _index : Number,
-    _id : String 
+    _index : Number
 },{
-    versionKey : false
+    versionKey : false,
+    _id : false
 });
 
 const UserModel = Mongoose.model('users', UserInfoSchema, 'users');

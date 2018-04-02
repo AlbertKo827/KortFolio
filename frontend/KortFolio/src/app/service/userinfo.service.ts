@@ -63,8 +63,7 @@ export class UserModel{
         _name : String,
         _email : String,
         _pw : String,
-        _index : Number,
-        _id : String
+        _index : Number
     }
   ){};
 }

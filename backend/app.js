@@ -68,8 +68,7 @@ app.get('/api/user/:id', (req, res)=>{//id 값의 유저 정보를 가져온다
                     _name : "",
                     _email : "",
                     _pw : "",
-                    _index : "",
-                    _id : ""
+                    _index : ""
                 }
             })
         }
@@ -126,8 +125,7 @@ console.log("api user : " + req.user);
                 _name : "Login",
                 _email : "",
                 _pw : "",
-                _index : "",
-                _id : ""
+                _index : ""
             }
         })
     }
