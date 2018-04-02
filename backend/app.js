@@ -44,6 +44,8 @@ app.use('/', passport.passportRouter);
 
 app.get('/api/user/:id', (req, res)=>{//id 값의 유저 정보를 가져온다
     User.findOne({'_index' : req.param.id}, (err, user)=>{//id 값의 유저 정보를 찾는다
+        delete user._id;
+        console.log("user!!!! : " + user);
         if(!err){//정상 동작
             if((req.user != undefined) && (req.user._index == req.param.id)){//클라이언트가 로그인 상태 이며 현재 user와 동일할 때
                 res.json({
@@ -100,19 +102,20 @@ console.log("api user : " + req.user);
 
     if(req.user != undefined){
         User.findOne({'_index' : req.user._index}, (err, user)=>{
+            delete user._id;
             console.log("user!!!! : " + user);
             if(!err){
                 res.json({
                     login_status : true,
                     status : "",
-                    user_json : delete user._id
+                    user_json : user
                 })
             }
             else{
                 res.json({
                     login_status : false,
                     status : "err",
-                    user_json : delete user._id
+                    user_json : user
                 })
             }
         })
