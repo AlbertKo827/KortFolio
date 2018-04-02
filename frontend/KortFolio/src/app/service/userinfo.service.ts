@@ -22,7 +22,6 @@ export class UserinfoService {
   getUser(id : String) : Observable<UserModel>{
      return this.http.get('api/user/' + id).map(
       res => {
-        console.log("Response" + res);
         return res.json();
     })
                                  .catch(
@@ -35,7 +34,6 @@ export class UserinfoService {
 
     return this.http.get('api/user').map(
       res => {
-        console.log("Response" + res);
         return res.json();
     })
                                  .catch(
