@@ -555,7 +555,6 @@ var UserinfoService = (function () {
     }
     UserinfoService.prototype.getUser = function (id) {
         return this.http.get('api/user/' + id).map(function (res) {
-            console.log("Response" + res);
             return res.json();
         })
             .catch(this.handleErrorObservable);
@@ -563,7 +562,6 @@ var UserinfoService = (function () {
     UserinfoService.prototype.getUserSelf = function () {
         console.log("current url : " + this.router.url);
         return this.http.get('api/user').map(function (res) {
-            console.log("Response" + res);
             return res.json();
         })
             .catch(this.handleErrorObservable);
