@@ -762,7 +762,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/userinfo/userinfo.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "{{userdata}}\n"
+module.exports = "{{userdata?}}\n"
 
 /***/ }),
 
