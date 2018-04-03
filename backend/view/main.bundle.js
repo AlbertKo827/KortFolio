@@ -762,7 +762,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/userinfo/userinfo.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1>UserPage</h1>\n{{userdata?.user_json._name}}\n"
+module.exports = "<h1>UserPage</h1>\n<p>{{userdata?.user_json._name}}</p>\n<p>{{userdata}}</p>\n\n"
 
 /***/ }),
 
@@ -797,7 +797,9 @@ var UserinfoComponent = (function () {
             _this.userId = params['id'];
             console.log(_this.userId);
         });
-        this.userinfo.getUser(this.userId).subscribe(function (data) { return _this.userdata; }, function (err) { return alert(err); }, function () { return console.log("success"); });
+        this.userinfo.getUser(this.userId).subscribe(function (data) {
+            _this.userdata = data;
+        }, function (err) { return alert(err); }, function () { return console.log("success"); });
     };
     return UserinfoComponent;
 }());

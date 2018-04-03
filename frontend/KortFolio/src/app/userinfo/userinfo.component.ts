@@ -22,10 +22,14 @@ export class UserinfoComponent implements OnInit {
     
 
     this.userinfo.getUser(this.userId).subscribe(
-      data => this.userdata,
+      data => {
+        this.userdata = data;
+      },
       err => alert(err),
       () => console.log("success")
     );
+
+
   }
 
 }
