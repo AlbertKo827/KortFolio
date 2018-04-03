@@ -53,8 +53,8 @@ app.get('/api/user/:id', (req, res)=>{//id 값의 유저 정보를 가져온다
                 delete user._id;
 
                 console.log("req.user._index : " + req.user._index + "₩nreq.params.id : " + req.params.id);
-                
-                if(req.user._index === req.params.id){
+
+                if(req.user._index == req.params.id){
                     res.json({
                         login_status : true,
                         status : "",
