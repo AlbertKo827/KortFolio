@@ -10,12 +10,24 @@ var transporter = nodemailer.createTransport(smtpTransport({
 }));
 
 module.exports.send = (body) => {
-    transporter.sendMail({
-        from: 'myeongsku@gmail.com',
-        to: 'myeongsku@naver.com',
-        subject: 'test',
-        text: "이름 : " + body.name + "₩₩n" + "연락처 : " + body.tel + "₩₩n" + "내용 : " + body.body
-    }, (error, info)=>{
+    var maildata = '{from: "myeongsku@gmail.com",to: "myeongsku@naver.com",subject: "test",text: "이름 : "' + body.name + "₩n" + "연락처 : " + body.tel + "₩₩n" + "내용 : " + body.body+'}'
+
+    // transporter.sendMail({
+    //     from: 'myeongsku@gmail.com',
+    //     to: 'myeongsku@naver.com',
+    //     subject: 'test',
+    //     text: "이름 : " + body.name + "₩₩n" + "연락처 : " + body.tel + "₩₩n" + "내용 : " + body.body
+    // }, (error, info)=>{
+    //     if (error){
+    //         console.log(error);
+    //     }
+    //     else {
+    //         console.log('Email sent! : ' + info.response);
+    //     }
+    //     transporter.close();
+    // });
+    console.log(JSON.parse(maildata.replace(/₩n/gi,"\\r\\n")));
+    transporter.sendMail(JSON.parse(maildata.replace(/₩n/gi,"\\r\\n")), (error, info)=>{
         if (error){
             console.log(error);
         }
