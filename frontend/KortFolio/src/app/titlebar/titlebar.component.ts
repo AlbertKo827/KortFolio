@@ -18,7 +18,7 @@ import { UserinfoService, UserModel, TestModel } from '../service/userinfo.servi
 export class TitlebarComponent implements OnInit {
 
   menuStatus : boolean = false;
-
+  userInfoUrl : String;
   public userdata : UserModel;
 
   constructor(private UserService : UserinfoService ) {
@@ -33,6 +33,12 @@ export class TitlebarComponent implements OnInit {
         if(this.userdata === undefined){
           console.log('undefined!!!!');
         } else{
+          if(this.userdata.user_json._name == "Login"){
+            this.userInfoUrl = "register";
+          }else{
+            this.userInfoUrl = "user/" + this.userdata.user_json._index;
+          }
+          
           console.log("data!! : " + data);
           console.log("tests!! : " + this.userdata.user_json._name);
         }

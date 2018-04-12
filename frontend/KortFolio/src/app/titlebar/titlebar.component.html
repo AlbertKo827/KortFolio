@@ -12,7 +12,8 @@
             <li>
                 <a href="contact">Contact</a>
             </li>
-            <li><a href="http://ifyoudontknow-youcandothis.tistory.com">MyBlog</a></li>
+            <li><a href="http://ifyoudontknow-youcandothis.tistory.com">Blog</a></li>
+            
             <li class="dropdown" dropdown> <!-- {1} -->
                 <a dropdownToggle role="button"> <!-- {2} -->
                   <span class="glyphicon glyphicon-cog"></span>
@@ -26,12 +27,18 @@
                             Login
                         </a>
                     </li>
+                    <li>
+                        <a href="register">
+                            <span class="glyphicon glyphicon-plus" style="margin-right:1rem;"></span>
+                            Register
+                        </a>
+                    </li>
                 </ul>
             </li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-            <li style="float : right;"><a href="user/{{userdata?.user_json._index}}">{{userdata?.user_json._name}}</a></li>
+            <li style="float : right;"><a href="{{userInfoUrl}}">{{userdata?.user_json._name}}</a></li>
         </ul>
 
     </div>

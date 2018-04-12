@@ -192,6 +192,44 @@ a:hover { color: rgb(236, 226, 164); text-decoration: none;}
     color: rgb(99, 99, 99);
 }
 
+.kortfolio-contact-bg{
+    background-color: rgb(65, 65, 65);
+    height: 95vh;
+    
+}
+
+.kortfolio-contact-bg > div {
+    color: white;
+    margin: 3rem 15rem;
+}
+
+.kortfolio-contactForm{
+    margin : 0 auto; 
+    padding : 1.5rem;  
+    border:3px dashed rgb(236, 226, 164); 
+    /* background-color : rgb(236, 226, 164);  */
+    border-radius : 5%; 
+    width : 45rem; 
+    height : 37rem;
+}
+
+.kortfolio-contactForm>div{
+    margin : 1.5rem auto;
+}
+
+.kortfolio-contactForm label{
+    text-align: left;
+    color : white;
+}
+
+.kortfolio-contactForm input[type=submit]{
+    background-color: rgb(236, 226, 164);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 /* 매우 작은 기기들 (모바일폰, 768px 보다 작은) */
 /* 부트스트랩에서 이것은 기본이므로 미디어쿼리가 없습니다. */
 

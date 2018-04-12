@@ -1,8 +1,45 @@
-<div class="container-fluid">
-  <form action="/contact" accept-charset="utf-8" style="margin : 10rem auto; width : 25rem; padding : 0;" method="POST">
-    <label>이름<input type="text" name="name"/></label>
-    <label>연락처<input type="text" name="tel"/></label>
-    <label>메세지<textarea name="Message" rows="8" cols="20" style="resize:none;" name="message"></textarea></label>
+<div class="container-fluid kortfolio-contact-bg">
+<div class="container" style="margin : 3rem auto; width : 45rem;">
+  <div class="col-xs-12 col-sm-12 col-md-12">
+  <h1>혹시!</h1>
+  <p>
+    제가 회사에 필요하다면 연락주세요!!
+  </p>
+  </div>
+</div>
+<form class = "kortfolio-contactForm" action="/contact" accept-charset="utf-8" style="" method="POST">
+  <div class="row">
+    <div class="col-xs-3 col-sm-3 col-md-3">
+      <label for="name" style="">이름</label>
+    </div>
+    <div class="col-xs-9 col-sm-9 col-md-9">
+      <input type="text" id="name" name="name" style="width:20rem;">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-3 l-sm-3 col-md-3">
+      <label for="tel" style="">연락처</label>
+    </div>
+    <div class="col-xs-9 col-sm-9 col-md-9">
+      <input type="text" id="tel" name="tel" style="width:20rem;">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-3 col-sm-3 col-md-3">
+      <label for="" style="">메세지</label>
+    </div>
+    <div class="col-xs-9 col-sm-9 col-md-9">
+      <textarea name="Message" rows="8" cols="20" style="resize:none; width:20rem;"></textarea>
+    </div>
+  </div>
+
+  <!-- <label style="display : block">이름<input type="text" name="name" style="width : 10rem;"/></label>
+  <label style="display : block">연락처<input type="text" name="tel"/></label>
+  <label style="display : block">메세지<textarea name="Message" rows="8" cols="20" style="resize:none; width : 10rem" name="message"></textarea></label> -->
+  <div style="text-align:center">
     <input type="submit" value="보내기"/>
-  </form>
+  </div>
+</form>
 </div>
