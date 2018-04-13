@@ -10,7 +10,7 @@ var transporter = nodemailer.createTransport(smtpTransport({
 }));
 
 module.exports.send = (body) => {
-    var maildata = '{"from": "myeongsku@gmail.com","to": "myeongsku@naver.com","subject": "test","text": "이름 : ' + body.name + "₩n연락처 : " + body.tel + "₩n내용 : " + body.body+'"}'
+    var maildata = '{"from": "myeongsku@gmail.com","to": "myeongsku@naver.com","subject": "test","text": "이름 : ' + body.name + "₩n연락처 : " + body.tel + "₩n내용 : " + body.message+'"}'
 
     // transporter.sendMail({
     //     from: 'myeongsku@gmail.com',
