@@ -27,6 +27,8 @@ export class TitlebarComponent implements OnInit {
 
   ngOnInit() {
     //Http
+    var element = document.getElementById("register");
+
     this.UserService.getUserSelf().subscribe( 
       data => {
         this.userdata = data;
@@ -34,9 +36,11 @@ export class TitlebarComponent implements OnInit {
           console.log('undefined!!!!');
         } else{
           if(this.userdata.user_json._name == "Login"){
-            this.userInfoUrl = "register";
+            this.userInfoUrl = "login";
+            element.setAttribute("style","display:block;");
           }else{
             this.userInfoUrl = "user/" + this.userdata.user_json._index;
+            element.setAttribute("style","display:none;");
           }
           
           console.log("data!! : " + data);
