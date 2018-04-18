@@ -27,7 +27,7 @@ export class TitlebarComponent implements OnInit {
 
   ngOnInit() {
     //Http
-    var element = document.getElementById("register");
+    var element = document.getElementById("registers");
 
     this.UserService.getUserSelf().subscribe( 
       data => {
