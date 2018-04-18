@@ -7,7 +7,9 @@
             <span class="navbar-brand glyphicon glyphicon-align-justify" id="kortfolio-menu" (click)="openMenu()"></span>
             <a href="" style="margin:auto 0;"><span class="navbar-brand">KortFolio</span></a>
         </div>
-
+        <ul class="nav navbar-nav navbar-right" id="kortfolio-login">
+                <li style="float : right;"><a href="{{userInfoUrl}}">{{userdata?.user_json._name}}</a></li>
+        </ul>
         <ul class="nav navbar-nav navbar-left" id="menu">
             <li>
                 <a href="contact">Contact</a>
@@ -22,13 +24,13 @@
                     <!--<li><a href="#">공사중이라고욧!!</a></li>
                     <li role="separator" class="divider"></li>-->
                     <li>
-                        <a href="login">
+                        <a href="{{userInfoUrl}}">
                             <span class="glyphicon glyphicon-user" style="margin-right:1rem;"></span>
-                            Login
+                            {{userdata?.user_json._name}}
                         </a>
                     </li>
                     <li>
-                        <a href="register">
+                        <a href="register" >
                             <span class="glyphicon glyphicon-plus" style="margin-right:1rem;"></span>
                             Register
                         </a>
@@ -37,9 +39,7 @@
             </li>
         </ul>
 
-        <ul class="nav navbar-nav navbar-right">
-            <li style="float : right;"><a href="{{userInfoUrl}}">{{userdata?.user_json._name}}</a></li>
-        </ul>
+        
 
     </div>
 </nav>
