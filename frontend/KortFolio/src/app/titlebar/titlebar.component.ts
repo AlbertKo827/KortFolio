@@ -27,9 +27,11 @@ export class TitlebarComponent implements OnInit {
 
   ngOnInit() {
     //Http
-    var element = document.getElementById("registers");
+     var elements : HTMLElement = document.getElementById("registers");
+    console.log(elements);
 
-    this.UserService.getUserSelf().subscribe( 
+    document.addEventListener('DOMContentLoaded', ()=>{
+      this.UserService.getUserSelf().subscribe( 
       data => {
         this.userdata = data;
         if(this.userdata === undefined){
@@ -37,10 +39,10 @@ export class TitlebarComponent implements OnInit {
         } else{
           if(this.userdata.user_json._name == "Login"){
             this.userInfoUrl = "login";
-            element.setAttribute("style","display:block;");
+            elements.setAttribute("style","display:block;");
           }else{
             this.userInfoUrl = "user/" + this.userdata.user_json._index;
-            element.setAttribute("style","display:none;");
+            elements.setAttribute("style","display:none;");
           }
           
           console.log("data!! : " + data);
@@ -50,6 +52,32 @@ export class TitlebarComponent implements OnInit {
       err => console.log(err),
       () => console.log('success')
     );
+    })
+    // this.UserService.getUserSelf().subscribe( 
+    //   data => {
+    //     this.userdata = data;
+    //     if(this.userdata === undefined){
+    //       console.log('undefined!!!!');
+    //     } else{
+    //       if(this.userdata.user_json._name == "Login"){
+    //         this.userInfoUrl = "login";
+    //         element.setAttribute("style","display:block;");
+    //       }else{
+    //         this.userInfoUrl = "user/" + this.userdata.user_json._index;
+    //         element.setAttribute("style","display:none;");
+    //       }
+          
+    //       console.log("data!! : " + data);
+    //       console.log("tests!! : " + this.userdata.user_json._name);
+    //     }
+    //   },
+    //   err => console.log(err),
+    //   () => console.log('success')
+    // );
+
+
+   
+
 }
 
   ///test
@@ -62,7 +90,15 @@ export class TitlebarComponent implements OnInit {
       element.setAttribute("style","display:block;");
     else
       element.setAttribute("style","display:none;");
+
+
+
+
+      var elements : HTMLElement = document.getElementById("registers");
+
+      elements.setAttribute("style","display:none;");
   }
+  
 /*
   Modal
 

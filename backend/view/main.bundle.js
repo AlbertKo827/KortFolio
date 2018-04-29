@@ -669,7 +669,7 @@ var _a;
 /***/ "../../../../../src/app/titlebar/titlebar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-kortfolio navbar-fixed-top\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n            <!--<a class=\"navbar-brand\">\n              <img src=\"assets/img/ngx-bootstrap.svg\" class=\"logo\">\n            </a>-->\n            <span class=\"navbar-brand glyphicon glyphicon-align-justify\" id=\"kortfolio-menu\" (click)=\"openMenu()\"></span>\n            <a href=\"\" style=\"margin:auto 0;\"><span class=\"navbar-brand\">KortFolio</span></a>\n        </div>\n        <ul class=\"nav navbar-nav navbar-right\" id=\"kortfolio-login\">\n                <li style=\"float : right;\"><a href=\"{{userInfoUrl}}\">{{userdata?.user_json._name}}</a></li>\n        </ul>\n        <ul class=\"nav navbar-nav navbar-left\" id=\"menu\">\n            <li>\n                <a href=\"contact\">Contact</a>\n            </li>\n            <li><a href=\"http://ifyoudontknow-youcandothis.tistory.com\">Blog</a></li>\n            \n            <li class=\"dropdown\" dropdown> <!-- {1} -->\n                <a dropdownToggle role=\"button\"> <!-- {2} -->\n                  <span class=\"glyphicon glyphicon-cog\"></span>\n                  <span class=\"caret\"></span></a>\n                <ul *dropdownMenu class=\"dropdown-menu\"> <!-- {3} -->\n                    <!--<li><a href=\"#\">공사중이라고욧!!</a></li>\n                    <li role=\"separator\" class=\"divider\"></li>-->\n                    <li>\n                        <a href=\"{{userInfoUrl}}\">\n                            <span class=\"glyphicon glyphicon-user\" style=\"margin-right:1rem;\"></span>\n                            {{userdata?.user_json._name}}\n                        </a>\n                    </li>\n                    <li id=\"registers\">\n                        <a href=\"register\" >\n                            <span class=\"glyphicon glyphicon-plus\" style=\"margin-right:1rem;\"></span>\n                            Register\n                        </a>\n                    </li>\n                </ul>\n            </li>\n        </ul>\n\n        \n\n    </div>\n</nav>"
+module.exports = "<nav class=\"navbar navbar-kortfolio navbar-fixed-top\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n            <!--<a class=\"navbar-brand\">\n              <img src=\"assets/img/ngx-bootstrap.svg\" class=\"logo\">\n            </a>-->\n            <span class=\"navbar-brand glyphicon glyphicon-align-justify\" id=\"kortfolio-menu\" (click)=\"openMenu()\"></span>\n            <a href=\"\" style=\"margin:auto 0;\"><span class=\"navbar-brand\">KortFolio</span></a>\n        </div>\n        <ul class=\"nav navbar-nav navbar-right\" id=\"kortfolio-login\">\n                <li style=\"float : right;\"><a href=\"{{userInfoUrl}}\">{{userdata?.user_json._name}}</a></li>\n        </ul>\n        <ul class=\"nav navbar-nav navbar-left\" id=\"menu\">\n            <li>\n                <a href=\"contact\">Contact</a>\n            </li>\n            <li><a href=\"http://ifyoudontknow-youcandothis.tistory.com\">Blog</a></li>\n            \n            <li class=\"dropdown\" dropdown> <!-- {1} -->\n                <a dropdownToggle role=\"button\"> <!-- {2} -->\n                  <span class=\"glyphicon glyphicon-cog\"></span>\n                  <span class=\"caret\"></span></a>\n                <ul *dropdownMenu class=\"dropdown-menu\"> <!-- {3} -->\n                    <!--<li><a href=\"#\">공사중이라고욧!!</a></li>\n                    <li role=\"separator\" class=\"divider\"></li>-->\n                    <li>\n                        <a href=\"{{userInfoUrl}}\">\n                            <span class=\"glyphicon glyphicon-user\" style=\"margin-right:1rem;\"></span>\n                            {{userdata?.user_json._name}}\n                        </a>\n                    </li>\n                    <li id=\"registers\">\n                        <a href=\"register\" >\n                            <span class=\"glyphicon glyphicon-plus\" style=\"margin-right:1rem;\"></span>\n                            Register\n                        </a>\n                    </li>\n                </ul>\n            </li>\n        </ul>\n    </div>\n</nav>"
 
 /***/ }),
 
@@ -705,25 +705,48 @@ var TitlebarComponent = (function () {
     TitlebarComponent.prototype.ngOnInit = function () {
         var _this = this;
         //Http
-        var element = document.getElementById("registers");
-        this.UserService.getUserSelf().subscribe(function (data) {
-            _this.userdata = data;
-            if (_this.userdata === undefined) {
-                console.log('undefined!!!!');
-            }
-            else {
-                if (_this.userdata.user_json._name == "Login") {
-                    _this.userInfoUrl = "login";
-                    element.setAttribute("style", "display:block;");
+        var elements = document.getElementById("registers");
+        console.log(elements);
+        document.addEventListener('DOMContentLoaded', function () {
+            _this.UserService.getUserSelf().subscribe(function (data) {
+                _this.userdata = data;
+                if (_this.userdata === undefined) {
+                    console.log('undefined!!!!');
                 }
                 else {
-                    _this.userInfoUrl = "user/" + _this.userdata.user_json._index;
-                    element.setAttribute("style", "display:none;");
+                    if (_this.userdata.user_json._name == "Login") {
+                        _this.userInfoUrl = "login";
+                        elements.setAttribute("style", "display:block;");
+                    }
+                    else {
+                        _this.userInfoUrl = "user/" + _this.userdata.user_json._index;
+                        elements.setAttribute("style", "display:none;");
+                    }
+                    console.log("data!! : " + data);
+                    console.log("tests!! : " + _this.userdata.user_json._name);
                 }
-                console.log("data!! : " + data);
-                console.log("tests!! : " + _this.userdata.user_json._name);
-            }
-        }, function (err) { return console.log(err); }, function () { return console.log('success'); });
+            }, function (err) { return console.log(err); }, function () { return console.log('success'); });
+        });
+        // this.UserService.getUserSelf().subscribe( 
+        //   data => {
+        //     this.userdata = data;
+        //     if(this.userdata === undefined){
+        //       console.log('undefined!!!!');
+        //     } else{
+        //       if(this.userdata.user_json._name == "Login"){
+        //         this.userInfoUrl = "login";
+        //         element.setAttribute("style","display:block;");
+        //       }else{
+        //         this.userInfoUrl = "user/" + this.userdata.user_json._index;
+        //         element.setAttribute("style","display:none;");
+        //       }
+        //       console.log("data!! : " + data);
+        //       console.log("tests!! : " + this.userdata.user_json._name);
+        //     }
+        //   },
+        //   err => console.log(err),
+        //   () => console.log('success')
+        // );
     };
     ///test
     TitlebarComponent.prototype.openMenu = function () {
@@ -733,6 +756,8 @@ var TitlebarComponent = (function () {
             element.setAttribute("style", "display:block;");
         else
             element.setAttribute("style", "display:none;");
+        var elements = document.getElementById("registers");
+        elements.setAttribute("style", "display:none;");
     };
     return TitlebarComponent;
 }());
