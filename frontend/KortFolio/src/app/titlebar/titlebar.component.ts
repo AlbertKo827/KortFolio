@@ -27,10 +27,12 @@ export class TitlebarComponent implements OnInit {
 
   ngOnInit() {
     //Http
-     var elements : HTMLElement = document.getElementById("registers");
-    console.log(elements);
+     
 
     document.addEventListener('DOMContentLoaded', ()=>{
+      var elements : HTMLElement = document.getElementById("registers");
+    console.log(elements);
+    
       this.UserService.getUserSelf().subscribe( 
       data => {
         this.userdata = data;

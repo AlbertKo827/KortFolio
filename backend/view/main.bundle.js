@@ -703,11 +703,11 @@ var TitlebarComponent = (function () {
         this.menuStatus = false;
     }
     TitlebarComponent.prototype.ngOnInit = function () {
-        var _this = this;
         //Http
-        var elements = document.getElementById("registers");
-        console.log(elements);
+        var _this = this;
         document.addEventListener('DOMContentLoaded', function () {
+            var elements = document.getElementById("registers");
+            console.log(elements);
             _this.UserService.getUserSelf().subscribe(function (data) {
                 _this.userdata = data;
                 if (_this.userdata === undefined) {
