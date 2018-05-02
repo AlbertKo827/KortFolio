@@ -703,8 +703,37 @@ var TitlebarComponent = (function () {
         this.menuStatus = false;
     }
     TitlebarComponent.prototype.ngOnInit = function () {
-        //Http
+        // this.UserService.getUserSelf().subscribe( 
+        //   data => {
+        //     this.userdata = data;
+        //     if(this.userdata === undefined){
+        //       console.log('undefined!!!!');
+        //     } else{
+        //       if(this.userdata.user_json._name == "Login"){
+        //         this.userInfoUrl = "login";
+        //         // elements.setAttribute("style","display:block;");
+        //       }else{
+        //         this.userInfoUrl = "user/" + this.userdata.user_json._index;
+        //         // elements.setAttribute("style","display:none;");
+        //       }
+        //       console.log("data!! : " + data);
+        //       console.log("tests!! : " + this.userdata.user_json._name);
+        //     }
+        //   },
+        //   err => console.log(err),
+        //   () => console.log('success')
+        // );
+    };
+    TitlebarComponent.prototype.ngAfterViewInit = function () {
         var _this = this;
+        var elements = document.getElementById("registers");
+        console.log(elements);
+        // if(this.userdata.user_json._name == "Login"){
+        //   elements.setAttribute("style","display:block;");
+        // }else{
+        //   elements.setAttribute("style","display:none;");
+        // }
+        // elements.setAttribute("style","display:none;");
         this.UserService.getUserSelf().subscribe(function (data) {
             _this.userdata = data;
             if (_this.userdata === undefined) {
@@ -713,26 +742,16 @@ var TitlebarComponent = (function () {
             else {
                 if (_this.userdata.user_json._name == "Login") {
                     _this.userInfoUrl = "login";
-                    // elements.setAttribute("style","display:block;");
+                    elements.setAttribute("style", "display:block;");
                 }
                 else {
                     _this.userInfoUrl = "user/" + _this.userdata.user_json._index;
-                    // elements.setAttribute("style","display:none;");
+                    elements.setAttribute("style", "display:none;");
                 }
                 console.log("data!! : " + data);
                 console.log("tests!! : " + _this.userdata.user_json._name);
             }
         }, function (err) { return console.log(err); }, function () { return console.log('success'); });
-    };
-    TitlebarComponent.prototype.ngAfterViewInit = function () {
-        var elements = document.getElementById("registers");
-        console.log(elements);
-        if (this.userdata.user_json._name == "Login") {
-            elements.setAttribute("style", "display:block;");
-        }
-        else {
-            elements.setAttribute("style", "display:none;");
-        }
     };
     ///test
     TitlebarComponent.prototype.openMenu = function () {

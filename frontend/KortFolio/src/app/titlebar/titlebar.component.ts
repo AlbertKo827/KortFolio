@@ -26,41 +26,61 @@ export class TitlebarComponent implements OnInit {
   }
 
   ngOnInit() {
-    //Http
-    
-
-    this.UserService.getUserSelf().subscribe( 
-      data => {
-        this.userdata = data;
-        if(this.userdata === undefined){
-          console.log('undefined!!!!');
-        } else{
-          if(this.userdata.user_json._name == "Login"){
-            this.userInfoUrl = "login";
-            // elements.setAttribute("style","display:block;");
-          }else{
-            this.userInfoUrl = "user/" + this.userdata.user_json._index;
-            // elements.setAttribute("style","display:none;");
-          }
+    // this.UserService.getUserSelf().subscribe( 
+    //   data => {
+    //     this.userdata = data;
+    //     if(this.userdata === undefined){
+    //       console.log('undefined!!!!');
+    //     } else{
+    //       if(this.userdata.user_json._name == "Login"){
+    //         this.userInfoUrl = "login";
+    //         // elements.setAttribute("style","display:block;");
+    //       }else{
+    //         this.userInfoUrl = "user/" + this.userdata.user_json._index;
+    //         // elements.setAttribute("style","display:none;");
+    //       }
           
-          console.log("data!! : " + data);
-          console.log("tests!! : " + this.userdata.user_json._name);
-        }
-      },
-      err => console.log(err),
-      () => console.log('success')
-    );
+    //       console.log("data!! : " + data);
+    //       console.log("tests!! : " + this.userdata.user_json._name);
+    //     }
+    //   },
+    //   err => console.log(err),
+    //   () => console.log('success')
+    // );
 }
 
 ngAfterViewInit(){
   var elements : HTMLElement = document.getElementById("registers");
   console.log(elements);
 
-  if(this.userdata.user_json._name == "Login"){
-    elements.setAttribute("style","display:block;");
-  }else{
-    elements.setAttribute("style","display:none;");
-  }
+  // if(this.userdata.user_json._name == "Login"){
+  //   elements.setAttribute("style","display:block;");
+  // }else{
+  //   elements.setAttribute("style","display:none;");
+  // }
+
+  // elements.setAttribute("style","display:none;");
+  this.UserService.getUserSelf().subscribe( 
+    data => {
+      this.userdata = data;
+      if(this.userdata === undefined){
+        console.log('undefined!!!!');
+      } else{
+        if(this.userdata.user_json._name == "Login"){
+          this.userInfoUrl = "login";
+          elements.setAttribute("style","display:block;");
+        }else{
+          this.userInfoUrl = "user/" + this.userdata.user_json._index;
+          elements.setAttribute("style","display:none;");
+        }
+        
+        console.log("data!! : " + data);
+        console.log("tests!! : " + this.userdata.user_json._name);
+      }
+    },
+    err => console.log(err),
+    () => console.log('success')
+  );
 }
 
   ///test
