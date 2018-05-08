@@ -21,67 +21,73 @@ export class TitlebarComponent implements OnInit {
   userInfoUrl : String;
   public userdata : UserModel;
 
+ test = "block";
+
   constructor(private UserService : UserinfoService ) {
 
   }
 
   ngOnInit() {
-    // this.UserService.getUserSelf().subscribe( 
-    //   data => {
-    //     this.userdata = data;
-    //     if(this.userdata === undefined){
-    //       console.log('undefined!!!!');
-    //     } else{
-    //       if(this.userdata.user_json._name == "Login"){
-    //         this.userInfoUrl = "login";
-    //         // elements.setAttribute("style","display:block;");
-    //       }else{
-    //         this.userInfoUrl = "user/" + this.userdata.user_json._index;
-    //         // elements.setAttribute("style","display:none;");
-    //       }
+    this.UserService.getUserSelf().subscribe( 
+      data => {
+        this.userdata = data;
+        if(this.userdata === undefined){
+          console.log('undefined!!!!');
+        } else{
+          if(this.userdata.user_json._name == "Login"){
+            this.userInfoUrl = "login";
+            // elements.setAttribute("style","display:block;");
+            this.test = "block";
+          }else{
+            this.userInfoUrl = "user/" + this.userdata.user_json._index;
+            // elements.setAttribute("style","display:none;");
+            this.test = "none";
+          }
           
-    //       console.log("data!! : " + data);
-    //       console.log("tests!! : " + this.userdata.user_json._name);
-    //     }
-    //   },
-    //   err => console.log(err),
-    //   () => console.log('success')
-    // );
-}
-
-ngAfterViewInit(){
-  var elements : HTMLElement = document.getElementById("registers");
-  console.log(elements);
-
-  // if(this.userdata.user_json._name == "Login"){
-  //   elements.setAttribute("style","display:block;");
-  // }else{
-  //   elements.setAttribute("style","display:none;");
-  // }
-
-  // elements.setAttribute("style","display:none;");
-  this.UserService.getUserSelf().subscribe( 
-    data => {
-      this.userdata = data;
-      if(this.userdata === undefined){
-        console.log('undefined!!!!');
-      } else{
-        if(this.userdata.user_json._name == "Login"){
-          this.userInfoUrl = "login";
-          elements.setAttribute("style","display:block;");
-        }else{
-          this.userInfoUrl = "user/" + this.userdata.user_json._index;
-          elements.setAttribute("style","display:none;");
+          console.log("data!! : " + data);
+          console.log("tests!! : " + this.userdata.user_json._name);
         }
-        
-        console.log("data!! : " + data);
-        console.log("tests!! : " + this.userdata.user_json._name);
-      }
-    },
-    err => console.log(err),
-    () => console.log('success')
-  );
+      },
+      err => console.log(err),
+      () => console.log('success')
+    );
 }
+
+// ngAfterViewInit(){
+//   var elements : HTMLElement = document.getElementById("registers");
+//   console.log(elements);
+
+//   var element = document.getElementById("menu");
+//   element.setAttribute("style", "color : red;")
+//   // if(this.userdata.user_json._name == "Login"){
+//   //   elements.setAttribute("style","display:block;");
+//   // }else{
+//   //   elements.setAttribute("style","display:none;");
+//   // }
+
+//   // elements.setAttribute("style","display:none;");
+//   this.UserService.getUserSelf().subscribe( 
+//     data => {
+//       this.userdata = data;
+//       if(this.userdata === undefined){
+//         console.log('undefined!!!!');
+//       } else{
+//         if(this.userdata.user_json._name == "Login"){
+//           this.userInfoUrl = "login";
+//           elements.setAttribute("style","display:block;");
+//         }else{
+//           this.userInfoUrl = "user/" + this.userdata.user_json._index;
+//           elements.setAttribute("style","display:none;");
+//         }
+        
+//         console.log("data!! : " + data);
+//         console.log("tests!! : " + this.userdata.user_json._name);
+//       }
+//     },
+//     err => console.log(err),
+//     () => console.log('success')
+//   );
+// }
 
   ///test
   openMenu(){
@@ -99,7 +105,7 @@ ngAfterViewInit(){
 
       var elements : HTMLElement = document.getElementById("registers");
 
-      elements.setAttribute("style","display:none;");
+      elements.setAttribute("style","display:block;");
   }
   
 /*
