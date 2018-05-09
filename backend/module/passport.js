@@ -77,6 +77,7 @@ module.exports.setPassport = () => {
             var _profile = profile._json;
 
             User.findOne({//DB에서 회원 정보를 찾는다.
+                '_provider':profile.provider,
                 '_index': profile.id
             }, (err, user)=>{
 
@@ -90,7 +91,8 @@ module.exports.setPassport = () => {
                         _index : _profile.id,
                         _name: profile.displayName,
                         _email: _profile.email,
-                        _pw : '1111'
+                        _pw : '1111',
+                        _provider : 'naver'
                     });
 
                     _user.save((err)=>{
@@ -121,6 +123,7 @@ module.exports.setPassport = () => {
             console.log(profile);
 
             User.findOne({//DB에서 회원 정보를 찾는다.
+                '_provider':profile.provider,
                 '_index': profile.id
             }, (err, user)=>{
 
@@ -134,7 +137,8 @@ module.exports.setPassport = () => {
                         _index : _profile.id,
                         _name: profile.displayName,
                         _email: _profile.email,
-                        _pw : '1111'
+                        _pw : '1111',
+                        _provider : 'facebook'
                     });
 
                     _user.save((err)=>{
@@ -165,6 +169,7 @@ module.exports.setPassport = () => {
             console.log(profile);
 
             User.findOne({//DB에서 회원 정보를 찾는다.
+                '_provider':profile.provider,
                 '_index': profile.id
             }, (err, user)=>{
 
@@ -178,7 +183,8 @@ module.exports.setPassport = () => {
                         _index : _profile.id,
                         _name: profile.displayName,
                         _email: '',
-                        _pw : '1111'
+                        _pw : '1111',
+                        _provider : 'kakao'
                     });
 
                     _user.save((err)=>{

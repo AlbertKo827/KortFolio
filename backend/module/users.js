@@ -1,6 +1,7 @@
 const Mongoose = require('mongoose');
 
 const UserInfoSchema = new Mongoose.Schema({
+    _provider : String,
     _name : String,
     _email : String,
     _pw : String,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TitlebarComponent } from '../titlebar/titlebar.component';
 
 @Component({
   selector: 'app-contact',
@@ -6,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['../app.component.css']
 })
 export class ContactComponent implements OnInit {
-
-  constructor() { }
+  name : string = "";
+  constructor( private userinfo : TitlebarComponent) { }
 
   ngOnInit() {
   }
