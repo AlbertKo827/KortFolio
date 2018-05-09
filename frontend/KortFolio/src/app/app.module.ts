@@ -73,7 +73,10 @@ import { ContactResultComponent } from './contact-result/contact-result.componen
     Modal.forRoot(),
     ProgressBar.forRoot(),
   ],
-  providers: [ UserinfoService ],
+  providers: [ 
+    UserinfoService,
+    TitlebarComponent
+ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

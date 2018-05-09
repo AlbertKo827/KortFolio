@@ -181,7 +181,10 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_13_ngx_bootstrap_modal__["b" /* ModalModule */].forRoot(),
             __WEBPACK_IMPORTED_MODULE_14_ngx_bootstrap_progressbar__["a" /* ProgressbarModule */].forRoot(),
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_16__service_userinfo_service__["a" /* UserinfoService */]],
+        providers: [
+            __WEBPACK_IMPORTED_MODULE_16__service_userinfo_service__["a" /* UserinfoService */],
+            __WEBPACK_IMPORTED_MODULE_7__titlebar_titlebar_component__["a" /* TitlebarComponent */]
+        ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
