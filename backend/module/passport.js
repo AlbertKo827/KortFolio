@@ -72,7 +72,7 @@ module.exports.setPassport = () => {
     passport.use('naver', new naverStrategy(Config.naverValue, 
         (accessToken, refreshToken, profile, done)=>
         {
-            //console.log(profile);
+            console.log(profile);
             
             var _profile = profile._json;
 
