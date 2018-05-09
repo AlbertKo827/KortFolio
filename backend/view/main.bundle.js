@@ -285,6 +285,7 @@ var ContactComponent = (function () {
         this.name = "";
     }
     ContactComponent.prototype.ngOnInit = function () {
+        console.log("contact userdata : " + this.userinfo.userdata.user_json._name);
     };
     return ContactComponent;
 }());

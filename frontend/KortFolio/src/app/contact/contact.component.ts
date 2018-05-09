@@ -11,6 +11,7 @@ export class ContactComponent implements OnInit {
   constructor( private userinfo : TitlebarComponent) { }
 
   ngOnInit() {
+    console.log("contact userdata : " + this.userinfo.userdata.user_json._name);
   }
 
 }
