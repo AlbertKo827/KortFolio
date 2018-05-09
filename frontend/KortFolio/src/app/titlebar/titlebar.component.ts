@@ -21,7 +21,10 @@ export class TitlebarComponent implements OnInit {
   userInfoUrl : String;
   public userdata : UserModel;
 
- test = "block";
+regOlogout = {
+  url : "register",
+  name : "Register"
+}
 
   constructor(private UserService : UserinfoService ) {
 
@@ -37,11 +40,13 @@ export class TitlebarComponent implements OnInit {
           if(this.userdata.user_json._name == "Login"){
             this.userInfoUrl = "login";
             // elements.setAttribute("style","display:block;");
-            this.test = "block";
+            this.regOlogout.url = "register";
+            this.regOlogout.name = "Register";
           }else{
             this.userInfoUrl = "user/" + this.userdata.user_json._index;
             // elements.setAttribute("style","display:none;");
-            this.test = "none";
+            this.regOlogout.url = "logout";
+            this.regOlogout.name = "Logout";
           }
           
           console.log("data!! : " + data);
@@ -99,13 +104,6 @@ export class TitlebarComponent implements OnInit {
       element.setAttribute("style","display:block;");
     else
       element.setAttribute("style","display:none;");
-
-
-
-
-      var elements : HTMLElement = document.getElementById("registers");
-
-      elements.setAttribute("style","display:block;");
   }
   
 /*
