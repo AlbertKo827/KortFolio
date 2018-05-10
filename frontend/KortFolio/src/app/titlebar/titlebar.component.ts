@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import { UserinfoService, UserModel, TestModel } from '../service/userinfo.service'
+import { UserinfoService, UserModel } from '../service/userinfo.service'
 
 @Component({
   selector: 'app-titlebar',
@@ -19,8 +19,8 @@ export class TitlebarComponent implements OnInit {
 
   menuStatus : boolean = false;
   userInfoUrl : String;
-  public userdata : UserModel;
-
+  userdata : UserModel;
+  test = "HEllo";
 regOlogout = {
   url : "register",
   name : "Register"

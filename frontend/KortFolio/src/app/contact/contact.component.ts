@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TitlebarComponent } from '../titlebar/titlebar.component';
 
+import { UserModel } from '../service/userinfo.service'
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
