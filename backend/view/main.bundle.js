@@ -410,7 +410,7 @@ IntroduceComponent = __decorate([
 /***/ "../../../../../src/app/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container-fluid\">\n    <h2>로그인</h2>\n  <div class=\"row\">\n    <div class=\"col-sm-12 col-md-4 col-md-offset-4 social-buttons\">\n      <a class=\"btn btn-block btn-social btn-lg btn-naver\" href=\"http://myeongsku.com/login/auth/naver\">\n        <span class=\"fa fa-naver\"></span> 네이버로 로그인\n      </a>\n      <a class=\"btn btn-block btn-social btn-lg btn-kakao\" href=\"http://myeongsku.com/login/auth/kakao\">\n        <span class=\"fa fa-kakao\"></span> 카카오로 로그인\n      </a>\n      <a class=\"btn btn-block btn-social btn-lg btn-facebook\" href=\"http://myeongsku.com/login/auth/facebook\">\n        <span class=\"fa fa-facebook\"></span> 페이스북으로 로그인\n      </a>\n    </div>\n  </div>\n  <a href=\"register\" style=\"color:blue\">회원가입</a>\n</div>"
+module.exports = "\n<div class=\"container-fluid\">\n    <h2>로그인</h2>\n  <div class=\"row\">\n    <div class=\"col-sm-12 col-md-4 col-md-offset-4 social-buttons\">\n      <a class=\"btn btn-block btn-social btn-lg btn-naver\" href=\"http://myeongsku.com/login/auth/naver\">\n        <span class=\"fa fa-naver\"></span> 네이버로 로그인\n      </a>\n      <a class=\"btn btn-block btn-social btn-lg btn-kakao\" href=\"http://myeongsku.com/login/auth/kakao\">\n        <span class=\"fa fa-kakao\"></span> 카카오로 로그인\n      </a>\n      <a class=\"btn btn-block btn-social btn-lg btn-facebook\" href=\"http://myeongsku.com/login/auth/facebook\">\n        <span class=\"fa fa-facebook\"></span> 페이스북으로 로그인\n      </a>\n    </div>\n  </div>\n  <!-- <a href=\"register\" style=\"color:blue\">회원가입</a> -->\n</div>"
 
 /***/ }),
 
@@ -678,7 +678,7 @@ var _a;
 /***/ "../../../../../src/app/titlebar/titlebar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-kortfolio navbar-fixed-top\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n            <!--<a class=\"navbar-brand\">\n              <img src=\"assets/img/ngx-bootstrap.svg\" class=\"logo\">\n            </a>-->\n            <span class=\"navbar-brand glyphicon glyphicon-align-justify\" id=\"kortfolio-menu\" (click)=\"openMenu()\"></span>\n            <a href=\"\" style=\"margin:auto 0;\"><span class=\"navbar-brand\">KortFolio</span></a>\n        </div>\n        <ul class=\"nav navbar-nav navbar-right\" id=\"kortfolio-login\">\n                <li style=\"float : right;\"><a href=\"{{userInfoUrl}}\">{{userdata?.user_json._name}}</a></li>\n        </ul>\n        <ul class=\"nav navbar-nav navbar-left\" id=\"menu\">\n            <li>\n                <a href=\"contact\">Contact</a>\n            </li>\n            <li><a href=\"http://ifyoudontknow-youcandothis.tistory.com\">Blog</a></li>\n            \n            <li class=\"dropdown\" dropdown> <!-- {1} -->\n                <a dropdownToggle role=\"button\"> <!-- {2} -->\n                  <span class=\"glyphicon glyphicon-cog\"></span>\n                  <span class=\"caret\"></span></a>\n                <ul *dropdownMenu class=\"dropdown-menu\"> <!-- {3} -->\n                    <!--<li><a href=\"#\">공사중이라고욧!!</a></li>\n                    <li role=\"separator\" class=\"divider\"></li>-->\n                    <li>\n                        <a href=\"{{userInfoUrl}}\">\n                            <span class=\"glyphicon glyphicon-user\" style=\"margin-right:1rem;\"></span>\n                            {{userdata?.user_json._name}}\n                        </a>\n                    </li>\n                    <li id=\"registers\" ><!--//[style.display]=\"test\">-->\n                        <a href=\"{{regOlogout?.url}}\" >\n                            <span class=\"glyphicon\" style=\"margin-right:1rem;\"></span>\n                            {{regOlogout?.name}}\n                        </a>\n                    </li>\n                </ul>\n            </li>\n        </ul>\n    </div>\n</nav>"
+module.exports = "<nav class=\"navbar navbar-kortfolio navbar-fixed-top\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n            <!--<a class=\"navbar-brand\">\n              <img src=\"assets/img/ngx-bootstrap.svg\" class=\"logo\">\n            </a>-->\n            <span class=\"navbar-brand glyphicon glyphicon-align-justify\" id=\"kortfolio-menu\" (click)=\"openMenu()\"></span>\n            <a href=\"\" style=\"margin:auto 0;\"><span class=\"navbar-brand\">KortFolio</span></a>\n        </div>\n        <ul class=\"nav navbar-nav navbar-right\" id=\"kortfolio-login\">\n                <li style=\"float : right;\"><a href=\"{{userInfoUrl}}\">{{userdata?.user_json._name}}</a></li>\n        </ul>\n        <ul class=\"nav navbar-nav navbar-left\" id=\"menu\">\n            <li>\n                <a href=\"contact\">Contact</a>\n            </li>\n            <li><a href=\"http://ifyoudontknow-youcandothis.tistory.com\">Blog</a></li>\n            \n            <li class=\"dropdown\" dropdown> <!-- {1} -->\n                <a dropdownToggle role=\"button\"> <!-- {2} -->\n                  <span class=\"glyphicon glyphicon-cog\"></span>\n                  <span class=\"caret\"></span></a>\n                <ul *dropdownMenu class=\"dropdown-menu\"> <!-- {3} -->\n                    <!--<li><a href=\"#\">공사중이라고욧!!</a></li>\n                    <li role=\"separator\" class=\"divider\"></li>-->\n                    <li>\n                        <a href=\"{{userInfoUrl}}\">\n                            <span class=\"glyphicon glyphicon-user\" style=\"margin-right:1rem;\"></span>\n                            {{userdata?.user_json._name}}\n                        </a>\n                    </li>\n                    <li id=\"registers\" [style.display]=\"regOlogout?.display\">\n                        <a href=\"{{regOlogout?.url}}\" >\n                            <span class=\"glyphicon\" style=\"margin-right:1rem;\"></span>\n                            {{regOlogout?.name}}\n                        </a>\n                    </li>\n                </ul>\n            </li>\n        </ul>\n    </div>\n</nav>"
 
 /***/ }),
 
@@ -713,7 +713,8 @@ var TitlebarComponent = (function () {
         this.test = "HEllo";
         this.regOlogout = {
             url: "register",
-            name: "Register"
+            name: "Register",
+            display: "none"
         };
     }
     TitlebarComponent.prototype.ngOnInit = function () {
@@ -729,12 +730,14 @@ var TitlebarComponent = (function () {
                     // elements.setAttribute("style","display:block;");
                     _this.regOlogout.url = "register";
                     _this.regOlogout.name = "Register";
+                    _this.regOlogout.display = "none";
                 }
                 else {
                     _this.userInfoUrl = "user/" + _this.userdata.user_json._index;
                     // elements.setAttribute("style","display:none;");
                     _this.regOlogout.url = "logout";
                     _this.regOlogout.name = "Logout";
+                    _this.regOlogout.display = "block";
                 }
             }
         }, function (err) { return console.log(err); }, function () { return console.log('success'); });

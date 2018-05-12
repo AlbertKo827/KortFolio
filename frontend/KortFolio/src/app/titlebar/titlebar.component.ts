@@ -23,7 +23,8 @@ export class TitlebarComponent implements OnInit {
   test = "HEllo";
 regOlogout = {
   url : "register",
-  name : "Register"
+  name : "Register",
+  display : "none"
 }
 
   constructor(private UserService : UserinfoService ) {
@@ -42,11 +43,13 @@ regOlogout = {
             // elements.setAttribute("style","display:block;");
             this.regOlogout.url = "register";
             this.regOlogout.name = "Register";
+            this.regOlogout.display = "none";
           }else{
             this.userInfoUrl = "user/" + this.userdata.user_json._index;
             // elements.setAttribute("style","display:none;");
             this.regOlogout.url = "logout";
             this.regOlogout.name = "Logout";
+            this.regOlogout.display = "block";
           }
           
           

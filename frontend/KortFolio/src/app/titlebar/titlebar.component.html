@@ -29,7 +29,7 @@
                             {{userdata?.user_json._name}}
                         </a>
                     </li>
-                    <li id="registers" ><!--//[style.display]="test">-->
+                    <li id="registers" [style.display]="regOlogout?.display">
                         <a href="{{regOlogout?.url}}" >
                             <span class="glyphicon" style="margin-right:1rem;"></span>
                             {{regOlogout?.name}}
