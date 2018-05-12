@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TitlebarComponent } from '../titlebar/titlebar.component';
 
-import { UserModel } from '../service/userinfo.service'
+import { UserinfoService } from '../service/userinfo.service'
 
 @Component({
   selector: 'app-contact',
@@ -9,11 +9,17 @@ import { UserModel } from '../service/userinfo.service'
   styleUrls: ['../app.component.css']
 })
 export class ContactComponent implements OnInit {
-  name : string = "";
-  constructor( private userinfo : TitlebarComponent) { }
+  name : String = "";
+  constructor( private UserService : UserinfoService) { }
 
   ngOnInit() {
-    console.log("contact userdata : " + this.userinfo.userdata.user_json._name);
+    this.UserService.getUserSelf().subscribe( 
+      data => {
+        this.name = data.user_json._name;
+      },
+      err => console.log(err),
+      () => console.log('success')
+    );
   }
 
 }

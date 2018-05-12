@@ -257,7 +257,7 @@ ContactResultComponent = __decorate([
 /***/ "../../../../../src/app/contact/contact.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid kortfolio-contact-bg\">\n<div class=\"container\" style=\"margin : 3rem auto; width : 45rem;\">\n  <div class=\"col-xs-12 col-sm-12 col-md-12\">\n  <h1>혹시!</h1>\n  <p>\n    제가 회사에 필요하다면 연락주세요!!\n  </p>\n  </div>\n</div>\n<form class = \"kortfolio-contactForm\" action=\"/contact\" accept-charset=\"utf-8\" style=\"\" method=\"POST\">\n  <div class=\"row\">\n    <div class=\"col-xs-3 col-sm-3 col-md-3\">\n      <label for=\"name\" style=\"\">이름</label>\n    </div>\n    <div class=\"col-xs-9 col-sm-9 col-md-9\">\n      <input type=\"text\" id=\"name\" name=\"name\" style=\"width:20rem;\" placeholder=\"성함을 적어주십시오.\" value=\"{{this.userinfo.user_json?._name}}\">\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-xs-3 l-sm-3 col-md-3\">\n      <label for=\"tel\" style=\"\">연락처</label>\n    </div>\n    <div class=\"col-xs-9 col-sm-9 col-md-9\">\n      <input type=\"text\" id=\"tel\" name=\"tel\" style=\"width:20rem;\" placeholder=\"010-XXXX-XXXX\" >\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-xs-3 col-sm-3 col-md-3\">\n      <label for=\"message\" style=\"\">메세지</label>\n    </div>\n    <div class=\"col-xs-9 col-sm-9 col-md-9\">\n      <textarea id=\"message\" name=\"message\" rows=\"8\" cols=\"20\" style=\"resize:none; width:20rem;\" placeholder=\"고명석씨를 채용하고싶군요!!\"></textarea>\n    </div>\n  </div>\n\n  <!-- <label style=\"display : block\">이름<input type=\"text\" name=\"name\" style=\"width : 10rem;\"/></label>\n  <label style=\"display : block\">연락처<input type=\"text\" name=\"tel\"/></label>\n  <label style=\"display : block\">메세지<textarea name=\"Message\" rows=\"8\" cols=\"20\" style=\"resize:none; width : 10rem\" name=\"message\"></textarea></label> -->\n  <div style=\"text-align:center\">\n    <input type=\"submit\" value=\"보내기\"/>\n  </div>\n</form>\n</div>"
+module.exports = "<div class=\"container-fluid kortfolio-contact-bg\">\n<div class=\"container\" style=\"margin : 3rem auto; width : 45rem;\">\n  <div class=\"col-xs-12 col-sm-12 col-md-12\">\n  <h1>혹시!</h1>\n  <p>\n    제가 회사에 필요하다면 연락주세요!!\n  </p>\n  </div>\n</div>\n<form class = \"kortfolio-contactForm\" action=\"/contact\" accept-charset=\"utf-8\" style=\"\" method=\"POST\">\n  <div class=\"row\">\n    <div class=\"col-xs-3 col-sm-3 col-md-3\">\n      <label for=\"name\" style=\"\">이름</label>\n    </div>\n    <div class=\"col-xs-9 col-sm-9 col-md-9\">\n      <input type=\"text\" id=\"name\" name=\"name\" style=\"width:20rem;\" placeholder=\"성함을 적어주십시오.\" value=\"{{this.name}}\">\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-xs-3 l-sm-3 col-md-3\">\n      <label for=\"tel\" style=\"\">연락처</label>\n    </div>\n    <div class=\"col-xs-9 col-sm-9 col-md-9\">\n      <input type=\"text\" id=\"tel\" name=\"tel\" style=\"width:20rem;\" placeholder=\"010-XXXX-XXXX\" >\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-xs-3 col-sm-3 col-md-3\">\n      <label for=\"message\" style=\"\">메세지</label>\n    </div>\n    <div class=\"col-xs-9 col-sm-9 col-md-9\">\n      <textarea id=\"message\" name=\"message\" rows=\"8\" cols=\"20\" style=\"resize:none; width:20rem;\" placeholder=\"고명석씨를 채용하고싶군요!!\"></textarea>\n    </div>\n  </div>\n\n  <!-- <label style=\"display : block\">이름<input type=\"text\" name=\"name\" style=\"width : 10rem;\"/></label>\n  <label style=\"display : block\">연락처<input type=\"text\" name=\"tel\"/></label>\n  <label style=\"display : block\">메세지<textarea name=\"Message\" rows=\"8\" cols=\"20\" style=\"resize:none; width : 10rem\" name=\"message\"></textarea></label> -->\n  <div style=\"text-align:center\">\n    <input type=\"submit\" value=\"보내기\"/>\n  </div>\n</form>\n</div>"
 
 /***/ }),
 
@@ -267,7 +267,7 @@ module.exports = "<div class=\"container-fluid kortfolio-contact-bg\">\n<div cla
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__titlebar_titlebar_component__ = __webpack_require__("../../../../../src/app/titlebar/titlebar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__ = __webpack_require__("../../../../../src/app/service/userinfo.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -280,12 +280,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var ContactComponent = (function () {
-    function ContactComponent(userinfo) {
-        this.userinfo = userinfo;
+    function ContactComponent(UserService) {
+        this.UserService = UserService;
         this.name = "";
     }
     ContactComponent.prototype.ngOnInit = function () {
-        console.log("contact userdata : " + this.userinfo.userdata.user_json._name);
+        var _this = this;
+        this.UserService.getUserSelf().subscribe(function (data) {
+            _this.name = data.user_json._name;
+        }, function (err) { return console.log(err); }, function () { return console.log('success'); });
     };
     return ContactComponent;
 }());
@@ -295,7 +298,7 @@ ContactComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/contact/contact.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__titlebar_titlebar_component__["a" /* TitlebarComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__titlebar_titlebar_component__["a" /* TitlebarComponent */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__["a" /* UserinfoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__["a" /* UserinfoService */]) === "function" && _a || Object])
 ], ContactComponent);
 
 var _a;
