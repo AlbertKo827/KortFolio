@@ -487,6 +487,8 @@ module.exports = "<ul class=\"portfolio-list\">\n  <li style=\"border: 2px solid
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PortfolioComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__ = __webpack_require__("../../../../../src/app/service/userinfo.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -497,10 +499,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var PortfolioComponent = (function () {
-    function PortfolioComponent() {
+    function PortfolioComponent(UserService, router) {
+        this.UserService = UserService;
+        this.router = router;
     }
     PortfolioComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.UserService.getUserSelf().subscribe(function (data) {
+            if (data.user_json._name == "Login") {
+                alert("로그인 후 관람이 가능합니다.");
+                _this.router.navigate(['/']);
+            }
+        }, function (err) { return console.log(err); }, function () { return console.log('success'); });
     };
     return PortfolioComponent;
 }());
@@ -510,9 +523,10 @@ PortfolioComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/portfolio/portfolio.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__["a" /* UserinfoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__["a" /* UserinfoService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], PortfolioComponent);
 
+var _a, _b;
 //# sourceMappingURL=portfolio.component.js.map
 
 /***/ }),
