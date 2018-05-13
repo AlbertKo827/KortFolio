@@ -844,7 +844,7 @@ var TitlebarComponent = (function () {
         console.log("ok!! click!");
         if (this.userdata.user_json._name == "Login") {
             alert("로그인 후 관람이 가능합니다.");
-            this.router.navigate(['./']);
+            this.router.navigate(['/']);
         }
     };
     return TitlebarComponent;
