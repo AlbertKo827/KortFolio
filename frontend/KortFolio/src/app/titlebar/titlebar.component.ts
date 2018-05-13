@@ -1,6 +1,7 @@
 import { Component, OnInit, TemplateRef, ViewChild, Input } from '@angular/core';
 import { ModalDirective } from 'ngx-bootstrap/modal';
 
+import { Router, ɵROUTER_PROVIDERS} from '@angular/router'
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 
@@ -12,7 +13,8 @@ import { UserinfoService, UserModel } from '../service/userinfo.service'
 @Component({
   selector: 'app-titlebar',
   templateUrl: './titlebar.component.html',
-  styleUrls: ['../app.component.css']
+  styleUrls: ['../app.component.css'],
+  providers :[ ɵROUTER_PROVIDERS ]
 })
 
 export class TitlebarComponent implements OnInit {
@@ -27,7 +29,7 @@ regOlogout = {
   display : "none"
 }
 
-  constructor(private UserService : UserinfoService ) {
+  constructor(private UserService : UserinfoService, private router : Router ) {
 
   }
 
@@ -116,11 +118,7 @@ regOlogout = {
 
     if(this.userdata.user_json._name == "Login"){
       alert("로그인 후 관람이 가능합니다.");
-      console.log("login");
-    }
-    else{
-      alert("ok");
-      console.log("okokok");
+      this.router.navigate(['./']);
     }
   }
 /*

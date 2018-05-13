@@ -98998,7 +98998,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["_15" /* Version *
 /* unused harmony export UrlSerializer */
 /* unused harmony export UrlTree */
 /* unused harmony export VERSION */
-/* unused harmony export ɵROUTER_PROVIDERS */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return ROUTER_PROVIDERS; });
 /* unused harmony export ɵflatten */
 /* unused harmony export ɵa */
 /* unused harmony export ɵg */
