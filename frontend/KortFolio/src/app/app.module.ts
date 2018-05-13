@@ -19,7 +19,8 @@ import { ContactComponent } from './contact/contact.component';
 import { UserinfoService } from './service/userinfo.service';
 import { TestComponent } from './test/test.component';
 import { UserinfoComponent } from './userinfo/userinfo.component';
-import { ContactResultComponent } from './contact-result/contact-result.component'
+import { ContactResultComponent } from './contact-result/contact-result.component';
+import { PortfolioComponent } from './portfolio/portfolio.component'
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ContactResultComponent } from './contact-result/contact-result.componen
     TestComponent,
     UserinfoComponent,
     ContactResultComponent,
+    PortfolioComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +50,10 @@ import { ContactResultComponent } from './contact-result/contact-result.componen
       {
         path:'register',
         component:RegisterComponent
+      },
+      {
+        path:'portfolio',
+        component:PortfolioComponent
       },
       {
         path:'contact',

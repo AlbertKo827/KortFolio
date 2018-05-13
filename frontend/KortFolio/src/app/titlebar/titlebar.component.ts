@@ -110,6 +110,19 @@ regOlogout = {
       element.setAttribute("style","display:none;");
   }
   
+
+  click_portfolio(){
+    console.log("ok!! click!");
+
+    if(this.userdata.user_json._name == "Login"){
+      alert("로그인 후 관람이 가능합니다.");
+      console.log("login");
+    }
+    else{
+      alert("ok");
+      console.log("okokok");
+    }
+  }
 /*
   Modal
 
