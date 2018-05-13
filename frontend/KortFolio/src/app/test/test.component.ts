@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserinfoService, UserModel } from '../service/userinfo.service';
-import { Params } from '@angular/router'
+import { UserinfoService } from '../service/userinfo.service'
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-test',
@@ -8,13 +8,21 @@ import { Params } from '@angular/router'
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit {
-  test : UserModel;
-
-  constructor(private userinfo : UserinfoService) { }
+  constructor( private UserService : UserinfoService, private router : Router) { }
 
   ngOnInit() {
-
-    console.log("test : " + this.test.user_json._name);
+    this.UserService.getUserSelf().subscribe( 
+      data => {
+        if(data.user_json._name == "Login"){
+          alert("로그인 후 관람이 가능합니다.");
+          this.router.navigate(['/']);
+        }
+        else{
+          this.router.navigate(['/portfolio']);
+        }
+      },
+      err => console.log(err),
+      () => console.log('success')
+    );
   }
-
 }

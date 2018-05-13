@@ -68,7 +68,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component'
         component:UserinfoComponent
       },
       {
-        path:'test',
+        path:'logincheck',
         component:TestComponent
       }
     ]),

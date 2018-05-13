@@ -12,16 +12,16 @@ export class PortfolioComponent implements OnInit {
   constructor( private UserService : UserinfoService, private router : Router) { }
 
   ngOnInit() {
-    this.UserService.getUserSelf().subscribe( 
-      data => {
-        if(data.user_json._name == "Login"){
-          alert("로그인 후 관람이 가능합니다.");
-          this.router.navigate(['/']);
-        }
-      },
-      err => console.log(err),
-      () => console.log('success')
-    );
+    // this.UserService.getUserSelf().subscribe( 
+    //   data => {
+    //     if(data.user_json._name == "Login"){
+    //       alert("로그인 후 관람이 가능합니다.");
+    //       this.router.navigate(['/']);
+    //     }
+    //   },
+    //   err => console.log(err),
+    //   () => console.log('success')
+    // );
   }
   
 

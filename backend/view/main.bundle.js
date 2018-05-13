@@ -177,7 +177,7 @@ AppModule = __decorate([
                     component: __WEBPACK_IMPORTED_MODULE_18__userinfo_userinfo_component__["a" /* UserinfoComponent */]
                 },
                 {
-                    path: 'test',
+                    path: 'logincheck',
                     component: __WEBPACK_IMPORTED_MODULE_17__test_test_component__["a" /* TestComponent */]
                 }
             ]),
@@ -507,13 +507,16 @@ var PortfolioComponent = (function () {
         this.router = router;
     }
     PortfolioComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.UserService.getUserSelf().subscribe(function (data) {
-            if (data.user_json._name == "Login") {
-                alert("로그인 후 관람이 가능합니다.");
-                _this.router.navigate(['/']);
-            }
-        }, function (err) { return console.log(err); }, function () { return console.log('success'); });
+        // this.UserService.getUserSelf().subscribe( 
+        //   data => {
+        //     if(data.user_json._name == "Login"){
+        //       alert("로그인 후 관람이 가능합니다.");
+        //       this.router.navigate(['/']);
+        //     }
+        //   },
+        //   err => console.log(err),
+        //   () => console.log('success')
+        // );
     };
     return PortfolioComponent;
 }());
@@ -708,6 +711,7 @@ module.exports = "<p>\n  Hello! : {{hello}}\n</p>\n"
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TestComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__ = __webpack_require__("../../../../../src/app/service/userinfo.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -719,12 +723,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var TestComponent = (function () {
-    function TestComponent(userinfo) {
-        this.userinfo = userinfo;
+    function TestComponent(UserService, router) {
+        this.UserService = UserService;
+        this.router = router;
     }
     TestComponent.prototype.ngOnInit = function () {
-        console.log("test : " + this.test.user_json._name);
+        var _this = this;
+        this.UserService.getUserSelf().subscribe(function (data) {
+            if (data.user_json._name == "Login") {
+                alert("로그인 후 관람이 가능합니다.");
+                _this.router.navigate(['/']);
+            }
+            else {
+                _this.router.navigate(['/portfolio']);
+            }
+        }, function (err) { return console.log(err); }, function () { return console.log('success'); });
     };
     return TestComponent;
 }());
@@ -734,10 +749,10 @@ TestComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/test/test.component.html"),
         styles: [__webpack_require__("../../../../../src/app/test/test.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__["a" /* UserinfoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__["a" /* UserinfoService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__["a" /* UserinfoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__["a" /* UserinfoService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], TestComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=test.component.js.map
 
 /***/ }),
