@@ -210,7 +210,7 @@ a:hover { color: rgb(236, 226, 164); text-decoration: none;}
     /* background-color : rgb(236, 226, 164);  */
     border-radius : 5%; 
     width : 45rem; 
-    height : 37rem;
+    height : 45rem;
 }
 
 .kortfolio-contactForm>div{
@@ -302,6 +302,19 @@ text-align: center;
 
     #kortfolio-login{
         display: none;
+    }
+
+    .kortfolio-contactForm{
+        width: 30rem;
+    }
+
+    .kortfolio-contactForm label{
+        font-size: 1.2rem;
+    }
+
+    .kortfolio-contactForm .row div input,
+    .kortfolio-contactForm .row div textarea{
+        width: 17rem;
     }
 
     .portfolio-list li{
