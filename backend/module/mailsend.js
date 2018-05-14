@@ -18,14 +18,14 @@ module.exports.send = (body) => {
         from: 'myeongsku@gmail.com',
         to: 'myeongsku@naver.com',
         subject: 'test',
-        text: text.replace(/₩n/gi,"\\r\\n")
+        text : text// text: text.replace(/₩n/gi,"\\r\\n")
     };
 
     var maildata2 = {
         from: 'myeongsku@gmail.com',
         to: body.email,
         subject: '연락주셔서 감사합니다!!',
-        text: text.replace(/₩n/gi,"\\r\\n"),
+        text : text,// text: text.replace(/₩n/gi,"\\r\\n"),
         attachments : [
             {
                 path : path.join(__dirname, 'attachments/aaa.pages')
