@@ -21,7 +21,7 @@ module.exports.send = (body) => {
         text: text.replace(/₩n/gi,"\\r\\n"),
         attachments : [
             {
-                path : path.join(__dirname, 'attachments/윤중현-이력서 파레트코.pages')
+                path : path.join(__dirname, 'attachments/aaa.pages')
             }
         ]
     };
