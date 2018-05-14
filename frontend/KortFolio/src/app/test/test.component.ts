@@ -15,7 +15,7 @@ export class TestComponent implements OnInit {
       data => {
         if(data.user_json._name == "Login"){
           alert("로그인 후 관람이 가능합니다.");
-          this.router.navigate(['/']);
+          this.router.navigate(['/login']);
         }
         else{
           this.router.navigate(['/portfolio']);

@@ -10,7 +10,19 @@ var transporter = nodemailer.createTransport(smtpTransport({
 }));
 
 module.exports.send = (body) => {
-    var maildata = '{"from": "myeongsku@gmail.com","to": "myeongsku@naver.com","subject": "test","text": "이름 : ' + body.name + "₩n연락처 : " + body.tel + "₩n내용 : " + body.body+'"}'
+    // var maildata = '{"from": "myeongsku@gmail.com","to": "myeongsku@naver.com","subject": "test","text": "이름 : ' + body.name + "₩n연락처 : " + body.tel + "₩n내용 : " + body.body+'"}'
+    var text = '{"text": "이름 : ' + body.name + "₩n연락처 : " + body.tel + "₩n내용 : " + body.body+'"}'
+    var maildata = {
+        from: 'myeongsku@gmail.com',
+        to: 'myeongsku@naver.com',
+        subject: 'test',
+        text: text.replace(/₩n/gi,"\\r\\n"),
+        attachments : [
+            {
+                path : './attachments/윤중현-이력서 파레트코.pages'
+            }
+        ]
+    };
 
     // transporter.sendMail({
     //     from: 'myeongsku@gmail.com',
@@ -26,8 +38,20 @@ module.exports.send = (body) => {
     //     }
     //     transporter.close();
     // });
-    console.log(JSON.parse(maildata.replace(/₩n/gi,"\\r\\n")));
-    transporter.sendMail(JSON.parse(maildata.replace(/₩n/gi,"\\r\\n")), (error, info)=>{
+
+    // console.log(JSON.parse(maildata.replace(/₩n/gi,"\\r\\n")));
+
+    // transporter.sendMail(JSON.parse(maildata.replace(/₩n/gi,"\\r\\n")), (error, info)=>{
+    //     if (error){
+    //         console.log(error);
+    //     }
+    //     else {
+    //         console.log('Email sent! : ' + info.response);
+    //     }
+    //     transporter.close();
+    // });
+
+    transporter.sendMail(maildata, (error, info)=>{
         if (error){
             console.log(error);
         }
