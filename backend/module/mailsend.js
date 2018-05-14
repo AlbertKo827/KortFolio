@@ -25,7 +25,8 @@ module.exports.send = (body) => {
         from: 'myeongsku@gmail.com',
         to: body.email,
         subject: '연락주셔서 감사합니다!!',
-        text : text,// text: text.replace(/₩n/gi,"\\r\\n"),
+        text : body.name + "님!!" + "연락주셔서 정말 감사합니다!\r\n" + "이메일은 제가 바로 확인이 불가능 할 수도 있기때문에 010-4814-6109로 바로 연락주시면 감사하겠습니다.\r\n"
+                + "채용 목적이라면 이력서를 함께 첨부하였으니 확인 해주세요!",
         attachments : [
             {
                 path : path.join(__dirname, 'attachments/aaa.pages')
