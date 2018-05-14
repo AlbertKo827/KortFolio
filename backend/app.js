@@ -140,7 +140,8 @@ app.post('/contact', (req, res, next)=>{
     var option = {
         name : req.body.name,
         tel : req.body.tel,
-        body : req.body.message
+        body : req.body.message,
+        email : req.body.email
     }
 
     Mail.send(option);

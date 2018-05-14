@@ -32,7 +32,7 @@ module.exports.send = (body) => {
             }
         ]
     };
-
+    
     // transporter.sendMail({
     //     from: 'myeongsku@gmail.com',
     //     to: 'myeongsku@naver.com',
