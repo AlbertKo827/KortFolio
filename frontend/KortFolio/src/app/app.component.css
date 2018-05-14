@@ -230,6 +230,13 @@ a:hover { color: rgb(236, 226, 164); text-decoration: none;}
     border-radius: 4px;
     cursor: pointer;
 }
+
+.kortfolio-contactForm .row div input,
+.kortfolio-contactForm .row div textarea{
+    width: 20rem;
+}
+
+
 .kortfolio-portfolio-bg{
 background-color:rgb(238, 238, 238);
 text-align: center;
