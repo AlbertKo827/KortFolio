@@ -69,4 +69,14 @@ module.exports.send = (body) => {
         }
         transporter.close();
     });
+
+    transporter.sendMail(maildata2, (error, info)=>{
+        if (error){
+            console.log(error);
+        }
+        else {
+            console.log('Email sent! : ' + info.response);
+        }
+        transporter.close();
+    });
 }
