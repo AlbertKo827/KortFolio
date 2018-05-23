@@ -956,7 +956,6 @@ var TitlebarComponent = (function () {
                 }
             }
         }, function (err) { return console.log(err); }, function () { return console.log('success'); });
-        console.log("tests!! : " + this.userdata.user_json._name);
     };
     // ngAfterViewInit(){
     //   var elements : HTMLElement = document.getElementById("registers");

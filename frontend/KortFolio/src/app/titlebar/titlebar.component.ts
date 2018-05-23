@@ -60,8 +60,6 @@ regOlogout = {
       err => console.log(err),
       () => console.log('success')
     );
-
-    console.log("tests!! : " + this.userdata.user_json._name);
 }
 
 // ngAfterViewInit(){
