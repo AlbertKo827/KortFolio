@@ -98,12 +98,14 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__userinfo_userinfo_component__ = __webpack_require__("../../../../../src/app/userinfo/userinfo.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__contact_result_contact_result_component__ = __webpack_require__("../../../../../src/app/contact-result/contact-result.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__portfolio_portfolio_component__ = __webpack_require__("../../../../../src/app/portfolio/portfolio.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__portfolio_view_portfolio_view_component__ = __webpack_require__("../../../../../src/app/portfolio-view/portfolio-view.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -144,6 +146,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_18__userinfo_userinfo_component__["a" /* UserinfoComponent */],
             __WEBPACK_IMPORTED_MODULE_19__contact_result_contact_result_component__["a" /* ContactResultComponent */],
             __WEBPACK_IMPORTED_MODULE_20__portfolio_portfolio_component__["a" /* PortfolioComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__portfolio_view_portfolio_view_component__["a" /* PortfolioViewComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -151,6 +154,10 @@ AppModule = __decorate([
                 {
                     path: '',
                     component: __WEBPACK_IMPORTED_MODULE_9__introduce_introduce_component__["a" /* IntroduceComponent */]
+                },
+                {
+                    path: 'test',
+                    component: __WEBPACK_IMPORTED_MODULE_17__test_test_component__["a" /* TestComponent */]
                 },
                 {
                     path: 'login',
@@ -163,6 +170,10 @@ AppModule = __decorate([
                 {
                     path: 'portfolio',
                     component: __WEBPACK_IMPORTED_MODULE_20__portfolio_portfolio_component__["a" /* PortfolioComponent */]
+                },
+                {
+                    path: 'portfolio/:id',
+                    component: __WEBPACK_IMPORTED_MODULE_21__portfolio_view_portfolio_view_component__["a" /* PortfolioViewComponent */]
                 },
                 {
                     path: 'contact',
@@ -476,6 +487,49 @@ var _a;
 
 /***/ }),
 
+/***/ "../../../../../src/app/portfolio-view/portfolio-view.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  portfolio-view works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/portfolio-view/portfolio-view.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PortfolioViewComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var PortfolioViewComponent = (function () {
+    function PortfolioViewComponent() {
+    }
+    PortfolioViewComponent.prototype.ngOnInit = function () {
+    };
+    return PortfolioViewComponent;
+}());
+PortfolioViewComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-portfolio-view',
+        template: __webpack_require__("../../../../../src/app/portfolio-view/portfolio-view.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/app.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], PortfolioViewComponent);
+
+//# sourceMappingURL=portfolio-view.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/portfolio/portfolio.component.html":
 /***/ (function(module, exports) {
 
@@ -594,6 +648,73 @@ RegisterComponent = __decorate([
 
 /***/ }),
 
+/***/ "../../../../../src/app/service/portfolio.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PortfolioService; });
+/* unused harmony export PortfolioModel */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__("../../../../rxjs/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch__ = __webpack_require__("../../../../rxjs/add/operator/catch.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_catch__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+// Import RxJs required methods
+
+
+var PortfolioService = (function () {
+    function PortfolioService(http, router) {
+        this.http = http;
+        this.router = router;
+    }
+    PortfolioService.prototype.postPortfolio = function (body) {
+        return this.http.post('api/portfolio', body).map(function (res) {
+            return res.json();
+        })
+            .catch(this.handleErrorObservable);
+    };
+    PortfolioService.prototype.handleErrorObservable = function (error) {
+        console.error(error.message || error);
+        return __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__["Observable"].throw(error.message || error);
+    };
+    return PortfolioService;
+}());
+PortfolioService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object])
+], PortfolioService);
+
+var PortfolioModel = (function () {
+    function PortfolioModel(image, title, body) {
+        this.image = image;
+        this.title = title;
+        this.body = body;
+    }
+    return PortfolioModel;
+}());
+
+var _a, _b;
+//# sourceMappingURL=portfolio.service.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/service/userinfo.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -699,7 +820,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/test/test.component.html":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "<form class = \"kortfolio-contactForm\" accept-charset=\"utf-8\">\n    <div class=\"row\">\n      <div class=\"col-xs-3 col-sm-3 col-md-3\">\n        <label for=\"image\" style=\"\">이미지</label>\n      </div>\n      <div class=\"col-xs-9 col-sm-9 col-md-9\">\n        <input type=\"text\" id=\"image\" name=\"image\" placeholder=\"성함을 적어주십시오.\">\n      </div>\n    </div>\n  \n    <div class=\"row\">\n      <div class=\"col-xs-3 l-sm-3 col-md-3\">\n        <label for=\"title\" style=\"\">제목</label>\n      </div>\n      <div class=\"col-xs-9 col-sm-9 col-md-9\">\n        <input type=\"text\" id=\"title\" name=\"title\" placeholder=\"010-XXXX-XXXX\" >\n      </div>\n    </div>\n  \n    <div class=\"row\">\n      <div class=\"col-xs-3 l-sm-3 col-md-3\">\n        <label for=\"body\" style=\"\">내용</label>\n      </div>\n      <div class=\"col-xs-9 col-sm-9 col-md-9\">\n        <input type=\"text\" id=\"body\" name=\"body\" placeholder=\"id@xxx.com\">\n      </div>\n    </div>\n    <!-- <label style=\"display : block\">이름<input type=\"text\" name=\"name\" style=\"width : 10rem;\"/></label>\n    <label style=\"display : block\">연락처<input type=\"text\" name=\"tel\"/></label>\n    <label style=\"display : block\">메세지<textarea name=\"Message\" rows=\"8\" cols=\"20\" style=\"resize:none; width : 10rem\" name=\"message\"></textarea></label> -->\n    <div style=\"text-align:center\">\n      <input type=\"button\" value=\"보내기\" (click)={{}}/>\n    </div>\n  </form>"
 
 /***/ }),
 
@@ -709,7 +830,7 @@ module.exports = ""
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TestComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__ = __webpack_require__("../../../../../src/app/service/userinfo.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__service_portfolio_service__ = __webpack_require__("../../../../../src/app/service/portfolio.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -727,17 +848,27 @@ var TestComponent = (function () {
     function TestComponent(UserService, router) {
         this.UserService = UserService;
         this.router = router;
+        this._postBody = {
+            image: "",
+            title: "",
+            body: ""
+        };
+        this._image = document.getElementById("image");
+        this._title = document.getElementById("title");
+        this._body = document.getElementById("body");
     }
     TestComponent.prototype.ngOnInit = function () {
+    };
+    TestComponent.prototype.clickSubmmit = function () {
         var _this = this;
-        this.UserService.getUserSelf().subscribe(function (data) {
-            if (data.user_json._name == "Login") {
-                alert("로그인 후 관람이 가능합니다.");
-                _this.router.navigate(['/login']);
-            }
-            else {
-                _this.router.navigate(['/portfolio']);
-            }
+        this._postBody = {
+            image: this._image.getAttribute("value"),
+            title: this._title.getAttribute("value"),
+            body: this._body.getAttribute("value")
+        };
+        this.UserService.postPortfolio(this._postBody).subscribe(function (data) {
+            _this.result = data;
+            console.log(_this.result.body);
         }, function (err) { return console.log(err); }, function () { return console.log('success'); });
     };
     return TestComponent;
@@ -748,7 +879,7 @@ TestComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/test/test.component.html"),
         styles: [__webpack_require__("../../../../../src/app/test/test.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__["a" /* UserinfoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__["a" /* UserinfoService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__service_portfolio_service__["a" /* PortfolioService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__service_portfolio_service__["a" /* PortfolioService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], TestComponent);
 
 var _a, _b;
@@ -759,7 +890,7 @@ var _a, _b;
 /***/ "../../../../../src/app/titlebar/titlebar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-kortfolio navbar-fixed-top\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n            <!--<a class=\"navbar-brand\">\n              <img src=\"assets/img/ngx-bootstrap.svg\" class=\"logo\">\n            </a>-->\n            <span class=\"navbar-brand glyphicon glyphicon-align-justify\" id=\"kortfolio-menu\" (click)=\"openMenu()\"></span>\n            <a href=\"\" style=\"margin:auto 0;\"><span class=\"navbar-brand\">KortFolio</span></a>\n        </div>\n        <ul class=\"nav navbar-nav navbar-right\" id=\"kortfolio-login\">\n                <li style=\"float : right;\"><a href=\"{{userInfoUrl}}\">{{userdata?.user_json._name}}</a></li>\n        </ul>\n        <ul class=\"nav navbar-nav navbar-left\" id=\"menu\">\n            <li>\n                <a href=\"logincheck\" >PortFolio</a>\n            </li>\n            <li>\n                <a href=\"contact\">Contact</a>\n            </li>\n            <li><a href=\"http://ifyoudontknow-youcandothis.tistory.com\">Blog</a></li>\n            \n            <li class=\"dropdown\" dropdown> <!-- {1} -->\n                <a dropdownToggle role=\"button\"> <!-- {2} -->\n                  <span class=\"glyphicon glyphicon-cog\"></span>\n                  <span class=\"caret\"></span></a>\n                <ul *dropdownMenu class=\"dropdown-menu\"> <!-- {3} -->\n                    <!--<li><a href=\"#\">공사중이라고욧!!</a></li>\n                    <li role=\"separator\" class=\"divider\"></li>-->\n                    <li>\n                        <a href=\"{{userInfoUrl}}\">\n                            <span class=\"glyphicon glyphicon-user\" style=\"margin-right:1rem;\"></span>\n                            {{userdata?.user_json._name}}\n                        </a>\n                    </li>\n                    <li id=\"registers\" [style.display]=\"regOlogout?.display\">\n                        <a href=\"{{regOlogout?.url}}\" >\n                            <span class=\"glyphicon\" style=\"margin-right:1rem;\"></span>\n                            {{regOlogout?.name}}\n                        </a>\n                    </li>\n                </ul>\n            </li>\n        </ul>\n    </div>\n</nav>"
+module.exports = "<nav class=\"navbar navbar-kortfolio navbar-fixed-top\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n            <!--<a class=\"navbar-brand\">\n              <img src=\"assets/img/ngx-bootstrap.svg\" class=\"logo\">\n            </a>-->\n            <span class=\"navbar-brand glyphicon glyphicon-align-justify\" id=\"kortfolio-menu\" (click)=\"openMenu()\"></span>\n            <a href=\"\" style=\"margin:auto 0;\"><span class=\"navbar-brand\">KortFolio</span></a>\n        </div>\n        <ul class=\"nav navbar-nav navbar-right\" id=\"kortfolio-login\">\n                <li style=\"float : right;\"><a href=\"{{userInfoUrl}}\">{{userdata?.user_json._name}}</a></li>\n        </ul>\n        <ul class=\"nav navbar-nav navbar-left\" id=\"menu\">\n            <li>\n                <a href=\"logincheck\" >PortFolio</a>\n            </li>\n            <li>\n                <a href=\"contact\">Contact</a>\n            </li>\n            <li><a href=\"http://blog.myeongsku.com\">Blog</a></li>\n            \n            <li class=\"dropdown\" dropdown> <!-- {1} -->\n                <a dropdownToggle role=\"button\"> <!-- {2} -->\n                  <span class=\"glyphicon glyphicon-cog\"></span>\n                  <span class=\"caret\"></span></a>\n                <ul *dropdownMenu class=\"dropdown-menu\"> <!-- {3} -->\n                    <!--<li><a href=\"#\">공사중이라고욧!!</a></li>\n                    <li role=\"separator\" class=\"divider\"></li>-->\n                    <li>\n                        <a href=\"{{userInfoUrl}}\">\n                            <span class=\"glyphicon glyphicon-user\" style=\"margin-right:1rem;\"></span>\n                            {{userdata?.user_json._name}}\n                        </a>\n                    </li>\n                    <li id=\"registers\" [style.display]=\"regOlogout?.display\">\n                        <a href=\"{{regOlogout?.url}}\" >\n                            <span class=\"glyphicon\" style=\"margin-right:1rem;\"></span>\n                            {{regOlogout?.name}}\n                        </a>\n                    </li>\n                </ul>\n            </li>\n        </ul>\n    </div>\n</nav>"
 
 /***/ }),
 

@@ -20,7 +20,8 @@ import { UserinfoService } from './service/userinfo.service';
 import { TestComponent } from './test/test.component';
 import { UserinfoComponent } from './userinfo/userinfo.component';
 import { ContactResultComponent } from './contact-result/contact-result.component';
-import { PortfolioComponent } from './portfolio/portfolio.component'
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { PortfolioViewComponent } from './portfolio-view/portfolio-view.component'
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component'
     UserinfoComponent,
     ContactResultComponent,
     PortfolioComponent,
+    PortfolioViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,10 @@ import { PortfolioComponent } from './portfolio/portfolio.component'
       {
         path:'',
         component:IntroduceComponent
+      },
+      {
+        path:'test',
+        component:TestComponent
       },
       {
         path:'login',
@@ -54,6 +60,10 @@ import { PortfolioComponent } from './portfolio/portfolio.component'
       {
         path:'portfolio',
         component:PortfolioComponent
+      },
+      {
+        path:'portfolio/:id',
+        component:PortfolioViewComponent
       },
       {
         path:'contact',

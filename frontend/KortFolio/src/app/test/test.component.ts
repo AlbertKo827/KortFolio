@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserinfoService } from '../service/userinfo.service'
+import { PortfolioService } from '../service/portfolio.service'
 import { Router } from "@angular/router";
 
 @Component({
@@ -8,18 +8,35 @@ import { Router } from "@angular/router";
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit {
-  constructor( private UserService : UserinfoService, private router : Router) { }
+  constructor( private UserService : PortfolioService, private router : Router) { }
+
+  _postBody : any = {
+    image : "",
+    title : "",
+    body : ""
+  }
+
+  result : any;
+
+  _image : HTMLElement = document.getElementById("image");
+  _title : HTMLElement = document.getElementById("title");
+  _body : HTMLElement = document.getElementById("body");
 
   ngOnInit() {
-    this.UserService.getUserSelf().subscribe( 
+    
+  }
+
+  clickSubmmit(){
+    this._postBody = {
+      image : this._image.getAttribute("value"),
+      title : this._title.getAttribute("value"),
+      body : this._body.getAttribute("value")
+    }
+
+    this.UserService.postPortfolio(this._postBody).subscribe( 
       data => {
-        if(data.user_json._name == "Login"){
-          alert("로그인 후 관람이 가능합니다.");
-          this.router.navigate(['/login']);
-        }
-        else{
-          this.router.navigate(['/portfolio']);
-        }
+        this.result = data;
+        console.log(this.result.body);
       },
       err => console.log(err),
       () => console.log('success')

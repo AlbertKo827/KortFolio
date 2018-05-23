@@ -18,6 +18,7 @@ const route = express.Router();
 const register = require('./routes/register.js')(route);
 
 const User = require('./module/users.js').User;
+const Portfolio = require('./module/portfolioes.js').Portfolio;
 
 app.locals.pretty = true;
 
@@ -129,6 +130,95 @@ app.get('/user/:id', (req, res, next)=>{
 
     next();
 })
+
+app.get('/api/portfolioes', (req, res, next) => { //포트폴리오 목록 가져오기
+    Portfolio.find((err, portfolioes) => {
+        if(!err){
+            res.status(200).json(portfolioes);
+        }
+        else{
+            res.status(500).json({
+                image : 'error.jpg',
+                title : 'error',
+                body : '죄송합니다. 에러가 발생했습니다.'
+            })
+        }
+    })
+})
+
+app.get('/api/portfolio/:title', (req, res, next) => { //해당 포트폴리오 가져오기
+    Portfolio.findOne({'title' : req.params.title }, (err, portfolio) => {
+        delete portfolio._id;
+
+        if(!err){
+            if(!portfolio){
+                res.status(404).json({
+                    image : 'error.jpg',
+                    title : '404 error',
+                    body : '죄송합니다. 해당 자료는 찾을 수 없습니다.'
+                })
+            }
+            else{
+                res.status(200).json(portfolio);
+            }
+        }
+        else{
+            res.status(500).json({
+                image : 'error.jpg',
+                title : 'error',
+                body : '죄송합니다. 에러가 발생했습니다.'
+            })
+        }
+    })
+    
+})
+
+app.post('/api/portfolio', (req, res, next) => { //새로운 포트폴리오 등록
+    console.log(req.body);
+
+    Portfolio.findOne({'title' : req.body.title}, (err, portfolio) => {
+        if(!err){
+            console.log(portfolio);
+            
+            if(portfolio == null){
+                new Portfolio(req.body).save((err) => {
+                    if(!err){
+                        res.status(200).json({
+                            result : 'success',
+                            body : '자료 등록을 완료했습니다.'
+                        })
+                    }
+                    else{
+                        res.status(500).json({
+                            result : 'error',
+                            body : '죄송합니다. 에러가 발생했습니다.'
+                        })
+                    }
+                })
+            }
+            else {
+                res.status(500).json({
+                    result : 'error',
+                    body : '죄송합니다. 이미 존재하는 자료입니다.'
+                })
+            }
+        }
+        else{
+            res.status(500).json({
+                result : 'error',
+                body : '죄송합니다. 에러가 발생했습니다.'
+            })
+        }
+    })
+})
+
+app.get('/portfolio/:title', (req, res, next) => {
+    
+    
+    next();
+})
+
+
 
 app.get('/contact', (req, res, next) => {
     console.log('contact');
