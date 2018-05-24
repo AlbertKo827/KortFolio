@@ -99,12 +99,14 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__contact_result_contact_result_component__ = __webpack_require__("../../../../../src/app/contact-result/contact-result.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__portfolio_portfolio_component__ = __webpack_require__("../../../../../src/app/portfolio/portfolio.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__portfolio_view_portfolio_view_component__ = __webpack_require__("../../../../../src/app/portfolio-view/portfolio-view.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__service_portfolio_service__ = __webpack_require__("../../../../../src/app/service/portfolio.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -201,7 +203,7 @@ AppModule = __decorate([
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_16__service_userinfo_service__["a" /* UserinfoService */],
-            __WEBPACK_IMPORTED_MODULE_7__titlebar_titlebar_component__["a" /* TitlebarComponent */]
+            __WEBPACK_IMPORTED_MODULE_22__service_portfolio_service__["a" /* PortfolioService */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
     })
@@ -799,28 +801,10 @@ var _a, _b;
 
 /***/ }),
 
-/***/ "../../../../../src/app/test/test.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
 /***/ "../../../../../src/app/test/test.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form class = \"kortfolio-contactForm\" accept-charset=\"utf-8\">\n    <div class=\"row\">\n      <div class=\"col-xs-3 col-sm-3 col-md-3\">\n        <label for=\"image\" style=\"\">이미지</label>\n      </div>\n      <div class=\"col-xs-9 col-sm-9 col-md-9\">\n        <input type=\"text\" id=\"image\" name=\"image\" placeholder=\"성함을 적어주십시오.\">\n      </div>\n    </div>\n  \n    <div class=\"row\">\n      <div class=\"col-xs-3 l-sm-3 col-md-3\">\n        <label for=\"title\" style=\"\">제목</label>\n      </div>\n      <div class=\"col-xs-9 col-sm-9 col-md-9\">\n        <input type=\"text\" id=\"title\" name=\"title\" placeholder=\"010-XXXX-XXXX\" >\n      </div>\n    </div>\n  \n    <div class=\"row\">\n      <div class=\"col-xs-3 l-sm-3 col-md-3\">\n        <label for=\"body\" style=\"\">내용</label>\n      </div>\n      <div class=\"col-xs-9 col-sm-9 col-md-9\">\n        <input type=\"text\" id=\"body\" name=\"body\" placeholder=\"id@xxx.com\">\n      </div>\n    </div>\n    <!-- <label style=\"display : block\">이름<input type=\"text\" name=\"name\" style=\"width : 10rem;\"/></label>\n    <label style=\"display : block\">연락처<input type=\"text\" name=\"tel\"/></label>\n    <label style=\"display : block\">메세지<textarea name=\"Message\" rows=\"8\" cols=\"20\" style=\"resize:none; width : 10rem\" name=\"message\"></textarea></label> -->\n    <div style=\"text-align:center\">\n      <input type=\"button\" value=\"보내기\" (click)=\"postPorfolio()\"/>\n    </div>\n  </form>"
+module.exports = "<form class = \"kortfolio-contactForm\" accept-charset=\"utf-8\">\n    <div class=\"row\">\n      <div class=\"col-xs-3 col-sm-3 col-md-3\">\n        <label for=\"image\" style=\"\">이미지</label>\n      </div>\n      <div class=\"col-xs-9 col-sm-9 col-md-9\">\n        <input type=\"text\" id=\"image\" name=\"image\" placeholder=\"성함을 적어주십시오.\">\n      </div>\n    </div>\n  \n    <div class=\"row\">\n      <div class=\"col-xs-3 l-sm-3 col-md-3\">\n        <label for=\"title\" style=\"\">제목</label>\n      </div>\n      <div class=\"col-xs-9 col-sm-9 col-md-9\">\n        <input type=\"text\" id=\"title\" name=\"title\" placeholder=\"010-XXXX-XXXX\" >\n      </div>\n    </div>\n  \n    <div class=\"row\">\n      <div class=\"col-xs-3 l-sm-3 col-md-3\">\n        <label for=\"body\" style=\"\">내용</label>\n      </div>\n      <div class=\"col-xs-9 col-sm-9 col-md-9\">\n        <input type=\"text\" id=\"body\" name=\"body\" placeholder=\"id@xxx.com\">\n      </div>\n    </div>\n    <!-- <label style=\"display : block\">이름<input type=\"text\" name=\"name\" style=\"width : 10rem;\"/></label>\n    <label style=\"display : block\">연락처<input type=\"text\" name=\"tel\"/></label>\n    <label style=\"display : block\">메세지<textarea name=\"Message\" rows=\"8\" cols=\"20\" style=\"resize:none; width : 10rem\" name=\"message\"></textarea></label> -->\n    <div style=\"text-align:center\">\n      <input type=\"button\" value=\"보내기\" (click)=\"clickSubmmit()\"/>\n    </div>\n  </form>\n"
 
 /***/ }),
 
@@ -853,14 +837,14 @@ var TestComponent = (function () {
             title: "",
             body: ""
         };
-        this._image = document.getElementById("image");
-        this._title = document.getElementById("title");
-        this._body = document.getElementById("body");
     }
     TestComponent.prototype.ngOnInit = function () {
     };
     TestComponent.prototype.clickSubmmit = function () {
         var _this = this;
+        this._image = document.getElementById("image");
+        this._title = document.getElementById("title");
+        this._body = document.getElementById("body");
         this._postBody = {
             image: this._image.getAttribute("value"),
             title: this._title.getAttribute("value"),
@@ -877,7 +861,7 @@ TestComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'app-test',
         template: __webpack_require__("../../../../../src/app/test/test.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/test/test.component.css")]
+        styles: [__webpack_require__("../../../../../src/app/app.component.css")],
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__service_portfolio_service__["a" /* PortfolioService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__service_portfolio_service__["a" /* PortfolioService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], TestComponent);

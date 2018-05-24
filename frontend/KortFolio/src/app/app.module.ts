@@ -22,6 +22,7 @@ import { UserinfoComponent } from './userinfo/userinfo.component';
 import { ContactResultComponent } from './contact-result/contact-result.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { PortfolioViewComponent } from './portfolio-view/portfolio-view.component'
+import { PortfolioService } from './service/portfolio.service';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,7 @@ import { PortfolioViewComponent } from './portfolio-view/portfolio-view.componen
   ],
   providers: [ 
     UserinfoService,
-    TitlebarComponent
+    PortfolioService
  ],
   bootstrap: [AppComponent]
 })

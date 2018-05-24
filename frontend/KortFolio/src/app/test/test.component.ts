@@ -5,8 +5,9 @@ import { Router } from "@angular/router";
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
-  styleUrls: ['./test.component.css']
+  styleUrls: ['../app.component.css'],
 })
+
 export class TestComponent implements OnInit {
   constructor( private UserService : PortfolioService, private router : Router) { }
 
@@ -18,15 +19,19 @@ export class TestComponent implements OnInit {
 
   result : any;
 
-  _image : HTMLElement = document.getElementById("image");
-  _title : HTMLElement = document.getElementById("title");
-  _body : HTMLElement = document.getElementById("body");
+  _image : HTMLElement;
+  _title : HTMLElement;
+  _body : HTMLElement;
 
   ngOnInit() {
     
   }
 
   clickSubmmit(){
+    this._image = document.getElementById("image");
+    this._title = document.getElementById("title");
+    this._body = document.getElementById("body");
+
     this._postBody = {
       image : this._image.getAttribute("value"),
       title : this._title.getAttribute("value"),
