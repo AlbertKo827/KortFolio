@@ -18,24 +18,20 @@ export class TestComponent implements OnInit {
   }
 
   result : any;
-
-  _image : HTMLElement;
-  _title : HTMLElement;
-  _body : HTMLElement;
+  test = '';
+  _image : String; 
+  _title : String;
+  _body : String;
 
   ngOnInit() {
     
   }
 
   clickSubmmit(){
-    this._image = document.getElementById("image");
-    this._title = document.getElementById("title");
-    this._body = document.getElementById("body");
-
     this._postBody = {
-      image : this._image.getAttribute("value"),
-      title : this._title.getAttribute("value"),
-      body : this._body.getAttribute("value")
+      image : this._image,
+      title : this._title,
+      body : this._body,
     }
 
     console.log(this._postBody);

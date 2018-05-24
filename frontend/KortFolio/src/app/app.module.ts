@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule} from '@angular/router';
+import { FormsModule } from '@angular/forms'
 import { HttpModule, Http } from '@angular/http'
 import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
@@ -85,6 +86,7 @@ import { PortfolioService } from './service/portfolio.service';
     ]),
     HttpModule,
     HttpClientModule,
+    FormsModule,
     AlertModule.forRoot(),
     DropDown.forRoot(),
     Modal.forRoot(),

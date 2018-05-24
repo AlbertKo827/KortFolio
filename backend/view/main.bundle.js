@@ -80,32 +80,34 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__("../../../common/@angular/common/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__titlebar_titlebar_component__ = __webpack_require__("../../../../../src/app/titlebar/titlebar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ctrl_sbb_ctrl_sbb_component__ = __webpack_require__("../../../../../src/app/ctrl-sbb/ctrl-sbb.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__introduce_introduce_component__ = __webpack_require__("../../../../../src/app/introduce/introduce.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__register_register_component__ = __webpack_require__("../../../../../src/app/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ngx_bootstrap__ = __webpack_require__("../../../../ngx-bootstrap/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_ngx_bootstrap_dropdown__ = __webpack_require__("../../../../ngx-bootstrap/dropdown/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ngx_bootstrap_modal__ = __webpack_require__("../../../../ngx-bootstrap/modal/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_ngx_bootstrap_progressbar__ = __webpack_require__("../../../../ngx-bootstrap/progressbar/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__contact_contact_component__ = __webpack_require__("../../../../../src/app/contact/contact.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__service_userinfo_service__ = __webpack_require__("../../../../../src/app/service/userinfo.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__test_test_component__ = __webpack_require__("../../../../../src/app/test/test.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__userinfo_userinfo_component__ = __webpack_require__("../../../../../src/app/userinfo/userinfo.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__contact_result_contact_result_component__ = __webpack_require__("../../../../../src/app/contact-result/contact-result.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__portfolio_portfolio_component__ = __webpack_require__("../../../../../src/app/portfolio/portfolio.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__portfolio_view_portfolio_view_component__ = __webpack_require__("../../../../../src/app/portfolio-view/portfolio-view.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__service_portfolio_service__ = __webpack_require__("../../../../../src/app/service/portfolio.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__("../../../common/@angular/common/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__titlebar_titlebar_component__ = __webpack_require__("../../../../../src/app/titlebar/titlebar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ctrl_sbb_ctrl_sbb_component__ = __webpack_require__("../../../../../src/app/ctrl-sbb/ctrl-sbb.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__introduce_introduce_component__ = __webpack_require__("../../../../../src/app/introduce/introduce.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__register_register_component__ = __webpack_require__("../../../../../src/app/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_ngx_bootstrap__ = __webpack_require__("../../../../ngx-bootstrap/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ngx_bootstrap_dropdown__ = __webpack_require__("../../../../ngx-bootstrap/dropdown/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_ngx_bootstrap_modal__ = __webpack_require__("../../../../ngx-bootstrap/modal/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_ngx_bootstrap_progressbar__ = __webpack_require__("../../../../ngx-bootstrap/progressbar/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__contact_contact_component__ = __webpack_require__("../../../../../src/app/contact/contact.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__service_userinfo_service__ = __webpack_require__("../../../../../src/app/service/userinfo.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__test_test_component__ = __webpack_require__("../../../../../src/app/test/test.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__userinfo_userinfo_component__ = __webpack_require__("../../../../../src/app/userinfo/userinfo.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__contact_result_contact_result_component__ = __webpack_require__("../../../../../src/app/contact-result/contact-result.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__portfolio_portfolio_component__ = __webpack_require__("../../../../../src/app/portfolio/portfolio.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__portfolio_view_portfolio_view_component__ = __webpack_require__("../../../../../src/app/portfolio-view/portfolio-view.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__service_portfolio_service__ = __webpack_require__("../../../../../src/app/service/portfolio.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -137,75 +139,76 @@ var AppModule = (function () {
 AppModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["M" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__titlebar_titlebar_component__["a" /* TitlebarComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__ctrl_sbb_ctrl_sbb_component__["a" /* CtrlSBBComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__introduce_introduce_component__["a" /* IntroduceComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__register_register_component__["a" /* RegisterComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__contact_contact_component__["a" /* ContactComponent */],
-            __WEBPACK_IMPORTED_MODULE_17__test_test_component__["a" /* TestComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__userinfo_userinfo_component__["a" /* UserinfoComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__contact_result_contact_result_component__["a" /* ContactResultComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__portfolio_portfolio_component__["a" /* PortfolioComponent */],
-            __WEBPACK_IMPORTED_MODULE_21__portfolio_view_portfolio_view_component__["a" /* PortfolioViewComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__titlebar_titlebar_component__["a" /* TitlebarComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__ctrl_sbb_ctrl_sbb_component__["a" /* CtrlSBBComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__introduce_introduce_component__["a" /* IntroduceComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__register_register_component__["a" /* RegisterComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__contact_contact_component__["a" /* ContactComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__test_test_component__["a" /* TestComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__userinfo_userinfo_component__["a" /* UserinfoComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__contact_result_contact_result_component__["a" /* ContactResultComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__portfolio_portfolio_component__["a" /* PortfolioComponent */],
+            __WEBPACK_IMPORTED_MODULE_22__portfolio_view_portfolio_view_component__["a" /* PortfolioViewComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* RouterModule */].forRoot([
                 {
                     path: '',
-                    component: __WEBPACK_IMPORTED_MODULE_9__introduce_introduce_component__["a" /* IntroduceComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_10__introduce_introduce_component__["a" /* IntroduceComponent */]
                 },
                 {
                     path: 'test',
-                    component: __WEBPACK_IMPORTED_MODULE_17__test_test_component__["a" /* TestComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_18__test_test_component__["a" /* TestComponent */]
                 },
                 {
                     path: 'login',
-                    component: __WEBPACK_IMPORTED_MODULE_6__login_login_component__["a" /* LoginComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_7__login_login_component__["a" /* LoginComponent */]
                 },
                 {
                     path: 'register',
-                    component: __WEBPACK_IMPORTED_MODULE_10__register_register_component__["a" /* RegisterComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_11__register_register_component__["a" /* RegisterComponent */]
                 },
                 {
                     path: 'portfolio',
-                    component: __WEBPACK_IMPORTED_MODULE_20__portfolio_portfolio_component__["a" /* PortfolioComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_21__portfolio_portfolio_component__["a" /* PortfolioComponent */]
                 },
                 {
                     path: 'portfolio/:id',
-                    component: __WEBPACK_IMPORTED_MODULE_21__portfolio_view_portfolio_view_component__["a" /* PortfolioViewComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_22__portfolio_view_portfolio_view_component__["a" /* PortfolioViewComponent */]
                 },
                 {
                     path: 'contact',
-                    component: __WEBPACK_IMPORTED_MODULE_15__contact_contact_component__["a" /* ContactComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_16__contact_contact_component__["a" /* ContactComponent */]
                 },
                 {
                     path: 'contact/result',
-                    component: __WEBPACK_IMPORTED_MODULE_19__contact_result_contact_result_component__["a" /* ContactResultComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_20__contact_result_contact_result_component__["a" /* ContactResultComponent */]
                 },
                 {
                     path: 'user/:id',
-                    component: __WEBPACK_IMPORTED_MODULE_18__userinfo_userinfo_component__["a" /* UserinfoComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_19__userinfo_userinfo_component__["a" /* UserinfoComponent */]
                 },
                 {
                     path: 'logincheck',
-                    component: __WEBPACK_IMPORTED_MODULE_17__test_test_component__["a" /* TestComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_18__test_test_component__["a" /* TestComponent */]
                 }
             ]),
-            __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClientModule */],
-            __WEBPACK_IMPORTED_MODULE_11_ngx_bootstrap__["a" /* AlertModule */].forRoot(),
-            __WEBPACK_IMPORTED_MODULE_12_ngx_bootstrap_dropdown__["a" /* BsDropdownModule */].forRoot(),
-            __WEBPACK_IMPORTED_MODULE_13_ngx_bootstrap_modal__["b" /* ModalModule */].forRoot(),
-            __WEBPACK_IMPORTED_MODULE_14_ngx_bootstrap_progressbar__["a" /* ProgressbarModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["a" /* HttpClientModule */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_12_ngx_bootstrap__["a" /* AlertModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_13_ngx_bootstrap_dropdown__["a" /* BsDropdownModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_14_ngx_bootstrap_modal__["b" /* ModalModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_15_ngx_bootstrap_progressbar__["a" /* ProgressbarModule */].forRoot(),
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_16__service_userinfo_service__["a" /* UserinfoService */],
-            __WEBPACK_IMPORTED_MODULE_22__service_portfolio_service__["a" /* PortfolioService */]
+            __WEBPACK_IMPORTED_MODULE_17__service_userinfo_service__["a" /* UserinfoService */],
+            __WEBPACK_IMPORTED_MODULE_23__service_portfolio_service__["a" /* PortfolioService */]
         ],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -804,7 +807,7 @@ var _a, _b;
 /***/ "../../../../../src/app/test/test.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form class = \"kortfolio-contactForm\" accept-charset=\"utf-8\">\n    <div class=\"row\">\n      <div class=\"col-xs-3 col-sm-3 col-md-3\">\n        <label for=\"image\" style=\"\">이미지</label>\n      </div>\n      <div class=\"col-xs-9 col-sm-9 col-md-9\">\n        <input type=\"text\" id=\"image\" name=\"image\" placeholder=\"성함을 적어주십시오.\">\n      </div>\n    </div>\n  \n    <div class=\"row\">\n      <div class=\"col-xs-3 l-sm-3 col-md-3\">\n        <label for=\"title\" style=\"\">제목</label>\n      </div>\n      <div class=\"col-xs-9 col-sm-9 col-md-9\">\n        <input type=\"text\" id=\"title\" name=\"title\" placeholder=\"010-XXXX-XXXX\" >\n      </div>\n    </div>\n  \n    <div class=\"row\">\n      <div class=\"col-xs-3 l-sm-3 col-md-3\">\n        <label for=\"body\" style=\"\">내용</label>\n      </div>\n      <div class=\"col-xs-9 col-sm-9 col-md-9\">\n        <input type=\"text\" id=\"body\" name=\"body\" placeholder=\"id@xxx.com\">\n      </div>\n    </div>\n    <!-- <label style=\"display : block\">이름<input type=\"text\" name=\"name\" style=\"width : 10rem;\"/></label>\n    <label style=\"display : block\">연락처<input type=\"text\" name=\"tel\"/></label>\n    <label style=\"display : block\">메세지<textarea name=\"Message\" rows=\"8\" cols=\"20\" style=\"resize:none; width : 10rem\" name=\"message\"></textarea></label> -->\n    <div style=\"text-align:center\">\n      <input type=\"button\" value=\"보내기\" (click)=\"clickSubmmit()\"/>\n    </div>\n  </form>\n"
+module.exports = "<form class = \"kortfolio-contactForm\" accept-charset=\"utf-8\">\n    <div class=\"row\">\n      <div class=\"col-xs-3 col-sm-3 col-md-3\">\n        <label for=\"image\" style=\"\">이미지</label>\n      </div>\n      <div class=\"col-xs-9 col-sm-9 col-md-9\">\n        <input type=\"text\" id=\"image\" name=\"image\" placeholder=\"성함을 적어주십시오.\" [(ngModel)]=\"_image\">\n      </div>\n    </div>\n  \n    <div class=\"row\">\n      <div class=\"col-xs-3 l-sm-3 col-md-3\">\n        <label for=\"title\" style=\"\">제목</label>\n      </div>\n      <div class=\"col-xs-9 col-sm-9 col-md-9\">\n        <input type=\"text\" id=\"title\" name=\"title\" placeholder=\"010-XXXX-XXXX\" [(ngModel)]=\"_title\">\n      </div>\n    </div>\n  \n    <div class=\"row\">\n      <div class=\"col-xs-3 l-sm-3 col-md-3\">\n        <label for=\"body\" style=\"\">내용</label>\n      </div>\n      <div class=\"col-xs-9 col-sm-9 col-md-9\">\n        <input type=\"text\" id=\"body\" name=\"body\" placeholder=\"id@xxx.com\" [(ngModel)]=\"_body\">\n      </div>\n    </div>\n    <!-- <label style=\"display : block\">이름<input type=\"text\" name=\"name\" style=\"width : 10rem;\"/></label>\n    <label style=\"display : block\">연락처<input type=\"text\" name=\"tel\"/></label>\n    <label style=\"display : block\">메세지<textarea name=\"Message\" rows=\"8\" cols=\"20\" style=\"resize:none; width : 10rem\" name=\"message\"></textarea></label> -->\n    <div style=\"text-align:center\">\n      <input type=\"button\" value=\"보내기\" (click)=\"clickSubmmit()\"/>\n    </div>\n  </form>\n"
 
 /***/ }),
 
@@ -837,18 +840,16 @@ var TestComponent = (function () {
             title: "",
             body: ""
         };
+        this.test = '';
     }
     TestComponent.prototype.ngOnInit = function () {
     };
     TestComponent.prototype.clickSubmmit = function () {
         var _this = this;
-        this._image = document.getElementById("image");
-        this._title = document.getElementById("title");
-        this._body = document.getElementById("body");
         this._postBody = {
-            image: this._image.getAttribute("value"),
-            title: this._title.getAttribute("value"),
-            body: this._body.getAttribute("value")
+            image: this._image,
+            title: this._title,
+            body: this._body,
         };
         console.log(this._postBody);
         this.UserService.postPortfolio(this._postBody).subscribe(function (data) {

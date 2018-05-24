@@ -4,7 +4,7 @@
         <label for="image" style="">이미지</label>
       </div>
       <div class="col-xs-9 col-sm-9 col-md-9">
-        <input type="text" id="image" name="image" placeholder="성함을 적어주십시오.">
+        <input type="text" id="image" name="image" placeholder="성함을 적어주십시오." [(ngModel)]="_image">
       </div>
     </div>
   
@@ -13,7 +13,7 @@
         <label for="title" style="">제목</label>
       </div>
       <div class="col-xs-9 col-sm-9 col-md-9">
-        <input type="text" id="title" name="title" placeholder="010-XXXX-XXXX" >
+        <input type="text" id="title" name="title" placeholder="010-XXXX-XXXX" [(ngModel)]="_title">
       </div>
     </div>
   
@@ -22,7 +22,7 @@
         <label for="body" style="">내용</label>
       </div>
       <div class="col-xs-9 col-sm-9 col-md-9">
-        <input type="text" id="body" name="body" placeholder="id@xxx.com">
+        <input type="text" id="body" name="body" placeholder="id@xxx.com" [(ngModel)]="_body">
       </div>
     </div>
     <!-- <label style="display : block">이름<input type="text" name="name" style="width : 10rem;"/></label>
