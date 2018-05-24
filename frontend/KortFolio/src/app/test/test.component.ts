@@ -38,6 +38,8 @@ export class TestComponent implements OnInit {
       body : this._body.getAttribute("value")
     }
 
+    console.log(this._postBody);
+
     this.UserService.postPortfolio(this._postBody).subscribe( 
       data => {
         this.result = data;

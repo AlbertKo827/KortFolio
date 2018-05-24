@@ -850,6 +850,7 @@ var TestComponent = (function () {
             title: this._title.getAttribute("value"),
             body: this._body.getAttribute("value")
         };
+        console.log(this._postBody);
         this.UserService.postPortfolio(this._postBody).subscribe(function (data) {
             _this.result = data;
             console.log(_this.result.body);
