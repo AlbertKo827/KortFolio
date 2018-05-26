@@ -101,12 +101,14 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__portfolio_portfolio_component__ = __webpack_require__("../../../../../src/app/portfolio/portfolio.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__portfolio_view_portfolio_view_component__ = __webpack_require__("../../../../../src/app/portfolio-view/portfolio-view.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__service_portfolio_service__ = __webpack_require__("../../../../../src/app/service/portfolio.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__resume_download_resume_download_component__ = __webpack_require__("../../../../../src/app/resume-download/resume-download.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -151,6 +153,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_20__contact_result_contact_result_component__["a" /* ContactResultComponent */],
             __WEBPACK_IMPORTED_MODULE_21__portfolio_portfolio_component__["a" /* PortfolioComponent */],
             __WEBPACK_IMPORTED_MODULE_22__portfolio_view_portfolio_view_component__["a" /* PortfolioViewComponent */],
+            __WEBPACK_IMPORTED_MODULE_24__resume_download_resume_download_component__["a" /* ResumeDownloadComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -194,6 +197,10 @@ AppModule = __decorate([
                 {
                     path: 'logincheck',
                     component: __WEBPACK_IMPORTED_MODULE_18__test_test_component__["a" /* TestComponent */]
+                },
+                {
+                    path: 'download/:id',
+                    component: __WEBPACK_IMPORTED_MODULE_24__resume_download_resume_download_component__["a" /* ResumeDownloadComponent */]
                 }
             ]),
             __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* HttpModule */],
@@ -650,6 +657,48 @@ RegisterComponent = __decorate([
 ], RegisterComponent);
 
 //# sourceMappingURL=register.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/resume-download/resume-download.component.html":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "../../../../../src/app/resume-download/resume-download.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResumeDownloadComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ResumeDownloadComponent = (function () {
+    function ResumeDownloadComponent() {
+    }
+    ResumeDownloadComponent.prototype.ngOnInit = function () {
+    };
+    return ResumeDownloadComponent;
+}());
+ResumeDownloadComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-resume-download',
+        template: __webpack_require__("../../../../../src/app/resume-download/resume-download.component.html")
+    }),
+    __metadata("design:paramtypes", [])
+], ResumeDownloadComponent);
+
+//# sourceMappingURL=resume-download.component.js.map
 
 /***/ }),
 

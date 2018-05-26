@@ -24,6 +24,7 @@ import { ContactResultComponent } from './contact-result/contact-result.componen
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { PortfolioViewComponent } from './portfolio-view/portfolio-view.component'
 import { PortfolioService } from './service/portfolio.service';
+import { ResumeDownloadComponent } from './resume-download/resume-download.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { PortfolioService } from './service/portfolio.service';
     ContactResultComponent,
     PortfolioComponent,
     PortfolioViewComponent,
+    ResumeDownloadComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,6 +84,10 @@ import { PortfolioService } from './service/portfolio.service';
       {
         path:'logincheck',
         component:TestComponent
+      },
+      {
+        path:'download/:id',
+        component:ResumeDownloadComponent
       }
     ]),
     HttpModule,
