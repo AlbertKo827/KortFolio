@@ -263,7 +263,7 @@ app.get('/testdownload', (req, res)=>{
 })
 
 app.get('/download/:id', (req, res)=>{
-    res.download('./download/' + req.params.id + '.pdf');
+    res.download('./download/' + req.params.id + '.pdf', '고명석_이력서.pdf');
 })
 
 //app.use('/login', login);
