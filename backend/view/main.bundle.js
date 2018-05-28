@@ -101,7 +101,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__portfolio_portfolio_component__ = __webpack_require__("../../../../../src/app/portfolio/portfolio.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__portfolio_view_portfolio_view_component__ = __webpack_require__("../../../../../src/app/portfolio-view/portfolio-view.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__service_portfolio_service__ = __webpack_require__("../../../../../src/app/service/portfolio.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__resume_download_resume_download_component__ = __webpack_require__("../../../../../src/app/resume-download/resume-download.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__logincheck_logincheck_component__ = __webpack_require__("../../../../../src/app/logincheck/logincheck.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -153,7 +153,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_20__contact_result_contact_result_component__["a" /* ContactResultComponent */],
             __WEBPACK_IMPORTED_MODULE_21__portfolio_portfolio_component__["a" /* PortfolioComponent */],
             __WEBPACK_IMPORTED_MODULE_22__portfolio_view_portfolio_view_component__["a" /* PortfolioViewComponent */],
-            __WEBPACK_IMPORTED_MODULE_24__resume_download_resume_download_component__["a" /* ResumeDownloadComponent */],
+            __WEBPACK_IMPORTED_MODULE_24__logincheck_logincheck_component__["a" /* LogincheckComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -196,12 +196,8 @@ AppModule = __decorate([
                 },
                 {
                     path: 'logincheck',
-                    component: __WEBPACK_IMPORTED_MODULE_18__test_test_component__["a" /* TestComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_24__logincheck_logincheck_component__["a" /* LogincheckComponent */]
                 },
-                {
-                    path: 'download/:id',
-                    component: __WEBPACK_IMPORTED_MODULE_24__resume_download_resume_download_component__["a" /* ResumeDownloadComponent */]
-                }
             ]),
             __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["a" /* HttpClientModule */],
@@ -499,6 +495,84 @@ var _a;
 
 /***/ }),
 
+/***/ "../../../../../src/app/logincheck/logincheck.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/logincheck/logincheck.component.html":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "../../../../../src/app/logincheck/logincheck.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LogincheckComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__ = __webpack_require__("../../../../../src/app/service/userinfo.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var LogincheckComponent = (function () {
+    function LogincheckComponent(UserService, router) {
+        this.UserService = UserService;
+        this.router = router;
+    }
+    LogincheckComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.UserService.getUserSelf().subscribe(function (data) {
+            if (data.user_json._name == "Login") {
+                alert("로그인 후 관람이 가능합니다.");
+                _this.router.navigate(['/']);
+            }
+            else {
+                _this.router.navigate(['/portfolio']);
+            }
+        }, function (err) { return console.log(err); }, function () { return console.log('success'); });
+    };
+    return LogincheckComponent;
+}());
+LogincheckComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-logincheck',
+        template: __webpack_require__("../../../../../src/app/logincheck/logincheck.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/logincheck/logincheck.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__["a" /* UserinfoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__["a" /* UserinfoService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
+], LogincheckComponent);
+
+var _a, _b;
+//# sourceMappingURL=logincheck.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/portfolio-view/portfolio-view.component.html":
 /***/ (function(module, exports) {
 
@@ -657,48 +731,6 @@ RegisterComponent = __decorate([
 ], RegisterComponent);
 
 //# sourceMappingURL=register.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/resume-download/resume-download.component.html":
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "../../../../../src/app/resume-download/resume-download.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResumeDownloadComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var ResumeDownloadComponent = (function () {
-    function ResumeDownloadComponent() {
-    }
-    ResumeDownloadComponent.prototype.ngOnInit = function () {
-    };
-    return ResumeDownloadComponent;
-}());
-ResumeDownloadComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
-        selector: 'app-resume-download',
-        template: __webpack_require__("../../../../../src/app/resume-download/resume-download.component.html")
-    }),
-    __metadata("design:paramtypes", [])
-], ResumeDownloadComponent);
-
-//# sourceMappingURL=resume-download.component.js.map
 
 /***/ }),
 

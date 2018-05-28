@@ -24,6 +24,7 @@ import { ContactResultComponent } from './contact-result/contact-result.componen
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { PortfolioViewComponent } from './portfolio-view/portfolio-view.component'
 import { PortfolioService } from './service/portfolio.service';
+import { LogincheckComponent } from './logincheck/logincheck.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { PortfolioService } from './service/portfolio.service';
     ContactResultComponent,
     PortfolioComponent,
     PortfolioViewComponent,
+    LogincheckComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,7 +83,7 @@ import { PortfolioService } from './service/portfolio.service';
       },
       {
         path:'logincheck',
-        component:TestComponent
+        component:LogincheckComponent
       },
     ]),
     HttpModule,
