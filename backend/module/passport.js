@@ -9,6 +9,7 @@ const passport = require('passport');
 const kakaoStrategy = require('passport-kakao').Strategy;
 const naverStrategy = require('passport-naver').Strategy;
 const facebookStrategy = require('passport-facebook').Strategy;
+const LocalStrategy = require('passport-local').Strategy;
 
 const User = require('./users.js').User;
 
@@ -53,6 +54,54 @@ router.get('/login/facebook_oauth', passport.authenticate('facebook', {
     //res.end();
     res.redirect('/');
     //next();
+})
+
+router.post('/login', passport.authenticate('local', {failureRedirect: '/login'}), // 인증 실패 시 401 리턴, {} -> 인증 스트레티지
+  function (req, res) {
+    res.redirect('/');
+    
+  });
+
+router.post('/register', (req, res) => {
+    User.findOne({//DB에서 회원 정보를 찾는다.
+        '_email' : req.body.email,
+        '_privider' : 'kortfolio'
+    }, (err, user)=>{
+
+        if(err){//DB Error!
+            console.log("에러! : " + err);
+
+            return done(err);
+        }
+        else if (!user) {//회원이 아니라면
+            const _user = new User({//신규 유저 정보를 JSON으로
+                _index : '0',
+                _name: req.body.name,
+                _email: req.body.email,
+                _pw : req.body.pw,
+                _provider : 'kortfolio'
+            });
+
+            _user.save((err)=>{
+
+                if (err){ 
+                    console.log(err);
+                    console.log('done 1');
+                    res.redirect('/register');
+                }
+                else{
+                    console.log('done 2');
+                    res.redirect('/login')
+                }
+            });
+        } else {
+            res.redirect('/register');
+        }
+    });
+})
+
+router.get('/register', (req, res, next) => {
+    next();
 })
 
 module.exports.initialize = passport.initialize();
@@ -202,6 +251,34 @@ module.exports.setPassport = () => {
                 } else {
                     console.log('로그인');
                     return done(null, user);
+                }
+            });
+        }
+    ));
+
+    passport.use(new LocalStrategy({
+        usernameField : 'email',
+        passwordField : 'pw'}, 
+        (email, password, done)=>
+        {
+            User.findOne({//DB에서 회원 정보를 찾는다.
+                '_email' : email
+            }, (err, user)=>{
+                if(err){//DB Error!
+                    console.log("에러! : " + err);
+
+                    return done(err);
+                }
+                else if (!user) {//회원이 아니라면
+                    return done(null, false, { message : '회원이 아닙니다. 회원가입이 필요합니다.'})
+                } else {
+                    if(email === user._email && password === user._pw){
+                        console.log('로그인');
+                        return done(null, user);
+                    }
+                    else{
+                        return done(null, false);
+                    }
                 }
             });
         }
