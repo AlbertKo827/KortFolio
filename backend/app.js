@@ -267,7 +267,7 @@ app.get('/download/:id', (req, res)=>{
 })
 
 //app.use('/login', login);
-app.use('/register', register);
+// app.use('/register', register);
 
 app.get('/*', (req, res)=>{
      res.sendFile(path.join(__dirname, 'view/index.html'));

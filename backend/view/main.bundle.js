@@ -694,7 +694,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/register/register.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form ngNoForm action=\"/login\" method=\"post\">\n  <div>\n    <label>Username:</label>\n    <input type=\"text\" name=\"username\"/>\n  </div>\n  <div>\n    <label>Password:</label>\n    <input type=\"password\" name=\"password\"/>\n  </div>\n  <div>\n    <input type=\"submit\" value=\"Log In\"/>\n  </div>\n</form>"
+module.exports = "<form ngNoForm action=\"/register\" method=\"POST\">\n    <input type=\"text\" name=\"name\" placeholder=\"이름\"/>\n    <input type=\"text\" name=\"email\" placeholder=\"이메일\"/>\n    <input type=\"password\" name=\"pw\" placeholder=\"비밀번호\"/>\n    <input type=\"submit\" name=\"submit\" value=\"회원가입\" />\n</form>"
 
 /***/ }),
 
