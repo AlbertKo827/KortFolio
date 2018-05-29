@@ -262,7 +262,11 @@ app.get('/testdownload', (req, res)=>{
     res.download("./download/How to use 'git'.pdf");
 })
 
-app.get('/download/:id', (req, res)=>{
+app.get('/download/:id', (req, res) => {
+    res.download('./download/' + req.params.id);
+})
+
+app.get('/download/resume/:id', (req, res)=>{
     res.download('./download/' + req.params.id + '.pdf', '고명석_이력서.pdf');
 })
 
