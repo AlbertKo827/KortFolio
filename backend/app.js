@@ -19,6 +19,7 @@ const register = require('./routes/register.js')(route);
 
 const User = require('./module/users.js').User;
 const Portfolio = require('./module/portfolioes.js').Portfolio;
+const Comment = require('./module/comments.js').Comment;
 
 app.locals.pretty = true;
 
@@ -183,7 +184,7 @@ app.post('/api/portfolio', (req, res, next) => { //새로운 포트폴리오 등
             if(portfolio == null){
                 new Portfolio(req.body).save((err) => {
                     if(!err){
-                        res.status(200).json({
+                        res.status(200).json({ 
                             result : 'success',
                             body : '자료 등록을 완료했습니다.'
                         })
@@ -268,6 +269,56 @@ app.get('/download/:id', (req, res) => {
 
 app.get('/download/resume/:id', (req, res)=>{
     res.download('./download/' + req.params.id + '.pdf', '고명석_이력서.pdf');
+})
+
+app.get('/api/feedback', (req, res, next)=>{//댓글들 가져오기
+    Comment.find({}, (err, comments)=>{
+        res.status(200).json(comments);
+
+        console.log(comments);
+    })
+})
+
+app.post('/api/feedback', (req, res) =>{//댓글 달기
+    if(req.user === undefined){
+        res.status(500).json({
+            'result' : '로그인을 해주세요!'
+        });
+    }
+    Comment.find({}, (err, comments)=>{
+        if(!err){
+            new Comment({
+                '_comment' : req.body.comment,
+                '_name' : req.user._name,
+                '_pw' : req.user._pw,
+                '_provider' : req.user._provider
+            }).save(err => {
+                if(!err){
+                    res.status(200).json({
+                        'result' : '댓글 작성을 성공했습니다.'
+                    })
+                }
+                else{
+                    res.status(500).json({
+                        'result' : '댓글 작성 중 에러가 발생했습니다.'
+                    })
+                }
+            })
+        }
+        else{
+            res.status(500).json({
+                'result' : '댓글 작성 중 에러가 발생했습니다.'
+            })
+        }
+    })
+})
+
+app.put('/api/feedback', (req, res) => {//특정 댓글 수정하기
+
+})
+
+app.delete('/api/feedback', (req, res) => {//특정 댓글 삭제하기
+
 })
 
 //app.use('/login', login);

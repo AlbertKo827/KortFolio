@@ -25,6 +25,9 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { PortfolioViewComponent } from './portfolio-view/portfolio-view.component'
 import { PortfolioService } from './service/portfolio.service';
 import { LogincheckComponent } from './logincheck/logincheck.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { FooterDirective } from './footer.directive';
+import { FeedbackService } from './service/feedback.service';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,8 @@ import { LogincheckComponent } from './logincheck/logincheck.component';
     PortfolioComponent,
     PortfolioViewComponent,
     LogincheckComponent,
+    FeedbackComponent,
+    FooterDirective,
   ],
   imports: [
     BrowserModule,
@@ -85,6 +90,10 @@ import { LogincheckComponent } from './logincheck/logincheck.component';
         path:'logincheck',
         component:LogincheckComponent
       },
+      {
+        path:'feedback',
+        component:FeedbackComponent
+      },
     ]),
     HttpModule,
     HttpClientModule,
@@ -96,7 +105,8 @@ import { LogincheckComponent } from './logincheck/logincheck.component';
   ],
   providers: [ 
     UserinfoService,
-    PortfolioService
+    PortfolioService,
+    FeedbackService
  ],
   bootstrap: [AppComponent]
 })

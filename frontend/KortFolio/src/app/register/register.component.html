@@ -1,13 +1,6 @@
-<form action="/login" method="post">
-  <div>
-    <label>Username:</label>
-    <input type="text" name="username"/>
-  </div>
-  <div>
-    <label>Password:</label>
-    <input type="password" name="password"/>
-  </div>
-  <div>
-    <input type="submit" value="Log In"/>
-  </div>
+<form ngNoForm action="/register" method="POST">
+    <input type="text" name="name" placeholder="이름"/>
+    <input type="text" name="email" placeholder="이메일"/>
+    <input type="password" name="pw" placeholder="비밀번호"/>
+    <input type="submit" name="submit" value="회원가입" />
 </form>

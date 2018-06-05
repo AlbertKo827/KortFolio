@@ -1,7 +1,15 @@
 
 <div class="container-fluid">
     <h2>로그인</h2>
+    
   <div class="row">
+      <div class="col-sm-12 col-md-4 col-md-offset-4">
+          <form ngNoForm action="/login" method="POST" style="display: block; margin : 1rem;">
+            <input type="text" name="email" placeholder="email">
+            <input type="password" name="pw" placeholder="password">
+            <input type="submit" value="login">
+          </form>
+        </div>
     <div class="col-sm-12 col-md-4 col-md-offset-4 social-buttons">
       <a class="btn btn-block btn-social btn-lg btn-naver" href="http://myeongsku.com/login/auth/naver">
         <span class="fa fa-naver"></span> 네이버로 로그인
@@ -14,5 +22,9 @@
       </a>
     </div>
   </div>
-  <!-- <a href="register" style="color:blue">회원가입</a> -->
+  <a href="register" style="color:blue">회원가입</a>
+</div>
+<div>
+  <h1>죄송합니다.</h1>
+  <p>현재 passport.js를 이용한 간편 로그인 기능들이 검수 문제로 인해 사용이 안됩니다.</p>
 </div>

@@ -1,0 +1,22 @@
+<div *ngFor="let cnt of comments" class="container-fluid kortfolioFeedback">
+  <img class="cmd_image" src="../../assets/images/default-user-image.png">
+  <div class="comment" >
+    <div class="dataview">
+      <p class="name" >{{cnt._name}}</p>
+      <p class="date" >{{cnt._date | date:'yyyy년 MM월 dd일 HH시 mm분'}}</p>
+      <p class="body" >{{cnt._comment}}</p>
+    </div>
+    <div class="CRUD" >
+      <a class="put glyphicon glyphicon-edit" >수정하기</a>
+      <a class="del glyphicon glyphicon-trash" >지우기</a>
+      <a class="post glyphicon glyphicon-share-alt" >댓글쓰기</a>
+    </div>
+  </div>
+</div>
+
+<div Footer class="container-fluid kortfolioFeedbackCmd">
+  <form ngNoForm method="POST" name="PostCommand" action="api/feedback">
+    <textarea rows="7" placeholder="내용을 입력하세요" name="comment"></textarea>
+    <input type="submit" value="등록"/>
+  </form>
+</div>

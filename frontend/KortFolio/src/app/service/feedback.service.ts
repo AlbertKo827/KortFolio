@@ -10,33 +10,17 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 @Injectable()
-export class UserinfoService {
-
-
-  result : any;
-
-
+export class FeedbackService {
 
   constructor(private http : Http, private router : Router) { }
 
-  getUser(id : String) : Observable<UserModel>{
-     return this.http.get('api/user/' + id).map(
+  getComments() : Observable<CommentMdoel>{
+    return this.http.get('api/feedback').map(
       res => {
         return res.json();
-    })
-                                 .catch(
-      this.handleErrorObservable
-    );
-  }
-
-  getUserSelf() : Observable<UserModel>{
-    console.log("current url : " + this.router.url);
-
-    return this.http.get('api/user').map(
-      res => {
-        return res.json();
-    })
-                                 .catch(
+      }
+    )
+    .catch(
       this.handleErrorObservable
     );
   }
@@ -47,15 +31,12 @@ export class UserinfoService {
   }
 }
 
-export class UserModel{
+export class CommentMdoel{
   constructor(
-    public login_status : Boolean,
-    public status : String,
-    public user_json : {
-        _name : String,
-        _email : String,
-        _pw : String,
-        _index : Number
-    }
+    public _name : String,
+    public _pw : String,
+    public _provider : String,
+    public _date : String,
+    public _comment : String
   ){};
 }

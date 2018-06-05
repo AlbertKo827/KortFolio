@@ -279,6 +279,158 @@ text-align: center;
     color : rgb(236, 226, 164);
 }
 
+.kortfolioFeedback,
+.kortfolioFeedback a{
+    margin : 3rem auto;
+    color: white;
+}
+
+.kortfolioFeedback .cmd_image{
+    width: 8rem;
+    height: 8rem;
+    margin :auto;
+    background-color: azure;
+    border-radius: 50%;
+}
+
+.kortfolioFeedback .comment{
+    padding: 2rem;
+    width: 85%;
+    float: right;
+    background-color: rgb(99, 99, 99);
+    position: relative;
+    display: inline-block;
+    border-radius: 1rem;
+    border : 2px solid rgb(70, 70, 70);
+}
+
+.kortfolioFeedback>.comment::before{
+    /* content:''; 
+    position:absolute; 
+    width:0; 
+    height:0; 
+    border-style:solid;
+    border-width:10px 15px; 
+    margin-top:-10px;
+    border-color:transparent aquamarine transparent transparent; 
+    right : 100%;
+    top: 30%;
+    background-color: #000; */
+    content: '';
+    position: absolute;
+    top: 2.8rem;
+    width: 1rem;
+    height: 1rem;
+    border-top: 2px solid rgb(70, 70, 70);
+    border-left: 2px solid rgb(70, 70, 70);
+    border-right: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    background: rgb(99, 99, 99);
+
+    right: initial;
+    left: -.4rem;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.kortfolioFeedback .comment .dataview{
+    text-align: right;
+}
+
+.kortfolioFeedback .comment .dataview .name{
+    float: left;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.kortfolioFeedback .comment .dataview .date{
+    font-size: 1.2rem;
+}
+
+.kortfolioFeedback .comment .dataview .body{
+    text-align: left;
+    width: 100%;
+}
+
+.kortfolioFeedback .comment .CRUD{
+    text-align: right;
+}
+
+.kortfolioFeedback .comment .CRUD a{
+    margin : 0 0.25rem;
+}
+
+.kortfolioFeedback .comment .CRUD .put{
+
+}
+
+.kortfolioFeedback .comment .CRUD .del{
+
+}
+
+.kortfolioFeedback .comment .CRUD .post{
+
+}
+
+
+.kortfolioFeedbackCmd {
+
+}
+
+
+.kortfolioFeedbackCmd {
+    width: 80%;
+}
+
+.kortfolioFeedbackCmd * {
+    display: block;
+}
+
+.kortfolioFeedbackCmd{
+    background-color: aqua;
+    margin: 0 auto;
+    padding: 0 auto;
+    width: 100%;
+    /* position: fixed; */
+    overflow: hidden;
+    bottom: 0;
+}
+
+.kortfolioFeedbackCmd > form{
+    margin: 0 auto;
+    border: 3px black solid;
+    display: block;
+    margin: 3rem;
+    padding: 1rem;
+}
+
+.kortfolioFeedbackCmd > form > *{
+}
+
+.kortfolioFeedbackCmd > form > input[type="submit"]{
+    width: 100%;
+    margin: 1rem 0;
+    -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+}
+
+.kortfolioFeedbackCmd > form > textarea{
+    width: 100%;
+    margin: 0;
+    resize: none;
+
+    -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 /* 매우 작은 기기들 (모바일폰, 768px 보다 작은) */
 /* 부트스트랩에서 이것은 기본이므로 미디어쿼리가 없습니다. */
 
