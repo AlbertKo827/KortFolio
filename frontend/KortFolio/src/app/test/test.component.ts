@@ -23,6 +23,9 @@ export class TestComponent implements OnInit {
   _title : String;
   _body : String;
 
+  check : boolean = true;
+  testCnt = [];
+
   ngOnInit() {
     
   }
@@ -44,5 +47,11 @@ export class TestComponent implements OnInit {
       err => console.log(err),
       () => console.log('success')
     );
+  }
+
+  clickButton(){
+    this.check = !this.check;
+    this.testCnt.push(1);
+    console.log(this.testCnt);
   }
 }

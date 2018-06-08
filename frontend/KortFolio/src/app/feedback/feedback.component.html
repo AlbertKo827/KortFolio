@@ -1,22 +1,26 @@
-<div *ngFor="let cnt of comments" class="container-fluid kortfolioFeedback">
-  <img class="cmd_image" src="../../assets/images/default-user-image.png">
-  <div class="comment" >
-    <div class="dataview">
-      <p class="name" >{{cnt._name}}</p>
-      <p class="date" >{{cnt._date | date:'yyyy년 MM월 dd일 HH시 mm분'}}</p>
-      <p class="body" >{{cnt._comment}}</p>
-    </div>
-    <div class="CRUD" >
-      <a class="put glyphicon glyphicon-edit" >수정하기</a>
-      <a class="del glyphicon glyphicon-trash" >지우기</a>
-      <a class="post glyphicon glyphicon-share-alt" >댓글쓰기</a>
+<div *ngIf="user != null">
+  <div *ngFor="let cnt of comments" class="container-fluid kortfolioFeedback">
+    <img class="cmd_image" src="../../assets/images/default-user-image.png">
+    <div class="comment" >
+      <div class="dataview">
+        <p class="name" >{{cnt._name}}</p>
+        <p class="date" >{{cnt._date | date:'yyyy년 MM월 dd일 HH시 mm분'}}</p>
+        <p class="body" >{{cnt._comment}}</p>
+      </div>
+      <div class="CRUD" >
+        <a *ngIf="userCheck(cnt)" href="" class="put glyphicon glyphicon-edit" >수정하기</a>
+        <a *ngIf="userCheck(cnt)" (click)="clickDel(cnt._id)" class="del glyphicon glyphicon-trash" >지우기</a>
+        <a href="" class="post glyphicon glyphicon-share-alt" >댓글쓰기</a>
+      </div>
     </div>
   </div>
 </div>
 
 <div Footer class="container-fluid kortfolioFeedbackCmd">
-  <form ngNoForm method="POST" name="PostCommand" action="api/feedback">
-    <textarea rows="7" placeholder="내용을 입력하세요" name="comment"></textarea>
-    <input type="submit" value="등록"/>
+  <form ngNoForm method="POST" name="PostCommand">
+    <textarea rows="7" placeholder="내용을 입력하세요" name="comment" [(ngModel)]="body"></textarea>
+    <input (click)="clickPost()" type="submit" value="등록"/>
   </form>
 </div>
+
+<button (click)="tests()"></button>

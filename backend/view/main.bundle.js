@@ -89,28 +89,32 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ctrl_sbb_ctrl_sbb_component__ = __webpack_require__("../../../../../src/app/ctrl-sbb/ctrl-sbb.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__introduce_introduce_component__ = __webpack_require__("../../../../../src/app/introduce/introduce.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__register_register_component__ = __webpack_require__("../../../../../src/app/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_ngx_bootstrap__ = __webpack_require__("../../../../ngx-bootstrap/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ngx_bootstrap_dropdown__ = __webpack_require__("../../../../ngx-bootstrap/dropdown/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_ngx_bootstrap_modal__ = __webpack_require__("../../../../ngx-bootstrap/modal/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_ngx_bootstrap_progressbar__ = __webpack_require__("../../../../ngx-bootstrap/progressbar/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__contact_contact_component__ = __webpack_require__("../../../../../src/app/contact/contact.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__service_userinfo_service__ = __webpack_require__("../../../../../src/app/service/userinfo.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__test_test_component__ = __webpack_require__("../../../../../src/app/test/test.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__userinfo_userinfo_component__ = __webpack_require__("../../../../../src/app/userinfo/userinfo.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__contact_result_contact_result_component__ = __webpack_require__("../../../../../src/app/contact-result/contact-result.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__portfolio_portfolio_component__ = __webpack_require__("../../../../../src/app/portfolio/portfolio.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__portfolio_view_portfolio_view_component__ = __webpack_require__("../../../../../src/app/portfolio-view/portfolio-view.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__service_portfolio_service__ = __webpack_require__("../../../../../src/app/service/portfolio.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__logincheck_logincheck_component__ = __webpack_require__("../../../../../src/app/logincheck/logincheck.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__feedback_feedback_component__ = __webpack_require__("../../../../../src/app/feedback/feedback.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__footer_directive__ = __webpack_require__("../../../../../src/app/footer.directive.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__service_feedback_service__ = __webpack_require__("../../../../../src/app/service/feedback.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_ngx_cookie_service__ = __webpack_require__("../../../../ngx-cookie-service/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ngx_bootstrap__ = __webpack_require__("../../../../ngx-bootstrap/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_ngx_bootstrap_dropdown__ = __webpack_require__("../../../../ngx-bootstrap/dropdown/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_ngx_bootstrap_modal__ = __webpack_require__("../../../../ngx-bootstrap/modal/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_ngx_bootstrap_progressbar__ = __webpack_require__("../../../../ngx-bootstrap/progressbar/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__contact_contact_component__ = __webpack_require__("../../../../../src/app/contact/contact.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__service_userinfo_service__ = __webpack_require__("../../../../../src/app/service/userinfo.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__test_test_component__ = __webpack_require__("../../../../../src/app/test/test.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__userinfo_userinfo_component__ = __webpack_require__("../../../../../src/app/userinfo/userinfo.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__contact_result_contact_result_component__ = __webpack_require__("../../../../../src/app/contact-result/contact-result.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__portfolio_portfolio_component__ = __webpack_require__("../../../../../src/app/portfolio/portfolio.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__portfolio_view_portfolio_view_component__ = __webpack_require__("../../../../../src/app/portfolio-view/portfolio-view.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__service_portfolio_service__ = __webpack_require__("../../../../../src/app/service/portfolio.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__logincheck_logincheck_component__ = __webpack_require__("../../../../../src/app/logincheck/logincheck.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__feedback_feedback_component__ = __webpack_require__("../../../../../src/app/feedback/feedback.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__footer_directive__ = __webpack_require__("../../../../../src/app/footer.directive.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__service_feedback_service__ = __webpack_require__("../../../../../src/app/service/feedback.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__resultpage_resultpage_component__ = __webpack_require__("../../../../../src/app/resultpage/resultpage.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -153,15 +157,16 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_9__ctrl_sbb_ctrl_sbb_component__["a" /* CtrlSBBComponent */],
             __WEBPACK_IMPORTED_MODULE_10__introduce_introduce_component__["a" /* IntroduceComponent */],
             __WEBPACK_IMPORTED_MODULE_11__register_register_component__["a" /* RegisterComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__contact_contact_component__["a" /* ContactComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__test_test_component__["a" /* TestComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__userinfo_userinfo_component__["a" /* UserinfoComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__contact_result_contact_result_component__["a" /* ContactResultComponent */],
-            __WEBPACK_IMPORTED_MODULE_21__portfolio_portfolio_component__["a" /* PortfolioComponent */],
-            __WEBPACK_IMPORTED_MODULE_22__portfolio_view_portfolio_view_component__["a" /* PortfolioViewComponent */],
-            __WEBPACK_IMPORTED_MODULE_24__logincheck_logincheck_component__["a" /* LogincheckComponent */],
-            __WEBPACK_IMPORTED_MODULE_25__feedback_feedback_component__["a" /* FeedbackComponent */],
-            __WEBPACK_IMPORTED_MODULE_26__footer_directive__["a" /* FooterDirective */],
+            __WEBPACK_IMPORTED_MODULE_17__contact_contact_component__["a" /* ContactComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__test_test_component__["a" /* TestComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__userinfo_userinfo_component__["a" /* UserinfoComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__contact_result_contact_result_component__["a" /* ContactResultComponent */],
+            __WEBPACK_IMPORTED_MODULE_22__portfolio_portfolio_component__["a" /* PortfolioComponent */],
+            __WEBPACK_IMPORTED_MODULE_23__portfolio_view_portfolio_view_component__["a" /* PortfolioViewComponent */],
+            __WEBPACK_IMPORTED_MODULE_25__logincheck_logincheck_component__["a" /* LogincheckComponent */],
+            __WEBPACK_IMPORTED_MODULE_26__feedback_feedback_component__["a" /* FeedbackComponent */],
+            __WEBPACK_IMPORTED_MODULE_27__footer_directive__["a" /* FooterDirective */],
+            __WEBPACK_IMPORTED_MODULE_29__resultpage_resultpage_component__["a" /* ResultpageComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -172,7 +177,7 @@ AppModule = __decorate([
                 },
                 {
                     path: 'test',
-                    component: __WEBPACK_IMPORTED_MODULE_18__test_test_component__["a" /* TestComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_19__test_test_component__["a" /* TestComponent */]
                 },
                 {
                     path: 'login',
@@ -184,45 +189,50 @@ AppModule = __decorate([
                 },
                 {
                     path: 'portfolio',
-                    component: __WEBPACK_IMPORTED_MODULE_21__portfolio_portfolio_component__["a" /* PortfolioComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_22__portfolio_portfolio_component__["a" /* PortfolioComponent */]
                 },
                 {
                     path: 'portfolio/:id',
-                    component: __WEBPACK_IMPORTED_MODULE_22__portfolio_view_portfolio_view_component__["a" /* PortfolioViewComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_23__portfolio_view_portfolio_view_component__["a" /* PortfolioViewComponent */]
                 },
                 {
                     path: 'contact',
-                    component: __WEBPACK_IMPORTED_MODULE_16__contact_contact_component__["a" /* ContactComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_17__contact_contact_component__["a" /* ContactComponent */]
                 },
                 {
                     path: 'contact/result',
-                    component: __WEBPACK_IMPORTED_MODULE_20__contact_result_contact_result_component__["a" /* ContactResultComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_21__contact_result_contact_result_component__["a" /* ContactResultComponent */]
                 },
                 {
                     path: 'user/:id',
-                    component: __WEBPACK_IMPORTED_MODULE_19__userinfo_userinfo_component__["a" /* UserinfoComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_20__userinfo_userinfo_component__["a" /* UserinfoComponent */]
                 },
                 {
                     path: 'logincheck',
-                    component: __WEBPACK_IMPORTED_MODULE_24__logincheck_logincheck_component__["a" /* LogincheckComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_25__logincheck_logincheck_component__["a" /* LogincheckComponent */]
                 },
                 {
                     path: 'feedback',
-                    component: __WEBPACK_IMPORTED_MODULE_25__feedback_feedback_component__["a" /* FeedbackComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_26__feedback_feedback_component__["a" /* FeedbackComponent */]
                 },
+                {
+                    path: 'api/feedback',
+                    component: __WEBPACK_IMPORTED_MODULE_29__resultpage_resultpage_component__["a" /* ResultpageComponent */]
+                }
             ]),
             __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["a" /* HttpClientModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_12_ngx_bootstrap__["a" /* AlertModule */].forRoot(),
-            __WEBPACK_IMPORTED_MODULE_13_ngx_bootstrap_dropdown__["a" /* BsDropdownModule */].forRoot(),
-            __WEBPACK_IMPORTED_MODULE_14_ngx_bootstrap_modal__["b" /* ModalModule */].forRoot(),
-            __WEBPACK_IMPORTED_MODULE_15_ngx_bootstrap_progressbar__["a" /* ProgressbarModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_13_ngx_bootstrap__["a" /* AlertModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_14_ngx_bootstrap_dropdown__["a" /* BsDropdownModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_15_ngx_bootstrap_modal__["b" /* ModalModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_16_ngx_bootstrap_progressbar__["a" /* ProgressbarModule */].forRoot(),
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_17__service_userinfo_service__["a" /* UserinfoService */],
-            __WEBPACK_IMPORTED_MODULE_23__service_portfolio_service__["a" /* PortfolioService */],
-            __WEBPACK_IMPORTED_MODULE_27__service_feedback_service__["a" /* FeedbackService */]
+            __WEBPACK_IMPORTED_MODULE_18__service_userinfo_service__["a" /* UserinfoService */],
+            __WEBPACK_IMPORTED_MODULE_24__service_portfolio_service__["a" /* PortfolioService */],
+            __WEBPACK_IMPORTED_MODULE_28__service_feedback_service__["a" /* FeedbackService */],
+            __WEBPACK_IMPORTED_MODULE_12_ngx_cookie_service__["a" /* CookieService */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
     })
@@ -393,7 +403,7 @@ CtrlSBBComponent = __decorate([
 /***/ "../../../../../src/app/feedback/feedback.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngFor=\"let cnt of comments\" class=\"container-fluid kortfolioFeedback\">\n  <img class=\"cmd_image\" src=\"../../assets/images/default-user-image.png\">\n  <div class=\"comment\" >\n    <div class=\"dataview\">\n      <p class=\"name\" >{{cnt._name}}</p>\n      <p class=\"date\" >{{cnt._date | date:'yyyy년 MM월 dd일 HH시 mm분'}}</p>\n      <p class=\"body\" >{{cnt._comment}}</p>\n    </div>\n    <div class=\"CRUD\" >\n      <a class=\"put glyphicon glyphicon-edit\" >수정하기</a>\n      <a class=\"del glyphicon glyphicon-trash\" >지우기</a>\n      <a class=\"post glyphicon glyphicon-share-alt\" >댓글쓰기</a>\n    </div>\n  </div>\n</div>\n\n<div Footer class=\"container-fluid kortfolioFeedbackCmd\">\n  <form ngNoForm method=\"POST\" name=\"PostCommand\" action=\"api/feedback\">\n    <textarea rows=\"7\" placeholder=\"내용을 입력하세요\" name=\"comment\"></textarea>\n    <input type=\"submit\" value=\"등록\"/>\n  </form>\n</div>"
+module.exports = "<div *ngIf=\"user != null\">\n  <div *ngFor=\"let cnt of comments\" class=\"container-fluid kortfolioFeedback\">\n    <img class=\"cmd_image\" src=\"../../assets/images/default-user-image.png\">\n    <div class=\"comment\" >\n      <div class=\"dataview\">\n        <p class=\"name\" >{{cnt._name}}</p>\n        <p class=\"date\" >{{cnt._date | date:'yyyy년 MM월 dd일 HH시 mm분'}}</p>\n        <p class=\"body\" >{{cnt._comment}}</p>\n      </div>\n      <div class=\"CRUD\" >\n        <a *ngIf=\"userCheck(cnt)\" href=\"\" class=\"put glyphicon glyphicon-edit\" >수정하기</a>\n        <a *ngIf=\"userCheck(cnt)\" (click)=\"clickDel(cnt._id)\" class=\"del glyphicon glyphicon-trash\" >지우기</a>\n        <a href=\"\" class=\"post glyphicon glyphicon-share-alt\" >댓글쓰기</a>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div Footer class=\"container-fluid kortfolioFeedbackCmd\">\n  <form ngNoForm method=\"POST\" name=\"PostCommand\">\n    <textarea rows=\"7\" placeholder=\"내용을 입력하세요\" name=\"comment\" [(ngModel)]=\"body\"></textarea>\n    <input (click)=\"clickPost()\" type=\"submit\" value=\"등록\"/>\n  </form>\n</div>\n\n<button (click)=\"tests()\"></button>"
 
 /***/ }),
 
@@ -404,6 +414,7 @@ module.exports = "<div *ngFor=\"let cnt of comments\" class=\"container-fluid ko
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FeedbackComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__service_feedback_service__ = __webpack_require__("../../../../../src/app/service/feedback.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_userinfo_service__ = __webpack_require__("../../../../../src/app/service/userinfo.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -415,10 +426,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var FeedbackComponent = (function () {
-    function FeedbackComponent(Feedback) {
+    function FeedbackComponent(Feedback, Userinfo) {
         this.Feedback = Feedback;
-        this.tests = ["", "", ""];
+        this.Userinfo = Userinfo;
+        this.body = "";
     }
     FeedbackComponent.prototype.scroll = function () {
         console.log('sfsef');
@@ -429,6 +442,40 @@ var FeedbackComponent = (function () {
             _this.comments = comment;
             console.log(_this.comments);
         }, function (err) { return console.log(err); }, function () { return console.log('success'); });
+        this.Userinfo.getUserSelf().subscribe(function (user) {
+            _this.user = user;
+            console.log(user);
+        }, function (err) { return alert(err); });
+    };
+    FeedbackComponent.prototype.userCheck = function (info) {
+        var result = false;
+        if (this.user.login_status === true)
+            result = (this.user.user_json._providor == info._providor) && (this.user.user_json._email == info._email);
+        console.log(this.user);
+        console.log(info);
+        console.log(result);
+        return result;
+    };
+    FeedbackComponent.prototype.clickDel = function (id) {
+        console.log(id);
+        if (confirm("정말 지우시겠습니까?") == true) {
+            this.Feedback.delComment(id).subscribe(function (result) {
+                alert(result.message);
+                window.location.reload();
+            });
+        }
+    };
+    FeedbackComponent.prototype.clickPost = function () {
+        var _this = this;
+        var body = {
+            'comment': this.body
+        };
+        this.Feedback.postComment(body).subscribe(function (result) {
+            alert(result.message);
+        }, function (err) { return alert(err); }, function () {
+            console.log(_this.body);
+            window.location.reload();
+        });
     };
     return FeedbackComponent;
 }());
@@ -444,10 +491,10 @@ FeedbackComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/feedback/feedback.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__service_feedback_service__["a" /* FeedbackService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__service_feedback_service__["a" /* FeedbackService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__service_feedback_service__["a" /* FeedbackService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__service_feedback_service__["a" /* FeedbackService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__service_userinfo_service__["a" /* UserinfoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__service_userinfo_service__["a" /* UserinfoService */]) === "function" && _b || Object])
 ], FeedbackComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=feedback.component.js.map
 
 /***/ }),
@@ -843,6 +890,66 @@ RegisterComponent = __decorate([
 
 /***/ }),
 
+/***/ "../../../../../src/app/resultpage/resultpage.component.html":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "../../../../../src/app/resultpage/resultpage.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResultpageComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__service_feedback_service__ = __webpack_require__("../../../../../src/app/service/feedback.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ResultpageComponent = (function () {
+    function ResultpageComponent(feedback, router) {
+        this.feedback = feedback;
+        this.router = router;
+    }
+    ResultpageComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.feedback.getResult().subscribe(function (result) {
+            if (result.result === '2') {
+                alert(result.message);
+                _this.router.navigate(['/login']);
+            }
+            else {
+                alert(result.message);
+                _this.router.navigate(['/feedback']);
+            }
+        });
+    };
+    return ResultpageComponent;
+}());
+ResultpageComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-resultpage',
+        template: __webpack_require__("../../../../../src/app/resultpage/resultpage.component.html")
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__service_feedback_service__["a" /* FeedbackService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__service_feedback_service__["a" /* FeedbackService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
+], ResultpageComponent);
+
+var _a, _b;
+//# sourceMappingURL=resultpage.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/service/feedback.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -885,6 +992,30 @@ var FeedbackService = (function () {
         })
             .catch(this.handleErrorObservable);
     };
+    FeedbackService.prototype.delComment = function (id) {
+        return this.http.delete('api/feedback/' + id).map(function (res) {
+            return res.json();
+        })
+            .catch(this.handleErrorObservable);
+    };
+    FeedbackService.prototype.putComment = function (id, comment) {
+        return this.http.put('api/feedback/' + id, comment).map(function (res) {
+            return res.json();
+        })
+            .catch(this.handleErrorObservable);
+    };
+    FeedbackService.prototype.postComment = function (comment) {
+        return this.http.post('api/feedback', comment).map(function (res) {
+            return res.json();
+        })
+            .catch(this.handleErrorObservable);
+    };
+    FeedbackService.prototype.getResult = function () {
+        return this.http.get('api/feedback').map(function (res) {
+            return res.json();
+        })
+            .catch(this.handleErrorObservable);
+    };
     FeedbackService.prototype.handleErrorObservable = function (error) {
         console.error(error.message || error);
         return __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__["Observable"].throw(error.message || error);
@@ -897,7 +1028,8 @@ FeedbackService = __decorate([
 ], FeedbackService);
 
 var CommentMdoel = (function () {
-    function CommentMdoel(_name, _pw, _provider, _date, _comment) {
+    function CommentMdoel(_id, _name, _pw, _provider, _date, _comment) {
+        this._id = _id;
         this._name = _name;
         this._pw = _pw;
         this._provider = _provider;
@@ -1023,7 +1155,6 @@ var UserinfoService = (function () {
             .catch(this.handleErrorObservable);
     };
     UserinfoService.prototype.getUserSelf = function () {
-        console.log("current url : " + this.router.url);
         return this.http.get('api/user').map(function (res) {
             return res.json();
         })
@@ -1058,7 +1189,7 @@ var _a, _b;
 /***/ "../../../../../src/app/test/test.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form class = \"kortfolio-contactForm\" accept-charset=\"utf-8\">\n    <div class=\"row\">\n      <div class=\"col-xs-3 col-sm-3 col-md-3\">\n        <label for=\"image\" style=\"\">이미지</label>\n      </div>\n      <div class=\"col-xs-9 col-sm-9 col-md-9\">\n        <input type=\"text\" id=\"image\" name=\"image\" placeholder=\"성함을 적어주십시오.\" [(ngModel)]=\"_image\">\n      </div>\n    </div>\n  \n    <div class=\"row\">\n      <div class=\"col-xs-3 l-sm-3 col-md-3\">\n        <label for=\"title\" style=\"\">제목</label>\n      </div>\n      <div class=\"col-xs-9 col-sm-9 col-md-9\">\n        <input type=\"text\" id=\"title\" name=\"title\" placeholder=\"010-XXXX-XXXX\" [(ngModel)]=\"_title\">\n      </div>\n    </div>\n  \n    <div class=\"row\">\n      <div class=\"col-xs-3 l-sm-3 col-md-3\">\n        <label for=\"body\" style=\"\">내용</label>\n      </div>\n      <div class=\"col-xs-9 col-sm-9 col-md-9\">\n        <input type=\"text\" id=\"body\" name=\"body\" placeholder=\"id@xxx.com\" [(ngModel)]=\"_body\">\n      </div>\n    </div>\n    <!-- <label style=\"display : block\">이름<input type=\"text\" name=\"name\" style=\"width : 10rem;\"/></label>\n    <label style=\"display : block\">연락처<input type=\"text\" name=\"tel\"/></label>\n    <label style=\"display : block\">메세지<textarea name=\"Message\" rows=\"8\" cols=\"20\" style=\"resize:none; width : 10rem\" name=\"message\"></textarea></label> -->\n    <div style=\"text-align:center\">\n      <input type=\"button\" value=\"보내기\" (click)=\"clickSubmmit()\"/>\n    </div>\n  </form>\n"
+module.exports = "<form *ngIf=\"check\" class = \"kortfolio-contactForm\" accept-charset=\"utf-8\">\n    <div class=\"row\">\n      <div class=\"col-xs-3 col-sm-3 col-md-3\">\n        <label for=\"image\" style=\"\">이미지</label>\n      </div>\n      <div class=\"col-xs-9 col-sm-9 col-md-9\">\n        <input type=\"text\" id=\"image\" name=\"image\" placeholder=\"성함을 적어주십시오.\" [(ngModel)]=\"_image\">\n      </div>\n    </div>\n  \n    <div class=\"row\">\n      <div class=\"col-xs-3 l-sm-3 col-md-3\">\n        <label for=\"title\" style=\"\">제목</label>\n      </div>\n      <div class=\"col-xs-9 col-sm-9 col-md-9\">\n        <input type=\"text\" id=\"title\" name=\"title\" placeholder=\"010-XXXX-XXXX\" [(ngModel)]=\"_title\">\n      </div>\n    </div>\n  \n    <div class=\"row\" *ngFor=\"let Cnt of testCnt\">\n      <div class=\"col-xs-3 l-sm-3 col-md-3\">\n        <label for=\"body\" style=\"\">내용</label>\n      </div>\n      <div class=\"col-xs-9 col-sm-9 col-md-9\">\n        <input type=\"text\" id=\"body\" name=\"body\" placeholder=\"id@xxx.com\" [(ngModel)]=\"_body\">\n      </div>\n    </div>\n    <!-- <label style=\"display : block\">이름<input type=\"text\" name=\"name\" style=\"width : 10rem;\"/></label>\n    <label style=\"display : block\">연락처<input type=\"text\" name=\"tel\"/></label>\n    <label style=\"display : block\">메세지<textarea name=\"Message\" rows=\"8\" cols=\"20\" style=\"resize:none; width : 10rem\" name=\"message\"></textarea></label> -->\n    <div style=\"text-align:center\">\n      <input type=\"button\" value=\"보내기\" (click)=\"clickSubmmit()\"/>\n    </div>\n  </form>\n<button (click)=\"clickButton()\" >눌러!</button>"
 
 /***/ }),
 
@@ -1092,6 +1223,8 @@ var TestComponent = (function () {
             body: ""
         };
         this.test = '';
+        this.check = true;
+        this.testCnt = [];
     }
     TestComponent.prototype.ngOnInit = function () {
     };
@@ -1107,6 +1240,11 @@ var TestComponent = (function () {
             _this.result = data;
             console.log(_this.result.body);
         }, function (err) { return console.log(err); }, function () { return console.log('success'); });
+    };
+    TestComponent.prototype.clickButton = function () {
+        this.check = !this.check;
+        this.testCnt.push(1);
+        console.log(this.testCnt);
     };
     return TestComponent;
 }());

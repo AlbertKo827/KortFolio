@@ -274,7 +274,6 @@ app.get('/download/resume/:id', (req, res)=>{
 app.get('/api/feedback', (req, res, next)=>{//댓글들 가져오기
     Comment.find({}, (err, comments)=>{
         res.status(200).json(comments);
-
         console.log(comments);
     })
 })
@@ -282,7 +281,8 @@ app.get('/api/feedback', (req, res, next)=>{//댓글들 가져오기
 app.post('/api/feedback', (req, res) =>{//댓글 달기
     if(req.user === undefined){
         res.status(500).json({
-            'result' : '로그인을 해주세요!'
+            'message' : '로그인을 해주세요!',
+            'result' : '2'
         });
     }
     Comment.find({}, (err, comments)=>{
@@ -291,23 +291,27 @@ app.post('/api/feedback', (req, res) =>{//댓글 달기
                 '_comment' : req.body.comment,
                 '_name' : req.user._name,
                 '_pw' : req.user._pw,
-                '_provider' : req.user._provider
+                '_provider' : req.user._provider,
+                '_email' : req.user._email
             }).save(err => {
                 if(!err){
                     res.status(200).json({
-                        'result' : '댓글 작성을 성공했습니다.'
-                    })
+                        'message' : '댓글 작성을 성공했습니다.',
+                        'result' : '1'
+                    });
                 }
                 else{
                     res.status(500).json({
-                        'result' : '댓글 작성 중 에러가 발생했습니다.'
+                        'message' : '댓글 작성 중 에러가 발생했습니다.',
+                        'result' : '0'
                     })
                 }
             })
         }
         else{
             res.status(500).json({
-                'result' : '댓글 작성 중 에러가 발생했습니다.'
+                'message' : '댓글 작성 중 에러가 발생했습니다.',
+                'result' : '0'
             })
         }
     })
@@ -317,8 +321,21 @@ app.put('/api/feedback', (req, res) => {//특정 댓글 수정하기
 
 })
 
-app.delete('/api/feedback', (req, res) => {//특정 댓글 삭제하기
+app.delete('/api/feedback/:id', (req, res) => {//특정 댓글 삭제하기
+console.log(req.params.id);
 
+    Comment.findByIdAndRemove({'_id' : req.params.id}, (err, comment)=>{
+        if(err)
+            res.status(500).json({
+                'message' : '에러가 발생했습니다.',
+                'result' : '0'
+            })
+        else
+            res.status(200).json({
+                'message' : '삭제 완료됬습니다.',
+                'result' : '1'
+            })
+    })
 })
 
 //app.use('/login', login);

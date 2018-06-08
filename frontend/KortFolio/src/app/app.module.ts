@@ -11,6 +11,7 @@ import { CtrlSBBComponent } from './ctrl-sbb/ctrl-sbb.component';
 import { IntroduceComponent } from './introduce/introduce.component';
 import { RegisterComponent } from './register/register.component';
 
+import { CookieService } from 'ngx-cookie-service'
 import { AlertModule } from 'ngx-bootstrap';
 import { BsDropdownModule as DropDown } from 'ngx-bootstrap/dropdown';
 import { ModalModule as Modal } from 'ngx-bootstrap/modal';
@@ -28,6 +29,7 @@ import { LogincheckComponent } from './logincheck/logincheck.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { FooterDirective } from './footer.directive';
 import { FeedbackService } from './service/feedback.service';
+import { ResultpageComponent } from './resultpage/resultpage.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,7 @@ import { FeedbackService } from './service/feedback.service';
     LogincheckComponent,
     FeedbackComponent,
     FooterDirective,
+    ResultpageComponent,
   ],
   imports: [
     BrowserModule,
@@ -94,6 +97,10 @@ import { FeedbackService } from './service/feedback.service';
         path:'feedback',
         component:FeedbackComponent
       },
+      {
+        path:'api/feedback',
+        component:ResultpageComponent
+      }
     ]),
     HttpModule,
     HttpClientModule,
@@ -106,7 +113,8 @@ import { FeedbackService } from './service/feedback.service';
   providers: [ 
     UserinfoService,
     PortfolioService,
-    FeedbackService
+    FeedbackService,
+    CookieService
  ],
   bootstrap: [AppComponent]
 })

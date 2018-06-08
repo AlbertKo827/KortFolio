@@ -4,6 +4,7 @@ const CommentSchema = new Mongoose.Schema({
     _name : String,
     _pw : String,
     _provider : String,
+    _email : String,
     _date : {
         type : Date,
         default : Date.now()

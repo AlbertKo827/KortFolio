@@ -30,8 +30,6 @@ export class UserinfoService {
   }
 
   getUserSelf() : Observable<UserModel>{
-    console.log("current url : " + this.router.url);
-
     return this.http.get('api/user').map(
       res => {
         return res.json();
@@ -52,6 +50,7 @@ export class UserModel{
     public login_status : Boolean,
     public status : String,
     public user_json : {
+        _providor : String,
         _name : String,
         _email : String,
         _pw : String,
