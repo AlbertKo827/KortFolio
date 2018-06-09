@@ -317,8 +317,39 @@ app.post('/api/feedback', (req, res) =>{//댓글 달기
     })
 })
 
-app.put('/api/feedback', (req, res) => {//특정 댓글 수정하기
+app.put('/api/feedback/:id', (req, res) => {//특정 댓글 수정하기
+    console.log('put');
 
+    Comment.findByIdAndUpdate(req.params.id, {$set : req.body},{new : true}, (err, comment)=>{
+        console.log('db');
+
+        if(err)
+            res.status(500).json({
+                'message' : '에러가 발생했습니다.',
+                'result' : '0'
+            })
+        else{
+            // comment._comment = req.body.comment;
+            // comment.save(err=>{
+            //     if(err){
+            //         res.status(500).json({
+            //             'message' : '에러가 발생했습니다.',
+            //             'result' : '0'
+            //         })
+            //     }
+            //     else{
+            //         res.status(200).json({
+            //             'message' : '수정이 완료됬습니다.',
+            //             'result' : '1'
+            //         })
+            //     }
+            // })
+            res.status(200).json({
+                'message' : '수정이 완료됬습니다.',
+                'result' : '1'
+            })
+        }
+    })
 })
 
 app.delete('/api/feedback/:id', (req, res) => {//특정 댓글 삭제하기

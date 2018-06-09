@@ -392,7 +392,6 @@ text-align: center;
 }
 
 .kortfolioFeedbackCmd{
-    background-color: aqua;
     margin: 0 auto;
     padding: 0 auto;
     width: 100%;
@@ -403,16 +402,17 @@ text-align: center;
 
 .kortfolioFeedbackCmd > form{
     margin: 0 auto;
-    border: 3px black solid;
+    /* border: 3px black solid; */
     display: block;
-    margin: 3rem;
+    /* margin: 3rem; */
     padding: 1rem;
 }
 
 .kortfolioFeedbackCmd > form > *{
+    color: #000;
 }
 
-.kortfolioFeedbackCmd > form > input[type="submit"]{
+.kortfolioFeedbackCmd > form > input[type="button"]{
     width: 100%;
     margin: 1rem 0;
     -webkit-box-sizing: border-box;

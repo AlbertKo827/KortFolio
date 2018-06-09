@@ -5,22 +5,26 @@
       <div class="dataview">
         <p class="name" >{{cnt._name}}</p>
         <p class="date" >{{cnt._date | date:'yyyy년 MM월 dd일 HH시 mm분'}}</p>
-        <p class="body" >{{cnt._comment}}</p>
+        <p *ngIf="!editmode" class="body" >{{cnt._comment}}</p>
+        <div class="kortfolioFeedbackCmd">
+          <form ngNoForm *ngIf="editmode">
+            <textarea rows="7" placeholder="내용을 입력하세요" value="{{cnt._comment}}" name="recomment" #edit></textarea>
+            <input (click)="clickPut(cnt._id, edit.value)" type="button" value="등록"/>
+          </form>
+        </div>
       </div>
       <div class="CRUD" >
-        <a *ngIf="userCheck(cnt)" href="" class="put glyphicon glyphicon-edit" >수정하기</a>
+        <a *ngIf="userCheck(cnt)" (click)="changeMode()" class="put glyphicon glyphicon-edit" >{{editbutton}}</a>
         <a *ngIf="userCheck(cnt)" (click)="clickDel(cnt._id)" class="del glyphicon glyphicon-trash" >지우기</a>
-        <a href="" class="post glyphicon glyphicon-share-alt" >댓글쓰기</a>
+        <!-- <a class="post glyphicon glyphicon-share-alt" >댓글쓰기</a> -->
       </div>
     </div>
   </div>
 </div>
 
-<div Footer class="container-fluid kortfolioFeedbackCmd">
-  <form ngNoForm method="POST" name="PostCommand">
+<div class="container-fluid kortfolioFeedbackCmd">
+  <form ngNoForm name="PostCommand">
     <textarea rows="7" placeholder="내용을 입력하세요" name="comment" [(ngModel)]="body"></textarea>
-    <input (click)="clickPost()" type="submit" value="등록"/>
+    <input (click)="clickPost()" type="button" value="등록"/>
   </form>
 </div>
-
-<button (click)="tests()"></button>

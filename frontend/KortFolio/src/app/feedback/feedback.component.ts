@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, HostListener, Testability } from '@angular/core';
 import { FeedbackService } from '../service/feedback.service'
 import { UserinfoService, UserModel } from '../service/userinfo.service'
+import { BoundTextAst } from '@angular/compiler';
 
 @Component({
   selector: 'app-feedback',
@@ -12,6 +13,8 @@ export class FeedbackComponent implements OnInit {
 comments;
 body="";
 user : UserModel;
+editmode : boolean = false;
+editbutton = "수정하기";
 
 @HostListener('scroll') scroll(){
   console.log('sfsef')
@@ -37,6 +40,15 @@ user : UserModel;
       },
       err => alert(err)
     );
+  }
+
+  changeMode(){
+    this.editmode = !this.editmode;
+
+    if(this.editmode === true)
+      this.editbutton = "취소하기"
+    else
+      this.editbutton = "수정하기"
   }
 
   userCheck(info) : boolean{
@@ -74,6 +86,25 @@ user : UserModel;
         alert(result.message);
       },
       err => alert(err),
+      () => {
+        console.log(this.body);
+        window.location.reload();
+      }
+    )
+  }
+
+  clickPut(id, recomment){
+    var body = {
+      '_comment' : recomment
+    }
+
+    console.log(body);
+
+    this.Feedback.putComment(id, body).subscribe(
+      result => {
+        alert(result.message);
+      },
+      err => alert('오류 : ' + err),
       () => {
         console.log(this.body);
         window.location.reload();
