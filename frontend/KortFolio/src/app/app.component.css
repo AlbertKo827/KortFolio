@@ -430,6 +430,20 @@ text-align: center;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+.loginContainer{
+    margin : 3rem auto; 
+    width: 33%;
+}
+
+.loginForm{
+    background-color: aliceblue;
+    border-radius: 5%;
+    padding: 1rem 3rem;
+}
+
+.loginForm *{
+    margin: 1.5rem 0;
+}
 
 /* 매우 작은 기기들 (모바일폰, 768px 보다 작은) */
 /* 부트스트랩에서 이것은 기본이므로 미디어쿼리가 없습니다. */
@@ -480,6 +494,10 @@ text-align: center;
         width: 60%;
         float: none;
     }
+
+    .loginContainer{
+        width: 100%;
+    }
 }
 
 /* 중간 기기들 (데스크탑, 992px 이상) */
@@ -487,6 +505,7 @@ text-align: center;
     .kortfolio-boutme{
         border-right:dashed 1px rgb(236, 226, 164);
     }
+    
 }
 
 /* 큰 기기들 (큰 데스크탑, 1200px 이상) */

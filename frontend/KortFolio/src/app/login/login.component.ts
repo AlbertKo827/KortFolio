@@ -8,6 +8,8 @@ import { ModalDirective } from 'ngx-bootstrap/modal';
 })
 
 export class LoginComponent {
+  alertCheck = true;
+
   @ViewChild('autoShownModal') autoShownModal: ModalDirective;
   isModalShown: boolean = false;
  
@@ -21,5 +23,9 @@ export class LoginComponent {
  
   onHidden(): void {
     this.isModalShown = false;
+  }
+
+  alertClose(){
+    
   }
 }
