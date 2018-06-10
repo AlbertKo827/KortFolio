@@ -57,7 +57,10 @@ route.get('/api/user/:id', (req, res)=>{//id 값의 유저 정보를 가져온�
 
 route.get('/api/user', (req, res, next)=>{
     if(req.user != undefined){
-        User.findOne({'_index' : req.user._index}, (err, user)=>{
+        User.findOne({
+            '_provider' : req.user._provider,
+            '_id' : req.user._id
+    }, (err, user)=>{
             delete user._id;
 
             if(!err){
