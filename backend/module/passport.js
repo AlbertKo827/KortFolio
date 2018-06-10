@@ -67,35 +67,55 @@ router.post('/register', (req, res) => {
         '_email' : req.body.email,
         '_privider' : 'kortfolio'
     }, (err, user)=>{
-
         if(err){//DB Error!
             console.log("에러! : " + err);
+
+            res.status(500).json({
+                'message' : '에러가 발생했습니다.',
+                'result' : '0'
+            })
 
             return done(err);
         }
         else if (!user) {//회원이 아니라면
-            const _user = new User({//신규 유저 정보를 JSON으로
-                _index : '0',
-                _name: req.body.name,
-                _email: req.body.email,
-                _pw : req.body.pw,
-                _provider : 'kortfolio'
-            });
+            if(req.body.pw === req.body.repw){
+                const _user = new User({//신규 유저 정보를 JSON으로
+                    _index : '0',
+                    _name: req.body.name,
+                    _email: req.body.email,
+                    _pw : req.body.pw,
+                    _provider : 'kortfolio'
+                });
 
-            _user.save((err)=>{
+                _user.save((err)=>{
 
-                if (err){ 
-                    console.log(err);
-                    console.log('done 1');
-                    res.redirect('/register');
-                }
-                else{
-                    console.log('done 2');
-                    res.redirect('/login')
-                }
-            });
+                    if (err){ 
+                        console.log(err);
+                        console.log('done 1');
+                        res.status(500).json({
+                            'message' : '에러가 발생했습니다.',
+                            'result' : '0'
+                        })
+                    }
+                    else{
+                        console.log('done 2');
+                        res.status(500).json({
+                            'message' : '가입이 완료됬습니다.',
+                            'result' : '1'
+                        })
+                    }
+                });
+            } else {
+                res.status(500).json({
+                    'message' : '비밀번호가 일치하지 않습니다.',
+                    'result' : '0'
+                })
+            }
         } else {
-            res.redirect('/register');
+            res.status(500).json({
+                'message' : '이미 존재하는 계정입니다.',
+                'result' : '0'
+            })
         }
     });
 })

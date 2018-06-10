@@ -1,6 +1,7 @@
-<form ngNoForm action="/register" method="POST">
-    <input type="text" name="name" placeholder="이름"/>
-    <input type="text" name="email" placeholder="이메일"/>
-    <input type="password" name="pw" placeholder="비밀번호"/>
-    <input type="submit" name="submit" value="회원가입" />
+<form ngNoForm action="/register" method="POST" class="registerForm">
+    <input class="form-control" type="text" name="name" placeholder="이름"/>
+    <input class="form-control" type="text" name="email" placeholder="이메일"/>
+    <input class="form-control" type="password" name="pw" placeholder="비밀번호"/>
+    <input class="form-control" type="repassword" name="repw" placeholder="비밀번호확인"/>
+    <input class="btn btn-default btn-md btn-block" type="submit" name="submit" value="회원가입" />
 </form>
