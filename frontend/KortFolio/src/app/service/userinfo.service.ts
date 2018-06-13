@@ -39,6 +39,15 @@ export class UserinfoService {
     );
   }
 
+  register(body) : Observable<any>{
+    return this.http.post('register', body).map(
+      res => {return res.json();}
+    )
+    .catch(
+      this.handleErrorObservable
+    );
+  }
+
   private handleErrorObservable (error: Response | any) {
     console.error(error.message || error);
     return Observable.throw(error.message || error);

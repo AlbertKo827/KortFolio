@@ -1,7 +1,9 @@
-<form ngNoForm action="/register" method="POST" class="registerForm">
-    <input class="form-control" type="text" name="name" placeholder="이름"/>
-    <input class="form-control" type="text" name="email" placeholder="이메일"/>
-    <input class="form-control" type="password" name="pw" placeholder="비밀번호"/>
-    <input class="form-control" type="repassword" name="repw" placeholder="비밀번호확인"/>
-    <input class="btn btn-default btn-md btn-block" type="submit" name="submit" value="회원가입" />
+<h1>회원가입</h1>
+<div *ngIf="capslockAlert" class="alert alert-warning" role="alert">CapsLock이 켜져있습니다!</div>
+<form ngNoForm class="registerForm">
+    <input class="form-control" type="text" name="name" placeholder="이름" [(ngModel)]="_name"/>
+    <input class="form-control" type="text" name="email" placeholder="이메일" [(ngModel)]="_email"/>
+    <input Capslock (capsLock)="capslockCheck($event)" class="form-control" type="password" name="pw" placeholder="비밀번호" [(ngModel)]="_pw"/>
+    <input Capslock (capsLock)="capslockCheck($event)" class="form-control" type="password" name="repw" placeholder="비밀번호확인" [(ngModel)]="_repw"/>
+    <input (click)="clickSubmit()" class="btn btn-default btn-md btn-block" type="button" name="submit" value="회원가입" />
 </form>

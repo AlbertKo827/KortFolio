@@ -24,7 +24,7 @@ exports.i(__webpack_require__("../../../../css-loader/index.js?{\"sourceMap\":fa
 exports.i(__webpack_require__("../../../../css-loader/index.js?{\"sourceMap\":false,\"importLoaders\":1}!../../../../postcss-loader/index.js?{\"ident\":\"postcss\"}!../../../../bootstrap-social/assets/css/font-awesome.css"), "");
 
 // module
-exports.push([module.i, "nav.navbar-kortfolio{\n    background-color: rgb(237, 234, 215);\n    color:rgb(99, 99, 99);\n    font-size: 1.2rem;\n}\n.nav > li > a:hover,\n.nav > li > a:focus, \n.navbar-default .navbar-nav > .open > a,\n.navbar-default .navbar-nav > .active > a {\n    text-decoration: none;\n    background-color: rgb(236, 226, 164);\n}\n\nnav.navbar-kortfolio a{\n    color: rgb(99, 99, 99);\n}\n\n.dropdown .btn.btn-default{\n    margin-left: 10px; \n    width: -webkit-calc(100% - 20px);\n}\n\n.nav .open > a,\n.nav .open > a:hover,\n.nav .open > a:focus,\n.navbar-kortfolio .navbar-nav .open .dropdown-menu > a,\n.navbar-kortfolio .navbar-nav .open .dropdown-menu > a:hover,\n.navbar-kortfolio .navbar-nav .open .dropdown-menu > a:focus {\n  background-color: rgb(236, 226, 164);\n}\n\n.dropdown-menu > li > a:hover,\n.dropdown-menu > li > a:focus {\n    background-color: rgb(236, 226, 164);\n}\n\n\n#kortfolio-menu{\n    display: none;\n}\n\n.kortfolio-profile-img{\n    bottom:7.5rem; \n    position:relative;\n}\n\n.kortfolio-profile-img > div{\n    overflow:hidden; \n    position:relative; \n    width:15rem; \n    height:15rem;  \n    border:10px solid rgb(236, 226, 164); \n    border-radius:50%; \n    margin:auto;\n    padding-bottom: -10%;\n}\n\n.kortfolio-profile-img > div > img{\n    width: 100%;\n}\n\n.kortfolio-intro-header{\n    width:100%; \n    padding-left:0; \n    padding-right:0;\n    color: white;\n}\n\n.kortfolio-intro-header img.header-img{\n    \n    -webkit-animation: header-hovor-img 1s ease-out 200ms 1 normal forwards;\n    \n            animation: header-hovor-img 1s ease-out 200ms 1 normal forwards;\n}\n\n#header-name{\n    font-size:2rem;\n    font-weight:bold; \n    margin-top:1.5%;\n}\n\n.center-cropped {\n    width: 100px;\n    height: 100px;\n    background-position: center center;\n    background-repeat: no-repeat;\n  }\n\n.modal{\n    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\n}\n\n.svg-color g{\n    fill: rgb(237, 234, 215);\n}\n\n@-webkit-keyframes header-hovor-img{\n    to{\n        /*filter: brightness(1.1) contrast(2.4) grayscale(1) hue-rotate(0deg) invert(0.32) saturate(0);*/\n        opacity: 0.3;\n    }\n}\n\n@keyframes header-hovor-img{\n    to{\n        /*filter: brightness(1.1) contrast(2.4) grayscale(1) hue-rotate(0deg) invert(0.32) saturate(0);*/\n        opacity: 0.3;\n    }\n}\n\n.kortfolio-font > *{\n    color:rgb(236, 226, 164);\n}\n\n.kortfolio-font h1{\n    font-weight: bold;\n}\n\n.kortfolio-contant > *{\n    font-size:1.2rem;\n    line-height: 2.5rem;\n    z-index:1;\n    margin:1rem 0;\n    padding:1rem 0;\n}\n\n.kortfolio-contant span:first-child{\n    margin-right:0.5rem;\n    line-height: 2.8rem;\n    float: left;\n    font-size: 2.9rem;\n    color: #000;\n}\n\n.kortfolio-contant p > span:first-child{\n    width: 2.5rem;\n    height: 2.5rem;\n    line-height: 2.5rem;\n    background-color: #000;\n    border-radius: 50%;\n    font-size: 1.5rem;\n    text-align: center;\n    color: rgb(99, 99, 99);\n}\n\n.kortfolio-contant p{\n    margin-top:0.8rem;\n    margin-bottom:0.8rem;\n}\n\n.kortfolio-boutme{\n    font-size:0.9rem;\n    padding-bottom: 1rem;\n    margin-bottom:1rem;\n}\n\n.kortfolio-intro-body{\n    background-color:white; \n    color:rgb(99, 99, 99);\n    padding: 1rem 0;\n}\n\n.kortfolio-intro-body h2,\n.kortfolio-intro-body h1{\n    font-weight: bold;\n}\n\na:link { color: white; text-decoration: none;}\na:visited { color: white; text-decoration: none;}\na:hover { color: rgb(236, 226, 164); text-decoration: none;}\n\n.kortfolio-class{\n    margin:1rem 0;\n}\n\n.kortfolio-class::before{\n    margin-bottom: 10px;\n    float: left;\n    width: 4rem;\n}\n\n.kortfolio-skill p{\n    float:left; \n    margin: 0 4.5rem 0 1rem;\n    width:3.5rem;\n    font-weight: bold;\n    \n}\n\n.kortfolio-skill > div{\n    margin:1.5rem 0;\n}\n\n.kortfolio-skill .progress-bar{\n    background-image:none;\n    color: rgb(99, 99, 99);\n}\n\n.kortfolio-contact-bg{\n    background-color: rgb(65, 65, 65);\n    height: 95vh;\n    \n}\n\n.kortfolio-contact-bg > div {\n    color: white;\n    margin: 3rem 15rem;\n}\n\n.kortfolio-contactForm{\n    margin : 0 auto; \n    padding : 1.5rem;  \n    border:3px dashed rgb(236, 226, 164); \n    /* background-color : rgb(236, 226, 164);  */\n    border-radius : 5%; \n    width : 45rem; \n    height : 45rem;\n}\n\n.kortfolio-contactForm>div{\n    margin : 1.5rem auto;\n}\n\n.kortfolio-contactForm label{\n    text-align: left;\n    color : white;\n}\n\n.kortfolio-contactForm input[type=submit]{\n    background-color: rgb(236, 226, 164);\n    color: white;\n    padding: 12px 20px;\n    border: none;\n    border-radius: 4px;\n    cursor: pointer;\n}\n\n.kortfolio-contactForm .row div input,\n.kortfolio-contactForm .row div textarea{\n    width: 20rem;\n}\n\n\n.kortfolio-portfolio-bg{\nbackground-color:rgb(238, 238, 238);\ntext-align: center;\n}\n\n.portfolio-list {\n    display: inline;\n    list-style: none;\n    color : rgb(99, 99, 99);\n    margin : 0 auto;\n    padding: 0;\n    width: 100%;\n    height: 100%;\n    text-align: center;\n}\n\n.portfolio-list li{\n    background-color: white;\n    border-radius: 10px;\n    float: left;\n    width: 30%;\n    height: 30rem;\n    padding: 0 1rem;\n    margin: 1rem 1rem;\n}\n\n.portfolio-list li>div{\n    display: table-cell;\n    vertical-align: middle;\n    margin: 0 0; \n    padding: 2rem 0;\n    height: 22rem;\n}\n\n.portfolio-list li>a{\n    color : rgb(99, 99, 99);\n}\n\n.portfolio-list li>a:focus{\n    color : rgb(236, 226, 164);\n}\n\n.kortfolioFeedback,\n.kortfolioFeedback a{\n    margin : 3rem auto;\n    color: white;\n}\n\n.kortfolioFeedback .cmd_image{\n    width: 8rem;\n    height: 8rem;\n    margin :auto;\n    background-color: azure;\n    border-radius: 50%;\n}\n\n.kortfolioFeedback .comment{\n    padding: 2rem;\n    width: 85%;\n    float: right;\n    background-color: rgb(99, 99, 99);\n    position: relative;\n    display: inline-block;\n    border-radius: 1rem;\n    border : 2px solid rgb(70, 70, 70);\n}\n\n.kortfolioFeedback>.comment::before{\n    /* content:''; \n    position:absolute; \n    width:0; \n    height:0; \n    border-style:solid;\n    border-width:10px 15px; \n    margin-top:-10px;\n    border-color:transparent aquamarine transparent transparent; \n    right : 100%;\n    top: 30%;\n    background-color: #000; */\n    content: '';\n    position: absolute;\n    top: 2.8rem;\n    width: 1rem;\n    height: 1rem;\n    border-top: 2px solid rgb(70, 70, 70);\n    border-left: 2px solid rgb(70, 70, 70);\n    border-right: 2px solid transparent;\n    border-bottom: 2px solid transparent;\n    -webkit-backface-visibility: hidden;\n    backface-visibility: hidden;\n    -webkit-transform-origin: 100% 100%;\n    transform-origin: 100% 100%;\n    background: rgb(99, 99, 99);\n\n    right: initial;\n    left: -.4rem;\n    -webkit-transform: rotate(-45deg);\n    transform: rotate(-45deg);\n}\n\n.kortfolioFeedback .comment .dataview{\n    text-align: right;\n}\n\n.kortfolioFeedback .comment .dataview .name{\n    float: left;\n    font-weight: bold;\n    font-size: 1.5rem;\n    margin: 0;\n}\n\n.kortfolioFeedback .comment .dataview .date{\n    font-size: 1.2rem;\n}\n\n.kortfolioFeedback .comment .dataview .body{\n    text-align: left;\n    width: 100%;\n}\n\n.kortfolioFeedback .comment .CRUD{\n    text-align: right;\n}\n\n.kortfolioFeedback .comment .CRUD a{\n    margin : 0 0.25rem;\n}\n\n.kortfolioFeedback .comment .CRUD .put{\n\n}\n\n.kortfolioFeedback .comment .CRUD .del{\n\n}\n\n.kortfolioFeedback .comment .CRUD .post{\n\n}\n\n\n.kortfolioFeedbackCmd {\n\n}\n\n\n.kortfolioFeedbackCmd {\n    width: 80%;\n}\n\n.kortfolioFeedbackCmd * {\n    display: block;\n}\n\n.kortfolioFeedbackCmd{\n    margin: 0 auto;\n    padding: 0 auto;\n    width: 100%;\n    /* position: fixed; */\n    overflow: hidden;\n    bottom: 0;\n}\n\n.kortfolioFeedbackCmd > form{\n    margin: 0 auto;\n    /* border: 3px black solid; */\n    display: block;\n    /* margin: 3rem; */\n    padding: 1rem;\n}\n\n.kortfolioFeedbackCmd > form > *{\n    color: #000;\n}\n\n.kortfolioFeedbackCmd > form > input[type=\"button\"]{\n    width: 100%;\n    margin: 1rem 0;\n  box-sizing: border-box;\n\n}\n\n.kortfolioFeedbackCmd > form > textarea{\n    width: 100%;\n    margin: 0;\n    resize: none;\n  box-sizing: border-box;\n}\n.loginContainer{\n    margin : 3rem auto; \n    width: 33%;\n}\n\n.loginForm{\n    background-color: aliceblue;\n    border-radius: 5%;\n    padding: 1rem 3rem;\n}\n\n.loginForm *{\n    margin: 1.5rem 0;\n}\n\n.registerForm{\n    display: block;\n    width: 33%;\n    margin: 10% auto;\n}\n\n.registerForm *{\n    display: block;\n    margin: 1rem 0;\n}\n\n/* 매우 작은 기기들 (모바일폰, 768px 보다 작은) */\n/* 부트스트랩에서 이것은 기본이므로 미디어쿼리가 없습니다. */\n\n/* 작은 기기들 (태블릿, 768px 이상) */\n@media (max-width: 768px) {  \n    .navbar-header{\n        text-align: center;\n        margin: 0 auto;\n    }\n\n    .kortfolio-boutme{\n        border-bottom:dashed 1px rgb(236, 226, 164);\n    }\n\n    #kortfolio-menu{\n        display: block;\n        float: left;\n        margin: 0;\n    }\n    \n    .nav.navbar-nav{\n        display:none;\n    }\n\n    .nav.navbar-nav.navbar-right{\n        display: block;\n    }\n\n    #kortfolio-login{\n        display: none;\n    }\n\n    .kortfolio-contactForm{\n        width: 30rem;\n    }\n\n    .kortfolio-contactForm label{\n        font-size: 1.2rem;\n    }\n\n    .kortfolio-contactForm .row div input,\n    .kortfolio-contactForm .row div textarea{\n        width: 17rem;\n    }\n\n    .portfolio-list li{\n        width: 60%;\n        float: none;\n    }\n\n    .loginContainer{\n        width: 100%;\n    }\n}\n\n/* 중간 기기들 (데스크탑, 992px 이상) */\n@media (min-width: 992px) {  \n    .kortfolio-boutme{\n        border-right:dashed 1px rgb(236, 226, 164);\n    }\n    \n}\n\n/* 큰 기기들 (큰 데스크탑, 1200px 이상) */\n@media (min-width: 1200px)  {  \n    .kortfolio-boutme{\n        border-right:dashed 1px rgb(236, 226, 164);\n    }\n}", ""]);
+exports.push([module.i, "nav.navbar-kortfolio{\n    background-color: rgb(237, 234, 215);\n    color:rgb(99, 99, 99);\n    font-size: 1.2rem;\n}\n.nav > li > a:hover,\n.nav > li > a:focus, \n.navbar-default .navbar-nav > .open > a,\n.navbar-default .navbar-nav > .active > a {\n    text-decoration: none;\n    background-color: rgb(236, 226, 164);\n}\n\nnav.navbar-kortfolio a{\n    color: rgb(99, 99, 99);\n}\n\n.dropdown .btn.btn-default{\n    margin-left: 10px; \n    width: -webkit-calc(100% - 20px);\n}\n\n.nav .open > a,\n.nav .open > a:hover,\n.nav .open > a:focus,\n.navbar-kortfolio .navbar-nav .open .dropdown-menu > a,\n.navbar-kortfolio .navbar-nav .open .dropdown-menu > a:hover,\n.navbar-kortfolio .navbar-nav .open .dropdown-menu > a:focus {\n  background-color: rgb(236, 226, 164);\n}\n\n.dropdown-menu > li > a:hover,\n.dropdown-menu > li > a:focus {\n    background-color: rgb(236, 226, 164);\n}\n\n\n#kortfolio-menu{\n    display: none;\n}\n\n.kortfolio-profile-img{\n    bottom:7.5rem; \n    position:relative;\n}\n\n.kortfolio-profile-img > div{\n    overflow:hidden; \n    position:relative; \n    width:15rem; \n    height:15rem;  \n    border:10px solid rgb(236, 226, 164); \n    border-radius:50%; \n    margin:auto;\n    padding-bottom: -10%;\n}\n\n.kortfolio-profile-img > div > img{\n    width: 100%;\n}\n\n.kortfolio-intro-header{\n    width:100%; \n    padding-left:0; \n    padding-right:0;\n    color: white;\n}\n\n.kortfolio-intro-header img.header-img{\n    \n    -webkit-animation: header-hovor-img 1s ease-out 200ms 1 normal forwards;\n    \n            animation: header-hovor-img 1s ease-out 200ms 1 normal forwards;\n}\n\n#header-name{\n    font-size:2rem;\n    font-weight:bold; \n    margin-top:1.5%;\n}\n\n.center-cropped {\n    width: 100px;\n    height: 100px;\n    background-position: center center;\n    background-repeat: no-repeat;\n  }\n\n.modal{\n    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\n}\n\n.svg-color g{\n    fill: rgb(237, 234, 215);\n}\n\n@-webkit-keyframes header-hovor-img{\n    to{\n        /*filter: brightness(1.1) contrast(2.4) grayscale(1) hue-rotate(0deg) invert(0.32) saturate(0);*/\n        opacity: 0.3;\n    }\n}\n\n@keyframes header-hovor-img{\n    to{\n        /*filter: brightness(1.1) contrast(2.4) grayscale(1) hue-rotate(0deg) invert(0.32) saturate(0);*/\n        opacity: 0.3;\n    }\n}\n\n.kortfolio-font > *{\n    color:rgb(236, 226, 164);\n}\n\n.kortfolio-font h1{\n    font-weight: bold;\n}\n\n.kortfolio-contant > *{\n    font-size:1.2rem;\n    line-height: 2.5rem;\n    z-index:1;\n    margin:1rem 0;\n    padding:1rem 0;\n}\n\n.kortfolio-contant span:first-child{\n    margin-right:0.5rem;\n    line-height: 2.8rem;\n    float: left;\n    font-size: 2.9rem;\n    color: #000;\n}\n\n.kortfolio-contant p > span:first-child{\n    width: 2.5rem;\n    height: 2.5rem;\n    line-height: 2.5rem;\n    background-color: #000;\n    border-radius: 50%;\n    font-size: 1.5rem;\n    text-align: center;\n    color: rgb(99, 99, 99);\n}\n\n.kortfolio-contant p{\n    margin-top:0.8rem;\n    margin-bottom:0.8rem;\n}\n\n.kortfolio-boutme{\n    font-size:0.9rem;\n    padding-bottom: 1rem;\n    margin-bottom:1rem;\n}\n\n.kortfolio-intro-body{\n    background-color:white; \n    color:rgb(99, 99, 99);\n    padding: 1rem 0;\n}\n\n.kortfolio-intro-body h2,\n.kortfolio-intro-body h1{\n    font-weight: bold;\n}\n\na:link { color: white; text-decoration: none;}\na:visited { color: white; text-decoration: none;}\na:hover { color: rgb(236, 226, 164); text-decoration: none;}\n\n.kortfolio-class{\n    margin:1rem 0;\n}\n\n.kortfolio-class::before{\n    margin-bottom: 10px;\n    float: left;\n    width: 4rem;\n}\n\n.kortfolio-skill p{\n    float:left; \n    margin: 0 4.5rem 0 1rem;\n    width:3.5rem;\n    font-weight: bold;\n    \n}\n\n.kortfolio-skill > div{\n    margin:1.5rem 0;\n}\n\n.kortfolio-skill .progress-bar{\n    background-image:none;\n    color: rgb(99, 99, 99);\n}\n\n.kortfolio-contact-bg{\n    background-color: rgb(65, 65, 65);\n    height: 95vh;\n    \n}\n\n.kortfolio-contact-bg > div {\n    color: white;\n    margin: 3rem 15rem;\n}\n\n.kortfolio-contactForm{\n    margin : 0 auto; \n    padding : 1.5rem;  \n    border:3px dashed rgb(236, 226, 164); \n    /* background-color : rgb(236, 226, 164);  */\n    border-radius : 5%; \n    width : 45rem; \n    height : 45rem;\n}\n\n.kortfolio-contactForm>div{\n    margin : 1.5rem auto;\n}\n\n.kortfolio-contactForm label{\n    text-align: left;\n    color : white;\n}\n\n.kortfolio-contactForm input[type=submit]{\n    background-color: rgb(236, 226, 164);\n    color: white;\n    padding: 12px 20px;\n    border: none;\n    border-radius: 4px;\n    cursor: pointer;\n}\n\n.kortfolio-contactForm .row div input,\n.kortfolio-contactForm .row div textarea{\n    width: 20rem;\n}\n\n\n.kortfolio-portfolio-bg{\nbackground-color:rgb(238, 238, 238);\ntext-align: center;\n}\n\n.portfolio-list {\n    display: inline;\n    list-style: none;\n    color : rgb(99, 99, 99);\n    margin : 0 auto;\n    padding: 0;\n    width: 100%;\n    height: 100%;\n    text-align: center;\n}\n\n.portfolio-list li{\n    background-color: white;\n    border-radius: 10px;\n    float: left;\n    width: 30%;\n    height: 30rem;\n    padding: 0 1rem;\n    margin: 1rem 1rem;\n}\n\n.portfolio-list li>div{\n    display: table-cell;\n    vertical-align: middle;\n    margin: 0 0; \n    padding: 2rem 0;\n    height: 22rem;\n}\n\n.portfolio-list li>a{\n    color : rgb(99, 99, 99);\n}\n\n.portfolio-list li>a:focus{\n    color : rgb(236, 226, 164);\n}\n\n.kortfolioFeedback,\n.kortfolioFeedback a{\n    margin : 3rem auto;\n    color: white;\n}\n\n.kortfolioFeedback .cmd_image{\n    width: 8rem;\n    height: 8rem;\n    margin :auto;\n    background-color: azure;\n    border-radius: 50%;\n}\n\n.kortfolioFeedback .comment{\n    padding: 2rem;\n    width: 85%;\n    float: right;\n    background-color: rgb(99, 99, 99);\n    position: relative;\n    display: inline-block;\n    border-radius: 1rem;\n    border : 2px solid rgb(70, 70, 70);\n}\n\n.kortfolioFeedback>.comment::before{\n    /* content:''; \n    position:absolute; \n    width:0; \n    height:0; \n    border-style:solid;\n    border-width:10px 15px; \n    margin-top:-10px;\n    border-color:transparent aquamarine transparent transparent; \n    right : 100%;\n    top: 30%;\n    background-color: #000; */\n    content: '';\n    position: absolute;\n    top: 2.8rem;\n    width: 1rem;\n    height: 1rem;\n    border-top: 2px solid rgb(70, 70, 70);\n    border-left: 2px solid rgb(70, 70, 70);\n    border-right: 2px solid transparent;\n    border-bottom: 2px solid transparent;\n    -webkit-backface-visibility: hidden;\n    backface-visibility: hidden;\n    -webkit-transform-origin: 100% 100%;\n    transform-origin: 100% 100%;\n    background: rgb(99, 99, 99);\n\n    right: initial;\n    left: -.4rem;\n    -webkit-transform: rotate(-45deg);\n    transform: rotate(-45deg);\n}\n\n.kortfolioFeedback .comment .dataview{\n    text-align: right;\n}\n\n.kortfolioFeedback .comment .dataview .name{\n    float: left;\n    font-weight: bold;\n    font-size: 1.5rem;\n    margin: 0;\n}\n\n.kortfolioFeedback .comment .dataview .date{\n    font-size: 1.2rem;\n}\n\n.kortfolioFeedback .comment .dataview .body{\n    text-align: left;\n    width: 100%;\n}\n\n.kortfolioFeedback .comment .CRUD{\n    text-align: right;\n}\n\n.kortfolioFeedback .comment .CRUD a{\n    margin : 0 0.25rem;\n}\n\n.kortfolioFeedback .comment .CRUD .put{\n\n}\n\n.kortfolioFeedback .comment .CRUD .del{\n\n}\n\n.kortfolioFeedback .comment .CRUD .post{\n\n}\n\n\n.kortfolioFeedbackCmd {\n\n}\n\n\n.kortfolioFeedbackCmd {\n    width: 80%;\n}\n\n.kortfolioFeedbackCmd * {\n    display: block;\n}\n\n.kortfolioFeedbackCmd{\n    margin: 0 auto;\n    padding: 0 auto;\n    width: 100%;\n    /* position: fixed; */\n    overflow: hidden;\n    bottom: 0;\n}\n\n.kortfolioFeedbackCmd > form{\n    margin: 0 auto;\n    /* border: 3px black solid; */\n    display: block;\n    /* margin: 3rem; */\n    padding: 1rem;\n}\n\n.kortfolioFeedbackCmd > form > *{\n    color: #000;\n}\n\n.kortfolioFeedbackCmd > form > input[type=\"button\"]{\n    width: 100%;\n    margin: 1rem 0;\n  box-sizing: border-box;\n\n}\n\n.kortfolioFeedbackCmd > form > textarea{\n    width: 100%;\n    margin: 0;\n    resize: none;\n  box-sizing: border-box;\n}\n.loginContainer{\n    margin : 3rem auto; \n    width: 33%;\n}\n\n.loginForm{\n    background-color: aliceblue;\n    border-radius: 5%;\n    padding: 1rem 3rem;\n}\n\n.loginForm *{\n    margin: 1.5rem 0;\n}\n\n.registerForm{\n    display: block;\n    width: 33%;\n    margin: 10% auto;\n    background-color: aliceblue;\n    padding: 1rem 3rem;\n    border-radius: 5%;\n}\n\n.registerForm *{\n    display: block;\n    margin: 1rem 0;\n}\n\n/* 매우 작은 기기들 (모바일폰, 768px 보다 작은) */\n/* 부트스트랩에서 이것은 기본이므로 미디어쿼리가 없습니다. */\n\n/* 작은 기기들 (태블릿, 768px 이상) */\n@media (max-width: 768px) {  \n    .navbar-header{\n        text-align: center;\n        margin: 0 auto;\n    }\n\n    .kortfolio-boutme{\n        border-bottom:dashed 1px rgb(236, 226, 164);\n    }\n\n    #kortfolio-menu{\n        display: block;\n        float: left;\n        margin: 0;\n    }\n    \n    .nav.navbar-nav{\n        display:none;\n    }\n\n    .nav.navbar-nav.navbar-right{\n        display: block;\n    }\n\n    #kortfolio-login{\n        display: none;\n    }\n\n    .kortfolio-contactForm{\n        width: 30rem;\n    }\n\n    .kortfolio-contactForm label{\n        font-size: 1.2rem;\n    }\n\n    .kortfolio-contactForm .row div input,\n    .kortfolio-contactForm .row div textarea{\n        width: 17rem;\n    }\n\n    .portfolio-list li{\n        width: 60%;\n        float: none;\n    }\n\n    .loginContainer{\n        width: 100%;\n    }\n}\n\n/* 중간 기기들 (데스크탑, 992px 이상) */\n@media (min-width: 992px) {  \n    .kortfolio-boutme{\n        border-right:dashed 1px rgb(236, 226, 164);\n    }\n    \n}\n\n/* 큰 기기들 (큰 데스크탑, 1200px 이상) */\n@media (min-width: 1200px)  {  \n    .kortfolio-boutme{\n        border-right:dashed 1px rgb(236, 226, 164);\n    }\n}", ""]);
 
 // exports
 
@@ -107,12 +107,14 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__footer_directive__ = __webpack_require__("../../../../../src/app/footer.directive.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__service_feedback_service__ = __webpack_require__("../../../../../src/app/service/feedback.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__resultpage_resultpage_component__ = __webpack_require__("../../../../../src/app/resultpage/resultpage.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__capslock_directive__ = __webpack_require__("../../../../../src/app/capslock.directive.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -167,6 +169,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_26__feedback_feedback_component__["a" /* FeedbackComponent */],
             __WEBPACK_IMPORTED_MODULE_27__footer_directive__["a" /* FooterDirective */],
             __WEBPACK_IMPORTED_MODULE_29__resultpage_resultpage_component__["a" /* ResultpageComponent */],
+            __WEBPACK_IMPORTED_MODULE_30__capslock_directive__["a" /* CapslockDirective */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -239,6 +242,58 @@ AppModule = __decorate([
 ], AppModule);
 
 //# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/capslock.directive.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CapslockDirective; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var CapslockDirective = (function () {
+    function CapslockDirective() {
+        this.capsLock = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
+    }
+    CapslockDirective.prototype.onKeyDown = function (event) {
+        var capsOn = event.getModifierState && event.getModifierState('CapsLock');
+        if (capsOn) {
+            this.capsLock.emit(true);
+        }
+        else {
+            this.capsLock.emit(false);
+        }
+    };
+    return CapslockDirective;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Output */])('capsLock'),
+    __metadata("design:type", Object)
+], CapslockDirective.prototype, "capsLock", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('window:keypress', ['$event']),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], CapslockDirective.prototype, "onKeyDown", null);
+CapslockDirective = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* Directive */])({
+        selector: '[Capslock]'
+    }),
+    __metadata("design:paramtypes", [])
+], CapslockDirective);
+
+//# sourceMappingURL=capslock.directive.js.map
 
 /***/ }),
 
@@ -619,7 +674,7 @@ IntroduceComponent = __decorate([
 /***/ "../../../../../src/app/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container-fluid\">\n    <h2>로그인</h2>\n    \n    <div *ngIf=\"alertCheck\" class=\"alert alert-warning alert-dismissible\" role=\"alert\">\n      <button (click)=\"alertCheck = !alertCheck\" type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\n      <strong>죄송합니다!</strong> 현재 passport.js를 이용한 간편 로그인 기능들이 검수 문제로 인해 사용이 안됩니다.\n    </div>\n\n  <div class=\"row\" style=\"\">\n      <div class=\"loginContainer\">\n        <form class=\"loginForm\" ngNoForm action=\"/login\" method=\"POST\" style=\"display: block; margin : 1rem;\">\n          <input class=\"form-control\" type=\"text\" name=\"email\" placeholder=\"email\">\n          <input class=\"form-control\" type=\"password\" name=\"pw\" placeholder=\"password\">\n          <input class=\"btn btn-default btn-md btn-block\" type=\"submit\" value=\"login\">\n        </form>\n      </div>\n\n    <div class=\"col-sm-12 col-md-4 col-md-offset-4 social-buttons container-fluid\">\n      <a class=\"btn btn-block btn-social btn-lg btn-naver\" href=\"http://myeongsku.com/login/auth/naver\">\n        <span class=\"fa fa-naver\"></span> 네이버로 로그인\n      </a>\n      <a class=\"btn btn-block btn-social btn-lg btn-kakao\" href=\"http://myeongsku.com/login/auth/kakao\">\n        <span class=\"fa fa-kakao\"></span> 카카오로 로그인\n      </a>\n      <a class=\"btn btn-block btn-social btn-lg btn-facebook\" href=\"http://myeongsku.com/login/auth/facebook\">\n        <span class=\"fa fa-facebook\"></span> 페이스북으로 로그인\n      </a>\n      <a style=\"margin : 3rem auto; display: inline-block;\" href=\"register\" class=\"btn btn-primary btn-lg btn-block\">회원가입</a>\n    </div>\n  </div>\n</div>\n\n"
+module.exports = "\n<div class=\"container-fluid\">\n    <h2>로그인</h2>\n    \n    <div *ngIf=\"alertCheck\" class=\"alert alert-warning alert-dismissible\" role=\"alert\">\n      <button (click)=\"alertCheck = !alertCheck\" type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\n      <strong>죄송합니다!</strong> 현재 passport.js를 이용한 간편 로그인 기능들이 검수 문제로 인해 개발자를 제외한 회원분들은 사용이 안됩니다.\n    </div>\n\n  <div class=\"row\" style=\"\">\n      <div class=\"loginContainer\">\n        <form class=\"loginForm\" ngNoForm action=\"/login\" method=\"POST\" style=\"display: block; margin : 1rem;\">\n          <input class=\"form-control\" type=\"text\" name=\"email\" placeholder=\"email\">\n          <input class=\"form-control\" type=\"password\" name=\"pw\" placeholder=\"password\">\n          <input class=\"btn btn-default btn-md btn-block\" type=\"submit\" value=\"login\">\n        </form>\n      </div>\n\n    <div class=\"col-sm-12 col-md-4 col-md-offset-4 social-buttons container-fluid\">\n      <a class=\"btn btn-block btn-social btn-lg btn-naver\" href=\"http://myeongsku.com/login/auth/naver\">\n        <span class=\"fa fa-naver\"></span> 네이버로 로그인\n      </a>\n      <a class=\"btn btn-block btn-social btn-lg btn-kakao\" href=\"http://myeongsku.com/login/auth/kakao\">\n        <span class=\"fa fa-kakao\"></span> 카카오로 로그인\n      </a>\n      <a class=\"btn btn-block btn-social btn-lg btn-facebook\" href=\"http://myeongsku.com/login/auth/facebook\">\n        <span class=\"fa fa-facebook\"></span> 페이스북으로 로그인\n      </a>\n      <a style=\"margin : 3rem auto; display: inline-block;\" href=\"register\" class=\"btn btn-primary btn-lg btn-block\">회원가입</a>\n    </div>\n  </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -800,7 +855,7 @@ PortfolioViewComponent = __decorate([
 /***/ "../../../../../src/app/portfolio/portfolio.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid kortfolio-portfolio-bg\">\n  <ul class=\"portfolio-list\">\n    <li>\n      <div class=\"container-fluid\">\n        <img src=\"../../assets/images/kortfolio.png\" style=\"width: 100%\"/>\n      </div>\n      <a href=\"https://github.com/AlbertKo827/KortFolio\">\n        KortFolio (Angular 2/6, Node.js)\n      </a>\n    </li>\n    <li>\n      <div class=\"container-fluid\">\n        <img src=\"../../assets/images/tfriends.JPG\" style=\"width: 100%\"/>\n      </div>\n      <a href=\"portfolio/tfriends\">\n        TFS3 레이저 헤드 컨트롤 프로그램 (WPF/C#)\n      </a>\n    </li>\n    <li>\n      <div class=\"container-fluid\">\n          <img src=\"../../assets/images/how to use git.png\" style=\"width: 100%\"/>\n      </div>\n      <a href=\"/download/How to use 'git'.pdf\">\n        How to use git\n      </a>\n    </li>\n    \n    <li>\n      <div class=\"container-fluid\">\n        <img src=\"../../assets/images/yet.png\" style=\"width: 100%\"/>\n      </div>\n      <a href=\"#\">\n        준비중!\n      </a>\n    </li>\n  </ul>\n</div>"
+module.exports = "<div class=\"container-fluid kortfolio-portfolio-bg\">\n  <ul class=\"portfolio-list\">\n    <li>\n      <div class=\"container-fluid\">\n        <img src=\"../../assets/images/kortfolio.png\" style=\"width: 100%\"/>\n      </div>\n      <a href=\"https://github.com/AlbertKo827/KortFolio\">\n        KortFolio (Angular 2/6, Node.js)\n      </a>\n    </li>\n    <li>\n      <div class=\"container-fluid\">\n        <img src=\"../../assets/images/tfriends.JPG\" style=\"width: 100%\"/>\n      </div>\n      <!-- <a href=\"portfolio/tfriends\">\n        TFS3 레이저 헤드 컨트롤 프로그램 (WPF/C#)\n      </a> -->\n      <p>\n          TFS3 레이저 헤드 컨트롤 프로그램 (WPF/C#)\n      </p>\n    </li>\n    <li>\n      <div class=\"container-fluid\">\n          <img src=\"../../assets/images/how to use git.png\" style=\"width: 100%\"/>\n      </div>\n      <a href=\"/download/How to use 'git'.pdf\">\n        How to use git\n      </a>\n    </li>\n    \n    <li>\n      <div class=\"container-fluid\">\n        <img src=\"../../assets/images/yet.png\" style=\"width: 100%\"/>\n      </div>\n      <a href=\"#\">\n        준비중!\n      </a>\n    </li>\n  </ul>\n</div>"
 
 /***/ }),
 
@@ -857,7 +912,7 @@ var _a, _b;
 /***/ "../../../../../src/app/register/register.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form ngNoForm action=\"/register\" method=\"POST\" class=\"registerForm\">\n    <input class=\"form-control\" type=\"text\" name=\"name\" placeholder=\"이름\"/>\n    <input class=\"form-control\" type=\"text\" name=\"email\" placeholder=\"이메일\"/>\n    <input class=\"form-control\" type=\"password\" name=\"pw\" placeholder=\"비밀번호\"/>\n    <input class=\"form-control\" type=\"repassword\" name=\"repw\" placeholder=\"비밀번호확인\"/>\n    <input class=\"btn btn-default btn-md btn-block\" type=\"submit\" name=\"submit\" value=\"회원가입\" />\n</form>"
+module.exports = "<h1>회원가입</h1>\n<div *ngIf=\"capslockAlert\" class=\"alert alert-warning\" role=\"alert\">CapsLock이 켜져있습니다!</div>\n<form ngNoForm class=\"registerForm\">\n    <input class=\"form-control\" type=\"text\" name=\"name\" placeholder=\"이름\" [(ngModel)]=\"_name\"/>\n    <input class=\"form-control\" type=\"text\" name=\"email\" placeholder=\"이메일\" [(ngModel)]=\"_email\"/>\n    <input Capslock (capsLock)=\"capslockCheck($event)\" class=\"form-control\" type=\"password\" name=\"pw\" placeholder=\"비밀번호\" [(ngModel)]=\"_pw\"/>\n    <input Capslock (capsLock)=\"capslockCheck($event)\" class=\"form-control\" type=\"password\" name=\"repw\" placeholder=\"비밀번호확인\" [(ngModel)]=\"_repw\"/>\n    <input (click)=\"clickSubmit()\" class=\"btn btn-default btn-md btn-block\" type=\"button\" name=\"submit\" value=\"회원가입\" />\n</form>"
 
 /***/ }),
 
@@ -867,6 +922,8 @@ module.exports = "<form ngNoForm action=\"/register\" method=\"POST\" class=\"re
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__ = __webpack_require__("../../../../../src/app/service/userinfo.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -877,10 +934,76 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var RegisterComponent = (function () {
-    function RegisterComponent() {
+    function RegisterComponent(userservice, router) {
+        this.userservice = userservice;
+        this.router = router;
+        this._name = '';
+        this._email = '';
+        this._pw = '';
+        this._repw = '';
+        this.capslockAlert = false;
+        this.formData = {
+            'name': this._name,
+            'email': this._email,
+            'pw': this._pw,
+            'repw': this._repw
+        };
     }
     RegisterComponent.prototype.ngOnInit = function () {
+    };
+    RegisterComponent.prototype.checkData = function () {
+        this.formData = {
+            'name': this._name,
+            'email': this._email,
+            'pw': this._pw,
+            'repw': this._repw
+        };
+        console.log(this.formData);
+        if (this._name === '') {
+            alert('이름을 입력하세요!');
+            return false;
+        }
+        else if (this._email === '') {
+            alert('이메일을 입력하세요!');
+            return false;
+        }
+        else if ((this._pw === null) && (this._repw === null)) {
+            alert('비밀번호를 입력하세요!');
+            return false;
+        }
+        else if (this._pw != this._repw) {
+            alert('비밀번호가 일치하지 않습니다.');
+            return false;
+        }
+        else {
+            return true;
+        }
+    };
+    RegisterComponent.prototype.clickSubmit = function () {
+        var _this = this;
+        if (this.checkData()) {
+            this.userservice.register(this.formData).subscribe(function (result) {
+                alert(result.message);
+                if (result.result === '1') {
+                    _this.router.navigate(['/login']);
+                }
+                else {
+                    _this.router.navigate(['/register']);
+                }
+            }, function (err) { return alert(err); }, function () {
+            });
+        }
+    };
+    RegisterComponent.prototype.capslockCheck = function (event) {
+        if (event) {
+            this.capslockAlert = true;
+        }
+        else
+            this.capslockAlert = false;
+        console.log(event);
     };
     return RegisterComponent;
 }());
@@ -890,9 +1013,10 @@ RegisterComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/register/register.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__["a" /* UserinfoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__service_userinfo_service__["a" /* UserinfoService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], RegisterComponent);
 
+var _a, _b;
 //# sourceMappingURL=register.component.js.map
 
 /***/ }),
@@ -1165,6 +1289,10 @@ var UserinfoService = (function () {
         return this.http.get('api/user').map(function (res) {
             return res.json();
         })
+            .catch(this.handleErrorObservable);
+    };
+    UserinfoService.prototype.register = function (body) {
+        return this.http.post('register', body).map(function (res) { return res.json(); })
             .catch(this.handleErrorObservable);
     };
     UserinfoService.prototype.handleErrorObservable = function (error) {

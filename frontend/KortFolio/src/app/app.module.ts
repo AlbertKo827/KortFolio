@@ -30,6 +30,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { FooterDirective } from './footer.directive';
 import { FeedbackService } from './service/feedback.service';
 import { ResultpageComponent } from './resultpage/resultpage.component';
+import { CapslockDirective } from './capslock.directive';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { ResultpageComponent } from './resultpage/resultpage.component';
     FeedbackComponent,
     FooterDirective,
     ResultpageComponent,
+    CapslockDirective,
   ],
   imports: [
     BrowserModule,

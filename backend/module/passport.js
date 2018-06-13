@@ -63,9 +63,11 @@ router.post('/login', passport.authenticate('local', {failureRedirect: '/login'}
   });
 
 router.post('/register', (req, res) => {
+    console.log('body : ' + req.body.email);
+
     User.findOne({//DB에서 회원 정보를 찾는다.
-        '_email' : req.body.email,
-        '_privider' : 'kortfolio'
+        '_provider' : 'kortfolio',
+        '_email' : req.body.email
     }, (err, user)=>{
         if(err){//DB Error!
             console.log("에러! : " + err);
@@ -77,7 +79,8 @@ router.post('/register', (req, res) => {
 
             return done(err);
         }
-        else if (!user) {//회원이 아니라면
+
+        else if (user === null) {//회원이 아니라면
             if(req.body.pw === req.body.repw){
                 const _user = new User({//신규 유저 정보를 JSON으로
                     _index : '0',
@@ -99,7 +102,7 @@ router.post('/register', (req, res) => {
                     }
                     else{
                         console.log('done 2');
-                        res.status(500).json({
+                        res.status(200).json({
                             'message' : '가입이 완료됬습니다.',
                             'result' : '1'
                         })
@@ -117,7 +120,11 @@ router.post('/register', (req, res) => {
                 'result' : '0'
             })
         }
+
+        console.log('user : ' + user);
     });
+
+    
 })
 
 router.get('/register', (req, res, next) => {

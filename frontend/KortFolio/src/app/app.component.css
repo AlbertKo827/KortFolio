@@ -449,6 +449,9 @@ text-align: center;
     display: block;
     width: 33%;
     margin: 10% auto;
+    background-color: aliceblue;
+    padding: 1rem 3rem;
+    border-radius: 5%;
 }
 
 .registerForm *{
