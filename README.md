@@ -19,7 +19,7 @@ KortFolio란 제 포트폴리오 대체를 위해 MEAN Stack으로 만들어 제
 
 ## 포트폴리오 페이지
 * * *
-![portfolio](./imgae/3.png)
+![portfolio](./image/3.png)
 제가 그동안 해온 프로젝트 및 자료를 볼 수 있는 페이지입니다.
 
 ## 컨택트 페이지
